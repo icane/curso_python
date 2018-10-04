@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jesús Fernández (fernandez.cuesta@gmail.com)">
+  <meta name="keywords" content="python, intro, s01">
+  <title>Python 101</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="../css/estilo.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python 101</h1>
+  <p class="subtitle">Sesión 1</p>
+  <p class="author">Jesús Fernández (fernandez.cuesta@gmail.com)</p>
+  <p class="date">15 Octubre 2018</p>
+</section>
+
+<section><section id="introducción-a-python" class="title-slide slide level1"><h1>Introducción a Python</h1></section><h4 id="introducción-a-python-1">Introducción a Python</h4><section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="images/Python_logo_1990s.svg" alt="Python_logo_1990s" /><br />
+</p>
+<p>Creado en 1990 por <a href="https://gvanrossum.github.io/">Guido van Rossum</a></p>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="images/guido.jpg" alt="Guido van Rossum, 1995" style="width:40.0%" /><figcaption>Guido van Rossum, 1995</figcaption>
+</figure>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="images/guido2.gif" alt="Guido van Rossum, 1999" style="width:40.0%" /><figcaption>Guido van Rossum, 1999</figcaption>
+</figure>
+</section><section id="section-3" class="slide level2">
+<h2></h2>
+<ul>
+<li>Énfasis en la legibilidad del código (<a href="https://www.python.org/dev/peps/pep-0020/">PEP20</a>)</li>
+</ul>
+<div>
+<ul>
+<li class="fragment"><em>Beautiful is better than ugly</em></li>
+<li class="fragment"><em>Explicit is better than implicit</em></li>
+<li class="fragment"><em>Simple is better than complex</em></li>
+<li class="fragment"><em>Complex is better than complicated</em></li>
+<li class="fragment"><em>Readability counts</em></li>
+</ul>
+</div>
+</section><section id="ejemplo" class="slide level2">
+<h2>Ejemplo:</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">from</span> math <span class="im">import</span> factorial</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    num <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Introduce un número [0, 1, 2, ...]: &quot;</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    num <span class="op">=</span> <span class="bu">int</span>(num)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="cf">assert</span> num <span class="op">&gt;=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="cf">except</span> <span class="pp">ValueError</span>:</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">    <span class="bu">print</span>(<span class="st">&#39;Debes introducir un número&#39;)</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="st">except AssertionError:</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="st">    print(&#39;</span>Error, el número no puede ser negativo<span class="st">&#39;)</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="st">else:</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="st">    print(&#39;</span>El factorial de {} es {}<span class="st">&#39;.format(num, factorial(num)))</span></a></code></pre></div>
+</section><section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>Actualmente dos versiones principales activas:
+<ul>
+<li>Python2.7 (soporte hasta 1/1/2020)</li>
+<li><strong>Python3.x (3.6, 3.7)</strong> ←</li>
+</ul></li>
+</ul>
+<pre><code>python x.y.z
+x: versión principal, incompatibles entre sí [2, 3]
+y: versión secundaria, normalmente compatibles
+z: versión menor (errores y seguridad)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="ex">python</span> -V</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Python</span> 3.7.0</a></code></pre></div>
+</section><section id="section-5" class="slide level2">
+<h2></h2>
+<p><img data-src="images/timeline.png" alt="timeline" /><br />
+Línea temporal de versiones, en rojo: versión obsoleta</p>
+<aside class="notes">
+<p>El soporte de versiones es un poco más complejo. P.e. Python3.4.9 y 3.5.6 están soportadas solamente en modo “security fixes only”.</p>
+</aside>
+</section><section id="section-6" class="slide level2">
+<h2></h2>
+<ul>
+<li>Lenguaje de alto nivel, interpretado, orientado a objetos</li>
+</ul>
+<aside class="notes">
+<p>ciclo escribir-test-corregir muy corto</p>
+</aside>
+<div>
+<ul>
+<li class="fragment">Alta productividad, no compilado</li>
+<li class="fragment">Gran cantidad de librerías incorporadas (<em>batteries included</em>)</li>
+<li class="fragment">+ librerías externas (&gt;1M): Python Package Index (<a href="https://pypi.org/">PyPI</a>)</li>
+</ul>
+</div>
+</section><section id="alto-nivel" class="slide level2">
+<h2>Alto nivel</h2>
+<div>
+<ul>
+<li class="fragment">Sencillo y comprensible</li>
+<li class="fragment">Fácil de aprender</li>
+<li class="fragment">Abstracción de datos</li>
+<li class="fragment">Menos líneas de código</li>
+<li class="fragment">Interfaces simples (<em>pythonic</em>)</li>
+</ul>
+</div>
+</section><section id="código-ejemplo-en-c" class="slide level2">
+<h2>Código ejemplo en C++</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c++"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="pp">#include </span><span class="im">&lt;unistd.h&gt;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="pp">#include </span><span class="im">&lt;sys/types.h&gt;</span><span class="pp"> </span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="pp">#include </span><span class="im">&lt;sys/socket.h&gt;</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="pp">#include </span><span class="im">&lt;netinet/in.h&gt;</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="pp">#include </span><span class="im">&lt;netdb.h&gt;</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="pp">#include </span><span class="im">&lt;arpa/inet.h&gt;</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="pp">#include </span><span class="im">&lt;err.h&gt;</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"> </a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="dt">char</span> response[] = <span class="st">&quot;HTTP/1.1 200 OK</span><span class="sc">\r\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="st">&quot;Content-Type: text/html; charset=UTF-8</span><span class="sc">\r\n\r\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="st">&quot;Hello, world!</span><span class="sc">\r\n</span><span class="st">&quot;</span>;</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"> </a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="dt">int</span> main()</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16">{</a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">  <span class="dt">int</span> one = <span class="dv">1</span>, client_fd;</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">  <span class="kw">struct</span> sockaddr_in svr_addr, cli_addr;</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">  <span class="dt">socklen_t</span> sin_len = <span class="kw">sizeof</span>(cli_addr);</a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"> </a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">  <span class="dt">int</span> sock = socket(AF_INET, SOCK_STREAM, <span class="dv">0</span>);</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22">  <span class="cf">if</span> (sock &lt; <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23">    err(<span class="dv">1</span>, <span class="st">&quot;can&#39;t open socket&quot;</span>);</a>
+<a class="sourceLine" id="cb4-24" data-line-number="24"> </a>
+<a class="sourceLine" id="cb4-25" data-line-number="25">  setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &amp;one, <span class="kw">sizeof</span>(<span class="dt">int</span>));</a>
+<a class="sourceLine" id="cb4-26" data-line-number="26"> </a>
+<a class="sourceLine" id="cb4-27" data-line-number="27">  <span class="dt">int</span> port = <span class="dv">8080</span>;</a>
+<a class="sourceLine" id="cb4-28" data-line-number="28">  svr_addr.sin_family = AF_INET;</a>
+<a class="sourceLine" id="cb4-29" data-line-number="29">  svr_addr.sin_addr.<span class="va">s_addr</span> = INADDR_ANY;</a>
+<a class="sourceLine" id="cb4-30" data-line-number="30">  svr_addr.sin_port = htons(port);</a>
+<a class="sourceLine" id="cb4-31" data-line-number="31"> </a>
+<a class="sourceLine" id="cb4-32" data-line-number="32">  <span class="cf">if</span> (bind(sock, (<span class="kw">struct</span> sockaddr *) &amp;svr_addr, <span class="kw">sizeof</span>(svr_addr)) == <span class="dv">-1</span>) {</a>
+<a class="sourceLine" id="cb4-33" data-line-number="33">    close(sock);</a>
+<a class="sourceLine" id="cb4-34" data-line-number="34">    err(<span class="dv">1</span>, <span class="st">&quot;Can&#39;t bind&quot;</span>);</a>
+<a class="sourceLine" id="cb4-35" data-line-number="35">  }</a>
+<a class="sourceLine" id="cb4-36" data-line-number="36"> </a>
+<a class="sourceLine" id="cb4-37" data-line-number="37">  listen(sock, <span class="dv">5</span>);</a>
+<a class="sourceLine" id="cb4-38" data-line-number="38">  <span class="cf">while</span> (<span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb4-39" data-line-number="39">    client_fd = accept(sock, (<span class="kw">struct</span> sockaddr *) &amp;cli_addr, &amp;sin_len);</a>
+<a class="sourceLine" id="cb4-40" data-line-number="40"> </a>
+<a class="sourceLine" id="cb4-41" data-line-number="41">    <span class="cf">if</span> (client_fd == <span class="dv">-1</span>) {</a>
+<a class="sourceLine" id="cb4-42" data-line-number="42">      perror(<span class="st">&quot;Can&#39;t accept&quot;</span>);</a>
+<a class="sourceLine" id="cb4-43" data-line-number="43">      <span class="cf">continue</span>;</a>
+<a class="sourceLine" id="cb4-44" data-line-number="44">    }</a>
+<a class="sourceLine" id="cb4-45" data-line-number="45"> </a>
+<a class="sourceLine" id="cb4-46" data-line-number="46">    write(client_fd, response, <span class="kw">sizeof</span>(response) - <span class="dv">1</span>); <span class="co">/*-1:&#39;\0&#39;*/</span></a>
+<a class="sourceLine" id="cb4-47" data-line-number="47">    close(client_fd);</a>
+<a class="sourceLine" id="cb4-48" data-line-number="48">  }</a>
+<a class="sourceLine" id="cb4-49" data-line-number="49">}</a></code></pre></div>
+</section><section id="equivalente-python" class="slide level2">
+<h2>Equivalente python</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="im">from</span> flask <span class="im">import</span> Flask</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">app <span class="op">=</span> Flask(<span class="va">__name__</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="at">@app.route</span>(<span class="st">&quot;/&quot;</span>)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">def</span> hello():</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="cf">return</span> <span class="st">&quot;Hello World!&quot;</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">Flask.run(app, port<span class="op">=</span><span class="dv">8080</span>)</a></code></pre></div>
+</section><section id="interpretado" class="slide level2">
+<h2>Interpretado</h2>
+<div>
+<ul>
+<li class="fragment">No es necesario compilar</li>
+<li class="fragment">Compatible (en general) en distintos sistemas operativos y arquitecturas
+<ul>
+<li class="fragment">Linux</li>
+<li class="fragment">MacOS</li>
+<li class="fragment">Windows</li>
+<li class="fragment">otros (AIX, AS/400, z/OS, OpenVMS, arquitecturas ARM, …)</li>
+</ul></li>
+<li class="fragment">Depuración de errores desde intérprete</li>
+<li class="fragment">Gestión automática de memoria</li>
+</ul>
+</div>
+<aside class="notes">
+<p>GC, GIL</p>
+</aside>
+</section><section id="diferentes-paradigmas-de-programación" class="slide level2">
+<h2>Diferentes paradigmas de programación</h2>
+<div>
+<ul>
+<li class="fragment">Orientado a objetos</li>
+<li class="fragment">Procedural</li>
+<li class="fragment">Imperativo</li>
+<li class="fragment">Funcional (&lt;100%)</li>
+</ul>
+</div>
+</section><section id="section-7" class="slide level2">
+<h2></h2>
+<p>Muy usado en:</p>
+<div>
+<ul>
+<li class="fragment">Data Science</li>
+<li class="fragment">scripts</li>
+<li class="fragment">prototipos</li>
+<li class="fragment">automatización de procesos</li>
+<li class="fragment">servicios web (p.e. <a href="https://www.pinterest.com">pinterest</a>, <a href="https://www.instagram.com">instagram</a>, …)</li>
+<li class="fragment">como “pegamento” entre componentes escritos en otros lenguajes</li>
+</ul>
+</div>
+</section><section id="section-8" class="slide level2">
+<h2></h2>
+<p><a href="https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages">The 2018 Top Programming Languages, IEEE</a></p>
+<blockquote>
+<p><img data-src="https://spectrum.ieee.org/image/MzExNjk1OA.jpeg" alt="ieee_graph" /><br />
+</p>
+</blockquote>
+<p>gran soporte en <a href="https://stackoverflow.com/questions/tagged/python">foros</a>, comunidades, conferencias, …</p>
+</section></section>
+<section><section id="instalación-y-entorno" class="title-slide slide level1"><h1>Instalación y entorno</h1></section><h4 id="instalación-y-entorno-de-programación">Instalación y entorno de programación</h4><section id="section-9" class="slide level2">
+<h2></h2>
+<p>Diferentes distribuciones para Windows:</p>
+<div>
+<ul>
+<li class="fragment"><a href="https://www.python.org/">python</a></li>
+<li class="fragment"><a href="https://conda.io">conda</a></li>
+<li class="fragment"><a href="https://winpython.github.io/">winpython</a>
+<ul>
+<li class="fragment">enfocado a sitemas Windows</li>
+<li class="fragment">no necesita ser instalado</li>
+<li class="fragment">incluye compilador C/C++</li>
+</ul></li>
+<li class="fragment"><a href="https://www.activestate.com/activepython">activepython</a> (comercial)</li>
+</ul>
+</div>
+</section><section id="section-10" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>Regla general: evitar usar el intérprete global del sistema</p>
+</blockquote>
+<ul>
+<li class="fragment">Puede afectar a otros componentes</li>
+<li class="fragment">Dependencias entre distintos proyectos</li>
+<li class="fragment">Puede no ser la misma versión que la requerida en un proyecto</li>
+</ul>
+</section><section id="section-11" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="https://imgs.xkcd.com/comics/python_environment.png" alt="https://xkcd.com/1987" /><figcaption>https://xkcd.com/1987</figcaption>
+</figure>
+</section><section id="solución" class="slide level2">
+<h2>¿Solución?</h2>
+</section></section>
+<section><section id="entornos-virtuales" class="title-slide slide level1"><h1>Entornos virtuales</h1></section><h4 id="entornos-virtuales-1">Entornos virtuales</h4><section id="section-12" class="slide level2">
+<h2></h2>
+<ul>
+<li>Funcionan como entornos seguros</li>
+<li>Independientes entre sí</li>
+<li>Permiten especificar versiones de Python</li>
+<li>Facilmente reproducibles y exportables (<strong>Portabilidad</strong>)</li>
+</ul>
+</section><section id="section-13" class="slide level2">
+<h2></h2>
+<p><img data-src="images/entornos.png" alt="entornos" /><br />
+</p>
+<aside class="notes">
+<pre><code>&gt; where python</code></pre>
+</aside>
+</section></section>
+<section><section id="conda" class="title-slide slide level1"><h1>Conda</h1></section><h4 id="python-en-windows">Python en Windows</h4><section id="section-14" class="slide level2">
+<h2></h2>
+<h3 id="conda-anacondaminiconda">Conda: (anaconda/miniconda)</h3>
+<ul>
+<li>Gestor de paquetes multi-lenguaje (python/R/…)</li>
+<li>Transparente: no instala ficheros fuera de su directorio</li>
+<li>Multipropósito, gestiona paquetes adicionales (p.e. <code>git</code>, librerías, …)</li>
+</ul>
+</section><section id="section-15" class="slide level2">
+<h2></h2>
+<table>
+<thead>
+<tr class="header">
+<th>Anaconda</th>
+<th style="text-align: left;">Miniconda</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>~3GB disco</td>
+<td style="text-align: left;">&lt;400MB</td>
+</tr>
+<tr class="even">
+<td>&gt; 200 librerías</td>
+<td style="text-align: left;">base + dependencias</td>
+</tr>
+<tr class="odd">
+<td>+ herramientas</td>
+<td style="text-align: left;">ciclo distribución +rápido</td>
+</tr>
+<tr class="even">
+<td>IDE</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td>Anaconda Navigator</td>
+<td style="text-align: left;">sin interfaz gráfico</td>
+</tr>
+<tr class="even">
+<td>↑ tiempo instalación</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section><section id="section-16" class="slide level2">
+<h2></h2>
+<p>Alternativa: <a href="https://www.python.org/">python</a> + <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></p>
+</section></section>
+<section><section id="instalación" class="title-slide slide level1"><h1>Instalación</h1></section><section id="section-17" class="slide level2">
+<h2></h2>
+<p>Determinar la plataforma sobre la que se va a instalar</p>
+<p><img data-src="https://cdn-images-1.medium.com/max/800/1*4MbAW6APDD_GT14vaRkKQQ.jpeg" alt="conda_platform" /><br />
+</p>
+<aside class="notes">
+<p>instalar con chocolatey?</p>
+</aside>
+</section><section id="section-18" class="slide level2">
+<h2></h2>
+<p><a href="https://conda.io/miniconda.html" class="uri">https://conda.io/miniconda.html</a> <img data-src="images/miniconda.gif" alt="setup" /><br />
+La instalación puede tardar unos minutos (5-10)</p>
+<aside class="notes">
+<p>tiempos en VM windows 7-32bit 2GB RAM miniconda: 5 min anaconda: 18 min</p>
+</aside>
+</section></section>
+<section><section id="estructura-del-código" class="title-slide slide level1"><h1>Estructura del código</h1></section><h4 id="estructura-del-código-1">Estructura del código</h4><section id="section-19" class="slide level2">
+<h2></h2>
+<ul>
+<li>Guías de estilo:
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-0008/?">PEP8</a></li>
+<li><a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md">Guía de estilo de Google</a></li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/js/head.min.js"></script>
+  <script src="../js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+          { src: '../plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
