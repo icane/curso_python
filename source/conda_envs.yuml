@@ -1,0 +1,2 @@
+[Proyecto 3|beautifulsoup 4.6.0;Jinja2 2.10;pyramid 1.9.1|python3.7]<>1->[conda],[Proyecto 2|pandas 0.21.1;sqlalchemy=1.0.12|python2.7]<>1->[conda], [Proyecto 1|wagtail 1.10.1;django 1.8.19|python3.6]<>1->[conda], [Entorno base|bokeh 0.13.0; pytables 3.4.4|python3.7{bg:wheat}]<>1->[conda{bg:green}], [conda]->[Sistema Operativo],  [conda]->[Otros paquetes y librerías], [Otros paquetes y librerías]->[Sistema Operativo], [Entorno del sistema|pip;setuptools;wheel|python2.7{bg:cornsilk]<>1->[Librerías de sistema], [Librerías de sistema]->[Sistema Operativo]
+
