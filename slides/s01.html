@@ -101,7 +101,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <h1 class="title">Python 101</h1>
   <p class="subtitle">Sesión 1</p>
   <p class="author">Jesús Fernández (fernandez.cuesta@gmail.com)</p>
-  <p class="date">15 Octubre 2018</p>
+  <p class="date">16 Octubre 2018</p>
 </section>
 
 <section><section id="introducción-a-python" class="title-slide slide level1"><h1>Introducción a Python</h1></section><h4 id="introducción-a-python-1">Introducción a Python</h4><section id="section" class="slide level2">
@@ -112,17 +112,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="section-1" class="slide level2">
 <h2></h2>
 <figure>
-<img data-src="images/guido.jpg" alt="Guido van Rossum, 1995" style="width:40.0%" /><figcaption>Guido van Rossum, 1995</figcaption>
+<img data-src="images/guido2.gif" alt="Guido van Rossum, 1999" style="width:40.0%" /><figcaption>Guido van Rossum, 1999</figcaption>
 </figure>
 </section><section id="section-2" class="slide level2">
 <h2></h2>
-<figure>
-<img data-src="images/guido2.gif" alt="Guido van Rossum, 1999" style="width:40.0%" /><figcaption>Guido van Rossum, 1999</figcaption>
-</figure>
-</section><section id="section-3" class="slide level2">
-<h2></h2>
 <ul>
-<li>Énfasis en la legibilidad del código (<a href="https://www.python.org/dev/peps/pep-0020/">PEP20</a>)</li>
+<li>Énfasis en la productividad y legibilidad del código (<a href="https://www.python.org/dev/peps/pep-0020/">PEP20</a>)</li>
 </ul>
 <div>
 <ul>
@@ -147,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-10" data-line-number="10"><span class="st">    print(&#39;</span>Error, el número no puede ser negativo<span class="st">&#39;)</span></a>
 <a class="sourceLine" id="cb1-11" data-line-number="11"><span class="st">else:</span></a>
 <a class="sourceLine" id="cb1-12" data-line-number="12"><span class="st">    print(&#39;</span>El factorial de {} es {}<span class="st">&#39;.format(num, factorial(num)))</span></a></code></pre></div>
-</section><section id="section-4" class="slide level2">
+</section><section id="section-3" class="slide level2">
 <h2></h2>
 <ul>
 <li>Actualmente dos versiones principales activas:
@@ -162,14 +157,14 @@ y: versión secundaria, normalmente compatibles
 z: versión menor (errores y seguridad)</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">$ <span class="ex">python</span> -V</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">Python</span> 3.7.0</a></code></pre></div>
-</section><section id="section-5" class="slide level2">
+</section><section id="section-4" class="slide level2">
 <h2></h2>
 <p><img data-src="images/timeline.png" alt="timeline" /><br />
 Línea temporal de versiones, en rojo: versión obsoleta</p>
 <aside class="notes">
 <p>El soporte de versiones es un poco más complejo. P.e. Python3.4.9 y 3.5.6 están soportadas solamente en modo “security fixes only”.</p>
 </aside>
-</section><section id="section-6" class="slide level2">
+</section><section id="section-5" class="slide level2">
 <h2></h2>
 <ul>
 <li>Lenguaje de alto nivel, interpretado, orientado a objetos</li>
@@ -285,20 +280,29 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <li class="fragment">Funcional (&lt;100%)</li>
 </ul>
 </div>
-</section><section id="section-7" class="slide level2">
-<h2></h2>
-<p>Muy usado en:</p>
-<div>
-<ul>
-<li class="fragment">Data Science</li>
-<li class="fragment">scripts</li>
-<li class="fragment">prototipos</li>
-<li class="fragment">automatización de procesos</li>
-<li class="fragment">servicios web (p.e. <a href="https://www.pinterest.com">pinterest</a>, <a href="https://www.instagram.com">instagram</a>, …)</li>
-<li class="fragment">como “pegamento” entre componentes escritos en otros lenguajes</li>
-</ul>
-</div>
-</section><section id="section-8" class="slide level2">
+</section><section id="data-science" class="slide level2">
+<h2>Data Science</h2>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt="logo_scikit" class="logo" /> <img data-src="https://www.fullstackpython.com/img/logos/scipy.png" alt="logo_scipy" class="logo" /> <img data-src="https://pandas.pydata.org/_static/pandas_logo.png" alt="logo_pandas" class="logo" /><br />
+</p>
+</section><section id="machine-learning" class="slide level2">
+<h2>Machine Learning</h2>
+<p><img data-src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" alt="logo_keras" class="logo" /> <img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/2000px-TensorFlowLogo.svg.png" alt="logo_tensorflow" class="logo" /> <img data-src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" alt="logo_pytorch" class="logo" /><br />
+</p>
+</section><section id="web" class="slide level2">
+<h2>Web</h2>
+<p>(p.e. <a href="https://www.pinterest.com">pinterest</a>, <a href="https://www.instagram.com">instagram</a>, …)</p>
+<p><img data-src="images/logo_django.png" alt="logo_django" class="logo" /> <img data-src="https://cdn.freebiesupply.com/logos/thumbs/2x/flask-logo.png" alt="logo_flask" class="logo" /> <img data-src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Pyramid_web_framework_logo_on_transparent_background.png" alt="logo_pyramid" class="logo" /><br />
+</p>
+</section><section id="scripts-prototipos" class="slide level2">
+<h2>scripts, prototipos</h2>
+<p>como “pegamento” entre componentes escritos en otros lenguajes</p>
+<p><img data-src="images/logo_fabric.png" alt="logo_fabric" class="logo" /> <img data-src="images/logo_celery.png" alt="logo_celery" class="logo" /></p>
+</section><section id="automatización-de-procesos" class="slide level2">
+<h2>automatización de procesos</h2>
+<p><img data-src="https://keithtenzer.files.wordpress.com/2017/11/ansible-logo.png" alt="logo_ansible" class="logo" /> <img data-src="https://www.fullstackpython.com/img/logos/jinja.png" alt="logo_jinja2" class="logo" /> <img data-src="http://docs.python-requests.org/en/v1.0.0/_static/requests-sidebar.png" alt="logo_requests" class="logo" /><br />
+</p>
+<p><a href="https://github.com/vinta/awesome-python#readme">Información adicional</a></p>
+</section><section id="section-6" class="slide level2">
 <h2></h2>
 <p><a href="https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages">The 2018 Top Programming Languages, IEEE</a></p>
 <blockquote>
@@ -306,8 +310,40 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 </p>
 </blockquote>
 <p>gran soporte en <a href="https://stackoverflow.com/questions/tagged/python">foros</a>, comunidades, conferencias, …</p>
+</section><section id="section-7" class="slide level2">
+<h2></h2>
+<p>python vs R <img data-src="https://ezdatamunch.com/wp-content/uploads/2018/01/R-vs-python.png" alt="R vs Python" /><br />
+</p>
+</section><section id="section-8" class="slide level2">
+<h2></h2>
+<p><img data-src="images/SOtrend.svg" alt="stackoverflow_graph" /><br />
+fuente: <a href="https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas">stackoverflow</a></p>
+</section><section id="section-9" class="slide level2 small">
+<h2></h2>
+<ul>
+<li><code>R</code>: muy enfocado en análisis estadístico</li>
+<li><code>Python</code>: generalista, con librerías especializadas (<a href="https://pandas.pydata.org/">pandas</a>, <a href="http://scikit-learn.org/">scikit-learn</a>, <a href="https://www.scipy.org/">scipy</a>, … )</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><a href="https://www.kdnuggets.com/2017/08/python-overtakes-r-leader-analytics-data-science.html">Encuesta 2017</a></li>
+<li><a href="https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html">Encuesta 2018</a></li>
+<li><a href="https://www.kdnuggets.com/2018/06/ecosystem-data-science-python-victory.html">Python Data Science</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="https://www.kdnuggets.com/images/top-analytics-data-science-machine-learning-software-2018-3yrs-539.jpg" alt="poll_results" /><br />
+</p>
+</div>
+</div>
 </section></section>
-<section><section id="instalación-y-entorno" class="title-slide slide level1"><h1>Instalación y entorno</h1></section><h4 id="instalación-y-entorno-de-programación">Instalación y entorno de programación</h4><section id="section-9" class="slide level2">
+<section><section id="section-10" class="title-slide slide level1" data-background-image="images/python_words.gif"><h1>¿?</h1></section><section id="section-11" class="slide level2">
+<h2></h2>
+<figure>
+<img data-src="images/guido.jpg" alt="Guido van Rossum, 1995" style="width:40.0%" /><figcaption>Guido van Rossum, 1995</figcaption>
+</figure>
+</section></section>
+<section><section id="instalación-y-entorno" class="title-slide slide level1"><h1>Instalación y entorno</h1></section><h4 id="instalación-y-entorno-de-programación">Instalación y entorno de programación</h4><section id="section-12" class="slide level2">
 <h2></h2>
 <p>Diferentes distribuciones para Windows:</p>
 <div>
@@ -323,25 +359,27 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <li class="fragment"><a href="https://www.activestate.com/activepython">activepython</a> (comercial)</li>
 </ul>
 </div>
-</section><section id="section-10" class="slide level2">
+</section><section id="section-13" class="slide level2">
 <h2></h2>
 <blockquote>
 <p>Regla general: evitar usar el intérprete global del sistema</p>
 </blockquote>
+<div>
 <ul>
 <li class="fragment">Puede afectar a otros componentes</li>
 <li class="fragment">Dependencias entre distintos proyectos</li>
 <li class="fragment">Puede no ser la misma versión que la requerida en un proyecto</li>
 </ul>
-</section><section id="section-11" class="slide level2">
+</div>
+</section><section id="section-14" class="slide level2">
 <h2></h2>
 <figure>
-<img data-src="https://imgs.xkcd.com/comics/python_environment.png" alt="https://xkcd.com/1987" /><figcaption>https://xkcd.com/1987</figcaption>
+<img data-src="https://imgs.xkcd.com/comics/python_environment.png" alt="https://xkcd.com/1987" /><figcaption><a href="https://xkcd.com/1987" class="uri">https://xkcd.com/1987</a></figcaption>
 </figure>
 </section><section id="solución" class="slide level2">
 <h2>¿Solución?</h2>
 </section></section>
-<section><section id="entornos-virtuales" class="title-slide slide level1"><h1>Entornos virtuales</h1></section><h4 id="entornos-virtuales-1">Entornos virtuales</h4><section id="section-12" class="slide level2">
+<section><section id="entornos-virtuales" class="title-slide slide level1"><h1>Entornos virtuales</h1></section><h4 id="entornos-virtuales-1">Entornos virtuales</h4><section id="section-15" class="slide level2">
 <h2></h2>
 <ul>
 <li>Funcionan como entornos seguros</li>
@@ -349,7 +387,7 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <li>Permiten especificar versiones de Python</li>
 <li>Facilmente reproducibles y exportables (<strong>Portabilidad</strong>)</li>
 </ul>
-</section><section id="section-13" class="slide level2">
+</section><section id="section-16" class="slide level2">
 <h2></h2>
 <p><img data-src="images/entornos.png" alt="entornos" /><br />
 </p>
@@ -357,15 +395,19 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <pre><code>&gt; where python</code></pre>
 </aside>
 </section></section>
-<section><section id="conda" class="title-slide slide level1"><h1>Conda</h1></section><h4 id="python-en-windows">Python en Windows</h4><section id="section-14" class="slide level2">
+<section><section id="conda" class="title-slide slide level1"><h1>Conda</h1></section><h4 id="python-en-windows">Python en Windows</h4><section id="section-17" class="slide level2">
 <h2></h2>
-<h3 id="conda-anacondaminiconda">Conda: (anaconda/miniconda)</h3>
+<h3 id="conda-anacondaminiconda">Conda (anaconda/miniconda)</h3>
 <ul>
 <li>Gestor de paquetes multi-lenguaje (python/R/…)</li>
 <li>Transparente: no instala ficheros fuera de su directorio</li>
 <li>Multipropósito, gestiona paquetes adicionales (p.e. <code>git</code>, librerías, …)</li>
+<li>Coexistencia de entornos con diferentes librerías y versiones de python</li>
 </ul>
-</section><section id="section-15" class="slide level2">
+<ul>
+<li class="fragment">Por defecto nos encontraremos en el entorno <code>base</code></li>
+</ul>
+</section><section id="section-18" class="slide level2">
 <h2></h2>
 <table>
 <thead>
@@ -388,7 +430,7 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <td style="text-align: left;">ciclo distribución +rápido</td>
 </tr>
 <tr class="even">
-<td>IDE</td>
+<td>IDE (Spyder + <strong>890-VSCode</strong>)</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
@@ -401,11 +443,12 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 </tr>
 </tbody>
 </table>
-</section><section id="section-16" class="slide level2">
+</section><section id="section-19" class="slide level2">
 <h2></h2>
 <p>Alternativa: <a href="https://www.python.org/">python</a> + <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></p>
+<p>(más bajo nivel)</p>
 </section></section>
-<section><section id="instalación" class="title-slide slide level1"><h1>Instalación</h1></section><section id="section-17" class="slide level2">
+<section><section id="instalación" class="title-slide slide level1"><h1>Instalación</h1></section><h4 id="instalación-1">Instalación</h4><section id="section-20" class="slide level2">
 <h2></h2>
 <p>Determinar la plataforma sobre la que se va a instalar</p>
 <p><img data-src="https://cdn-images-1.medium.com/max/800/1*4MbAW6APDD_GT14vaRkKQQ.jpeg" alt="conda_platform" /><br />
@@ -413,15 +456,112 @@ Línea temporal de versiones, en rojo: versión obsoleta</p>
 <aside class="notes">
 <p>instalar con chocolatey?</p>
 </aside>
-</section><section id="section-18" class="slide level2">
+</section><section id="section-21" class="slide level2">
 <h2></h2>
-<p><a href="https://conda.io/miniconda.html" class="uri">https://conda.io/miniconda.html</a> <img data-src="images/miniconda.gif" alt="setup" /><br />
-La instalación puede tardar unos minutos (5-10)</p>
+<p><a href="https://www.anaconda.com/download/" class="uri">https://www.anaconda.com/download/</a> <img data-src="images/anaconda.gif" alt="setup" /><br />
+La instalación puede tardar unos 5-10 minutos</p>
 <aside class="notes">
 <p>tiempos en VM windows 7-32bit 2GB RAM miniconda: 5 min anaconda: 18 min</p>
 </aside>
 </section></section>
-<section><section id="estructura-del-código" class="title-slide slide level1"><h1>Estructura del código</h1></section><h4 id="estructura-del-código-1">Estructura del código</h4><section id="section-19" class="slide level2">
+<section><section id="práctica-i" class="title-slide slide level1"><h1>Práctica I</h1></section><h4 id="práctica-i-1">Práctica I</h4><section id="section-22" class="slide level2">
+<h2></h2>
+<h3 id="entorno-virtual-con-navigator">Entorno virtual con Navigator</h3>
+<ul>
+<li>Ejecutar Navigator y crear un nuevo entorno (distinto a <code>base</code>) con diferentes librerías instaladas, p.e.:</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pandas</code></td>
+<td style="text-align: left;"><code>bs4</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>matplotlib</code></td>
+<td style="text-align: left;"><code>jupyter</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>scrapy</code></td>
+<td style="text-align: left;"><code>seaborn</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>sqlalchemy</code></td>
+<td style="text-align: left;"><code>flask</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>jsonschema</code></td>
+<td style="text-align: left;"><code>bokeh</code></td>
+</tr>
+</tbody>
+</table>
+</section><section id="section-23" class="slide level2" data-background-image="images/venv_navigator.gif" data-background-size="80%">
+<h2></h2>
+</section></section>
+<section><section id="práctica-ii" class="title-slide slide level1"><h1>Práctica II</h1></section><h4 id="práctica-ii-1">Práctica II</h4><section id="section-24" class="slide level2">
+<h2></h2>
+<h3 id="entorno-virtual-en-modo-texto">Entorno virtual en modo texto</h3>
+<aside class="notes">
+<p>Se puede sugerir que cierto grupo instale diferentes versiones</p>
+</aside>
+<ul>
+<li>Ejecutar <code>Anaconda prompt</code></li>
+<li>Verificar que conda está instalado:</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">(</span>base<span class="kw">)</span> conda info</a></code></pre></div>
+</section><section id="section-25" class="slide level2">
+<h2></h2>
+<h3 id="entorno-virtual-en-modo-texto-1">Entorno virtual en modo texto</h3>
+<p>Crear un entorno virtual con <code>pandas</code>, <code>matplotlib</code>, <code>jupyter</code> y <code>pyjstat</code>.</p>
+<ul>
+<li>Crear un entorno virtual:</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">(</span>base<span class="kw">)</span> conda create --name entorno-01</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">(</span>base<span class="kw">)</span> conda create --name entorno-02 <span class="ot">python=</span>2.7 --yes</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co"># crea entorno con paquetes preinstalados</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">(</span>base<span class="kw">)</span> conda create -n entorno-03 <span class="ot">python=</span>3.7 pandas matplotlib -y</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="kw">(</span>base<span class="kw">)</span> conda activate entorno-03</a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="kw">(</span>entorno-03<span class="kw">)</span> conda list  # muestra paquetes instalados</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co"># instala paquetes de PyPI no gestionados por conda</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="kw">(</span>entorno-03<span class="kw">)</span> pip <span class="kw">install</span> pyjstat </a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co"># exportar definición del entorno</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="kw">(</span>entorno-03<span class="kw">)</span> conda <span class="kw">env</span> <span class="kw">export</span>  <span class="kw">&gt;</span> entorno-03.yml</a></code></pre></div>
+</section><section id="section-26" class="slide level2">
+<h2></h2>
+<ul>
+<li>Acceder al entorno virtual y mostrar librerías instaladas</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">(</span>base<span class="kw">)</span> conda activate entorno-03</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">(</span>entorno-03<span class="kw">)</span> conda list  # muestra paquetes instalados</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># instala paquetes adicionales</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">(</span>entorno-03<span class="kw">)</span> conda <span class="kw">install</span> jupyter -y</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co"># instal librerías desde PyPI, no gestionados por conda</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="kw">(</span>entorno-03<span class="kw">)</span> pip <span class="kw">install</span> pyjstat </a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw">(</span>entorno-03<span class="kw">)</span> conda list</a></code></pre></div>
+<p><a href="https://pip.pypa.io/en/stable/user_guide/">Guía de usuario <code>pip</code></a></p>
+</section></section>
+<section><section id="estructura-del-código" class="title-slide slide level1"><h1>Estructura del código</h1></section><h4 id="estructura-del-código-1">Estructura del código</h4><section id="section-27" class="slide level2">
+<h2></h2>
+<pre><code>principal/
+    __init__.py
+    practica.py
+    colector/
+        __init__.py
+        collector.py
+        database.py
+    procesador/
+        __init__.py
+        limpia.py
+        procesa.py
+    graficos/
+        __init__.py
+        graficos.py
+        exportar.py</code></pre>
+</section><section id="section-28" class="slide level2">
 <h2></h2>
 <ul>
 <li>Guías de estilo:
@@ -430,6 +570,14 @@ La instalación puede tardar unos minutos (5-10)</p>
 <li><a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md">Guía de estilo de Google</a></li>
 </ul></li>
 </ul>
+</section><section id="section-29" class="slide level2">
+<h2></h2>
+<p>Recursos en línea</p>
+<ul>
+<li><p><a href="https://docs.python.org/3/library/index.html">Librería standard de Python</a></p></li>
+<li><p><a href="https://docs.python.org/3.7/reference/index.html">Guía de referencia de Python</a> <!-- enlaces --></p></li>
+</ul>
+<!-- imágenes -->
 </section></section>
     </div>
   </div>

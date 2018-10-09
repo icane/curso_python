@@ -2,7 +2,7 @@
 title: Python 101
 subtitle: Sesión 1
 author: Jesús Fernández (fernandez.cuesta@gmail.com)
-date: 15 Octubre 2018
+date: 16 Octubre 2018
 revealjs-url: ..
 theme: solarized
 transition: fade
@@ -15,18 +15,15 @@ keywords: [python, intro, s01]
 #### Introducción a Python
 
 ##
-  ![Python_logo_1990s]\
+![Python_logo_1990s]\
 
 Creado en 1990 por [Guido van Rossum]
-
-##
-![Guido van Rossum, 1995]
 
 ##
 ![Guido van Rossum, 1999]
 
 ##
-- Énfasis en la legibilidad del código ([PEP20])
+- Énfasis en la productividad y legibilidad del código ([PEP20])
 
 ::: incremental
 
@@ -202,17 +199,30 @@ GC, GIL
 - Funcional (<100%)
 :::
 
-##
-Muy usado en:
+## Data Science
 
-::: incremental
-- Data Science
-- scripts
-- prototipos
-- automatización de procesos
-- servicios web (p.e. [pinterest], [instagram], ...)
-- como "pegamento" entre componentes escritos en otros lenguajes
-:::
+![logo_scikit]\ ![logo_scipy]\ ![logo_pandas]\
+
+## Machine Learning
+
+![logo_keras]\ ![logo_tensorflow]\ ![logo_pytorch]\
+
+## Web
+(p.e. [pinterest], [instagram], ...)
+
+![logo_django]\ ![logo_flask]\ ![logo_pyramid]\
+
+## scripts, prototipos
+como "pegamento" entre componentes escritos en otros lenguajes
+
+![logo_fabric]
+![logo_celery]
+
+## automatización de procesos
+
+![logo_ansible]\ ![logo_jinja2]\ ![logo_requests]\
+
+[Información adicional][awesome]
 
 ##
 [The 2018 Top Programming Languages, IEEE][ieee_rank]
@@ -222,3 +232,32 @@ Muy usado en:
 
 gran soporte en [foros][stackoverflow], comunidades, conferencias, ...
 
+##
+python vs R
+![R vs Python] \
+
+##
+![stackoverflow_graph]\
+fuente: [stackoverflow][stackoverflow_trends]
+
+## {.small}
+- `R`: muy enfocado en análisis estadístico
+- `Python`: generalista, con librerías especializadas ([pandas], 
+[scikit-learn], [scipy], ... )
+
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+- [Encuesta 2017][kdnuggets0708]
+- [Encuesta 2018][kdnuggets0805]
+- [Python Data Science][kdnuggets0806]
+:::
+::: {.column width="60%"}
+![poll_results]\
+:::
+::::::::::::::
+
+
+# ¿? {data-background-image="images/python_words.gif"} 
+## 
+![Guido van Rossum, 1995]
