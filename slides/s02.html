@@ -104,7 +104,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">16 Octubre 2018</p>
 </section>
 
-<section><section id="variables-estructuras-de-datos-expresiones-sentencias" class="title-slide slide level1"><h1>Variables, estructuras de datos, expresiones, sentencias</h1></section><h4 id="variables">Variables</h4><section id="section" class="slide level2">
+<section id="variables-estructuras-de-datos-expresiones-sentencias" class="title-slide slide level1"><h1>variables, estructuras de datos, expresiones, sentencias</h1></section>
+<section><section id="variables" class="title-slide slide level1"><h1>variables</h1></section><h4 id="variables-1">variables</h4><section id="section" class="slide level2">
 <h2></h2>
 <p>¿qué es una constante?</p>
 <p>un valor fijo, que nunca cambia</p>
@@ -113,7 +114,171 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&#39;curso python&#39;</span>)</a></code></pre></div>
 </section><section id="section-1" class="slide level2">
 <h2></h2>
-<p>prueba - prueba - prueba</p>
+<p>recordad: ¡¡ojo con las palabras reservadas!!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="va">False</span> <span class="kw">class</span> <span class="cf">return</span> <span class="kw">is</span> <span class="cf">finally</span> <span class="va">None</span> <span class="cf">if</span> <span class="cf">for</span> <span class="kw">lambda</span> <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="va">True</span> <span class="kw">def</span> <span class="im">from</span> <span class="cf">while</span> <span class="kw">nonlocal</span> <span class="kw">and</span> <span class="kw">del</span> <span class="kw">global</span> <span class="kw">not</span> <span class="cf">with</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="im">as</span> <span class="cf">elif</span> <span class="cf">try</span> <span class="kw">or</span> <span class="cf">yield</span> <span class="cf">assert</span> <span class="cf">else</span> <span class="im">import</span> <span class="cf">pass</span> <span class="cf">break</span> <span class="cf">except</span> <span class="kw">in</span> <span class="cf">raise</span></a></code></pre></div>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<p>una variable es una posición de memoria a la que se asocia un nombre o etiqueta</p>
+<p>se les asigna valores con el operador =</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1">x <span class="op">=</span> <span class="fl">12.2</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">y <span class="op">=</span> <span class="st">&#39;variable&#39;</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">x <span class="op">=</span> <span class="dv">100</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="bu">print</span>(x)</a></code></pre></div>
+</section><section id="nomenclatura" class="slide level2">
+<h2>nomenclatura</h2>
+<ul>
+<li>deben comenzar por una letra o guion bajo _</li>
+<li>pueden contener letras, números y guiones bajos</li>
+<li>son sensibles a mayúsculas/minúsculas</li>
+</ul>
+<aside class="notes">
+<p>ok: spam eggs spam23 _speed</p>
+<p>mal: 23spam #sign var.12</p>
+<p>mejor no: nombreVariable</p>
+<p>solo constantes: PI</p>
+<p>diferentes: spam Spam SPAM</p>
+</aside>
+</section><section id="declaraciones" class="slide level2">
+<h2>declaraciones</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">x <span class="op">=</span> <span class="dv">1</span> <span class="co"># declaración de asignación</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">x <span class="op">=</span> x <span class="op">+</span> <span class="dv">1</span> <span class="co"># asignación de expresión</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="bu">print</span>(x) <span class="co"># declaración print</span></a></code></pre></div>
+<p>¿cuáles son las variables, operadores, constantes, funciones?</p>
+</section><section id="declaraciones-de-asignación" class="slide level2">
+<h2>declaraciones de asignación</h2>
+<p>una declaración de asignación consiste en una expresión a la derecha del igual y una variable a la izquierda donde almacenar el resultado</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">x <span class="op">=</span> <span class="fl">3.9</span> <span class="op">*</span> x <span class="op">*</span> ( <span class="dv">1</span> <span class="op">-</span> x )</a></code></pre></div>
+</section></section>
+<section><section id="expresiones" class="title-slide slide level1"><h1>expresiones</h1></section><h4 id="expresiones-1">expresiones</h4><section id="expresiones-numéricas" class="slide level2">
+<h2>expresiones numéricas</h2>
+<table>
+<thead>
+<tr class="header">
+<th>operador</th>
+<th>operación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>suma</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>resta</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>multiplicación</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>división</td>
+</tr>
+<tr class="odd">
+<td>**</td>
+<td>potenciación</td>
+</tr>
+<tr class="even">
+<td>%</td>
+<td>resto</td>
+</tr>
+</tbody>
+</table>
+</section><section id="ejemplos" class="slide level2">
+<h2>ejemplos</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">x <span class="op">=</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">y <span class="op">=</span> <span class="dv">430</span> <span class="op">*</span> <span class="dv">11</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="bu">print</span>(y)</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">z <span class="op">=</span> y <span class="op">/</span> <span class="dv">1000</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="bu">print</span>(z)</a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">j <span class="op">=</span> <span class="dv">26</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">k <span class="op">=</span> j <span class="op">%</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="bu">print</span>(k)</a></code></pre></div>
+</section><section id="precedencia-de-operadores" class="slide level2">
+<h2>precedencia de operadores</h2>
+<ol type="1">
+<li>paréntesis</li>
+<li>potenciación</li>
+<li>multiplicación, división y resto</li>
+<li>suma y resta</li>
+<li>de izquierda a derecha</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">x <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span> <span class="op">/</span> <span class="dv">4</span> <span class="op">*</span> ( <span class="dv">5</span> <span class="op">+</span> <span class="dv">4</span> )</a></code></pre></div>
+</section><section id="tipos" class="slide level2">
+<h2>tipos</h2>
+<p>toda variable en Python tiene un tipo</p>
+<p>Python sabe la diferencia entre <code>number</code> y <code>string</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">8</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="bu">type</span>(x)</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">saludo <span class="op">=</span> <span class="st">&#39;hola&#39;</span> <span class="op">+</span> <span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="st">&#39;Miguel&#39;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="bu">print</span>(saludo)</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="bu">type</span>(saludo)</a></code></pre></div>
+<p>con cadenas de texto, <code>+</code> concatena</p>
+</section><section id="tipos-1" class="slide level2">
+<h2>tipos</h2>
+<p>algunas operaciones están prohibidas…</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">saludo <span class="op">=</span> <span class="st">&#39;hola&#39;</span> <span class="op">+</span> <span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="st">&#39;Miguel&#39;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">saludo <span class="op">=</span> saludo <span class="op">+</span> <span class="dv">1</span></a></code></pre></div>
+<p>¡no se puede sumar 1 a una cadena de texto!</p>
+</section><section id="tipos-numéricos" class="slide level2">
+<h2>tipos numéricos</h2>
+<ul>
+<li>enteros</li>
+<li>coma flotante</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">x <span class="op">=</span> <span class="dv">1</span> </a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="bu">type</span>(x)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">y <span class="op">=</span> <span class="fl">48.9</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="bu">type</span>(y)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">z <span class="op">=</span> <span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="bu">type</span>(z)</a></code></pre></div>
+</section><section id="conversiones-de-tipo" class="slide level2">
+<h2>conversiones de tipo</h2>
+<p>en una expresión, <code>int</code> se convierte implícitamente a <code>float</code></p>
+<p>conversiones explícitas: <code>int()</code> y <code>float()</code></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="bu">print</span>(<span class="bu">float</span>(<span class="dv">24</span>) <span class="op">+</span> <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">i <span class="op">=</span> <span class="dv">35</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="bu">type</span>(i)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">f <span class="op">=</span> <span class="bu">float</span>(i)</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="bu">print</span>(f)</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="bu">type</span>(f)</a></code></pre></div>
+</section><section id="conversiones-de-tipo-1" class="slide level2">
+<h2>conversiones de tipo</h2>
+<p>muy utilizada en logging:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1">msg <span class="op">=</span> <span class="st">&#39;Número total de ocurrencias: &#39;</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">count <span class="op">=</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="bu">print</span>(msg <span class="op">+</span> <span class="bu">str</span>(count))</a></code></pre></div>
+<p>también se puede hacer lo contrario:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">value<span class="op">=</span> <span class="st">&#39;555&#39;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="bu">print</span>(<span class="bu">int</span>(value) <span class="op">+</span> <span class="dv">5</span>)</a></code></pre></div>
+</section><section id="división-entera" class="slide level2">
+<h2>división entera</h2>
+<p>la división entera produce un resultado en punto flotante</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="bu">print</span>(<span class="dv">10</span> <span class="op">/</span> <span class="dv">2</span>)</a></code></pre></div>
+</section><section id="entrada-por-teclado" class="slide level2">
+<h2>entrada por teclado</h2>
+<p><code>input()</code> devuelve un <code>string</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">nombre <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;¿Cómo te llamas?&#39;</span>)</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="bu">print</span>(<span class="st">&#39;Bienvenido&#39;</span>, nombre)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">edad <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Edad: &#39;</span>)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">edad_para_jubilarse <span class="op">=</span> <span class="dv">65</span> <span class="op">-</span> <span class="bu">int</span>(edad)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&#39;Te quedan&#39;</span>, edad_para_jubilarse, <span class="st">&#39;años para jubilarte&#39;</span>)</a></code></pre></div>
+</section><section id="comentarios" class="slide level2">
+<h2>comentarios</h2>
+<p>Python ignora cualquier cosa después de una almohadilla (#)</p>
+<p>Los comentarios sirven para:</p>
+<ul>
+<li>describir lo que va a pasar en el código</li>
+<li>documentar quién escribió esa parte del código</li>
+<li>deshabilitar temporalmente una línea de código (*)</li>
+</ul>
 </section></section>
     </div>
   </div>
