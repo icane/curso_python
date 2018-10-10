@@ -1,18 +1,16 @@
-.stack > h4 {
-  font-size:  small;   
+.stack > h4, .footnote p{
+  font-size: small;   
 }
 
 .stack .present + h4{
   visibility: hidden;
 }
 
-
 .reveal section img {
   border: none;
   box-shadow: none;
   max-height: 95vh;
 }
-
 
 .logo {
   height: 20vh;
