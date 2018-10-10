@@ -1,4 +1,4 @@
 #!/bin/sh
-cat source/s01/*.md | \
+cat source/$1/*.md | \
 pandoc -t revealjs -f markdown -s - --css ../css/estilo.css  \
- -o slides/s01.html
+ -o slides/$1.html

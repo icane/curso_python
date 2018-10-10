@@ -21,7 +21,7 @@ body {
   background-color: #2b2b2b; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: normal;
   color: #eee; }
@@ -52,16 +52,16 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #eee;
-  font-family: "League Gothic", Impact, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 2.5em; }
 
 .reveal h2 {
   font-size: 2.11em; }

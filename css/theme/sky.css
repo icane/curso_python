@@ -57,12 +57,12 @@ body {
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 2.5em; }
 
 .reveal h2 {
   font-size: 2.11em; }
