@@ -207,18 +207,18 @@ GC, GIL
 
 ![logo_keras]\ ![logo_tensorflow]\ ![logo_pytorch]\
 
-## Web
+## Desarrollo Web
 (p.e. [pinterest], [instagram], ...)
 
 ![logo_django]\ ![logo_flask]\ ![logo_pyramid]\
 
-## scripts, prototipos
+## Desarrollo software (scripts, prototipos, ...)
 como "pegamento" entre componentes escritos en otros lenguajes
 
 ![logo_fabric]
 ![logo_celery]
 
-## automatización de procesos
+## Automatización de procesos software
 
 ![logo_ansible]\ ![logo_jinja2]\ ![logo_requests]\
 
