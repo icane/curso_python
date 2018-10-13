@@ -16,7 +16,29 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
-> Regla general: evitar usar el intérprete global del sistema
+::::::::::::: {.columns}
+::: {.column width="60%" .smaller}
+- Para ejecutar código python necesitaremos un **intérprete** (`python.exe`).
+
+::: incremental
+- Preinstalado en ciertos S.O. (p.e. Linux)
+- Diferentes tipos de intérprete (`CPython`, `PyPy`, `Jython`, `IronPython`...)
+- Podemos tener "`n`" intérpretes distintos instalados en el sistema, cada uno
+  con diferentes librerías
+- `conda`: instala por defecto un entorno (intérprete) `base`
+:::
+
+:::
+::: {.column width="40%"}
+![hierarchy] \
+:::
+::::::::::::::
+
+
+
+##
+> **Regla general**: evitar usar el intérprete global del sistema
+  y el entorno `base`
 
 ::: incremental
 - Puede afectar a otros componentes
@@ -25,7 +47,11 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
+![entornos]\
+
+##
 ![<https://xkcd.com/1987>][https://xkcd.com/1987]
+
 
 
 ## ¿Solución?
@@ -44,6 +70,20 @@ Diferentes distribuciones para Windows:
 
 ::: notes
     > where python
+:::
+
+##
+Podemos ejecutar código **python**:
+
+::: incremental
+- Directamente (si el S.O. lo permite, `#!`)
+- Desde un intérprete `python` (p.e. `ipython`)
+- Desde un [cuaderno `jupyter`]
+:::
+
+
+::: notes
+cuaderno jupyter en html: https://bit.ly/2NzqwNz
 :::
 
 # Conda
@@ -133,6 +173,7 @@ Se puede sugerir que cierto grupo instale diferentes versiones
 - Verificar que conda está instalado:
 ~~~zsh
 (base) conda info
+(base) conda --help
 ~~~
 
 ##
@@ -153,10 +194,11 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 (entorno-03) conda list  # muestra paquetes instalados
 
 # instala paquetes de PyPI no gestionados por conda
-(entorno-03) pip install pyjstat 
+(entorno-03) pip install -y pyjstat 
 
 # exportar definición del entorno
-(entorno-03) conda env export  > entorno-03.yml
+(entorno-03) conda list --export > requirements.txt  # solo dependencias
+(entorno-03) conda env export > entorno-03.yml  # entorno + dependencias
 ~~~
 
 ##

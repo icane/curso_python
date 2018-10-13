@@ -1,5 +1,9 @@
 .stack > h4, .footnote p{
-  font-size: small;   
+  font-size: smaller;   
+}
+
+.sourceCode code, .reveal div .smaller{
+  font-size: smaller;
 }
 
 .stack .present + h4{

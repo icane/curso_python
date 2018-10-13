@@ -2,10 +2,11 @@
 <!-- enlaces -->
 
 [activepython]: https://www.activestate.com/activepython
-[awesome]: https://github.com/vinta/awesome-python#readme
+[awesome-pythonme]: https://github.com/vinta/awesome-python#readme
 [batteries]: https://docs.python.org/3/library/index.html
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
+[cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
 [ieee_rank]: https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages
@@ -25,6 +26,7 @@
 [scipy]: https://www.scipy.org/
 [scikit-learn]: http://scikit-learn.org/
 [stackoverflow]: https://stackoverflow.com/questions/tagged/python
+[stackoverflow-es]: https://es.stackoverflow.com/questions/tagged/python
 [stackoverflow_trends]: https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas
 [winpython]: https://winpython.github.io/
 
@@ -35,6 +37,7 @@
 [entornos]: images/entornos.png
 [Guido van Rossum, 1995]: images/guido.jpg  { width=40% }
 [Guido van Rossum, 1999]: images/guido2.gif  { width=40% }
+[hierarchy]: images/hierarchy.png
 [https://xkcd.com/1987]: https://imgs.xkcd.com/comics/python_environment.png
 [ieee_graph]: https://spectrum.ieee.org/image/MzExNjk1OA.jpeg
 [logo_ansible]: https://keithtenzer.files.wordpress.com/2017/11/ansible-logo.png { .logo }
