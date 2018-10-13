@@ -1,9 +1,10 @@
 .stack > h4, .footnote p{
-  font-size: smaller;   
+  font-size: small;   
 }
 
 .sourceCode code, .reveal div .smaller{
   font-size: smaller;
+  line-height: normal
 }
 
 .stack .present + h4{

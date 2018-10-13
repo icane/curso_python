@@ -7,6 +7,7 @@
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
 [cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
+[distrib]: https://docs.python.org/3/distributing/index.html 
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
 [ieee_rank]: https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages

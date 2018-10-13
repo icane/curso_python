@@ -186,8 +186,6 @@ directorios.
         string/
             __init__.py
             string.py
-##
-
 ::: notes
 Identificaremos un directorio como módulo python mediante el fichero
 `__init__.py` (que puede estar vacío o no).
@@ -213,24 +211,28 @@ tests/test_functional.py
 ~~~
 :::
 ::: {.column width="60%"}
-descripción del proyecto
-licencia
-
-descripción de las dependencias
-descripción del entorno
-el código en sí
-
-
-documentación del proyecto
-
-funciones de test del proyecto
+    descripción del proyecto
+    licencia
+    distribución/empaquetado [2]
+    descripción de las dependencias
+    descripción del entorno
+    el código en sí
+    " "
+    " "
+    documentación del proyecto
+    " "
+    funciones de test del proyecto
+    " "
 :::
 ::::::::::::::
 
 
-::: notes
-`setup.py`: usado para distribuir como un paquete (p.e. `distutils`)
-:::
+:::: {.footnote}
+&sup2; p.e. [setuptools][distrib]`
+::::
+
+
+##
 
 - Guías de estilo:
   + [PEP8]
