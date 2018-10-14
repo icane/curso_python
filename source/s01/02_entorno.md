@@ -16,7 +16,29 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
-> Regla general: evitar usar el intérprete global del sistema
+::::::::::::: {.columns}
+::: {.column width="60%" .smaller}
+- Para ejecutar código python necesitaremos un **intérprete** (`python.exe`).
+
+::: incremental
+- Preinstalado en ciertos S.O. (p.e. Linux)
+- Diferentes tipos de intérprete (`CPython`, `PyPy`, `Jython`, `IronPython`...)
+- Podemos tener "`n`" intérpretes distintos instalados en el sistema, cada uno
+  con diferentes librerías
+- `conda`: instala por defecto un entorno (intérprete) `base`
+:::
+
+:::
+::: {.column width="40%"}
+![hierarchy] \
+:::
+::::::::::::::
+
+
+
+##
+> **Regla general**: evitar usar el intérprete global del sistema
+  y el entorno `base`
 
 ::: incremental
 - Puede afectar a otros componentes
@@ -25,7 +47,11 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
+![entornos]\
+
+##
 ![<https://xkcd.com/1987>][https://xkcd.com/1987]
+
 
 
 ## ¿Solución?
@@ -33,10 +59,10 @@ Diferentes distribuciones para Windows:
 # Entornos virtuales
 #### Entornos virtuales
 
-## 
-- Funcionan como entornos seguros
+##
+- Funcionan en un marco aislado y seguro
 - Independientes entre sí
-- Permiten especificar versiones de Python
+- Permiten especificar versiones de Python (2.7.10, 3.6.6, 3.6.7, ...)
 - Facilmente reproducibles y exportables (**Portabilidad**)
 
 ## 
@@ -44,6 +70,20 @@ Diferentes distribuciones para Windows:
 
 ::: notes
     > where python
+:::
+
+##
+Podemos ejecutar código **python**:
+
+::: incremental
+- Directamente (si el S.O. lo permite, `#!`)
+- Desde un intérprete `python` (p.e. `ipython`)
+- Desde un [cuaderno `jupyter`]
+:::
+
+
+::: notes
+cuaderno jupyter en html: https://bit.ly/2ygkNqU
 :::
 
 # Conda
@@ -120,7 +160,7 @@ anaconda: 18 min
 ## {data-background-image="images/venv_navigator.gif" data-background-size=80%}
 
 # Práctica II
-#### Práctica II
+#### Práctica II: Entorno virtual en modo texto
 
 ##
 ### Entorno virtual en modo texto
@@ -133,31 +173,49 @@ Se puede sugerir que cierto grupo instale diferentes versiones
 - Verificar que conda está instalado:
 ~~~zsh
 (base) conda info
+(base) conda --help
 ~~~
 
 ##
-### Entorno virtual en modo texto
-
 Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 
-
-- Crear un entorno virtual:
+- Inicializar el entorno virtual:
 
 ~~~zsh
 (base) conda create --name entorno-01
 (base) conda create --name entorno-02 python=2.7 --yes
 # crea entorno con paquetes preinstalados
-(base) conda create -n entorno-03 python=3.7 pandas matplotlib -y
+(base) conda create -n entorno-03 python=3.7 pandas -y
+~~~
 
+- Acceder (activar) el entorno virtual:
+
+~~~python
 (base) conda activate entorno-03
 (entorno-03) conda list  # muestra paquetes instalados
-
-# instala paquetes de PyPI no gestionados por conda
-(entorno-03) pip install pyjstat 
-
-# exportar definición del entorno
-(entorno-03) conda env export  > entorno-03.yml
 ~~~
+
+##
+Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
+
+::: {.smaller}
+- Instalar librerías adicionales dentro del entorno
+~~~python
+# instal librerías gestionadas por conda
+(entorno 03) conda install matplotlib --yes
+# instala paquetes de PyPI no gestionados por conda
+(entorno-03) pip install -y pyjstat 
+~~~
+
+- Exportar entorno virtual
+
+~~~python
+# exportar definición del entorno
+(entorno-03) conda list --export > requirements.txt  # solo dependencias
+(entorno-03) conda env export > entorno-03.yml  # entorno + dependencias
+~~~
+:::
+> **Distribuible y replicable**
 
 ##
 - Acceder al entorno virtual y mostrar librerías instaladas
