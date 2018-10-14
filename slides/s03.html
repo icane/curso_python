@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Alejandro Villar (avillar@ticnor.es)">
+  <meta name="keywords" content="python, intro, s03, oop">
+  <title>Python 101</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="../css/estilo.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python 101</h1>
+  <p class="subtitle">Sesión 3</p>
+  <p class="author">Alejandro Villar (avillar@ticnor.es)</p>
+  <p class="date">22 Octubre 2018</p>
+</section>
+
+<section><section id="programación-orientada-a-objetos" class="title-slide slide level1"><h1>Programación Orientada a Objetos</h1></section><h4 id="programación-orientada-a-objetos-1">Programación Orientada a Objetos</h4><section id="diferentes-paradigmas-de-programación" class="slide level2">
+<h2>Diferentes paradigmas de programación</h2>
+<ul>
+<li><strong>Orientado a objetos</strong></li>
+<li><span class="text-muted">Procedural</span></li>
+<li><span class="text-muted">Imperativo</span></li>
+<li><span class="text-muted">Funcional (&lt;100%)</span></li>
+</ul>
+</section><section id="qué-es" class="slide level2">
+<h2>Qué es</h2>
+<ul>
+<li>Concepto central: <strong>objeto</strong>
+<ul>
+<li>Datos (atributos o campos)</li>
+<li>Comportamiento (métodos)</li>
+</ul></li>
+</ul>
+</section><section id="objeto-coche-de-pedro" class="slide level2">
+<h2>Objeto: Coche de Pedro</h2>
+<ul>
+<li>Datos:
+<ul>
+<li>Color: Gris</li>
+<li>Año: 2012</li>
+</ul></li>
+<li>Comportamiento:
+<ul>
+<li>Arrancar</li>
+<li>Parar</li>
+<li>Acelerar</li>
+<li>Frenar</li>
+</ul></li>
+</ul>
+</section><section id="clases-y-objetos" class="slide level2">
+<h2>Clases y objetos</h2>
+<ul>
+<li>Clase: Definición a partir de la que crear objetos (<em>contrato</em>).
+<ul>
+<li>Normalmente, mayúscula inicial</li>
+</ul></li>
+<li>Objeto: Instancia individual de una clase.
+<ul>
+<li>Normalmente, minúscula inicial (son variables)</li>
+</ul></li>
+</ul>
+</section><section id="características-de-oop" class="slide level2">
+<h2>Características de OOP</h2>
+<div>
+<ul>
+<li class="fragment">Herencia</li>
+<li class="fragment">Encapsulamiento</li>
+<li class="fragment">Abstracción</li>
+<li class="fragment">Polimorfismo</li>
+<li class="fragment">Composición</li>
+</ul>
+</div>
+</section><section id="herencia" class="slide level2">
+<h2>Herencia</h2>
+<div>
+<ul>
+<li class="fragment">Jerarquía: atributos y comportamiento</li>
+<li class="fragment">La clase <em>Perro</em> hereda de <em>Mamífero</em> y ésta de <em>Animal</em>.</li>
+<li class="fragment">Pero también de <em>Cuadrúpedo</em> &lt;- Herencia múltiple</li>
+<li class="fragment">Las subclases completan o modifican a sus clases ancestro</li>
+</ul>
+</div>
+</section><section id="encapsulamiento" class="slide level2">
+<h2>Encapsulamiento</h2>
+<ul>
+<li>Limitar acceso al estado interno del objeto</li>
+<li>Campos y métodos públicos y privados
+<ul>
+<li>¡Python no limita el acceso! -&gt; Convenio</li>
+</ul></li>
+</ul>
+</section><section id="abstracción" class="slide level2">
+<h2>Abstracción</h2>
+<ul>
+<li>No nos preocupamos de los detalles de funcionamiento interno</li>
+<li><em>Confiamos</em> en que el objeto hará lo que le pedimos correctamente</li>
+<li>Ejemplo:
+<ul>
+<li>En Coche.arrancar() nos da igual el sistema de arranque interno, queremos que el coche pase a estar arrancado</li>
+</ul></li>
+</ul>
+</section><section id="polimorfismo" class="slide level2">
+<h2>Polimorfismo</h2>
+<ul>
+<li>Tratamos a una familia de objetos de la misma forma</li>
+<li>Ejemplo 1: lo que haga mensaje.enviar() dependerá de su clase
+<ul>
+<li>SMS</li>
+<li>Email</li>
+<li>MensajeWhatsApp</li>
+</ul></li>
+<li>Ejemplo 2: si la clase Mensaje tiene campos “asunto” y “contenido”, podemos implementar Bandeja.recibir(mensaje) sin importarnos la subclase concreta de mensaje.</li>
+</ul>
+</section><section id="composición" class="slide level2">
+<h2>Composición</h2>
+<ul>
+<li>Combinación de varios objetos con diferentes características</li>
+<li>Ejemplo:
+<ul>
+<li>Coche contiene Motor, Frenos, Ruedas, etc.</li>
+<li>coche.frenar() llama a frenos.activar()</li>
+</ul></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/js/head.min.js"></script>
+  <script src="../js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+          { src: '../plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
