@@ -2,7 +2,7 @@
 #### expresiones
 
 ## expresiones numéricas
-|operador|operación|
+|operador|operación| <!-- .slide: style="font-size: 30px;"-->
 |--------|---------|
 |+|suma|
 |-|resta|
@@ -143,3 +143,4 @@ Los comentarios sirven para:
 - describir lo que va a pasar en el código
 - documentar quién escribió esa parte del código
 - deshabilitar temporalmente una línea de código (*)
+
