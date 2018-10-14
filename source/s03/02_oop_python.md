@@ -237,6 +237,7 @@ class BA(B, A):
 ~~~
 
 ## Herencia (VII)
+*Linearization*
 
 ~~~python
 class A:
