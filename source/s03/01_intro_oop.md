@@ -17,9 +17,9 @@ keywords: [python, intro, s03, oop]
 ## Diferentes paradigmas de programación
 
 - **Orientado a objetos**
-- <span class="text-muted">Procedural</span>
-- <span class="text-muted">Imperativo</span>
-- <span class="text-muted">Funcional (<100%)</span>
+- [Procedural]{.text-muted}
+- [Imperativo]{.text-muted}
+- [Funcional (<100%)]{.text-muted}
 
 ## Qué es
 
