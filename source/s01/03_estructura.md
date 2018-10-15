@@ -18,14 +18,14 @@
 ~~~python
 import os
 
-home = os.path.expanduser('~')  # directorio del usuario
+home = os.path.expanduser('~')  # comentario en línea
 directorio_entorno = os.path.join(home,
                                   'Anaconda3',
                                   'envs',
                                   'entorno-03')
 ficheros = []
 
-# Busca ficheros y guarda (nombre, tamaño)
+# los comentarios comienzan con el caracter '#'
 for f in os.listdir(directorio_entorno):
     if os.path.isfile(f):
         tamaño = os.stat(os.join(directorio_entorno), f).st_size
@@ -80,6 +80,7 @@ ficheros = [(f.name, f.stat().st_size)
 ##
 Palabras reservadas
 
+::: {.smaller}
 ~~~python
 import builtins
 import keyword
@@ -123,14 +124,17 @@ print(dir(builtins))
 'vars', 'zip']
 
 ~~~
-
+:::
 
 ##
 #### `if __name__ == "__main__":`
 
 ::: {.smaller}
 Se llama a `__main__()` cuando se ejecuta directamente:
-`python circunferencia.py`
+
+~~~{zsh}
+(base) python circunferencia.py
+~~~
 :::
 
 ::: {.smaller}
@@ -145,15 +149,15 @@ def area(radio):
 def longitud(radio):
     return 2 * math.pi * radio
 
-# los comentarios comienzan con el caracter '#'
-if __name__ == "__main__":  # comentario en línea
-    radio = float(sys.argv[1])
-    print("La longitud de una circunferencia de radio {}cm es {:.2f}cm^2.".format(
-        radio, longitud(radio)
-    ))
-    print("El area de una circunferencia de radio {1}cm es {0:.2f}cm^2.".format(
-        area(radio), radio
-    ))
+# entra aquí cuando se ejecuta directamente
+if __name__ == "__main__":
+    radio = float(sys.argv[1])  # sys.argv[] son los argumentos de entrada
+    print(
+        "La longitud de una circunferencia de radio {}cm es {:.2f}cm^2."
+        .format(radio, longitud(radio))
+    )
+    print("El area de una circunferencia de radio {1}cm es {0:.2f}cm^2."
+          .format(area(radio), radio))
 ~~~
 :::
 
@@ -163,19 +167,21 @@ En el ejemplo anterior no son necesarios los paréntesis, ya que el operador
 ::::
 
 ##
-Un fichero `python` puede contener (entre otros) definiciones de constantes,
-variables, funciones o clases.
-Para organizar el código guardaremos los ficheros `.py` en un árbol de
-directorios.
+::: {.smaller}
+- Un fichero `python` puede contener (entre otros) definiciones de constantes,
+  variables, funciones o clases.
+- Para organizar el código guardaremos los ficheros `.py` en un árbol de
+  directorios:
 
+~~~
     principal/
         __init__.py
         practica.py
-        colector/
+        recolector/
             __init__.py
             collector.py
             database.py
-        procesador/
+        conversor/
             __init__.py
             limpia.py
             procesa.py
@@ -186,9 +192,13 @@ directorios.
         string/
             __init__.py
             string.py
+~~~
+:::
+
 ::: notes
-Identificaremos un directorio como módulo python mediante el fichero
+Identificaremos un directorio como paquete python mediante el fichero
 `__init__.py` (que puede estar vacío o no).
+
 :::
 
 ## Proyecto ejemplo
@@ -196,21 +206,23 @@ Identificaremos un directorio como módulo python mediante el fichero
 :::::::::::::: {.columns}
 ::: {.column width="40%"}
 ~~~
-README.rst
-LICENSE
-setup.py
-requirements.txt
-entorno_conda.yml
-ejemplo/__init__.py
-ejemplo/core.py
-ejemplo/helpers.py
-docs/conf.py
-docs/index.rst
-tests/test_unit.py
-tests/test_functional.py
+proyecto/
+    README.rst
+    LICENSE
+    setup.py
+    requirements.txt
+    entorno_conda.yml
+    ejemplo/__init__.py
+    ejemplo/core.py
+    ejemplo/helpers.py
+    docs/conf.py
+    docs/index.rst
+    tests/unitarios.py
+    tests/funcionales.py
 ~~~
 :::
 ::: {.column width="60%"}
+    nombre del paquete
     descripción del proyecto
     licencia
     distribución/empaquetado [2]
@@ -228,7 +240,7 @@ tests/test_functional.py
 
 
 :::: {.footnote}
-&sup2; p.e. [setuptools][distrib]`
+&sup2; p.e. [setuptools][distrib]
 ::::
 
 
@@ -240,9 +252,10 @@ tests/test_functional.py
 
 
 ## 
-Recursos en línea
+Otros recursos en línea
 
 - [Librería standard de Python][batteries]
 - [Guía de referencia de Python][reference]
+- [Guía para principiantes][beginners]
 - [Stackoverflow][stackoverflow]
 - [Stackoverflow en español][stackoverflow-es]

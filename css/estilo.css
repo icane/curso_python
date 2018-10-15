@@ -20,3 +20,19 @@
 .logo {
   height: 20vh;
 }
+
+subtitle {
+  font-size: 2em;
+}
+
+#title-slide h1 {
+  font-size: 1.5em;
+}
+
+#title-slide .subtitle {
+  background-color: grey;
+  color: beige;
+  font-size: larger;
+  font-variant: all-small-caps;
+  font-weight:  bold;
+}
