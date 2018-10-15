@@ -22,7 +22,8 @@ Diferentes distribuciones para Windows:
 
 ::: incremental
 - Preinstalado en ciertos S.O. (p.e. Linux)
-- Diferentes tipos de intérprete (`CPython`, `PyPy`, `Jython`, `IronPython`...)
+- Diferentes tipos de intérprete (**`CPython`**, `PyPy`, `Jython`,
+  `IronPython`...)
 - Podemos tener "`n`" intérpretes distintos instalados en el sistema, cada uno
   con diferentes librerías
 - `conda`: instala por defecto un entorno (intérprete) `base`
@@ -201,9 +202,9 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 ::: {.smaller}
 - Instalar librerías adicionales dentro del entorno
 ~~~python
-# instal librerías gestionadas por conda
-(entorno 03) conda install matplotlib --yes
-# instala paquetes de PyPI no gestionados por conda
+# instala librerías gestionadas por conda
+(entorno 03) conda install matplotlib jupyter --yes
+# instala paquetes no gestionados por conda desde PyPI (Python Package Index)
 (entorno-03) pip install -y pyjstat 
 ~~~
 
@@ -215,7 +216,7 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 (entorno-03) conda env export > entorno-03.yml  # entorno + dependencias
 ~~~
 :::
-> **Distribuible y replicable**
+ **Distribuible y replicable**
 
 ##
 - Acceder al entorno virtual y mostrar librerías instaladas
@@ -226,10 +227,16 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 # instala paquetes adicionales
 (entorno-03) conda install jupyter -y
 
-# instal librerías desde PyPI, no gestionados por conda
+# instala paquetes desde PyPI, no gestionados por conda
 (entorno-03) pip install pyjstat 
 (entorno-03) conda list
 ~~~
 
-[Guía de usuario `pip`][pip_userguide]
+- [Resumen comandos `conda`][conda_cheatsheet]
+- [Guía de usuario `pip`][pip_userguide]
 
+
+::: notes
+En python, los términos "paquete" y "librería" son comunmente intercambiables
+salvo para referirnos a "librerías standard".
+::::

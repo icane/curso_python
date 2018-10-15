@@ -1,16 +1,3 @@
----
-title: Python 101
-subtitle: Sesión 1
-author: Jesús Fernández (fernandez.cuesta@gmail.com)
-date: 16 Octubre 2018
-revealjs-url: ..
-theme: solarized
-transition: fade
-transitionSpeed: fast
-slideNumber: true
-keywords: [python, intro, s01]
----
-
 # Introducción a Python
 #### Introducción a Python
 
@@ -106,6 +93,7 @@ ciclo escribir-test-corregir muy corto
 :::
 
 ## Código ejemplo en C++
+::: {.smaller}
 ~~~C++
 #include <stdio.h>
 #include <stdlib.h>
@@ -157,7 +145,7 @@ int main()
   }
 }
 ~~~
-
+:::
 
 ## Equivalente python
 
@@ -176,11 +164,28 @@ Flask.run(app, port=8080)
 
 ::: incremental
 - No es necesario compilar
+
+  :::::::::::::: {.columns}
+  ::: {.column width="64%"}
+  ![exec_compiler]\
+  :::
+  ::: {.column width="36%"}
+  ![exec_interpreter]\
+  :::
+  ::::::::::::::
+
+  Necesitamos tener instalado un intérprete `python`
+:::
+
+
+## Interpretado
+
+::: incremental
 - Compatible (en general) en distintos sistemas operativos y arquitecturas  
    + Linux
    + MacOS
    + Windows
-   + otros (AIX, AS/400, z/OS, OpenVMS, arquitecturas ARM, ...)
+   + otros (AIX, AS/400, z/OS, OpenVMS, ARM, ...)
 - Depuración de errores desde intérprete
 - Gestión automática de memoria
 :::
@@ -198,6 +203,8 @@ GC, GIL
 - Imperativo
 - Funcional (<100%)
 :::
+
+# Python es usado en
 
 ## Data Science
 
@@ -224,16 +231,20 @@ como "pegamento" entre componentes escritos en otros lenguajes
 
 [Información adicional][awesome]
 
+# Python como lenguaje de programación
+
 ##
 [The 2018 Top Programming Languages, IEEE][ieee_rank]
 
 > ![ieee_graph]\
 
-
 gran soporte en [foros][stackoverflow], comunidades, conferencias, ...
 
 ##
-python vs R
+![stackoverflow_top]\
+fuente: [stackoverflow][stackoverflow_vs]
+
+##
 ![R vs Python] \
 
 ##
