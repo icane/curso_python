@@ -84,5 +84,3 @@ una declaración de asignación consiste en una expresión a la derecha del igua
 ~~~python
 x = 3.9 * x * ( 1 - x )
 ~~~
-
-

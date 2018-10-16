@@ -38,6 +38,19 @@ c = a + c
 print(c)
 ~~~~
 
+## ordenación
+
+~~~~python
+a = [7, 4, 9, 1, 8]
+print(a.sort())
+~~~~
+
+::: notes
+qué pasa si se hace:
+
+print(a.sort()
+:::
+
 ## añadir y quitar elementos
 
 ~~~~python
@@ -79,5 +92,4 @@ email = words[1]
 pieces = email.split('@')
 print(pieces[1])
 :::
-
 

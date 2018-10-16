@@ -143,4 +143,3 @@ Los comentarios sirven para:
 - describir lo que va a pasar en el código
 - documentar quién escribió esa parte del código
 - deshabilitar temporalmente una línea de código (*)
-

@@ -133,9 +133,3 @@ host = data[atpos+1 : sppos]
 print(host)
 ~~~~
 :::
-
-
-
-
-
-

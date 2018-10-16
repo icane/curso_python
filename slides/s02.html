@@ -277,10 +277,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>describir lo que va a pasar en el código</li>
 <li>documentar quién escribió esa parte del código</li>
-<li>deshabilitar temporalmente una línea de código (*)</li>
+<li>deshabilitar temporalmente una línea de código (*) # ejecución condicional #### ejecución condicional</li>
 </ul>
-</section></section>
-<section><section id="ejecución-condicional" class="title-slide slide level1"><h1>ejecución condicional</h1></section><h4 id="ejecución-condicional-1">ejecución condicional</h4><section id="ejemplo" class="slide level2">
+</section><section id="ejemplo" class="slide level2">
 <h2>ejemplo</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -425,7 +424,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb23-5" data-line-number="5">    istr <span class="op">=</span> <span class="dv">-1</span></a>
 <a class="sourceLine" id="cb23-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Segundo&#39;</span>, istr)</a></code></pre></div>
 </section></section>
-<section><section id="bucles" class="title-slide slide level1"><h1>bucles</h1></section><h4 id="bucles-1">bucles</h4><section id="qué-son" class="slide level2">
+<section><section id="funciones" class="title-slide slide level1"><h1>funciones</h1></section><h4 id="funciones-1">funciones</h4><section id="definición" class="slide level2">
+<h2>definición</h2>
+<p>trozos de código reutilizable que toman argumentos de entrada, realizan algún tipo de cálculo y devuelven resultados</p>
+<ul>
+<li>se definen con <code>def</code> e indentando su contenido o cuerpo</li>
+<li>se invocan usando su nombre, paréntesis y argumentos</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">def</span> my_function():</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">    <span class="bu">print</span>(<span class="st">&#39;Hola&#39;</span>)</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&#39;Adios&#39;</span>)</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5">my_function()</a>
+<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Pepe&#39;</span>)</a>
+<a class="sourceLine" id="cb24-7" data-line-number="7">my_function()</a></code></pre></div>
+</section><section id="tipos-2" class="slide level2">
+<h2>tipos</h2>
+<ul>
+<li>built-in: parte de Python (<code>print(), input(), int()</code>)</li>
+<li>definidas por el usuario</li>
+</ul>
+<p>¡no usar nombre de función como nombre de variable!</p>
+</section><section id="argumentos" class="slide level2">
+<h2>argumentos</h2>
+<ul>
+<li>son valores que se pasan como entrada a la función en su llamada</li>
+<li>permiten dirigir a la función para que lleve a cabo distintos tipos de trabajo</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&#39;Pepe&#39;</span>)</a></code></pre></div>
+</section><section id="parámetros" class="slide level2">
+<h2>parámetros</h2>
+<ul>
+<li>son variables utilizadas en la definición de la función</li>
+<li>permiten a la función acceder a sus argumentos para una llamada particular</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">def</span> say_hello(lang):</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">    <span class="cf">if</span> lang <span class="op">==</span> <span class="st">&#39;es&#39;</span> :</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&#39;Hola&#39;</span>)</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">    <span class="cf">elif</span> lang <span class="op">==</span> <span class="st">&#39;fr&#39;</span> :</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&#39;Salut&#39;</span>)</a>
+<a class="sourceLine" id="cb26-6" data-line-number="6">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">        <span class="bu">print</span>(<span class="st">&#39;Hello&#39;</span>)</a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">say_hello(<span class="st">&#39;fr&#39;</span>)</a></code></pre></div>
+</section><section id="retorno" class="slide level2">
+<h2>retorno</h2>
+<p>una función retorna un resultado con <code>return</code></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">def</span> say_hello(person):</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">    <span class="cf">return</span> <span class="st">&quot;Hello &quot;</span> <span class="op">+</span> <span class="bu">str</span>(person)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="bu">print</span>(say_hello(<span class="st">&#39;Ana&#39;</span>))</a></code></pre></div>
+</section><section id="múltiples-parámetros" class="slide level2">
+<h2>múltiples parámetros</h2>
+<ul>
+<li>simplemente, se añaden</li>
+<li>¡ojo con el número y orden de parámetros!</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">def</span> add_three(a, b, c):</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">    <span class="bu">sum</span> <span class="op">=</span> a <span class="op">+</span> b <span class="op">+</span> c</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3">    <span class="cf">return</span> <span class="bu">sum</span></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4">x <span class="op">=</span> add_three(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="bu">print</span>(x)</a></code></pre></div>
+</section><section id="algunos-consejos" class="slide level2">
+<h2>algunos consejos</h2>
+<ul>
+<li>organizar el código</li>
+<li>DRY!</li>
+<li>divide y vencerás</li>
+<li>hacer bibliotecas con lo que más se usa # bucles #### bucles</li>
+</ul>
+</section><section id="qué-son" class="slide level2">
 <h2>qué son</h2>
 <ul>
 <li>los bucles permiten repetir la ejecución de un determinado paso</li>
@@ -434,46 +501,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="ejemplo-while-bucles-indefinidos" class="slide level2">
 <h2>ejemplo while (bucles indefinidos)</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1">n <span class="op">=</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
-<a class="sourceLine" id="cb24-4" data-line-number="4">    n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
-<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="bu">print</span>(n)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1">n <span class="op">=</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">    n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="bu">print</span>(n)</a></code></pre></div>
 </section><section id="qué-hace-esto" class="slide level2">
 <h2>¿qué hace esto?</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1">n <span class="op">=</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
-<a class="sourceLine" id="cb25-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
-<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="bu">print</span>(n)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">n <span class="op">=</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="bu">print</span>(n)</a></code></pre></div>
 </section><section id="y-esto" class="slide level2">
 <h2>¿y esto?</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">n <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
-<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="bu">print</span>(n)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1">n <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span> :</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">    <span class="bu">print</span>(n)</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="bu">print</span>(n)</a></code></pre></div>
 </section><section id="salir-de-un-bucle" class="slide level2">
 <h2>salir de un bucle</h2>
 <p><code>break</code></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="cf">while</span> <span class="va">True</span> :</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">    input_text <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Introduce q para terminar: &#39;</span>)</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">    <span class="cf">if</span> input_text <span class="op">==</span> <span class="st">&#39;q&#39;</span> :</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">        <span class="cf">break</span></a>
-<a class="sourceLine" id="cb27-5" data-line-number="5">    <span class="bu">print</span>(input_text)</a>
-<a class="sourceLine" id="cb27-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Hecho&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="cf">while</span> <span class="va">True</span> :</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">    input_text <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Introduce q para terminar: &#39;</span>)</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">    <span class="cf">if</span> input_text <span class="op">==</span> <span class="st">&#39;q&#39;</span> :</a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">        <span class="cf">break</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">    <span class="bu">print</span>(input_text)</a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Hecho&#39;</span>)</a></code></pre></div>
 </section><section id="salir-de-una-iteración" class="slide level2">
 <h2>salir de una iteración</h2>
 <p><code>continue</code></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="cf">while</span> <span class="va">True</span> :</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2">    input_text <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Introduce q para terminar, c para otra oportunidad: &#39;</span>)</a>
-<a class="sourceLine" id="cb28-3" data-line-number="3">    <span class="cf">if</span> input_text <span class="op">==</span> <span class="st">&#39;q&#39;</span> :</a>
-<a class="sourceLine" id="cb28-4" data-line-number="4">        <span class="cf">break</span></a>
-<a class="sourceLine" id="cb28-5" data-line-number="5">    <span class="cf">elif</span> input_text <span class="op">==</span> <span class="st">&#39;c&#39;</span>:</a>
-<a class="sourceLine" id="cb28-6" data-line-number="6">        <span class="cf">continue</span></a>
-<a class="sourceLine" id="cb28-7" data-line-number="7">    <span class="bu">print</span>(input_text)</a>
-<a class="sourceLine" id="cb28-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&#39;Hecho&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="cf">while</span> <span class="va">True</span> :</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">    input_text <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Introduce q para terminar, c para otra oportunidad: &#39;</span>)</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">    <span class="cf">if</span> input_text <span class="op">==</span> <span class="st">&#39;q&#39;</span> :</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">        <span class="cf">break</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">    <span class="cf">elif</span> input_text <span class="op">==</span> <span class="st">&#39;c&#39;</span>:</a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">        <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">    <span class="bu">print</span>(input_text)</a>
+<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&#39;Hecho&#39;</span>)</a></code></pre></div>
 </section><section id="bucles-definidos" class="slide level2">
 <h2>bucles definidos</h2>
 <ul>
@@ -481,15 +548,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>se ejecutan un número exacto de veces</li>
 <li>iteran sobre los miembros de un conjunto</li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>] :</a>
-<a class="sourceLine" id="cb29-2" data-line-number="2">    <span class="bu">print</span>(i)</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>] :</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">    <span class="bu">print</span>(i)</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&#39;Despegue!&#39;</span>)</a></code></pre></div>
 </section><section id="también-se-pueden-iterar-strings" class="slide level2">
 <h2>también se pueden iterar strings</h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">it_crowd <span class="op">=</span> [<span class="st">&#39;Izu&#39;</span>, <span class="st">&#39;Saro&#39;</span>, <span class="st">&#39;Seco&#39;</span>]</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="cf">for</span> it_guy <span class="kw">in</span> it_crowd :</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&#39;Pregúntaselo a: &#39;</span>, it_guy)</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Hecho!&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">it_crowd <span class="op">=</span> [<span class="st">&#39;Izu&#39;</span>, <span class="st">&#39;Saro&#39;</span>, <span class="st">&#39;Seco&#39;</span>]</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="cf">for</span> it_guy <span class="kw">in</span> it_crowd :</a>
+<a class="sourceLine" id="cb35-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&#39;Pregúntaselo a: &#39;</span>, it_guy)</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Hecho!&#39;</span>)</a></code></pre></div>
 </section><section id="de-forma-general" class="slide level2">
 <h2>de forma general</h2>
 <ol type="1">
@@ -504,27 +571,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 </section><section id="conteos" class="slide level2">
 <h2>conteos</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">total <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
-<a class="sourceLine" id="cb31-4" data-line-number="4">    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Hecho! el total es:&#39;</span>, total)</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">total <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
+<a class="sourceLine" id="cb36-4" data-line-number="4">    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Hecho! el total es:&#39;</span>, total)</a></code></pre></div>
 </section><section id="media-aritmética" class="slide level2">
 <h2>media aritmética</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">total <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
-<a class="sourceLine" id="cb32-5" data-line-number="5">    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb32-6" data-line-number="6">    total_sum <span class="op">=</span> total_sum <span class="op">+</span> number</a>
-<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="bu">print</span>(<span class="st">&#39;Hecho! la media es:&#39;</span>, total_sum <span class="op">/</span> total)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">total <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
+<a class="sourceLine" id="cb37-5" data-line-number="5">    total <span class="op">=</span> total <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6">    total_sum <span class="op">=</span> total_sum <span class="op">+</span> number</a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"><span class="bu">print</span>(<span class="st">&#39;Hecho! la media es:&#39;</span>, total_sum <span class="op">/</span> total)</a></code></pre></div>
 </section><section id="filtrado" class="slide level2">
 <h2>filtrado</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
-<a class="sourceLine" id="cb33-3" data-line-number="3">    <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">20</span> :</a>
-<a class="sourceLine" id="cb33-4" data-line-number="4">        <span class="bu">print</span>(<span class="st">&#39;Mayor que 20&#39;</span>)</a>
-<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Hecho! )</span></a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1">numbers <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">41</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="dv">74</span>, <span class="dv">15</span>]</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="cf">for</span> number <span class="kw">in</span> numbers :</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">    <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">20</span> :</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">        <span class="bu">print</span>(<span class="st">&#39;Mayor que 20&#39;</span>)</a>
+<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&#39;Hecho! )</span></a></code></pre></div>
 </section><section id="is-is-not" class="slide level2">
 <h2>is / is not</h2>
 <ul>
@@ -532,9 +599,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>significa “es lo mismo que”</li>
 <li>similar a <code>==</code>, pero más fuerte</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">x <span class="op">=</span> <span class="va">None</span></a>
-<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="cf">if</span> x <span class="kw">is</span> <span class="va">None</span> :</a>
-<a class="sourceLine" id="cb34-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&#39;No hay valor para x&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1">x <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="cf">if</span> x <span class="kw">is</span> <span class="va">None</span> :</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&#39;No hay valor para x&#39;</span>)</a></code></pre></div>
 </section></section>
 <section><section id="strings" class="title-slide slide level1"><h1>strings</h1></section><h4 id="strings-1">strings</h4><section id="más-sobre-strings" class="slide level2 slide:" style="font-size: 30px;">
 <h2>más sobre strings</h2>
@@ -554,11 +621,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="indexado-y-rebanado" class="slide level2">
 <h2>indexado y rebanado</h2>
 <p>indexado: como un vector que empieza en 0</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
-<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="bu">print</span> fruit[<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">len</span>(fruit)) <span class="co"># longitud de la cadena</span></a>
-<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="bu">print</span> fruit[<span class="dv">0</span>:<span class="dv">5</span>]  <span class="co"># slicing</span></a>
-<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="bu">print</span> fruit[<span class="dv">1</span>:]  <span class="co"># slicing hasta el final</span></a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="bu">print</span> fruit[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">len</span>(fruit)) <span class="co"># longitud de la cadena</span></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="bu">print</span> fruit[<span class="dv">0</span>:<span class="dv">5</span>]  <span class="co"># slicing</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="bu">print</span> fruit[<span class="dv">1</span>:]  <span class="co"># slicing hasta el final</span></a></code></pre></div>
 <aside class="notes">
 <ul>
 <li>el segundo número: hasta pero no incluido</li>
@@ -567,13 +634,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </aside>
 </section><section id="iteración" class="slide level2">
 <h2>iteración</h2>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="cf">for</span> letra <span class="kw">in</span> fruit:</a>
-<a class="sourceLine" id="cb36-3" data-line-number="3">    <span class="bu">print</span>(letra)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="cf">for</span> letra <span class="kw">in</span> fruit:</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">    <span class="bu">print</span>(letra)</a></code></pre></div>
 </section><section id="in-como-operador-lógico" class="slide level2">
 <h2>in como operador lógico</h2>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="co">&#39;n&#39;</span> <span class="kw">in</span> fruit</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">fruit <span class="op">=</span> <span class="st">&#39;plátano&#39;</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="co">&#39;n&#39;</span> <span class="kw">in</span> fruit</a></code></pre></div>
 </section><section id="string-library" class="slide level2">
 <h2>string library</h2>
 <ul>
@@ -586,16 +653,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><code>find()</code> busca la primera ocurrencia de un substring</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1">fruit <span class="op">=</span> plátano</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2">pos <span class="op">=</span> fruit.find(<span class="st">&#39;ta&#39;</span>)</a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="bu">print</span>(pos)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">fruit <span class="op">=</span> plátano</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">pos <span class="op">=</span> fruit.find(<span class="st">&#39;ta&#39;</span>)</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="bu">print</span>(pos)</a></code></pre></div>
 </div><div class="column" style="width:40%;">
 <p>mayúsculas y minúsculas</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Hola Miguel&#39;</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">mins <span class="op">=</span> greeting.lower()</a>
-<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="bu">print</span>(mins)</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4">mays <span class="op">=</span> greeting.upper()</a>
-<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="bu">print</span>(mays)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Hola Miguel&#39;</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">mins <span class="op">=</span> greeting.lower()</a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="bu">print</span>(mins)</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">mays <span class="op">=</span> greeting.upper()</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="bu">print</span>(mays)</a></code></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -606,15 +673,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>buscar reemplazar</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Hola Miguel&#39;</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2">another_greeting <span class="op">=</span> greeting.replace(<span class="st">&#39;Miguel&#39;</span>, <span class="st">&#39;Pepito&#39;</span>)</a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="bu">print</span>(another_greeting)</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Hola Miguel&#39;</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2">another_greeting <span class="op">=</span> greeting.replace(<span class="st">&#39;Miguel&#39;</span>, <span class="st">&#39;Pepito&#39;</span>)</a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="bu">print</span>(another_greeting)</a></code></pre></div>
 </div><div class="column" style="width:40%;">
 <p>quitar espacios en blanco (stripping)</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;  Hola Miguel   &#39;</span></a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">greeting.lstrip()</a>
-<a class="sourceLine" id="cb41-3" data-line-number="3">greeting.rstrip()</a>
-<a class="sourceLine" id="cb41-4" data-line-number="4">greeting.strip()</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;  Hola Miguel   &#39;</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">greeting.lstrip()</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3">greeting.rstrip()</a>
+<a class="sourceLine" id="cb46-4" data-line-number="4">greeting.strip()</a></code></pre></div>
 </div>
 </div>
 <aside class="notes">
@@ -623,19 +690,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="ejemplos-3" class="slide level2">
 <h2>ejemplos</h2>
 <p>prefijos</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Que tenga un buen día&#39;</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">greeting.startswith(<span class="st">&#39;Que&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">greeting <span class="op">=</span> <span class="st">&#39;Que tenga un buen día&#39;</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">greeting.startswith(<span class="st">&#39;Que&#39;</span>)</a></code></pre></div>
 </section><section id="ejercicio-1" class="slide level2">
 <h2>ejercicio</h2>
 <p><code>From miguel.exposito@apps.cantabria.es Sat Jan  5 09:14:16 2008</code></p>
 <aside class="notes">
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">atpos <span class="op">=</span> data.find(<span class="st">&#39;@&#39;</span>)</a>
-<a class="sourceLine" id="cb43-2" data-line-number="2">sppos <span class="op">=</span> data.find(<span class="st">&#39; &#39;</span>,atpos)</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3">host <span class="op">=</span> data[atpos<span class="op">+</span><span class="dv">1</span> : sppos]</a>
-<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="bu">print</span>(host)</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">atpos <span class="op">=</span> data.find(<span class="st">&#39;@&#39;</span>)</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">sppos <span class="op">=</span> data.find(<span class="st">&#39; &#39;</span>,atpos)</a>
+<a class="sourceLine" id="cb48-3" data-line-number="3">host <span class="op">=</span> data[atpos<span class="op">+</span><span class="dv">1</span> : sppos]</a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="bu">print</span>(host)</a></code></pre></div>
 </aside>
 </section></section>
-<section><section id="lists" class="title-slide slide level1"><h1>lists</h1></section><h4 id="lists-1">lists</h4><section id="definición" class="slide level2">
+<section><section id="lists" class="title-slide slide level1"><h1>lists</h1></section><h4 id="lists-1">lists</h4><section id="definición-1" class="slide level2">
 <h2>definición</h2>
 <p><code>[5, 89, 'Miguel']</code></p>
 <ul>
@@ -647,39 +714,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="indexado-rebanado-y-longitud" class="slide level2">
 <h2>indexado, rebanado y longitud</h2>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">my_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">21</span>, <span class="dv">40</span>, <span class="dv">68</span>]</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="bu">print</span>(my_list[<span class="dv">1</span>]) <span class="co"># indexado</span></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3">my_list[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">7</span> <span class="co"># mutabilidad</span></a>
-<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="bu">print</span>(my_list)</a>
-<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="bu">print</span>(my_list[<span class="dv">2</span>:<span class="dv">3</span>]) <span class="co"># rebanado</span></a>
-<a class="sourceLine" id="cb44-6" data-line-number="6"><span class="bu">print</span>(<span class="bu">len</span>(my_list)) <span class="co"># longitud</span></a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1">my_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">21</span>, <span class="dv">40</span>, <span class="dv">68</span>]</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="bu">print</span>(my_list[<span class="dv">1</span>]) <span class="co"># indexado</span></a>
+<a class="sourceLine" id="cb49-3" data-line-number="3">my_list[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">7</span> <span class="co"># mutabilidad</span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4"><span class="bu">print</span>(my_list)</a>
+<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="bu">print</span>(my_list[<span class="dv">2</span>:<span class="dv">3</span>]) <span class="co"># rebanado</span></a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="bu">print</span>(<span class="bu">len</span>(my_list)) <span class="co"># longitud</span></a></code></pre></div>
 </section><section id="rangos" class="slide level2">
 <h2>rangos</h2>
 <p>devuelven una my_list de números en el intervalo [0,N-1]</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="bu">print</span>(<span class="bu">range</span>(<span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="bu">print</span>(<span class="bu">range</span>(<span class="dv">4</span>))</a></code></pre></div>
 </section><section id="concatenación" class="slide level2">
 <h2>concatenación</h2>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb46-2" data-line-number="2">b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</a>
-<a class="sourceLine" id="cb46-3" data-line-number="3">c <span class="op">=</span> a <span class="op">+</span> c</a>
-<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="bu">print</span>(c)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1">a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3">c <span class="op">=</span> a <span class="op">+</span> c</a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="bu">print</span>(c)</a></code></pre></div>
+</section><section id="ordenación" class="slide level2">
+<h2>ordenación</h2>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1">a <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">8</span>]</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="bu">print</span>(a.sort())</a></code></pre></div>
+<aside class="notes">
+<p>qué pasa si se hace:</p>
+<p>print(a.sort()</p>
+</aside>
 </section><section id="añadir-y-quitar-elementos" class="slide level2">
 <h2>añadir y quitar elementos</h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">my_list <span class="op">=</span> <span class="bu">list</span>()</a>
-<a class="sourceLine" id="cb47-2" data-line-number="2">my_list.append(<span class="st">&#39;Miguel&#39;</span>)</a>
-<a class="sourceLine" id="cb47-3" data-line-number="3">my_list.append(<span class="st">&#39;Paco&#39;</span>)</a>
-<a class="sourceLine" id="cb47-4" data-line-number="4">my_list.append(<span class="st">&#39;Alberto&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1">my_list <span class="op">=</span> <span class="bu">list</span>()</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2">my_list.append(<span class="st">&#39;Miguel&#39;</span>)</a>
+<a class="sourceLine" id="cb53-3" data-line-number="3">my_list.append(<span class="st">&#39;Paco&#39;</span>)</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4">my_list.append(<span class="st">&#39;Alberto&#39;</span>)</a></code></pre></div>
 <p>pop quita el último elemento y lo devuelve</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="bu">print</span>(my_list.pop())</a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="bu">print</span>(my_list)</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="bu">print</span>(my_list.pop())</a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="bu">print</span>(my_list)</a></code></pre></div>
 <p>también se puede especificar qué elemento</p>
 </section><section id="otras-funciones" class="slide level2">
 <h2>otras funciones</h2>
 <p><code>len, max, min, sum</code></p>
 <p>split rompe un string en una my_list de strings</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1">my_list <span class="op">=</span> <span class="st">&#39;my_list de cuatro palabras&#39;</span></a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">palabras <span class="op">=</span> my_list.split()</a>
-<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="bu">print</span>(palabras)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" data-line-number="1">my_list <span class="op">=</span> <span class="st">&#39;my_list de cuatro palabras&#39;</span></a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">palabras <span class="op">=</span> my_list.split()</a>
+<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="bu">print</span>(palabras)</a></code></pre></div>
 <p>se puede especificar un delimitador</p>
 </section><section id="ejercicio-2" class="slide level2">
 <h2>ejercicio</h2>
@@ -688,7 +763,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>words = line.split() email = words[1] pieces = email.split(‘@’) print(pieces[1])</p>
 </aside>
 </section></section>
-<section><section id="dicts" class="title-slide slide level1"><h1>dicts</h1></section><h4 id="dicts-1">dicts</h4><section id="definición-1" class="slide level2">
+<section><section id="dicts" class="title-slide slide level1"><h1>dicts</h1></section><h4 id="dicts-1">dicts</h4><section id="definición-2" class="slide level2">
 <h2>definición</h2>
 <ul>
 <li>también son colecciones de elementos</li>
@@ -699,70 +774,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="ejemplo-2" class="slide level2">
 <h2>ejemplo</h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1">ages <span class="op">=</span> <span class="bu">dict</span>()</a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">ages[<span class="st">&#39;miguel&#39;</span>] <span class="op">=</span> <span class="dv">37</span></a>
-<a class="sourceLine" id="cb50-3" data-line-number="3">ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">=</span> <span class="dv">88</span></a>
-<a class="sourceLine" id="cb50-4" data-line-number="4">ages[<span class="st">&#39;carmen&#39;</span>] <span class="op">=</span> <span class="dv">25</span></a>
-<a class="sourceLine" id="cb50-5" data-line-number="5"><span class="bu">print</span>(ages)</a>
-<a class="sourceLine" id="cb50-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb50-7" data-line-number="7">ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">=</span> ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">+</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb50-8" data-line-number="8"><span class="bu">print</span>(ages)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1">ages <span class="op">=</span> <span class="bu">dict</span>()</a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">ages[<span class="st">&#39;miguel&#39;</span>] <span class="op">=</span> <span class="dv">37</span></a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">=</span> <span class="dv">88</span></a>
+<a class="sourceLine" id="cb56-4" data-line-number="4">ages[<span class="st">&#39;carmen&#39;</span>] <span class="op">=</span> <span class="dv">25</span></a>
+<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="bu">print</span>(ages)</a>
+<a class="sourceLine" id="cb56-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb56-7" data-line-number="7">ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">=</span> ages[<span class="st">&#39;pepito&#39;</span>] <span class="op">+</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb56-8" data-line-number="8"><span class="bu">print</span>(ages)</a></code></pre></div>
 </section><section id="lists-vs-dicts" class="slide level2">
 <h2>lists vs dicts</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1">my_list <span class="op">=</span> <span class="bu">list</span>()</a>
-<a class="sourceLine" id="cb51-2" data-line-number="2">my_list.append(<span class="dv">21</span>)</a>
-<a class="sourceLine" id="cb51-3" data-line-number="3">my_list.append(<span class="dv">183</span>)</a>
-<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="bu">print</span>(my_list)</a>
-<a class="sourceLine" id="cb51-5" data-line-number="5">my_list[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">23</span></a>
-<a class="sourceLine" id="cb51-6" data-line-number="6"><span class="bu">print</span>(my_list)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" data-line-number="1">my_list <span class="op">=</span> <span class="bu">list</span>()</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2">my_list.append(<span class="dv">21</span>)</a>
+<a class="sourceLine" id="cb57-3" data-line-number="3">my_list.append(<span class="dv">183</span>)</a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="bu">print</span>(my_list)</a>
+<a class="sourceLine" id="cb57-5" data-line-number="5">my_list[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">23</span></a>
+<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="bu">print</span>(my_list)</a></code></pre></div>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1">my_dict <span class="op">=</span> <span class="bu">dict</span>()</a>
-<a class="sourceLine" id="cb52-2" data-line-number="2">my_dict[<span class="st">&#39;edad&#39;</span>] <span class="op">=</span> <span class="dv">21</span></a>
-<a class="sourceLine" id="cb52-3" data-line-number="3">my_dict[<span class="st">&#39;curso&#39;</span>] <span class="op">=</span> <span class="dv">183</span></a>
-<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="bu">print</span>(my_dict)</a>
-<a class="sourceLine" id="cb52-5" data-line-number="5">my_dict[<span class="st">&#39;edad&#39;</span>] <span class="op">=</span> <span class="dv">23</span></a>
-<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="bu">print</span>(my_dict)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1">my_dict <span class="op">=</span> <span class="bu">dict</span>()</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2">my_dict[<span class="st">&#39;edad&#39;</span>] <span class="op">=</span> <span class="dv">21</span></a>
+<a class="sourceLine" id="cb58-3" data-line-number="3">my_dict[<span class="st">&#39;curso&#39;</span>] <span class="op">=</span> <span class="dv">183</span></a>
+<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="bu">print</span>(my_dict)</a>
+<a class="sourceLine" id="cb58-5" data-line-number="5">my_dict[<span class="st">&#39;edad&#39;</span>] <span class="op">=</span> <span class="dv">23</span></a>
+<a class="sourceLine" id="cb58-6" data-line-number="6"><span class="bu">print</span>(my_dict)</a></code></pre></div>
 </div>
 </div>
 </section><section id="diccionarios-con-literales" class="slide level2">
 <h2>diccionarios con literales</h2>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1">shopping_list <span class="op">=</span> {<span class="st">&#39;patatas&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;york&#39;</span>: <span class="dv">100</span>, <span class="st">&#39;yogur&#39;</span>: <span class="dv">6</span>}</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" data-line-number="1">shopping_list <span class="op">=</span> {<span class="st">&#39;patatas&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;york&#39;</span>: <span class="dv">100</span>, <span class="st">&#39;yogur&#39;</span>: <span class="dv">6</span>}</a></code></pre></div>
 <p>se puede crear un my_dict vacío así:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1">empty_dict <span class="op">=</span> {}</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1">empty_dict <span class="op">=</span> {}</a></code></pre></div>
 </section><section id="uso-común-múltiples-contadores" class="slide level2">
 <h2>uso común: múltiples contadores</h2>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" data-line-number="1">names <span class="op">=</span> {}</a>
-<a class="sourceLine" id="cb55-2" data-line-number="2">names[<span class="st">&#39;Paco&#39;</span>] <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb55-3" data-line-number="3">names[<span class="st">&#39;Pepe&#39;</span>] <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb55-4" data-line-number="4"><span class="bu">print</span>(names)</a>
-<a class="sourceLine" id="cb55-5" data-line-number="5">names[<span class="st">&#39;Paco&#39;</span>] <span class="op">=</span> names[<span class="st">&#39;Paco&#39;</span>] <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb55-6" data-line-number="6"><span class="bu">print</span>(names)</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" data-line-number="1">names <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">names[<span class="st">&#39;Paco&#39;</span>] <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">names[<span class="st">&#39;Pepe&#39;</span>] <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb61-4" data-line-number="4"><span class="bu">print</span>(names)</a>
+<a class="sourceLine" id="cb61-5" data-line-number="5">names[<span class="st">&#39;Paco&#39;</span>] <span class="op">=</span> names[<span class="st">&#39;Paco&#39;</span>] <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb61-6" data-line-number="6"><span class="bu">print</span>(names)</a></code></pre></div>
 </section><section id="cuidado-cuando-la-clave-no-existe" class="slide level2">
 <h2>cuidado cuando la clave no existe</h2>
 <p>si se utiliza una clave que no existe, aparecerá un error</p>
 <p>Solución: <code>get()</code></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1">counts <span class="op">=</span> {}</a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">counts[<span class="st">&#39;mesa&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;mesa&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3">counts[<span class="st">&#39;silla&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;silla&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="bu">print</span>(counts)</a>
-<a class="sourceLine" id="cb56-5" data-line-number="5">counts[<span class="st">&#39;mesa&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;mesa&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="bu">print</span>(counts)</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1">counts <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2">counts[<span class="st">&#39;mesa&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;mesa&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3">counts[<span class="st">&#39;silla&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;silla&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="bu">print</span>(counts)</a>
+<a class="sourceLine" id="cb62-5" data-line-number="5">counts[<span class="st">&#39;mesa&#39;</span>] <span class="op">=</span> counts.get(<span class="st">&#39;mesa&#39;</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb62-6" data-line-number="6"><span class="bu">print</span>(counts)</a></code></pre></div>
 </section><section id="iteración-en-diccionarios" class="slide level2">
 <h2>iteración en diccionarios</h2>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
-<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="cf">for</span> key <span class="kw">in</span> counts:</a>
-<a class="sourceLine" id="cb57-3" data-line-number="3">    <span class="bu">print</span>(key, counts[key])</a></code></pre></div>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="cf">for</span> key, value <span class="kw">in</span> counts.items():</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3">    <span class="bu">print</span>(key, value)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="cf">for</span> key <span class="kw">in</span> counts:</a>
+<a class="sourceLine" id="cb63-3" data-line-number="3">    <span class="bu">print</span>(key, counts[key])</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
+<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="cf">for</span> key, value <span class="kw">in</span> counts.items():</a>
+<a class="sourceLine" id="cb64-3" data-line-number="3">    <span class="bu">print</span>(key, value)</a></code></pre></div>
 </section><section id="obtener-claves-y-valores" class="slide level2">
 <h2>obtener claves y valores</h2>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
-<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="bu">print</span>(counts.keys())</a>
-<a class="sourceLine" id="cb59-3" data-line-number="3"><span class="bu">print</span>(counts.values())</a>
-<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="bu">print</span>(counts.items())</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" data-line-number="1">counts <span class="op">=</span> {<span class="st">&#39;mesa&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;silla&#39;</span>: <span class="dv">4</span>, <span class="st">&#39;reposapies&#39;</span>: <span class="dv">3</span>}</a>
+<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="bu">print</span>(counts.keys())</a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="bu">print</span>(counts.values())</a>
+<a class="sourceLine" id="cb65-4" data-line-number="4"><span class="bu">print</span>(counts.items())</a></code></pre></div>
 </section><section id="contar-palabras" class="slide level2">
 <h2>contar palabras</h2>
 <ul>
@@ -776,13 +851,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>En un lugar de La Mancha, de cuyo nombre no quiero acordarme…</p>
 </blockquote>
 <aside class="notes">
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1">counts <span class="op">=</span> <span class="bu">dict</span>()</a>
-<a class="sourceLine" id="cb60-2" data-line-number="2">text <span class="op">=</span> <span class="st">&#39;En un lugar de La Mancha, de cuyo nombre no quiero acordarme...&#39;</span></a>
-<a class="sourceLine" id="cb60-3" data-line-number="3">words <span class="op">=</span> text.split()</a>
-<a class="sourceLine" id="cb60-4" data-line-number="4"><span class="cf">for</span> word <span class="kw">in</span> words:</a>
-<a class="sourceLine" id="cb60-5" data-line-number="5">    counts[word] <span class="op">=</span> counts.get(word, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb60-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Cuenta:&#39;</span>, counts )</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1">counts <span class="op">=</span> <span class="bu">dict</span>()</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2">text <span class="op">=</span> <span class="st">&#39;En un lugar de La Mancha, de cuyo nombre no quiero acordarme...&#39;</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3">words <span class="op">=</span> text.split()</a>
+<a class="sourceLine" id="cb66-4" data-line-number="4"><span class="cf">for</span> word <span class="kw">in</span> words:</a>
+<a class="sourceLine" id="cb66-5" data-line-number="5">    counts[word] <span class="op">=</span> counts.get(word, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb66-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Cuenta:&#39;</span>, counts )</a></code></pre></div>
 </aside>
+</section></section>
+<section><section id="tuples-files" class="title-slide slide level1"><h1>tuples &amp; files</h1></section><h4 id="tuples-files-1">tuples &amp; files</h4><section id="tuples" class="slide level2">
+<h2>tuples</h2>
+<p>un tipo de secuencia similar a una lista… pero inmutable</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1">x <span class="op">=</span> [<span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>]</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2">x[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">6</span></a>
+<a class="sourceLine" id="cb67-3" data-line-number="3"><span class="bu">print</span>(x)</a></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1">z <span class="op">=</span> (<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2">z[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">0</span></a></code></pre></div>
+</div>
+</div>
+</section><section id="qué-no-se-puede-hacer" class="slide level2">
+<h2>¿qué no se puede hacer?</h2>
+<ul>
+<li>sort</li>
+<li>append</li>
+<li>reverse</li>
+</ul>
+</section><section id="lists-vs-tuples" class="slide level2">
+<h2>lists vs tuples</h2>
+<ul>
+<li>las tuplas son más eficientes (memoria y rendimiento)</li>
+<li>se pueden usar como un diccionario sin claves</li>
+<li>se suelen usar dentro de listas</li>
+<li>son comparables elemento a elemento</li>
+</ul>
+<p><strong>no se pueden añadir ni eliminar elementos</strong></p>
+</section><section id="asignación" class="slide level2">
+<h2>asignación</h2>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" data-line-number="1">(x,y) <span class="op">=</span> (<span class="dv">4</span>, <span class="st">&#39;Pepe&#39;</span>)</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="bu">print</span>(y)</a></code></pre></div>
+<p>se puede crear un my_dict vacío así:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" data-line-number="1">empty_dict <span class="op">=</span> {}</a></code></pre></div>
+</section><section id="ficheros" class="slide level2">
+<h2>ficheros</h2>
+<ul>
+<li>un fichero de texto puede verse como una secuencia de líneas</li>
+<li>para abrirse, se crea un apuntador para manipularlo</li>
+</ul>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" data-line-number="1">my_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;prueba.txt&#39;</span>)</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="cf">for</span> line <span class="kw">in</span> my_file:</a>
+<a class="sourceLine" id="cb71-3" data-line-number="3">    <span class="bu">print</span>(line.rstrip())</a></code></pre></div>
 <!-- imágenes -->
 </section></section>
     </div>
