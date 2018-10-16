@@ -74,7 +74,11 @@
 
 [03ipynb]: code/s01/03_estructura.ipynb
 [05ipynb]: code/s01/05_bonus.ipynb
+[binder03]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F03_estructura.ipynb
+[binder05]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F05_bonus.ipynb
+[bindersp]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2Fnb_sample.ipynb
 [circunferencia.py]: code/s01/circunferencia.py
+[consola online]: https://hub.mybinder.org/user/icane-curso_python-98y3wfn8/lab?
 [cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
 [ipynb_offline]: code/s01/nb_sample.ipynb
 

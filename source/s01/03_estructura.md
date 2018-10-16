@@ -77,7 +77,8 @@ ficheros = [(f.name, f.stat().st_size)
             if f.is_file()]
 ~~~
 
-[cuaderno jupyter][03ipynb]
+[cuaderno jupyter][binder03]
+[cuaderno jupyter (offline)][03ipynb]
 
 ##
 Palabras reservadas
@@ -263,6 +264,9 @@ proyecto/
 devuelve varios resultados, pero solamente estamos interesados en uno.
 ::::
 
+:::: {.footnote}
+[consola online]
+::::
 
 ##
 - `[TAB]` autocompleta (p.e. `import st[TAB]`)
@@ -340,9 +344,12 @@ plt.plot(a, b)
 #### Práctica IV: Ejecutar un cuaderno `jupyter`
 
 ##
-Copiar el [cuaderno de ejemplo][ipynb_offline] en el directorio del prompt de
+<!-- Copiar el [cuaderno de ejemplo][ipynb_offline] en el directorio del prompt de -->
+Copiar el [cuaderno de ejemplo][bindersp] en el directorio del prompt de
 Anaconda y ejecutar línea por línea.
 
+
+[cuderno ejemplo offline][ipynb_offline]
 
 # Práctica V
 #### Práctica V: Exportar e importar un entorno virtual
