@@ -244,6 +244,10 @@ como "pegamento" entre componentes escritos en otros lenguajes
 ##
 ![simpson]\
 
+::: notes
+Poner un ejemplo
+::::
+
 # Python como lenguaje de programación
 
 ##

@@ -345,11 +345,10 @@ plt.plot(a, b)
 
 ##
 <!-- Copiar el [cuaderno de ejemplo][ipynb_offline] en el directorio del prompt de -->
-Copiar el [cuaderno de ejemplo][bindersp] en el directorio del prompt de
-Anaconda y ejecutar línea por línea.
+<!-- Anaconda y ejecutar línea por línea. -->
+Abrir el [cuaderno de ejemplo][bindersp] y ejecutar línea por línea.
 
-
-[cuderno ejemplo offline][ipynb_offline]
+[cuaderno ejemplo offline][ipynb_offline]
 
 # Práctica V
 #### Práctica V: Exportar e importar un entorno virtual
