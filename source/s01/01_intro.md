@@ -1,3 +1,4 @@
+
 # Introducción a Python
 #### Introducción a Python
 
@@ -9,17 +10,26 @@ Creado en 1990 por [Guido van Rossum]
 ##
 ![Guido van Rossum, 1999]
 
+::: notes
+_Benevolent Dictator for Life_ hasta el 28/Feb/2018
+:::
+
 ##
 - Énfasis en la productividad y legibilidad del código ([PEP20])
 
 ::: incremental
-
 - *Beautiful is better than ugly*
 - *Explicit is better than implicit*
 - *Simple is better than complex*
 - *Complex is better than complicated*
 - *Readability counts*
+:::
 
+::: notes
+> There are two ways of constructing a software design: one way is to make it
+  so simple that there are obviously no deficiencies; the other is to make it
+  so complicated that there are no obvious deficiencies
+      Tony Hoare
 :::
 
 ## Ejemplo:
@@ -191,7 +201,9 @@ Flask.run(app, port=8080)
 :::
 
 ::: notes
-GC, GIL
+GC, GIL (_Global Intepreter Lock_)
+
+reference counting: 
 :::
 
 
@@ -229,7 +241,8 @@ como "pegamento" entre componentes escritos en otros lenguajes
 
 ![logo_ansible]\ ![logo_jinja2]\ ![logo_requests]\
 
-[Información adicional][awesome]
+##
+![simpson]\
 
 # Python como lenguaje de programación
 
@@ -272,3 +285,4 @@ fuente: [stackoverflow][stackoverflow_trends]
 # ¿? {data-background-image="images/python_words.gif"} 
 ## 
 ![Guido van Rossum, 1995]
+

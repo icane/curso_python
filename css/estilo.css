@@ -1,10 +1,22 @@
-.stack > h4, .footnote p{
-  font-size: small;   
+.stack > h4, .footnote p {
+  font-size: small;
+}
+
+.smaller .sourceCode {
+  margin: 0.5em;
 }
 
 .sourceCode code, .reveal div .smaller{
   font-size: smaller;
-  line-height: normal
+  line-height: normal;
+}
+
+.reveal pre code {
+  background-color: whitesmoke;
+}
+
+.reveal code {
+  background-color: beige;
 }
 
 .stack .present + h4{

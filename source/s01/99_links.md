@@ -2,12 +2,11 @@
 <!-- enlaces -->
 
 [activepython]: https://www.activestate.com/activepython
-[awesome-pythonme]: https://github.com/vinta/awesome-python#readme
+[awesome]: https://github.com/vinta/awesome-python#readme
 [batteries]: https://docs.python.org/3/library/index.html
 [beginners]: https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
-[cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
 [distrib]: https://docs.python.org/3/distributing/index.html 
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
@@ -25,21 +24,22 @@
 [PyPI]: https://pypi.org/
 [python]: https://www.python.org/
 [reference]: https://docs.python.org/3.7/reference/index.html
-[scipy]: https://www.scipy.org/
 [scikit-learn]: http://scikit-learn.org/
-[stackoverflow]: https://stackoverflow.com/questions/tagged/python
+[scipy]: https://www.scipy.org/
 [stackoverflow-es]: https://es.stackoverflow.com/questions/tagged/python
+[stackoverflow]: https://stackoverflow.com/questions/tagged/python
 [stackoverflow_trends]: https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas
 [stackoverflow_vs]: https://insights.stackoverflow.com/trends?tags=python%2Cjava%2Cphp%2Cc%23
 [winpython]: https://winpython.github.io/
 
 <!-- imágenes -->
 
-[exec_compiler]: images/exec_compiler.png
-[exec_interpreter]: images/exec_interpreter.png
 [conda_envs]: images/envs_graph.jpg
 [conda_platform]: images/conda_platform.jpeg
 [entornos]: images/conda_envs.svg
+[exec_compiler]: images/exec_compiler.png
+[exec_interpreter]: images/exec_interpreter.png
+[GIL]: images/GIL.png { width=70% }
 [Guido van Rossum, 1995]: images/guido.jpg  { width=40% }
 [Guido van Rossum, 1999]: images/guido2.gif  { width=40% }
 [hierarchy]: images/hierarchy.svg
@@ -64,8 +64,17 @@
 [Python_logo_1990s]: images/Python_logo_1990s.svg
 [R vs Python]: images/R_vs_Python.png
 [setup]: images/anaconda.gif
+[simpson]: images/simpson.gif
 [stackoverflow_graph]: images/SOtrend.svg
 [stackoverflow_top]: images/SO_py_vs_other.svg
 [timeline]: images/timeline.png
 [venv_navigator]: images/venv_navigator.gif
+
+<!-- código -->
+
+[03ipynb]: code/s01/03_estructura.ipynb
+[05ipynb]: code/s01/05_bonus.ipynb
+[circunferencia.py]: code/s01/circunferencia.py
+[cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
+[ipynb_offline]: code/s01/nb_sample.ipynb
 

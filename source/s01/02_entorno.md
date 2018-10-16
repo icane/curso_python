@@ -74,7 +74,7 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
-Podemos ejecutar código **python**:
+### Podemos ejecutar código **python**:
 
 ::: incremental
 - Directamente (si el S.O. lo permite, `#!`)
@@ -107,7 +107,7 @@ Anaconda                                Miniconda
 ~3GB disco                              <400MB
 > 200 librerías                         base + dependencias
 + herramientas                          ciclo distribución +rápido
-IDE (Spyder + **890-VSCode**)
+IDE (Spyder + **VSCode**)
 Anaconda Navigator                      sin interfaz gráfico
 &uarr; tiempo instalación
                         
@@ -153,7 +153,7 @@ anaconda: 18 min
  ----------------- ---------------
  `pandas`          `bs4`
  `matplotlib`      `jupyter`
- `scrapy`          `seaborn`
+ `scrapy`          `scipy`
  `sqlalchemy`      `flask`
  `jsonschema`      `bokeh`
  ----------------- ---------------
@@ -186,7 +186,7 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 (base) conda create --name entorno-01
 (base) conda create --name entorno-02 python=2.7 --yes
 # crea entorno con paquetes preinstalados
-(base) conda create -n entorno-03 python=3.7 pandas -y
+(base) conda create -n entorno-03 python=3.7 pandas scipy -y
 ~~~
 
 - Acceder (activar) el entorno virtual:
@@ -230,6 +230,11 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 # instala paquetes desde PyPI, no gestionados por conda
 (entorno-03) pip install pyjstat 
 (entorno-03) conda list
+
+# instala paquetes desde github usando pip
+(entorno-03) pip install -e ^
+"git+https://github.com/predicador37/pyjstat.git#egg=pyjstat-git"
+
 ~~~
 
 - [Resumen comandos `conda`][conda_cheatsheet]
@@ -237,6 +242,7 @@ Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
 
 
 ::: notes
-En python, los términos "paquete" y "librería" son comunmente intercambiables
-salvo para referirnos a "librerías standard".
+En python, los términos "paquete", "librería" y "módulo" son comunmente
+intercambiables, salvo para referirnos a "librerías standard".
 ::::
+
