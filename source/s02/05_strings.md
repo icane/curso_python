@@ -21,11 +21,11 @@ inmutable: para hacer cualquier cambio hay que crear otra string
 indexado: como un vector que empieza en 0
 
 ~~~python
-fruta = 'plátano'
-print fruta[3]
-print(len(fruta)) # longitud de la cadena
-print fruta[0:5]  # slicing
-print fruta[1:]  # slicing hasta el final
+fruit = 'plátano'
+print fruit[3]
+print(len(fruit)) # longitud de la cadena
+print fruit[0:5]  # slicing
+print fruit[1:]  # slicing hasta el final
 ~~~
 
 ::: notes
@@ -36,16 +36,16 @@ print fruta[1:]  # slicing hasta el final
 ## iteración
 
 ~~~~python
-fruta = 'plátano'
-for letra in fruta:
+fruit = 'plátano'
+for letra in fruit:
     print(letra)
 ~~~~
 
 ## in como operador lógico
 
 ~~~~python
-fruta = 'plátano'
-'n' in fruta
+fruit = 'plátano'
+'n' in fruit
 ~~~~
 
 ## string library
@@ -62,8 +62,8 @@ fruta = 'plátano'
 `find()` busca la primera ocurrencia de un substring
 
 ~~~python
-fruta = plátano
-posicion = fruta.find('ta')
+fruit = plátano
+pos = fruit.find('ta')
 print(pos)
 ~~~
 :::
@@ -71,10 +71,10 @@ print(pos)
 mayúsculas y minúsculas
 
 ~~~python
-saludo = 'Hola Miguel'
-mins = saludo.lower()
+greeting = 'Hola Miguel'
+mins = greeting.lower()
 print(mins)
-mays = saludo.upper()
+mays = greeting.upper()
 print(mays)
 ~~~
 :::
@@ -91,19 +91,19 @@ al comparar strings, primero se transforman a minúsculas
 buscar reemplazar
 
 ~~~python
-saludo = 'Hola Miguel'
-otro_saludo = saludo.replace('Miguel', 'Pepito')
-print(otro_saludo)
+greeting = 'Hola Miguel'
+another_greeting = greeting.replace('Miguel', 'Pepito')
+print(another_greeting)
 ~~~
 :::
 ::: {.column width="40%"}
 quitar espacios en blanco (stripping)
 
 ~~~python
-saludo = '  Hola Miguel   '
-saludo.lstrip()
-saludo.rstrip()
-saludo.strip()
+greeting = '  Hola Miguel   '
+greeting.lstrip()
+greeting.rstrip()
+greeting.strip()
 ~~~
 :::
 ::::::::::::::
@@ -117,8 +117,8 @@ replace() reemplaza todas las ocurrencias
 prefijos
 
 ~~~python
-saludo = 'Que tenga un buen día'
-saludo.startswith('Que')
+greeting = 'Que tenga un buen día'
+greeting.startswith('Que')
 ~~~
 
 ## ejercicio

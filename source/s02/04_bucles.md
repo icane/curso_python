@@ -44,10 +44,10 @@ print(n)
 
 ~~~python
 while True :
-    entrada = input('Introduce q para terminar: ')
-    if entrada == 'q' :
+    input_text = input('Introduce q para terminar: ')
+    if input_text == 'q' :
         break
-    print(entrada)
+    print(input_text)
 print('Hecho')
 ~~~
 
@@ -57,12 +57,12 @@ print('Hecho')
 
 ~~~python
 while True :
-    entrada = input('Introduce q para terminar, c para otra oportunidad: ')
-    if entrada == 'q' :
+    input_text = input('Introduce q para terminar, c para otra oportunidad: ')
+    if input_text == 'q' :
         break
-    elif entrada == 'c':
+    elif input_text == 'c':
         continue
-    print(entrada)
+    print(input_text)
 print('Hecho')
 ~~~
 
@@ -81,9 +81,9 @@ print('Despegue!')
 ## también se pueden iterar strings
 
 ~~~~python
-informaticos = ['Izu', 'Saro', 'Seco']
-for informatico in informaticos :
-    print('Pregúntaselo a: ', informatico)
+it_crowd = ['Izu', 'Saro', 'Seco']
+for it_guy in it_crowd :
+    print('Pregúntaselo a: ', it_guy)
 print('Hecho!')
 ~~~~
 
@@ -100,9 +100,9 @@ print('Hecho!')
 ## conteos
 
 ~~~~python
-numeros = [9, 41, 12, 3, 74, 15]
+numbers = [9, 41, 12, 3, 74, 15]
 total = 0
-for numero in numeros :
+for number in numbers :
     total = total + 1
 print('Hecho! el total es:', total)
 ~~~~
@@ -110,21 +110,21 @@ print('Hecho! el total es:', total)
 ## media aritmética
 
 ~~~~python
-numeros = [9, 41, 12, 3, 74, 15]
+numbers = [9, 41, 12, 3, 74, 15]
 total = 0
-suma = 0
-for numero in numeros :
+sum = 0
+for number in numbers :
     total = total + 1
-    suma = suma + numero
-print('Hecho! la media es:', suma / total)
+    total_sum = total_sum + number
+print('Hecho! la media es:', total_sum / total)
 ~~~~
 
 ## filtrado
 
 ~~~~python
-numeros = [9, 41, 12, 3, 74, 15]
-for numero in numeros :
-    if numero > 20 :
+numbers = [9, 41, 12, 3, 74, 15]
+for number in numbers :
+    if number > 20 :
         print('Mayor que 20')
 print('Hecho! )
 ~~~~
