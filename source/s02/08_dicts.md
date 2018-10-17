@@ -128,3 +128,27 @@ print('Cuenta:', counts )
 ~~~~
 :::
 
+## ejercicio
+
+~~~~python
+providers = {
+ 'places': {
+    'priority': 1,
+    'eligible': False
+ },
+ 'google': {
+    'priority': 2,
+    'eligible': True
+ }, 
+ 'bing': {
+    'priority': 4,
+    'eligible': False
+
+ }, 
+ 'mapbox': {
+     'priority': 3,
+    'eligible': True
+ }
+}
+~~~~
+
