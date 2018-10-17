@@ -1,7 +1,7 @@
 # ejecución condicional
 #### ejecución condicional
 
-## ejemplo
+##
 ::::::::::::: {.columns}
 ::: {.column width="40%"}
 ![condicional_1] \
@@ -137,3 +137,10 @@ except:
     istr = -1
 print('Segundo', istr)
 ~~~
+
+## ejercicio
+
+>Reescribir el programa del cálculo de paga para pagarle todas las horas de más a partir de 40 a 1.5 veces el coste de la hora normal
+
+Ej: 45 horas y 10 €/hora: 475 €
+

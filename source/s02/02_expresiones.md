@@ -130,7 +130,7 @@ print('Bienvenido', name)
 
 ~~~python
 age = input('Edad: ')
-age_to_retirement = 65 - int(edad)
+age_to_retirement = 65 - int(age)
 print('Te quedan', age_to_retirement, 'años para jubilarte')
 ~~~
 
@@ -143,3 +143,17 @@ Los comentarios sirven para:
 - describir lo que va a pasar en el código
 - documentar quién escribió esa parte del código
 - deshabilitar temporalmente una línea de código (*)
+
+## ejercicio
+
+>escribir un programa que obtenga del usuario el número de horas trabajadas y el coste por hora y que calcule la paga de un empleado
+
+
+:::: notes
+~~~~python
+hours = input("Introduzca el número de horas: ")
+cph = input("Introduzca el coste por hora: ")
+print("La paga es: ", float(hours) * float(cph))
+~~~~
+::::
+

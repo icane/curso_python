@@ -7,6 +7,8 @@ trozos de código reutilizable que toman argumentos de entrada, realizan algún 
 - se definen con `def` e indentando su contenido o cuerpo
 - se invocan usando su nombre, paréntesis y argumentos
 
+## ejemplo
+
 ~~~python
 def my_function():
     print('Hola')
@@ -79,3 +81,4 @@ print(x)
 - DRY!
 - divide y vencerás
 - hacer bibliotecas con lo que más se usa
+

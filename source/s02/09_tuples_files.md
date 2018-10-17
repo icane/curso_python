@@ -43,12 +43,6 @@ z[2] = 0
 print(y)
 ~~~~
 
-se puede crear un my_dict vacío así: 
-
-~~~~python
-empty_dict = {}
-~~~~
-
 ## ficheros
 
 - un fichero de texto puede verse como una secuencia de líneas

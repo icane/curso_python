@@ -66,7 +66,7 @@ print(my_list.pop())
 print(my_list)
 ~~~~
 
-también se puede especificar qué elemento
+también se puede especificar qué elemento (índice)
 
 ## otras funciones
 

@@ -44,10 +44,10 @@ print(n)
 
 ~~~python
 while True :
-    input_text = input('Introduce q para terminar: ')
-    if input_text == 'q' :
+    text= input('Introduce q para terminar: ')
+    if text == 'q' :
         break
-    print(input_text)
+    print(text)
 print('Hecho')
 ~~~
 
@@ -57,12 +57,12 @@ print('Hecho')
 
 ~~~python
 while True :
-    input_text = input('Introduce q para terminar, c para otra oportunidad: ')
-    if input_text == 'q' :
+    text = input('Introduce q para terminar, c para otra oportunidad: ')
+    if text == 'q' :
         break
-    elif input_text == 'c':
+    elif text == 'c':
         continue
-    print(input_text)
+    print(text)
 print('Hecho')
 ~~~
 
@@ -97,12 +97,24 @@ print('Hecho!')
 
 > cuál es el máximo de la siguiente lista: 9, 41, 12, 3, 74, 15
 
+::: notes
+~~~~python
+numbers = [9, 41, 12, 3, 74, 15]
+max = -1
+for number in numbers:
+    if number > max:
+        max = number
+print(max)
+
+~~~~
+:::
+
 ## conteos
 
 ~~~~python
-numbers = [9, 41, 12, 3, 74, 15]
+numeros = [9, 41, 12, 3, 74, 15]
 total = 0
-for number in numbers :
+for numero in numeros :
     total = total + 1
 print('Hecho! el total es:', total)
 ~~~~
@@ -110,21 +122,21 @@ print('Hecho! el total es:', total)
 ## media aritmética
 
 ~~~~python
-numbers = [9, 41, 12, 3, 74, 15]
+numeros = [9, 41, 12, 3, 74, 15]
 total = 0
-sum = 0
-for number in numbers :
+suma = 0
+for numero in numeros :
     total = total + 1
-    total_sum = total_sum + number
-print('Hecho! la media es:', total_sum / total)
+    suma = suma + numero
+print('Hecho! la media es:', suma / total)
 ~~~~
 
 ## filtrado
 
 ~~~~python
-numbers = [9, 41, 12, 3, 74, 15]
-for number in numbers :
-    if number > 20 :
+numeros = [9, 41, 12, 3, 74, 15]
+for numero in numeros :
+    if numero > 20 :
         print('Mayor que 20')
 print('Hecho! )
 ~~~~
@@ -133,12 +145,12 @@ print('Hecho! )
 - utilizados en expresiones lógicas
 - significa "es lo mismo que"
 - similar a `==`, pero más fuerte
+- is devuelve True si dos variables apuntan al mismo objeto
+- `==` devuelve True si los objetos a los que apuntan dos variables son iguales
 
 ~~~~python
 x = None
 if x is None :
     print('No hay valor para x')
 ~~~~
-
-
 
