@@ -1,17 +1,4 @@
----
-title: Python 101
-subtitle: Sesión 2
-author: Miguel Expósito Martín (exposito_m@cantabria.es)
-date: 16 Octubre 2018
-revealjs-url: ..
-theme: solarized
-transition: fade
-transitionSpeed: fast
-slideNumber: true
-keywords: [python, intro, s02]
----
-
-# variables, estructuras de datos, expresiones, sentencias
+# variables, estructuras de datos y de control, expresiones, sentencias y funciones
 
 # variables
 #### variables
@@ -25,6 +12,8 @@ un valor fijo, que nunca cambia
 print(123)
 print(15.2)
 print('curso python')
+pi = 3.14
+print(pi)
 ~~~
 
 ##
@@ -36,7 +25,8 @@ True def from while nonlocal and del global not with
 as elif try or yield assert else import pass break except in raise
 ~~~
 
-##
+## ¿qué es una variable?
+
 una variable es una posición de memoria a la que se asocia un nombre o etiqueta
 
 se les asigna valores con el operador =
@@ -84,5 +74,4 @@ una declaración de asignación consiste en una expresión a la derecha del igua
 ~~~python
 x = 3.9 * x * ( 1 - x )
 ~~~
-
 

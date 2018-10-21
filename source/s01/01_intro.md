@@ -1,15 +1,3 @@
----
-title: Python 101
-subtitle: Sesión 1
-author: Jesús Fernández (fernandez.cuesta@gmail.com)
-date: 16 Octubre 2018
-revealjs-url: ..
-theme: solarized
-transition: fade
-transitionSpeed: fast
-slideNumber: true
-keywords: [python, intro, s01]
----
 
 # Introducción a Python
 #### Introducción a Python
@@ -22,17 +10,26 @@ Creado en 1990 por [Guido van Rossum]
 ##
 ![Guido van Rossum, 1999]
 
+::: notes
+_Benevolent Dictator for Life_ hasta el 28/Feb/2018
+:::
+
 ##
 - Énfasis en la productividad y legibilidad del código ([PEP20])
 
 ::: incremental
-
 - *Beautiful is better than ugly*
 - *Explicit is better than implicit*
 - *Simple is better than complex*
 - *Complex is better than complicated*
 - *Readability counts*
+:::
 
+::: notes
+> There are two ways of constructing a software design: one way is to make it
+  so simple that there are obviously no deficiencies; the other is to make it
+  so complicated that there are no obvious deficiencies
+      Tony Hoare
 :::
 
 ## Ejemplo:
@@ -106,6 +103,7 @@ ciclo escribir-test-corregir muy corto
 :::
 
 ## Código ejemplo en C++
+::: {.smaller}
 ~~~C++
 #include <stdio.h>
 #include <stdlib.h>
@@ -157,7 +155,7 @@ int main()
   }
 }
 ~~~
-
+:::
 
 ## Equivalente python
 
@@ -176,17 +174,36 @@ Flask.run(app, port=8080)
 
 ::: incremental
 - No es necesario compilar
+
+  :::::::::::::: {.columns}
+  ::: {.column width="64%"}
+  ![exec_compiler]\
+  :::
+  ::: {.column width="36%"}
+  ![exec_interpreter]\
+  :::
+  ::::::::::::::
+
+  Necesitamos tener instalado un intérprete `python`
+:::
+
+
+## Interpretado
+
+::: incremental
 - Compatible (en general) en distintos sistemas operativos y arquitecturas  
    + Linux
    + MacOS
    + Windows
-   + otros (AIX, AS/400, z/OS, OpenVMS, arquitecturas ARM, ...)
+   + otros (AIX, AS/400, z/OS, OpenVMS, ARM, ...)
 - Depuración de errores desde intérprete
 - Gestión automática de memoria
 :::
 
 ::: notes
-GC, GIL
+GC, GIL (_Global Intepreter Lock_)
+
+reference counting: 
 :::
 
 
@@ -198,6 +215,8 @@ GC, GIL
 - Imperativo
 - Funcional (<100%)
 :::
+
+# Python es usado en
 
 ## Data Science
 
@@ -222,18 +241,27 @@ como "pegamento" entre componentes escritos en otros lenguajes
 
 ![logo_ansible]\ ![logo_jinja2]\ ![logo_requests]\
 
-[Información adicional][awesome]
+##
+![simpson]\
+
+::: notes
+Poner un ejemplo
+::::
+
+# Python como lenguaje de programación
 
 ##
 [The 2018 Top Programming Languages, IEEE][ieee_rank]
 
 > ![ieee_graph]\
 
-
 gran soporte en [foros][stackoverflow], comunidades, conferencias, ...
 
 ##
-python vs R
+![stackoverflow_top]\
+fuente: [stackoverflow][stackoverflow_vs]
+
+##
 ![R vs Python] \
 
 ##
@@ -261,3 +289,4 @@ fuente: [stackoverflow][stackoverflow_trends]
 # ¿? {data-background-image="images/python_words.gif"} 
 ## 
 ![Guido van Rossum, 1995]
+

@@ -1,0 +1,1 @@
+%2F%2F Cool Class Diagram, [fichero1.py|-import libreria1; import modulo2;|código]-[note: librerías de terceros{bg:wheat}], [fichero2.py|import libreria1; import modulo1;|código]-[note: librerías de terceros], [__init.py__]->[python.exe], [python.exe]->[Sistema Operativo], [python.exe],[note: librerías de terceros]-[__init.py__]

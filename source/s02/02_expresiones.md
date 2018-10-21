@@ -2,7 +2,7 @@
 #### expresiones
 
 ## expresiones numéricas
-|operador|operación|
+|operador|operación| <!-- .slide: style="font-size: 30px;"-->
 |--------|---------|
 |+|suma|
 |-|resta|
@@ -48,9 +48,9 @@ Python sabe la diferencia entre `number` y `string`
 x = 5 + 8
 print(x)
 type(x)
-saludo = 'hola' + ' ' + 'Miguel'
-print(saludo)
-type(saludo)
+greeting = 'hola' + ' ' + 'Miguel'
+print(greeting)
+type(greeting)
 ~~~
 
 con cadenas de texto, `+` concatena
@@ -60,8 +60,8 @@ con cadenas de texto, `+` concatena
 algunas operaciones están prohibidas...
 
 ~~~python
-saludo = 'hola' + ' ' + 'Miguel'
-saludo = saludo + 1
+greeting = 'hola' + ' ' + 'Miguel'
+greeting = greeting + 1
 ~~~
 
 ¡no se puede sumar 1 a una cadena de texto!
@@ -124,14 +124,14 @@ print(10 / 2)
 `input()` devuelve un `string`
 
 ~~~python
-nombre = input('¿Cómo te llamas?')
-print('Bienvenido', nombre)
+name = input('¿Cómo te llamas?')
+print('Bienvenido', name)
 ~~~
 
 ~~~python
-edad = input('Edad: ')
-edad_para_jubilarse = 65 - int(edad)
-print('Te quedan', edad_para_jubilarse, 'años para jubilarte')
+age = input('Edad: ')
+age_to_retirement = 65 - int(age)
+print('Te quedan', age_to_retirement, 'años para jubilarte')
 ~~~
 
 ## comentarios
@@ -143,3 +143,17 @@ Los comentarios sirven para:
 - describir lo que va a pasar en el código
 - documentar quién escribió esa parte del código
 - deshabilitar temporalmente una línea de código (*)
+
+## ejercicio
+
+>escribir un programa que obtenga del usuario el número de horas trabajadas y el coste por hora y que calcule la paga de un empleado
+
+
+:::: notes
+~~~~python
+hours = input("Introduzca el número de horas: ")
+cph = input("Introduzca el coste por hora: ")
+print("La paga es: ", float(hours) * float(cph))
+~~~~
+::::
+

@@ -4,8 +4,10 @@
 [activepython]: https://www.activestate.com/activepython
 [awesome]: https://github.com/vinta/awesome-python#readme
 [batteries]: https://docs.python.org/3/library/index.html
+[beginners]: https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
+[distrib]: https://docs.python.org/3/distributing/index.html 
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
 [ieee_rank]: https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages
@@ -22,41 +24,61 @@
 [PyPI]: https://pypi.org/
 [python]: https://www.python.org/
 [reference]: https://docs.python.org/3.7/reference/index.html
-[scipy]: https://www.scipy.org/
 [scikit-learn]: http://scikit-learn.org/
+[scipy]: https://www.scipy.org/
+[stackoverflow-es]: https://es.stackoverflow.com/questions/tagged/python
 [stackoverflow]: https://stackoverflow.com/questions/tagged/python
 [stackoverflow_trends]: https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas
+[stackoverflow_vs]: https://insights.stackoverflow.com/trends?tags=python%2Cjava%2Cphp%2Cc%23
 [winpython]: https://winpython.github.io/
 
 <!-- imágenes -->
 
-[conda_envs]: https://cdn-images-1.medium.com/max/800/1*0qVCJMcjaKZEcFEyHDj2yg.jpeg
-[conda_platform]: https://cdn-images-1.medium.com/max/800/1*4MbAW6APDD_GT14vaRkKQQ.jpeg
-[entornos]: images/entornos.png
+[conda_envs]: images/envs_graph.jpg
+[conda_platform]: images/conda_platform.jpeg
+[entornos]: images/conda_envs.svg
+[exec_compiler]: images/exec_compiler.png
+[exec_interpreter]: images/exec_interpreter.png
+[GIL]: images/GIL.png { width=70% }
 [Guido van Rossum, 1995]: images/guido.jpg  { width=40% }
 [Guido van Rossum, 1999]: images/guido2.gif  { width=40% }
-[https://xkcd.com/1987]: https://imgs.xkcd.com/comics/python_environment.png
-[ieee_graph]: https://spectrum.ieee.org/image/MzExNjk1OA.jpeg
-[logo_ansible]: https://keithtenzer.files.wordpress.com/2017/11/ansible-logo.png { .logo }
+[hierarchy]: images/hierarchy.svg
+[https://xkcd.com/1987]: images/xkcd1987.png
+[ieee_graph]: images/ieee_graph.jpeg
+[logo_ansible]: images/ansible_logo.png { .logo }
 [logo_celery]: images/logo_celery.png { .logo }
 [logo_django]: images/logo_django.png { .logo }
 [logo_fabric]: images/logo_fabric.png { .logo }
-[logo_flask]: https://cdn.freebiesupply.com/logos/thumbs/2x/flask-logo.png { .logo }
-[logo_jinja2]: https://www.fullstackpython.com/img/logos/jinja.png { .logo }
-[logo_keras]: https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png { .logo }
-[logo_pandas]: https://pandas.pydata.org/_static/pandas_logo.png { .logo }
-[logo_pyramid]: https://upload.wikimedia.org/wikipedia/commons/5/5d/Pyramid_web_framework_logo_on_transparent_background.png { .logo }
-[logo_pytorch]: https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png { .logo }
-[logo_requests]: http://docs.python-requests.org/en/v1.0.0/_static/requests-sidebar.png { .logo }
-[logo_scikit]: https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png { .logo }
-[logo_scipy]: https://www.fullstackpython.com/img/logos/scipy.png { .logo }
-[logo_tensorflow]: https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/2000px-TensorFlowLogo.svg.png { .logo }
-[poll_results]: https://www.kdnuggets.com/images/top-analytics-data-science-machine-learning-software-2018-3yrs-539.jpg 
-[python_logo]: https://www.python.org/static/community_logos/python-logo-master-v3-TM.png
+[logo_flask]: images/flask_logo.png { .logo }
+[logo_jinja2]: images/jinja_logo.png { .logo }
+[logo_keras]: images/keras_logo.png { .logo }
+[logo_pandas]: images/pandas_logo.png { .logo }
+[logo_pyramid]: images/pyramid_logo.png { .logo }
+[logo_pytorch]: images/pytorch_logo.png { .logo }
+[logo_requests]: images/requests_logo.png {.logo}
+[logo_scikit]: images/scikit_logo.png { .logo }
+[logo_scipy]: images/scipy_logo.png { .logo }
+[logo_tensorflow]: images/tensorflow_logo.png { .logo }
+[poll_results]: images/poll_results.png
+[python_logo]: images/python_logo.png
 [Python_logo_1990s]: images/Python_logo_1990s.svg
-[R vs Python]: https://ezdatamunch.com/wp-content/uploads/2018/01/R-vs-python.png
+[R vs Python]: images/R_vs_Python.png
 [setup]: images/anaconda.gif
+[simpson]: images/simpson.gif
 [stackoverflow_graph]: images/SOtrend.svg
+[stackoverflow_top]: images/SO_py_vs_other.svg
 [timeline]: images/timeline.png
-[venv_navigator]: images/venv_navigator.avi
+[venv_navigator]: images/venv_navigator.gif
+
+<!-- código -->
+
+[03ipynb]: code/s01/03_estructura.ipynb
+[05ipynb]: code/s01/05_bonus.ipynb
+[binder03]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F03_estructura.ipynb
+[binder05]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F05_bonus.ipynb
+[bindersp]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2Fnb_sample.ipynb
+[circunferencia.py]: code/s01/circunferencia.py
+[consola online]: https://hub.mybinder.org/user/icane-curso_python-98y3wfn8/lab?
+[cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
+[ipynb_offline]: code/s01/nb_sample.ipynb
 

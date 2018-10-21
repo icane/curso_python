@@ -1,5 +1,22 @@
-.stack > h4, .footnote p{
-  font-size: small;   
+.stack > h4, .footnote p {
+  font-size: small;
+}
+
+.smaller .sourceCode {
+  margin: 0.5em;
+}
+
+.sourceCode code, .reveal div .smaller{
+  font-size: smaller;
+  line-height: normal;
+}
+
+.reveal pre code {
+  background-color: whitesmoke;
+}
+
+.reveal code {
+  background-color: beige;
 }
 
 .stack .present + h4{
@@ -14,6 +31,22 @@
 
 .logo {
   height: 20vh;
+}
+
+subtitle {
+  font-size: 2em;
+}
+
+#title-slide h1 {
+  font-size: 1.5em;
+}
+
+#title-slide .subtitle {
+  background-color: grey;
+  color: beige;
+  font-size: larger;
+  font-variant: all-small-caps;
+  font-weight:  bold;
 }
 
 .text-muted {
