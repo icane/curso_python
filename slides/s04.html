@@ -144,6 +144,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>{n,m}</code> = “entre n y m veces”</li>
 </ul></li>
 </ul>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<pre><code>abc? = ab / abc
+abc+ = abc / abcc / abccc / ...
+abc* = ab / abc / abcc / ...
+abc{2,3} = abcc / abccc</code></pre>
 </section><section id="conceptos-básicos-iii" class="slide level2">
 <h2>Conceptos básicos (III)</h2>
 <ul>
@@ -155,8 +161,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>[^a-z]</code> = “carácter que no es de la ‘a’ a la ‘z’”</li>
 </ul></li>
 </ul>
-</section><section id="conceptos-básicos-iv" class="slide level2">
-<h2>Conceptos básicos (IV)</h2>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<pre><code>[0-2][3-5]
+[a-f]?[jkl]
+[gq][^u]
+[ab]+[cd]?</code></pre>
+</section><section id="conceptos-básicos-v" class="slide level2">
+<h2>Conceptos básicos (V)</h2>
 <ul>
 <li>Clases de caracteres:
 <ul>
@@ -173,12 +185,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="ejemplos" class="slide level2">
 <h2>Ejemplos</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode awk"><code class="sourceCode awk"><a class="sourceLine" id="cb1-1" data-line-number="1">H[aäe]nsel</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">¡Go<span class="op">+</span>l<span class="op">!</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">(No m<span class="op">|</span>M)e gusta Python</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">Mi [mp]adre tiene \d<span class="op">+</span> años</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">[a<span class="op">-</span>z0<span class="op">-</span><span class="dv">9</span>]<span class="kw">{</span><span class="dv">4</span><span class="op">,</span><span class="dv">8</span><span class="kw">}</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="op">^</span>(python<span class="op">|</span>java)$</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode awk"><code class="sourceCode awk"><a class="sourceLine" id="cb3-1" data-line-number="1">H[aäe]nsel</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">¡Go<span class="op">+</span>l<span class="op">!</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">(No m<span class="op">|</span>M)e gusta Python</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">Mi [mp]adre tiene \d<span class="op">+</span> años</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">[a<span class="op">-</span>z0<span class="op">-</span><span class="dv">9</span>]<span class="kw">{</span><span class="dv">4</span><span class="op">,</span><span class="dv">8</span><span class="kw">}</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="op">^</span>(python<span class="op">|</span>java)$</a></code></pre></div>
 </section><section id="grupos-y-capturas" class="slide level2">
 <h2>Grupos y capturas</h2>
 <ul>
@@ -196,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="problemas-i" class="slide level2">
 <h2>Problemas (I)</h2>
 <ul>
-<li>Difíciles de entender para humanos (write-only)
+<li>Difíciles de entender para humanos (<em>write-only</em>)
 <ul>
 <li><a href="https://regex101.com/" target="_blank">https://regex101.com/</a></li>
 </ul></li>
@@ -214,12 +226,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Sintaxis “preferida”, RFC 1035</p>
 </aside>
 </section></section>
-<section><section id="expresiones-regulares-en-python" class="title-slide slide level1"><h1>Expresiones regulares en Python</h1></section><h4 id="expresiones-regulares-en-python-1">Expresiones regulares en Python</h4><section id="section" class="slide level2">
+<section><section id="expresiones-regulares-en-python" class="title-slide slide level1"><h1>Expresiones regulares en Python</h1></section><h4 id="expresiones-regulares-en-python-1">Expresiones regulares en Python</h4><section id="section-2" class="slide level2">
 <h2></h2>
 <p>Python soporta nativamente expresiones regulares mediante el módulo <code>re</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">&#39;a[bc]&#39;</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> r.match(<span class="st">&#39;ab&#39;</span>)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="op">&lt;</span>_sre.SRE_Match <span class="bu">object</span><span class="op">;</span> span<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">2</span>), match<span class="op">=</span><span class="st">&#39;ab&#39;</span><span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">&#39;a[bc]&#39;</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> r.match(<span class="st">&#39;ab&#39;</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="op">&lt;</span>_sre.SRE_Match <span class="bu">object</span><span class="op">;</span> span<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">2</span>), match<span class="op">=</span><span class="st">&#39;ab&#39;</span><span class="op">&gt;</span></a></code></pre></div>
 </section><section id="módulo-re-i" class="slide level2">
 <h2>Módulo <code>re</code> (I)</h2>
 <ul>
@@ -250,10 +262,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </aside>
 </section><section id="ejemplos-1" class="slide level2">
 <h2>Ejemplos</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">re.sub(<span class="vs">r&#39;\. {2,}&#39;</span>, <span class="st">&#39;. &#39;</span> texto)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">re.sub(<span class="vs">r&#39;(F(ernando|rancisco))&#39;</span>, <span class="vs">r&#39;Julián (antes \1)&#39;</span>, texto, re.I)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">re.findall(<span class="vs">r&#39;((\d)+,)*(\d+)(\.(\d+))?&#39;</span>, texto)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">re.split(<span class="vs">r&#39;\.\s*&#39;</span>, texto)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">re.sub(<span class="vs">r&#39;\. {2,}&#39;</span>, <span class="st">&#39;. &#39;</span> texto)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">re.sub(<span class="vs">r&#39;(F(ernando|rancisco))&#39;</span>, <span class="vs">r&#39;Julián (antes \1)&#39;</span>, texto, re.I)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">re.findall(<span class="vs">r&#39;((\d)+,)*(\d+)(\.(\d+))?&#39;</span>, texto)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">re.split(<span class="vs">r&#39;\.\s*&#39;</span>, texto)</a></code></pre></div>
 </section><section id="otras-características-avanzadas" class="slide level2">
 <h2>Otras características avanzadas</h2>
 <ul>
@@ -294,11 +306,194 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ol>
 </aside>
-</section><section id="section-1" class="slide level2">
+</section><section id="section-3" class="slide level2">
 <h2></h2>
 <figure>
 <img data-src="images/s04/scraping-google-scholar.png" alt="scraping_google_scholar" /><figcaption>scraping_google_scholar</figcaption>
 </figure>
+</section></section>
+<section><section id="brevísima-intro-a-html" class="title-slide slide level1"><h1>Brevísima intro a HTML</h1></section><h4 id="web-scraping-2">Web scraping</h4><section id="section-4" class="slide level2">
+<h2></h2>
+<ul>
+<li>HTML: lenguaje de marcado (<em>markup language</em>)</li>
+<li>Especificación del W3C</li>
+<li>Base de la web</li>
+<li>Árbol de <code>&lt;elementos&gt;</code> anidados</li>
+<li>Los elementos pueden tener atributos, contenido textual y comentarios</li>
+<li>El espaciado extra se ignora</li>
+</ul>
+</section><section id="section-5" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">        <span class="kw">&lt;title&gt;</span>Mi HTML<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">        <span class="kw">&lt;h1</span><span class="ot"> id=</span><span class="st">&quot;titulo-pagina&quot;</span><span class="kw">&gt;</span>Esto es un título<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;texto-normal&quot;</span><span class="kw">&gt;</span>Esto es un párrafo<span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+</section><section id="elementos-importantes" class="slide level2">
+<h2>Elementos importantes</h2>
+<ul>
+<li><code>html</code>
+<ul>
+<li><code>head</code>
+<ul>
+<li><code>title</code></li>
+</ul></li>
+<li><code>body</code>
+<ul>
+<li><code>div</code></li>
+<li><code>span</code></li>
+<li><code>p</code></li>
+<li><code>a</code></li>
+<li><code>img</code></li>
+<li><code>h1</code>, <code>h2</code>, <code>h3</code>…, <code>h6</code></li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Elementos se abren y cierran (o autocierran).</li>
+<li>Explicar que algunos elementos tienen contenido y otros no.</li>
+</ul>
+</aside>
+</section><section id="atributos-importantes" class="slide level2">
+<h2>Atributos importantes</h2>
+<ul>
+<li><code>id</code> (único en el documento)</li>
+<li><code>class</code></li>
+<li><code>href</code></li>
+<li><code>src</code></li>
+</ul>
+</section><section id="selectores-css-i" class="slide level2">
+<h2>Selectores CSS (I)</h2>
+<ul>
+<li>Sintaxis:
+<ul>
+<li><code>elemento</code></li>
+<li><code>#id</code></li>
+<li><code>.clase</code></li>
+<li><code>[atributo]</code></li>
+<li><code>[atributo=&quot;valor&quot;]</code></li>
+</ul></li>
+</ul>
+</section><section id="selectores-css-ii" class="slide level2">
+<h2>Selectores CSS (II)</h2>
+<ul>
+<li>Se pueden anidar y combinar:
+<ul>
+<li><code>body h1</code></li>
+<li><code>p.texto-normal</code></li>
+<li><code>body &gt; p</code></li>
+<li><code>p a[href]</code></li>
+</ul></li>
+</ul>
+</section><section id="section-6" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">&lt;html&gt;</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">    <span class="kw">&lt;head&gt;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">        <span class="kw">&lt;title&gt;</span>Mi HTML<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">    <span class="kw">&lt;/head&gt;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="kw">&lt;body&gt;</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">        <span class="kw">&lt;h1</span><span class="ot"> id=</span><span class="st">&quot;titulo-pagina&quot;</span><span class="kw">&gt;</span>Esto es un título<span class="kw">&lt;/h1&gt;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">        <span class="kw">&lt;h2&gt;</span>Subtítulo<span class="kw">&lt;/h2&gt;</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">        <span class="kw">&lt;p</span><span class="ot"> class=</span><span class="st">&quot;texto-normal&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">            Esto es un párrafo </a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">            <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;hola.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Hola&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">            <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;/&quot;</span><span class="ot"> class=</span><span class="st">&quot;back-link&quot;</span><span class="kw">&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;enfasis&quot;</span><span class="kw">&gt;</span>Volver<span class="kw">&lt;/span&gt;&lt;/a&gt;</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">        <span class="kw">&lt;/p&gt;</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;pie&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">            Copyright Ticnor 2018.</a>
+<a class="sourceLine" id="cb8-15" data-line-number="15">        <span class="kw">&lt;/div&gt;</span></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">    <span class="kw">&lt;/body&gt;</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+</section></section>
+<section><section id="scrapy" class="title-slide slide level1"><h1>Scrapy</h1></section><h4 id="web-scraping-3">Web scraping</h4><section id="qué-es-scrapy" class="slide level2">
+<h2>Qué es Scrapy</h2>
+<p>Scrapy es una librería de Python para hacer <em>web crawlers</em> (recolectores de información en HTML).</p>
+</section><section id="ejemplo-1" class="slide level2">
+<h2>Ejemplo</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="im">import</span> scrapy</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">class</span> BlogSpider(scrapy.Spider):</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">    name <span class="op">=</span> <span class="st">&#39;blogspider&#39;</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">    start_urls <span class="op">=</span> [<span class="st">&#39;https://blog.scrapinghub.com&#39;</span>]</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">    <span class="kw">def</span> parse(<span class="va">self</span>, response):</a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">        <span class="cf">for</span> title <span class="kw">in</span> response.css(<span class="st">&#39;.post-header&gt;h2&#39;</span>):</a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">            <span class="cf">yield</span> {<span class="st">&#39;title&#39;</span>: title.css(<span class="st">&#39;a ::text&#39;</span>).extract_first()}</a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">        <span class="cf">for</span> next_page <span class="kw">in</span> response.css(<span class="st">&#39;div.prev-post &gt; a&#39;</span>):</a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">            <span class="cf">yield</span> response.follow(next_page, <span class="va">self</span>.parse)</a></code></pre></div>
+<pre><code>$ scrapy runspider blogspider.py</code></pre>
+</section><section id="section-7" class="slide level2">
+<h2></h2>
+<ul>
+<li>Es necesario tener algo de conocimiento sobre la estructura del sitio que se quiere rastrear:
+<ul>
+<li>¿Qué elementos / atributos / textos queremos extraer?</li>
+<li>¿Qué enlaces (<code>&lt;a&gt;</code>) debemos seguir (paginación, categorías…)?</li>
+</ul></li>
+</ul>
+</section><section id="section-8" class="slide level2">
+<h2></h2>
+<p><img data-src="images/s04/ff-inspector.png" alt="ff_inspector" /> Mejor método: Inspeccionar Elemento</p>
+</section><section id="procedimiento" class="slide level2">
+<h2>Procedimiento</h2>
+<ol type="1">
+<li>Definir las URL iniciales
+<ul>
+<li>Ej: <a href="https://scholar.google.es/scholar?q=einstein">https://scholar.google.es/scholar?q=einstein</a></li>
+</ul></li>
+<li>Localizar los elementos que queremos extraer
+<ul>
+<li>Ej: <code>.gs_ri h3 a :::text</code></li>
+</ul></li>
+<li>Localizar los enlaces a las siguientes páginas a navegar
+<ul>
+<li>Ej: <code>#gs_n a</code></li>
+</ul></li>
+</ol>
+</section><section id="section-9" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="im">import</span> scrapy</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">class</span> EinsterSpider(scrapy.Spider):</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">    name <span class="op">=</span> <span class="st">&#39;einsten_spider&#39;</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">    start_urls <span class="op">=</span> [<span class="st">&#39;https://scholar.google.es/scholar?q=einstein&#39;</span>]</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7">    <span class="kw">def</span> parse(<span class="va">self</span>, response):</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">        <span class="cf">for</span> texto <span class="kw">in</span> response.css(<span class="st">&#39;.gs_ri h3 a ::text&#39;</span>):</a>
+<a class="sourceLine" id="cb11-9" data-line-number="9">            <span class="cf">yield</span> {<span class="st">&#39;publicacion&#39;</span>: texto.extract()}</a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11">        <span class="cf">for</span> next_page <span class="kw">in</span> response.css(<span class="st">&#39;#gs_n a&#39;</span>):</a>
+<a class="sourceLine" id="cb11-12" data-line-number="12">            <span class="cf">yield</span> response.follow(next_page, <span class="va">self</span>.parse)</a></code></pre></div>
+<pre><code>scrapy runspider einstein.py -o resultados.json</code></pre>
+</section><section id="qué-más-ofrece-scrapy" class="slide level2">
+<h2>¿Qué más ofrece scrapy?</h2>
+<ul>
+<li>Extraer con métodos independientes distintas páginas (p.e., navegar listados, pero extraer datos de vistas individuales).</li>
+<li>Pasar argumentos desde la línea de comandos.</li>
+<li>Su consola (<code>scrapy shell https://www.ticnor.es</code>).</li>
+</ul>
+</section><section id="y-más-y-más" class="slide level2">
+<h2>Y más, y más…</h2>
+<ul>
+<li>Exportar a distintos formatos (JSON, JSONL, CSV, XML).</li>
+<li>Seleccionar con XPath.</li>
+<li>Integrarlo en módulos (no sólo desde línea de comandos).</li>
+<li>…</li>
+</ul>
+</section><section id="ejercicio" class="slide level2">
+<h2>Ejercicio</h2>
+<p>Extraer un listado de todas las calderas con su precio de <a href="https://euroclimaonline.es/">https://euroclimaonline.es/</a></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="ot">[</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">    <span class="fu">{</span> <span class="dt">&quot;modelo&quot;</span><span class="fu">:</span> <span class="st">&quot;XYZ&quot;</span><span class="fu">,</span> <span class="dt">&quot;precio&quot;</span><span class="fu">:</span> <span class="st">&quot;335,30 €&quot;</span><span class="fu">}</span><span class="ot">,</span> </a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">    <span class="fu">{</span> <span class="dt">&quot;modelo&quot;</span><span class="fu">:</span> <span class="st">&quot;TRS&quot;</span><span class="fu">,</span> <span class="dt">&quot;precio&quot;</span><span class="fu">:</span> <span class="st">&quot;299,99 €&quot;</span><span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">    <span class="er">...</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="ot">]</span></a></code></pre></div>
 <!-- enlaces -->
 <!-- imágenes -->
 </section></section>
