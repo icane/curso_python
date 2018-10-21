@@ -89,5 +89,5 @@ concreta de mensaje.
 ## Composición
 - Combinación de varios objetos con diferentes características
 - Ejemplo:
-    - Coche contiene Motor, Frenos, Ruedas, etc.
-    - coche.frenar() llama a frenos.activar()
+    - Coche contiene objetos de clase Motor, Freno, Rueda, etc.
+    - coche.frenar() llama a frenos_delante.activar() y frenos_detras.activar()

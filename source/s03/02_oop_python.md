@@ -2,6 +2,25 @@
 # POO en Python
 #### POO en Python
 
+## Primero, un repaso
+- ``dict``: estructura clave -> valor
+    - Claves únicas
+    - Valores: cualquier cosa
+    - Permite anidamiento
+
+##
+~~~python
+midic = {
+    'clave1': 'valor1',
+    'clave2': 23,
+    'clave3': [1, 2, 3],
+    'clave4': {
+        'subclave1': [1, 2]
+    }
+}
+~~~
+
+
 ##
 La clase más simple:
 
@@ -17,9 +36,9 @@ Una clase más completa:
 class Persona:
     """Una clase para almacenar datos de personas"""
     
-    nombre = None
-    apellidos = None
-    email = None
+    self.nombre = None
+    self.apellidos = None
+    self.email = None
     
     
     def saludar(self):
@@ -45,7 +64,7 @@ Villar, Alejandro <avillar@ticnor.es>
 ## ``self`` (I)
 
 - Los métodos dentro de una clase tienen un argumento inicial: ``self``
-- Ese argumento representa a la **instancia** que lo llama
+- Ese argumento representa a la **instancia** (objeto) que lo llama
 - Python automáticamente lo añade a los argumentos de llamada
 - Necesario para modificar atributos de la instancia.
 
@@ -117,11 +136,26 @@ Hola, Juan Pérez
 - De instancia: única para cada instancia
 
 ~~~python
-class Empleado:
-    estado = 'Ocupado'  # Variable de clase
+class Coche:
+    ruedas = 4          # Variable de clase
     
-    def __init__(self, empresa):
-        self.empresa = empresa # Variable de instancia
+    def __init__(self, marca):
+        self.marca = marca   # Variable de instancia
+~~~
+
+##
+~~~python
+>>> honda = Coche("Honda")
+>>> honda.ruedas
+4
+>>> Coche.ruedas
+4
+>>> honda.marca
+'Honda'
+>>> Coche.marca
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: type object 'Coche' has no attribute 'marca'
 ~~~
 
 ## Variables y métodos "privados"
@@ -199,17 +233,21 @@ class Mayusculas(Transformador):
 ## Herencia (V)
 - ``super()`` permite llamar a métodos definidos en las clases
 ancestro
-- Ejemplo: constructor
 
 ~~~python
 class Mamifero:
     def __init__(self):
         print("Soy un mamífero")
+    def comer(self, comida):
+        print("Como {0}".format(comida))
 
 class Raton(Mamifero):
     def __init__(self):
         super().__init__()
-        print("Soy un ratón")
+        print("Soy un ratón")  
+    def comer(self, comida):
+        super().comer(comida)
+        print("y lo royo") # o roo o roigo
 ~~~
 
 ::: notes
