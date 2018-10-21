@@ -41,6 +41,14 @@ keywords: [python, intro, s04, regex, scraping]
     - ``{n,}`` = "n o más veces"
     - ``{n,m}`` = "entre n y m veces"
 
+##
+~~~
+abc? = ab / abc
+abc+ = abc / abcc / abccc / ...
+abc* = ab / abc / abcc / ...
+abc{2,3} = abcc / abccc
+~~~
+
 ## Conceptos básicos (III)
 
 - Clases de caracteres:
@@ -49,7 +57,15 @@ keywords: [python, intro, s04, regex, scraping]
     - ``[a-z0-9]`` = "'a' a la 'z' o '0' a '9'"
     - ``[^a-z]`` = "carácter que no es de la 'a' a la 'z'"
 
-## Conceptos básicos (IV)
+##
+~~~
+[0-2][3-5]
+[a-f]?[jkl]
+[gq][^u]
+[ab]+[cd]?
+~~~
+
+## Conceptos básicos (V)
 
 - Clases de caracteres:
     - ``\s`` = ``[ \t\n\r\f]`` = espacio
@@ -85,7 +101,7 @@ Comentar ?: para no capturar
 
 ## Problemas (I)
 
-- Difíciles de entender para humanos (write-only)
+- Difíciles de entender para humanos (*write-only*)
     - [https://regex101.com/](https://regex101.com/){target="_blank"}
 - No valen para todo
     - Sólo lenguajes regulares
