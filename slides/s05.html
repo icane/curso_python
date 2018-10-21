@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Miguel Expósito Martín (exposito_m@cantabria.es)">
+  <meta name="keywords" content="python, intro, s05">
+  <title>Python para Análisis de datos: Introducción</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="../css/estilo.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python para Análisis de datos: Introducción</h1>
+  <p class="subtitle">Sesión 5</p>
+  <p class="author">Miguel Expósito Martín (exposito_m@cantabria.es)</p>
+  <p class="date">24 Octubre 2018</p>
+</section>
+
+<section id="python-data-analysis-library" class="title-slide slide level1"><h1>Python Data Analysis Library</h1></section>
+<section><section id="numpy" class="title-slide slide level1"><h1>numpy</h1></section><h4 id="pandas">pandas</h4><section id="hoja-de-ruta" class="slide level2">
+<h2>hoja de ruta</h2>
+<ul>
+<li>numpy</li>
+<li>pandas</li>
+</ul>
+</section><section id="numpy-1" class="slide level2">
+<h2>numpy</h2>
+<p>es la biblioteca principal para computación científica en Python.</p>
+<ul>
+<li>su principal estructura de datos es el array multidimensional</li>
+<li>recuerda a Matlab</li>
+<li>existe desde el año 2000</li>
+<li>es rápido, eficiente y tiene baja huella en memoria</li>
+</ul>
+</section><section id="numpy-2" class="slide level2">
+<h2>numpy</h2>
+<ul>
+<li>almacena datos en bloques contiguos de memoria</li>
+<li>contiene funciones matemáticas sobre arrays sin necesidad de bucles</li>
+<li>implementa funcionalidades de álgebra lineal</li>
+<li>ofrece una API en C para conectar <code>numpy</code> con C o Fortran</li>
+</ul>
+</section><section id="prueba-de-rendimiento" class="slide level2">
+<h2>prueba de rendimiento</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">my_array <span class="op">=</span> np.arange(<span class="dv">1000000</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">my_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1000000</span>))</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_array_2 <span class="op">=</span> my_arr <span class="op">*</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_list_2 <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> my_list]</a></code></pre></div>
+</section><section id="tipos-de-datos-precisos" class="slide level2 slide:" style="font-size: 30px;">
+<h2>tipos de datos precisos</h2>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tipo</th>
+<th style="text-align: left;">descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">int_</td>
+<td style="text-align: left;">Default integer type (same as C long; normally either int64 or int32)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">intc</td>
+<td style="text-align: left;">Identical to C int (normally int32 or int64)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">intp</td>
+<td style="text-align: left;">Integer used for indexing (same as C ssize_t; normally either int32 or int64)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">int8</td>
+<td style="text-align: left;">Byte (-128 to 127)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">int16</td>
+<td style="text-align: left;">Integer (-32768 to 32767)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">int32</td>
+<td style="text-align: left;">Integer (-2147483648 to 2147483647)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">int64</td>
+<td style="text-align: left;">Integer (-9223372036854775808 to 9223372036854775807)</td>
+</tr>
+</tbody>
+</table>
+</section><section id="tipos-de-datos-precisos-1" class="slide level2 slide:" style="font-size: 30px;">
+<h2>tipos de datos precisos</h2>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">tipo</th>
+<th style="text-align: left;">descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">float_</td>
+<td style="text-align: left;">Shorthand for float64.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">float16</td>
+<td style="text-align: left;">Half precision float: sign bit, 5 bits exponent, 10 bits mantissa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">float32</td>
+<td style="text-align: left;">Single precision float: sign bit, 8 bits exponent, 23 bits mantissa</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">float64</td>
+<td style="text-align: left;">Double precision float: sign bit, 11 bits exponent, 52 bits mantissa</td>
+</tr>
+</tbody>
+</table>
+</section><section id="valores-especiales" class="slide level2">
+<h2>valores especiales</h2>
+<p><code>nan</code>, <code>inf</code></p>
+<p><strong>¡ojo! no usar comparadores de igualdad</strong></p>
+<p>usar <code>np.isnan()</code> o <code>np.isinf()</code></p>
+</section><section id="ndarrays" class="slide level2">
+<h2>ndarrays</h2>
+<ul>
+<li>contenedor flexible y rápido de datasets numéricos</li>
+<li>permite realizar operaciones matemáticas sobre bloques</li>
+<li><code>rank</code>: número de dimensiones</li>
+<li><code>shape</code>: tupla de enteros con el tamaño de cada dimensión</li>
+<li>datos numéricos y homogéneos (<strong>mismo tipo</strong>)</li>
+</ul>
+</section><section id="ndarrays-1" class="slide level2">
+<h2>ndarrays</h2>
+<p><img data-src="images/content_arrays-axes.png" alt="arrays" /><br />
+</p>
+</section><section id="ndarrays-2" class="slide level2">
+<h2>ndarrays</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">data <span class="op">=</span> np.random.randn(<span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">data</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">data <span class="op">*</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">data <span class="op">+</span> data</a></code></pre></div>
+</section><section id="crear-ndarrays" class="slide level2">
+<h2>crear ndarrays</h2>
+<ul>
+<li>forma más fácil: función <code>array()</code></li>
+<li>acepta cualquier objeto de tipo secuencia</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1">data1 <span class="op">=</span> [<span class="dv">6</span>, <span class="fl">7.5</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">arr1 <span class="op">=</span> np.array(data1)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">arr1</a></code></pre></div>
+</section><section id="crear-ndarrays-1" class="slide level2">
+<h2>crear ndarrays</h2>
+<p>una lista de listas de la misma longitud se convierte a array multidimensional:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">data2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]]</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">arr2 <span class="op">=</span> np.array(data2)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">arr2</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">arr2.ndim <span class="co"># dimension</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">arr2.shape <span class="co"># forma</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">arr2.dtype <span class="co"># tipo de datos</span></a></code></pre></div>
+</section><section id="crear-ndarrays-2" class="slide level2">
+<h2>crear ndarrays</h2>
+<ul>
+<li>otras funciones: <code>zeros</code>, <code>ones</code>, <code>empty</code>, <code>full</code>, <code>arange</code></li>
+<li>para varias dimensiones, pasar una tupla como argumento</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">np.zeros(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">np.zeros((<span class="dv">3</span>, <span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">np.ones(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">np.empty((<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">np.full((<span class="dv">2</span>,<span class="dv">2</span>), np.inf)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">np.arange(<span class="dv">15</span>)</a></code></pre></div>
+</section><section id="crear-ndarrays-3" class="slide level2">
+<h2>crear ndarrays</h2>
+<p>valores aleatorios: <code>np.random.randn()</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">arr</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">matrix <span class="op">=</span> np.random.randn(<span class="dv">4</span>,<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">matrix</a></code></pre></div>
+</section><section id="tipos-en-ndarrays" class="slide level2">
+<h2>tipos en ndarrays</h2>
+<p><code>dtype</code> es un objeto especial que contiene metadatos <strong>importante</strong>: <code>astype</code> para convertir tipos</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.float64)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">arr2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.int32)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">arr1.dtype</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">arr2.dtype</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">float_arr <span class="op">=</span> arr2.astype(np.float64)</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">float_arr.dtype</a></code></pre></div>
+<p>¿qué pasa al convertir de <code>float</code> a <code>int</code>?</p>
+<aside class="notes">
+<p>astype siempre crea un array nuevo float64 y float32 tienen errores en punto flotante</p>
+</aside>
+</section><section id="operaciones-vectoriales" class="slide level2">
+<h2>operaciones vectoriales</h2>
+<ul>
+<li>sin bucles for</li>
+<li>entre arrays de la misma longitud, elemento a elemento</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">arr <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">3.</span>], [<span class="fl">4.</span>, <span class="fl">5.</span>, <span class="fl">6.</span>]])</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">arr <span class="op">*</span> arr</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
+</section><section id="operaciones-matriciales" class="slide level2">
+<h2>operaciones matriciales</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">A <span class="op">=</span> np.array( [[<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>]] )</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">B <span class="op">=</span> np.array( [[<span class="dv">2</span>,<span class="dv">0</span>], [<span class="dv">3</span>,<span class="dv">4</span>]] )</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">A <span class="op">@</span> B </a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">A.dot(B)</a></code></pre></div>
+</section><section id="más-álgebra-lineal" class="slide level2">
+<h2>más álgebra lineal</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="im">from</span> numpy.linalg <span class="im">import</span> inv, qr</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">X <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">mat <span class="op">=</span> X.T.dot(X)</a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">inv(mat)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">mat.dot(inv(mat))</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8">q, r <span class="op">=</span> qr(mat)</a></code></pre></div>
+<p><a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.linalg.html">linear algebra</a><br />
+</p>
+</section><section id="indexado-y-rebanado-básicos" class="slide level2">
+<h2>indexado y rebanado básicos</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">arr[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">arr[<span class="dv">5</span>:<span class="dv">8</span>]</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">arr[<span class="dv">5</span>:<span class="dv">8</span>] <span class="op">=</span> <span class="dv">12</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
+<p>las rebanadas son vistas del array original; si se modifica una vista, se refleja en el original</p>
+<p><strong>¡¡no se copian!!</strong></p>
+</section><section id="indexado-y-rebanado-básicos-1" class="slide level2">
+<h2>indexado y rebanado básicos</h2>
+<p>con dos dimensiones</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1">arr2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">arr2d[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">arr2d[<span class="dv">0</span>][<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">arr2d[:<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">arr2d[:<span class="dv">2</span>, <span class="dv">1</span>:]</a></code></pre></div>
+</section><section id="funciones-universales" class="slide level2">
+<h2>funciones universales</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">np.sqrt(arr) <span class="co"># raíz cuadrada</span></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">np.exp(arr) <span class="co"># e elevado a</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">x <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">y <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb13-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">np.maximum(x, y) <span class="co"># máximo elemento a elemento</span></a></code></pre></div>
+<p><a href="https://docs.scipy.org/doc/numpy-1.15.1/reference/ufuncs.html#available-ufuncs">ufuncs</a><br />
+</p>
+</section><section id="funciones-estadísticas" class="slide level2">
+<h2>funciones estadísticas</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">arr.mean()</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">arr.mean(axis<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">arr.<span class="bu">sum</span>()</a></code></pre></div>
+</section><section id="lógica-condicional" class="slide level2">
+<h2>lógica condicional</h2>
+<p>ej: obtener <code>x</code> si <code>cond</code> es <code>True</code>; si no, obtener <code>y</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">x <span class="op">=</span> np.array([<span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">1.3</span>, <span class="fl">1.4</span>, <span class="fl">1.5</span>])</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">y <span class="op">=</span> np.array([<span class="fl">2.1</span>, <span class="fl">2.2</span>, <span class="fl">2.3</span>, <span class="fl">2.4</span>, <span class="fl">2.5</span>])</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">cond <span class="op">=</span> np.array([<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">result <span class="op">=</span> np.where(cond, xarr, yarr)</a>
+<a class="sourceLine" id="cb15-6" data-line-number="6">result</a></code></pre></div>
+</section><section id="lógica-condicional-1" class="slide level2">
+<h2>lógica condicional</h2>
+<p>ejemplo:</p>
+<blockquote>
+<p>Generar una matriz de 4x4 con valores aleatorios. Reemplazar todos los valores positivos con 2 y los valores negativos con -2.</p>
+</blockquote>
+<aside class="notes">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">np.where(arr <span class="op">&gt;</span> <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-2</span>)</a></code></pre></div>
+</aside>
+</section><section id="arrays-booleanos" class="slide level2">
+<h2>arrays booleanos</h2>
+<p><code>any()</code>, <code>all()</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">bools <span class="op">=</span> np.array([<span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">bools.<span class="bu">any</span>()</a>
+<a class="sourceLine" id="cb17-3" data-line-number="3">bools.<span class="bu">all</span>()</a></code></pre></div>
+<p>¿cómo contar True en un array booleano?</p>
+<p>~~<del>python arr = np.random.randn(100) (arr &gt; 0).sum()</del>~~<!-- imágenes --></p>
+<!-- enlaces -->
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/js/head.min.js"></script>
+  <script src="../js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+          { src: '../plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
