@@ -287,3 +287,4 @@ bools.all()
 arr = np.random.randn(100)
 (arr > 0).sum()
 ~~~~
+
