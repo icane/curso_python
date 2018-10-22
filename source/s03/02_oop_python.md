@@ -36,9 +36,9 @@ Una clase más completa:
 class Persona:
     """Una clase para almacenar datos de personas"""
     
-    self.nombre = None
-    self.apellidos = None
-    self.email = None
+    nombre = None
+    apellidos = None
+    email = None
     
     
     def saludar(self):
