@@ -383,7 +383,230 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>¿cómo contar True en un array booleano?</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">100</span>)</a>
 <a class="sourceLine" id="cb18-2" data-line-number="2">(arr <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>()</a></code></pre></div>
-<!-- imágenes -->
+</section></section>
+<section><section id="introducción-a-pandas" class="title-slide slide level1"><h1>introducción a pandas</h1></section><h4 id="introducción-a-pandas-1">introducción a pandas</h4><section id="qué-es" class="slide level2">
+<h2>qué es</h2>
+<p>paquete Python con estructuras de datos flexibles, expresivas y eficientes para trabajar con datos relacionados o etiquetados</p>
+<ul>
+<li>datos tabulares con columnas heterogéneas (XLS, SQL)</li>
+<li>datos ordenados o no ordenados de series temporales</li>
+<li>datos matriciales arbitrarios con etiquetas de fila y columna</li>
+<li>cualquier otra forma de conjuntos de datos estadísticos observacionales</li>
+</ul>
+</section><section id="características" class="slide level2">
+<h2>características</h2>
+<ul>
+<li>gestión de datos nulos</li>
+<li>tamaño mutable (borrado e inserción de columnas)</li>
+<li>funcionalidades de agregación (<code>group by</code>)</li>
+<li>rebanado inteligente basado en etiquetas</li>
+<li>fusión intuitiva de conjuntos de datos</li>
+<li>robustas herramientas de entrada/salida</li>
+<li>funcionalidad para series temporales</li>
+<li>open source desde 2010</li>
+</ul>
+</section></section>
+<section><section id="series" class="title-slide slide level1"><h1>series</h1></section><h4 id="series-1">series</h4><section id="qué-son" class="slide level2">
+<h2>qué son</h2>
+<p>objetos de una dimensión similares a un array que contienen una secuencia de valores y un array asociado de etiquetas (índice)</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">obj <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">obj</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">obj.values</a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">obj.index</a></code></pre></div>
+<p>si no se especifica índice, se crea uno con enteros de 0 a N-1</p>
+</section><section id="índices" class="slide level2">
+<h2>índices</h2>
+<p>a veces es deseable crear una serie con un índice etiquetado</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">obj2 <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Febrero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>])</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">obj2</a></code></pre></div>
+</section><section id="índices-1" class="slide level2">
+<h2>índices</h2>
+<p>en contraposición a los arrays, pueden usarse las etiquetas para la selección de valores</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">obj2[<span class="st">&#39;Marzo&#39;</span>]</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3">obj2[<span class="st">&#39;Abril&#39;</span>] <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">obj2[[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>]]</a></code></pre></div>
+</section><section id="filtrado-simple" class="slide level2">
+<h2>filtrado simple</h2>
+<p>la relación valor-índice se preserva</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">obj2[obj2 <span class="op">&gt;</span> <span class="dv">0</span>]</a></code></pre></div>
+</section><section id="desde-diccionario" class="slide level2">
+<h2>desde diccionario</h2>
+<p>la relación diccionario - series es directa</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1">my_dict <span class="op">=</span> {<span class="st">&#39;visitantes&#39;</span>: <span class="dv">2000</span>, <span class="st">&#39;visitas&#39;</span>: <span class="dv">50000</span>, <span class="st">&#39;hits&#39;</span>: <span class="dv">200000</span>}</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">obj3 <span class="op">=</span> pd.Series(my_dict)</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">obj3</a></code></pre></div>
+</section><section id="desde-diccionario-1" class="slide level2">
+<h2>desde diccionario</h2>
+<p>se puede cambiar el orden de las claves</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1">metrics <span class="op">=</span> [<span class="st">&#39;visitas&#39;</span>,  <span class="st">&#39;hits&#39;</span>, <span class="st">&#39;visitantes&#39;</span>, <span class="st">&#39;tpv&#39;</span>]</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">obj4 <span class="op">=</span> pd.Series(my_dict, index<span class="op">=</span>metrics)</a></code></pre></div>
+</section><section id="operaciones-desde-numpy" class="slide level2">
+<h2>operaciones desde numpy</h2>
+<p>se pueden aplicar operaciones sin modificar la estructura</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1">np.square(obj3)</a></code></pre></div>
+</section><section id="alineación-automática" class="slide level2">
+<h2>alineación automática</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">obj3 <span class="op">+</span> obj4</a></code></pre></div>
+</section></section>
+<section><section id="dataframes" class="title-slide slide level1"><h1>dataframes</h1></section><h4 id="dataframes-1">dataframes</h4><section id="qué-son-1" class="slide level2">
+<h2>qué son</h2>
+<blockquote>
+<p>objetos que representan una tabla rectangular conteniendo una colección ordenada de columnas, cada una de las cuales puede ser de un tipo de datos distinto</p>
+</blockquote>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1">data <span class="op">=</span> {<span class="st">&#39;ca&#39;</span>: [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Canarias&#39;</span>, <span class="st">&#39;Canarias&#39;</span>],</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="st">&#39;year&#39;</span>: [<span class="dv">2000</span>, <span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2001</span>, <span class="dv">2002</span>],</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="st">&#39;pop&#39;</span>: [<span class="fl">1.5</span>, <span class="fl">1.7</span>, <span class="fl">3.6</span>, <span class="fl">2.4</span>, <span class="fl">2.9</span>]}</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">frame <span class="op">=</span> pd.DataFrame(data) <span class="co"># inicialización con list of dicts</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">frame.head() <span class="co"># visualizar las 5 primeras filas</span></a></code></pre></div>
+</section><section id="ejemplo" class="slide level2 slide:" style="font-size: 30px;">
+<h2>ejemplo</h2>
+<pre class="csv"><code>    Trimestre         Sexo  ...                           Variables  value
+0         2005  Ambos sexos  ...                           Población    NaN
+1         2005  Ambos sexos  ...                             Activos    NaN
+2         2005  Ambos sexos  ...                            Ocupados    NaN
+3         2005  Ambos sexos  ...                             Parados    NaN
+4         2005  Ambos sexos  ...    Parados que buscan primer empleo    NaN
+5         2005  Ambos sexos  ...                           Inactivos    NaN
+6090  2018 - 2      Mujeres  ...                           Población  253.7
+6091  2018 - 2      Mujeres  ...                             Activos  126.7
+6092  2018 - 2      Mujeres  ...                            Ocupados  109.5
+6093  2018 - 2      Mujeres  ...                             Parados   17.2
+6094  2018 - 2      Mujeres  ...    Parados que buscan primer empleo    2.2
+6095  2018 - 2      Mujeres  ...                           Inactivos  127.1</code></pre>
+</section><section id="manejo-básico" class="slide level2">
+<h2>manejo básico</h2>
+<ul>
+<li>se puede especificar el orden de las columnas</li>
+<li>si una columna no existe, se creará con valores nulos</li>
+<li>una columna se puede recuperar como un objeto de tipo series</li>
+<li>también pueden recuperarse filas</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1">pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;state&#39;</span>, <span class="st">&#39;pop&#39;</span>])</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">frame2 <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;ca&#39;</span>, <span class="st">&#39;pop&#39;</span>, <span class="st">&#39;debt&#39;</span>],</a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">                      index<span class="op">=</span>[<span class="st">&#39;uno&#39;</span>, <span class="st">&#39;dos&#39;</span>, <span class="st">&#39;tres&#39;</span>, <span class="st">&#39;cuatro&#39;</span>, <span class="st">&#39;cinco&#39;</span>])</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">frame2</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">frame2[<span class="st">&#39;ca&#39;</span>] <span class="co"># columna</span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">frame2.loc[<span class="st">&#39;tres&#39;</span>] <span class="co"># fila</span></a></code></pre></div>
+</section><section id="manejo-básico-1" class="slide level2">
+<h2>manejo básico</h2>
+<ul>
+<li>se puede obtener una lista de columnas</li>
+<li>el atributo <code>dtypes</code> indica el tipo de dato de cada columna</li>
+<li>las dimensiones del dataframe se obtienen con <code>.shape</code></li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">frame2.columns</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">frame2.dtypes</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3">frame2.shape</a></code></pre></div>
+</section><section id="manejo-básico-2" class="slide level2">
+<h2>manejo básico</h2>
+<p>la serie devuelta al recuperar una columna es una vista</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1">vals <span class="op">=</span> frame[<span class="st">&#39;pop&#39;</span>]</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">vals[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">vals</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">data</a></code></pre></div>
+<p>usar <code>copy()</code> para eliminar el warning</p>
+</section><section id="manejo-básico-3" class="slide level2">
+<h2>manejo básico</h2>
+<p>un dataframe se puede transponer</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">frame2.T</a></code></pre></div>
+</section><section id="inspección" class="slide level2">
+<h2>inspección</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">frame2.describe() <span class="co"># información estadística</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">frame2.info() <span class="co"># información sobre la estructura de datos</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">frame2.tail()</a></code></pre></div>
+</section><section id="selección-de-columnas" class="slide level2">
+<h2>selección de columnas</h2>
+<p>un dataframe puede verse como un conjunto de series que comparten un índice (las cabeceras de las columnas)</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">frame2[[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;pop&#39;</span>]] <span class="co"># selección columnas</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">frame2[frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>] <span class="co"># filtrado con condición</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">frame2[(frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>) <span class="op">&amp;</span> (frame2[<span class="st">&#39;year&#39;</span>] <span class="op">!=</span> <span class="dv">2002</span>)] <span class="co"># filtrado con condición compuesta</span></a></code></pre></div>
+</section><section id="indexado" class="slide level2">
+<h2>indexado</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">frame4 <span class="op">=</span> frame2.set_index(<span class="st">&#39;year&#39;</span>)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">frame4</a></code></pre></div>
+</section><section id="selección-de-filas" class="slide level2">
+<h2>selección de filas</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">frame2.iloc[<span class="dv">3</span>] <span class="co"># posición</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">frame2.iloc[[<span class="dv">3</span>,<span class="dv">4</span>]] <span class="co"># posición</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">frame4.loc[<span class="dv">2001</span>] <span class="co"># etiqueta</span></a></code></pre></div>
+</section><section id="reseteo-de-índice" class="slide level2">
+<h2>reseteo de índice</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">frame4.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+</section><section id="resumen-de-selección" class="slide level2">
+<h2>resumen de selección</h2>
+<ul>
+<li><code>loc</code> para indexado basado en etiquetas</li>
+<li><code>iloc</code> para indexado posicional</li>
+</ul>
+<p>aunque hay <a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html">otras formas…</a></p>
+<p>para modificar el propio dataframe, usar el atributo <code>inplace=True</code></p>
+</section><section id="joins" class="slide level2">
+<h2>joins</h2>
+<p>inner join</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1">left_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">5</span>), </a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">                           <span class="st">&#39;left_value&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>]})</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">right_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">7</span>), </a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">                           <span class="st">&#39;right_value&#39;</span>: [<span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>]})</a>
+<a class="sourceLine" id="cb38-5" data-line-number="5">left_frame</a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">right_frame</a>
+<a class="sourceLine" id="cb38-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</a></code></pre></div>
+</section></section>
+<section><section id="pandas-desde-excel" class="title-slide slide level1"><h1>pandas desde excel</h1></section><h4 id="pandas-desde-excel-1">pandas desde excel</h4><section id="cargar-fichero-de-ejemplo" class="slide level2">
+<h2>cargar fichero de ejemplo</h2>
+<p><a href="https://gist.githubusercontent.com/predicador37/24e8e4ee465956aa923bc0add5309118/raw/0f076cc91b06dd8190d10ede1810fc3c22029eda/gistfile1.txt">https://gist.githubusercontent.com/predicador37/24e8e4ee465956aa923bc0add5309118/raw/0f076cc91b06dd8190d10ede1810fc3c22029eda/gistfile1.txt</a></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/24e8e4ee465956aa923bc0add5309118/raw/0f076cc91b06dd8190d10ede1810fc3c22029eda/gistfile1.txt&#39;</span></a>
+<a class="sourceLine" id="cb39-4" data-line-number="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
+<a class="sourceLine" id="cb39-5" data-line-number="5">df.head()</a></code></pre></div>
+</section><section id="ejemplo-1" class="slide level2 slide:" style="font-size: 30px;">
+<h2>ejemplo</h2>
+<pre class="csv"><code>    Trimestre         Sexo  ...                           Variables  value
+0         2005  Ambos sexos  ...                           Población    NaN
+1         2005  Ambos sexos  ...                             Activos    NaN
+2         2005  Ambos sexos  ...                            Ocupados    NaN
+3         2005  Ambos sexos  ...                             Parados    NaN
+4         2005  Ambos sexos  ...    Parados que buscan primer empleo    NaN
+5         2005  Ambos sexos  ...                           Inactivos    NaN
+6090  2018 - 2      Mujeres  ...                           Población  253.7
+6091  2018 - 2      Mujeres  ...                             Activos  126.7
+6092  2018 - 2      Mujeres  ...                            Ocupados  109.5
+6093  2018 - 2      Mujeres  ...                             Parados   17.2
+6094  2018 - 2      Mujeres  ...    Parados que buscan primer empleo    2.2
+6095  2018 - 2      Mujeres  ...                           Inactivos  127.1</code></pre>
+</section><section id="índices-2" class="slide level2">
+<h2>índices</h2>
+<p>en contraposición a los arrays, pueden usarse las etiquetas para la selección de valores</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">obj2[<span class="st">&#39;Marzo&#39;</span>]</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">obj2[<span class="st">&#39;Abril&#39;</span>] <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">obj2[[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>]]</a></code></pre></div>
+</section><section id="filtrado-simple-1" class="slide level2">
+<h2>filtrado simple</h2>
+<p>la relación valor-índice se preserva</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">obj2[obj2 <span class="op">&gt;</span> <span class="dv">0</span>]</a></code></pre></div>
+</section><section id="desde-diccionario-2" class="slide level2">
+<h2>desde diccionario</h2>
+<p>la relación diccionario - series es directa</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">my_dict <span class="op">=</span> {<span class="st">&#39;visitantes&#39;</span>: <span class="dv">2000</span>, <span class="st">&#39;visitas&#39;</span>: <span class="dv">50000</span>, <span class="st">&#39;hits&#39;</span>: <span class="dv">200000</span>}</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2">obj3 <span class="op">=</span> pd.Series(my_dict)</a>
+<a class="sourceLine" id="cb43-3" data-line-number="3">obj3</a></code></pre></div>
+</section><section id="desde-diccionario-3" class="slide level2">
+<h2>desde diccionario</h2>
+<p>se puede cambiar el orden de las claves</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">metrics <span class="op">=</span> [<span class="st">&#39;visitas&#39;</span>,  <span class="st">&#39;hits&#39;</span>, <span class="st">&#39;visitantes&#39;</span>, <span class="st">&#39;tpv&#39;</span>]</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">obj4 <span class="op">=</span> pd.Series(my_dict, index<span class="op">=</span>metrics)</a></code></pre></div>
+</section><section id="operaciones-desde-numpy-1" class="slide level2">
+<h2>operaciones desde numpy</h2>
+<p>se pueden aplicar operaciones sin modificar la estructura</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">np.square(obj3)</a></code></pre></div>
+</section><section id="alineación-automática-1" class="slide level2">
+<h2>alineación automática</h2>
+<p>~~<del>python obj3 + obj4</del>~~<!-- imágenes --></p>
 <!-- enlaces -->
 </section></section>
     </div>
