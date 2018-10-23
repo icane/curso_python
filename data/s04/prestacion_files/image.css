@@ -1,0 +1,10 @@
+
+/* Image style */
+#scrollUp {
+	bottom: 20px;
+	right: 20px;
+	height: 38px;  /* Height of image */
+	width: 38px; /* Width of image */
+	background-image: url('../../img/top.png'); 
+	background-repeat:no-repeat;
+}
