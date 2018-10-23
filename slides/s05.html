@@ -736,19 +736,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb63-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb63-4" data-line-number="4">final_table <span class="op">=</span> final_table.rename(index<span class="op">=</span>{<span class="dv">0</span>:<span class="st">&quot;Total&quot;</span>})</a>
 <a class="sourceLine" id="cb63-5" data-line-number="5">final_table</a></code></pre></div>
-</section><section id="otro-fichero-de-ejemplo" class="slide level2">
-<h2>otro fichero de ejemplo</h2>
+</section><section id="otro-ejemplo" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>lectura del fichero</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
 <a class="sourceLine" id="cb64-2" data-line-number="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
 <a class="sourceLine" id="cb64-3" data-line-number="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/29a4c89cc652d3b201ec718377cbfd11/raw/d6a5adcc0534138fc8e2275cc7780b054136c3e3/excel-data-2.csv&#39;</span></a>
 <a class="sourceLine" id="cb64-4" data-line-number="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
 <a class="sourceLine" id="cb64-5" data-line-number="5">df.head()</a>
 <a class="sourceLine" id="cb64-6" data-line-number="6">df.dtypes</a></code></pre></div>
-</section><section id="conversión-de-objeto-a-fecha" class="slide level2">
-<h2>conversión de objeto a fecha</h2>
+</section><section id="otro-ejemplo-1" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>conversión de objeto a fecha</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" data-line-number="1">df[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;date&#39;</span>])</a>
 <a class="sourceLine" id="cb65-2" data-line-number="2">df.head()</a>
 <a class="sourceLine" id="cb65-3" data-line-number="3">df.dtypes</a></code></pre></div>
+</section><section id="otro-ejemplo-2" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>filtrar por número de cuenta 307599</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1">df[df[<span class="st">&#39;account number&#39;</span>] <span class="op">==</span> <span class="dv">307599</span>].head()</a></code></pre></div>
+</section><section id="otro-ejemplo-3" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>filtrar por cantidad mayor a 22</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1">df[df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>].head()</a></code></pre></div>
+</section><section id="otro-ejemplo-4" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>filtrar por referencia (sku) que empiece por B1</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>))].head()</a></code></pre></div>
+</section><section id="otro-ejemplo-5" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>combinar los dos filtros anteriores</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" data-line-number="1">df[(df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>)))].head()</a></code></pre></div>
+</section><section id="otro-ejemplo-6" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>encontrar todos los registros que incluyen dos números de cuenta específicos</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" data-line-number="1">df[df[<span class="st">&#39;account number&#39;</span>].isin([<span class="dv">714466</span>, <span class="dv">218895</span>])].head()</a></code></pre></div>
+</section><section id="otro-ejemplo-7" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>recuperar lista de clientes por nombre</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" data-line-number="1">df.query(<span class="st">&#39;name == [&quot;Kulas Inc&quot;,&quot;Barton LLC&quot;]&#39;</span>).head()</a></code></pre></div>
+</section><section id="otro-ejemplo-8" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>trabajar con fechas</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" data-line-number="1">df <span class="op">=</span> df.sort(<span class="st">&#39;date&#39;</span>)</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2">df.head()</a>
+<a class="sourceLine" id="cb72-3" data-line-number="3">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;20140905&#39;</span>].head() <span class="co"># por fecha exacta</span></a>
+<a class="sourceLine" id="cb72-4" data-line-number="4">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;2014-03&#39;</span>].head() <span class="co"># por mes</span></a>
+<a class="sourceLine" id="cb72-5" data-line-number="5">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;Oct-2014&#39;</span>].head() <span class="co"># por mes en otro formato</span></a>
+<a class="sourceLine" id="cb72-6" data-line-number="6">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;10-10-2014&#39;</span>].head() <span class="co"># por fecha en otro formato</span></a></code></pre></div>
+</section><section id="otro-ejemplo-9" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>series temporales: utilizar la fecha como índice con <code>set_index()</code></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb73-1" data-line-number="1">df2 <span class="op">=</span> df.set_index([<span class="st">&#39;date&#39;</span>])</a>
+<a class="sourceLine" id="cb73-2" data-line-number="2">df2.head()</a>
+<a class="sourceLine" id="cb73-3" data-line-number="3">df2[<span class="st">&quot;20140101&quot;</span>:<span class="st">&quot;20140201&quot;</span>].head() <span class="co"># filtrado por rango de fechas</span></a>
+<a class="sourceLine" id="cb73-4" data-line-number="4">df2[<span class="st">&quot;2014&quot;</span>].head() <span class="co"># filtrado por año</span></a></code></pre></div>
+</section><section id="otro-ejemplo-10" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>identificar referencias que contienen un determinado valor</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" data-line-number="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1&#39;</span>)].head()</a>
+<a class="sourceLine" id="cb74-2" data-line-number="2">df[(df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1-531&#39;</span>)) <span class="op">&amp;</span> (df[<span class="st">&#39;quantity&#39;</span>]<span class="op">&gt;</span><span class="dv">40</span>)].sort_values(by<span class="op">=</span>[<span class="st">&#39;quantity&#39;</span>,<span class="st">&#39;name&#39;</span>],ascending<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</a></code></pre></div>
+</section><section id="otro-ejemplo-11" class="slide level2">
+<h2>otro ejemplo</h2>
+<p>obtener una lista de valores únicos</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" data-line-number="1">df[<span class="st">&#39;name&#39;</span>].unique()</a></code></pre></div>
+</section></section>
+<section><section id="pyjstat" class="title-slide slide level1"><h1>pyjstat</h1></section><h4 id="pyjstat-1">pyjstat</h4><section id="qué-es-1" class="slide level2">
+<h2>qué es</h2>
+<p>paquete Python para convertir JSON-stat a pandas dataframe</p>
+<p><a href="https://json-stat.org/">https://json-stat.org/</a></p>
+<p>se puede visualizar en:</p>
+<ul>
+<li><a href="http://jsonviewer.stack.hu/">http://jsonviewer.stack.hu/</a></li>
+<li><a href="https://json-stat.org/format/browser/">https://json-stat.org/format/browser/</a></li>
+<li><a href="https://json-stat.org/format/viewer/">https://json-stat.org/format/viewer/</a></li>
+<li><a href="http://json-stat.com/explorer/">http://json-stat.com/explorer/</a></li>
+</ul>
+</section><section id="ejemplo-lectura-de-archivo" class="slide level2">
+<h2>ejemplo: lectura de archivo</h2>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="im">from</span> pyjstat <span class="im">import</span> pyjstat</a>
+<a class="sourceLine" id="cb76-2" data-line-number="2">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/active-population-aged-16-more-gender-age-group-activity-base-2011.json-stat&#39;</span></a>
+<a class="sourceLine" id="cb76-3" data-line-number="3">dataset <span class="op">=</span> pyjstat.Dataset.read(DATA_URL) <span class="co"># lee dataset de json-stat</span></a>
+<a class="sourceLine" id="cb76-4" data-line-number="4">df <span class="op">=</span> dataset.write(<span class="st">&#39;dataframe&#39;</span>) <span class="co"># genera un dataframe</span></a>
+<a class="sourceLine" id="cb76-5" data-line-number="5"><span class="bu">print</span>(df)</a></code></pre></div>
+</section><section id="ejemplo-consulta" class="slide level2">
+<h2>ejemplo: consulta</h2>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1">query <span class="op">=</span> [{<span class="st">&#39;sexo&#39;</span>: <span class="st">&#39;hombres&#39;</span>}, {<span class="st">&#39;trimestre&#39;</span>: <span class="st">&#39;2016-1&#39;</span>}, {<span class="st">&#39;grupo-de-edad&#39;</span>: <span class="st">&#39;total&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;parados&#39;</span>}]</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2">dataset.get_value(query)</a></code></pre></div>
 <!-- imágenes -->
 <!-- enlaces -->
 </section></section>
