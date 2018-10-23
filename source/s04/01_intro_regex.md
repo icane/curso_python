@@ -1,5 +1,5 @@
 ---
-title: Python 101
+title: "Python para Análisis de datos: Introducción"
 subtitle: Sesión 4
 author: Alejandro Villar (avillar@ticnor.es)
 date: 23 Octubre 2018
