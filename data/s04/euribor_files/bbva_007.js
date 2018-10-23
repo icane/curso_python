@@ -1,0 +1,1 @@
+define("dataLayerProductInfo",["dataLayerUtils"],function(r){"use strict";return{setProductInfo:function(t,o){return"object"==typeof t&&t.hasOwnProperty("product")&&!t.product.primaryCategory?r.getProductInfo.call(t,o):r.showErrorMessage("bbvaDataLayerProductInfo"),t}}});

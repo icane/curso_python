@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Cross Storage Hub</title>
+</head>
+<body>
+  <!-- debe apuntar a las librerias del site privado -->
+  <script type="text/javascript" src="hubCross_data/hub.js"></script>
+  <script>
+
+    //urls y metodos del site privado que se permiten
+    CrossStorageHub.init([
+      {origin: /.qa.web.grupobbva.com$/, allow: ['get', 'set', 'del', 'getKeys', 'clear']},
+      {origin: /.bbva.es$/, allow: ['get', 'set', 'del', 'getKeys', 'clear']}
+    ]);
+  </script>
+
+</body></html>
