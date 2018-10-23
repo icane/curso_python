@@ -1,0 +1,79 @@
+[data-carousel-name] {
+	display: table;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+[data-carousel-control="wrapper"] {
+	display: table-cell;
+	overflow: hidden;
+	display: block\9;/* hack ie8 */
+	margin-left: auto;/* hack ie8 */
+	margin-right: auto;/* hack ie8 */
+	position: relative;
+	padding-left: 5px;
+}
+[data-carousel-control="wrapper"] ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	white-space: nowrap;
+	max-width: none;
+}
+[data-carousel-control="wrapper"] ul li {
+	display: inline-block;
+	min-width: none;      /*items are smashed, increase with min width*/
+	max-width: none;      /*items are to wide, limit with max width*/
+	min-height: none;     /*items are to long, limit with min height*/
+	padding-top: 5px;
+	padding-right: 5px;   /*items need some room, increase padding right*/
+	padding-bottom: 5px;
+	padding-left: 5px;    /*items need some room, increase padding left*/
+	vertical-align: top;
+	text-align: center;
+}
+[data-carousel-control="wrapper"] ul li .caption {
+	white-space: normal;
+}
+[data-carousel-control="wrapper"] ul li div {
+	overflow: auto;
+	text-align: left;
+	white-space: normal;
+}
+[data-carousel-control="left"], [data-carousel-control="right"] {
+	display: table-cell;
+	font-size: 2em;
+	vertical-align: middle;
+	color: transparent;
+	cursor: pointer;
+	position: relative;
+}
+[data-carousel-control="left"]{
+  border-right: solid 12px #8bd1f3;
+  background-color: #8bd1f3;
+  z-index: 2;
+}
+[data-carousel-control="right"] {
+  border-left: solid 12px #8bd1f3;
+  background-color: #8bd1f3;
+  z-index: 2;
+}
+[data-carousel-control="left"] span, [data-carousel-control="right"] span{
+	background-image: url("../mult/flechas-carousel.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 45px;
+	height: 90px;
+
+}
+[data-carousel-control="right"] span{
+	background-position: 0 -94px;
+
+}
+.no-touch [data-carousel-control="left"]:hover span, .no-touch [data-carousel-control="right"]:hover span, [data-carousel-control="left"]:active span, [data-carousel-control="right"]:active span {
+	/*background-color: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 1);*/
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}

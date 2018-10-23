@@ -1,0 +1,1 @@
+require(["/estaticos/js/apiFront.min"],function(o){$(function(){o.arregosGtmetrix(),o.fondosDataImg(),$(".boxTool").igualarAltura(!0),$(".grid-row").each(function(){$(".boxBotons",$(this)).igualarAltura(!0)}),$(".contenido.videos , .contenido.glosario:not(.articulo)").igualarAltura(!0)})});

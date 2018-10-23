@@ -42,6 +42,14 @@ y comentarios
 - Explicar que algunos elementos tienen contenido y otros no.
 :::
 
+## Tablas
+- ``table`` (tabla)
+    - ``thead`` (grupo de cabecera, opcional)
+    - ``tbody`` (grupo de cuerpo, opcional)
+    - ``tr`` (fila)
+    - ``th`` (celda de cabecera)
+    - ``td`` (celda de contenido)
+
 ## Atributos importantes
 - ``id`` (único en el documento)
 - ``class``

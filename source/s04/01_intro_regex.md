@@ -1,5 +1,5 @@
 ---
-title: Python 101
+title: "Python para Análisis de datos: Introducción"
 subtitle: Sesión 4
 author: Alejandro Villar (avillar@ticnor.es)
 date: 23 Octubre 2018
@@ -29,7 +29,7 @@ keywords: [python, intro, s04, regex, scraping]
     - Ejemplo: ``s(o|ó)lo``
 - Comodín (el punto):
     - Ejemplo: ``s.lo``
-- Caractere especiales: ¡escapar con ``\``!
+- Caracteres especiales: ¡escapar con ``\``!
 
 ## Conceptos básicos (II)
 
@@ -75,6 +75,7 @@ abc{2,3} = abcc / abccc
 - Otros caracteres especiales:
     - ``^`` = "principio de línea"
     - ``$`` = "final de línea"
+    - ``\b`` = "límite de palabra"
 
 ## Ejemplos
 

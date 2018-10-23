@@ -1,0 +1,471 @@
+/**
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ * (en) Styles for Accessible-Tabs plugin for jQuery
+ * (de) Gestaltung des Acessible-Tabs Plugins für jQuery
+ *
+ * @copyright       © 2005-2013, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         4.1.2
+ */
+@media screen, projection {
+.tabbody { padding: 1.5em 0; }
+	
+	
+  .jquery_tabs {
+    margin: 0 0 1.5em 0;
+	
+  }
+  .jquery_tabs ul.tabs-list {
+    font-size: 1em;
+    display: table;
+    table-layout: fixed;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .jquery_tabs ul.tabs-list li {
+    margin: 0 4px 0 0;
+    border: 0 none;
+    display: inline;
+    float: left;
+    padding: 0;
+  }
+  .jquery_tabs ul.tabs-list li a {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0.75em;
+    background:#eee;
+    display: block;
+    float: left;
+    font-weight: normal;
+    margin: 0;
+  }
+  .jquery_tabs ul.tabs-list li a:focus, .jquery_tabs ul.tabs-list li a:hover, .jquery_tabs ul.tabs-list li a:active {
+    background: #eee;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #000;
+    font-weight: normal;
+    outline: #0000FF dotted 1px;
+    text-decoration: underline;
+  }
+  .jquery_tabs ul.tabs-list li.current a,
+  .jquery_tabs ul.tabs-list li.current a:focus,
+  .jquery_tabs ul.tabs-list li.current a:hover,
+  .jquery_tabs ul.tabs-list li.current a:active {
+    background: #b20a1a;
+    border: 1px #ccc solid;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #fff;
+    border-bottom: 0 none;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .jquery_tabs .content {
+    border-top: 1px #ccc solid;
+    clear: both;
+    padding: 0;
+    position: relative;
+    top: -1px;
+    margin-bottom: -1px;
+  }
+
+  /* hiding texts visually */
+  .jquery_tabs .tabhead {
+    position: absolute;
+    left: -32768px;
+  }
+
+  .jquery_tabs .current-info,
+  .jquery_tabs .accessibletabsanchor {
+    left: -999em;
+    position: absolute;
+  }
+
+   /** Avoid margin collapsing to enable correct sync of all tabs
+    *
+    * @workaround
+    * @affected all browsers
+    * @css-for all browsers
+    * @valid yes
+	*/
+  .jquery_tabs .tab-content {
+    border-bottom: 1px transparent solid;
+    border-top: 1px transparent solid;
+    padding-top: 1.5em;
+    /*overflow: hidden;/*ACCESIBILIDAD*/
+	overflow: hidden;
+  }
+
+  /** Containing floats adjustment and stability fixes for Internet Explorer
+   *
+   * @workaround
+   * @affected IE 5.x/Win, IE6, IE7
+   * @css-for IE 5.x/Win, IE6, IE7
+   * @valid no
+   */
+  * html .jquery_tabs {
+    zoom: 1;
+    width: auto;
+    position: relative;
+  }
+  * html .jquery_tabs .tab-content {
+    border-bottom: 1px #fff solid;
+    border-top: 1px #fff solid;
+  }
+  * html .jquery_tabs .content {
+    z-index: -1;
+  }
+
+  * + html .jquery_tabs {
+    zoom: 1;
+    width: auto;
+  }
+
+  .jquery_tabs * {
+    zoom: 1;
+  }
+  
+  
+  .jquery_tabs ul.tabs-list li a:focus,
+  .jquery_tabs ul.tabs-list li a:hover,
+  .jquery_tabs ul.tabs-list li a:active {	background-color:#666666 ; color: #ffffff;
+  /*TRANSISTIONS*/
+	-webkit-transition: background 0.5s ease;
+	   -moz-transition: background 0.5s ease;
+	     -o-transition: background 0.5s ease;
+	    -ms-transition: background 0.5s ease;
+	        transition: background 0.5s ease; }
+			
+			
+			
+/* -- TABS del menú de distributiva -- */			
+.main .menu_distributiva	
+	
+.main .menu_distributiva  .jquery_tabs {
+    margin: 0 0 1.5em 0;
+  }
+.main .menu_distributiva  .jquery_tabs ul.tabs-list {
+    font-size: 1em;
+    display: table;
+    table-layout: fixed;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li {
+    margin: 0 4px 0 0;
+    border: 0 none;
+    display: inline;
+    float: left;
+    padding: 0;
+  }
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li a {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0.75em;
+    background:#074D89;
+    display: block;
+    float: left;
+    font-weight: normal;
+    margin: 0;
+  }
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li a:focus,.main .menu_distributiva .jquery_tabs ul.tabs-list li a:hover,.main .menu_distributiva .jquery_tabs ul.tabs-list li a:active {
+    background: #eee;
+    border-radius: 0;
+    color: #000;
+    font-weight: normal;
+    outline: #ffffFF dotted 1px;
+    text-decoration: underline;
+  }
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li.current a,
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li.current a:focus,
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li.current a:hover,
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li.current a:active {
+    background: #b20a1a;
+    border: 1px #CE7E01 solid;
+    border-radius: 0;
+    color: #fff;
+    border-bottom: 0 none;
+    font-weight: bold;
+    text-decoration: none;
+  }
+.main .menu_distributiva  .jquery_tabs .content {
+    /*border-top: 1px #ccc solid;*/
+    clear: both;
+    padding: 0;
+    position: relative;
+    top: -1px;
+    margin-bottom: -1px;
+  }
+
+  /* hiding texts visually */
+.main .menu_distributiva  .jquery_tabs .tabhead {
+    position: absolute;
+    left: -32768px;
+  }
+
+.main .menu_distributiva  .jquery_tabs .current-info,
+.main .menu_distributiva  .jquery_tabs .accessibletabsanchor {
+    left: -999em;
+    position: absolute;
+  }
+
+   /** Avoid margin collapsing to enable correct sync of all tabs
+    *
+    * @workaround
+    * @affected all browsers
+    * @css-for all browsers
+    * @valid yes
+	*/
+.main .menu_distributiva  .jquery_tabs .tab-content {
+    border-bottom: 1px transparent solid;
+    border-top: 1px transparent solid;
+    padding-top: 1.5em;
+     /*overflow: hidden;/*ACCESIBILIDAD*/
+	overflow: hidden;
+  }
+
+  /** Containing floats adjustment and stability fixes for Internet Explorer
+   *
+   * @workaround
+   * @affected IE 5.x/Win, IE6, IE7
+   * @css-for IE 5.x/Win, IE6, IE7
+   * @valid no
+   */
+  * html .main .menu_distributiva .jquery_tabs {
+    zoom: 1;
+    width: auto;
+    position: relative;
+  }
+  * html .main .menu_distributiva  .jquery_tabs .tab-content {
+    border-bottom: 1px #fff solid;
+    border-top: 1px #fff solid;
+  }
+  * html .main .menu_distributiva  .jquery_tabs .content {
+    z-index: -1;
+  }
+
+  * + html .main .menu_distributiva  .jquery_tabs {
+    zoom: 1;
+    width: auto;
+  }
+
+.main .menu_distributiva  .jquery_tabs * {
+    zoom: 1;
+  }
+  
+  
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li a:focus,
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li a:hover,
+.main .menu_distributiva  .jquery_tabs ul.tabs-list li a:active {	background-color:#666666 ; color: #ffffff;
+  /*TRANSISTIONS*/
+	-webkit-transition: background 0.5s ease;
+	   -moz-transition: background 0.5s ease;
+	     -o-transition: background 0.5s ease;
+	    -ms-transition: background 0.5s ease;
+	        transition: background 0.5s ease; }		
+			
+			
+/* -- FIN TABS del menú de distributiva -- */		
+
+
+
+/* -- TABS del menú de cuerpo de contenido -- */	
+  .jquery_tabs_menu_contenido  .tabbody { padding: 1.5em 0; padding-left:1em ; padding-right:1.5em }
+	
+	
+  .jquery_tabs_menu_contenido {
+    margin: 0 -1em 0 -1em ; width:100%
+  }
+  .jquery_tabs_menu_contenido { margin-bottom:-2em}
+  .jquery_tabs_menu_contenido ul.tabs-list {
+    font-size:95%;
+    display: table;
+    table-layout: fixed;
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+    z-index: 1; padding-left:0; padding-right:0;
+}
+.jquery_tabs_menu_contenido ul.tabs-list { min-width:680px; }
+  .jquery_tabs_menu_contenido ul.tabs-list li {
+    margin: 0 1px 0 0;
+    border: 0 none;
+    display: inline;
+    float: left;
+    padding: 0;
+  }
+  .jquery_tabs_menu_contenido ul.tabs-list li a {
+    font-size: 0.9em;
+    line-height: 1.5;
+    padding: 0.75em 0.75em;
+    font-weight:bold ;
+    background:#eee;
+    display: block;
+    float: left;
+    font-weight: normal;
+    margin: 0;
+  }
+  .jquery_tabs_menu_contenido ul.tabs-list li a:focus, .jquery_tabs_menu_contenido ul.tabs-list li a:hover, .jquery_tabs_menu_contenido ul.tabs-list li a:active {
+    background: #eee;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #000 ;
+    font-weight: normal;
+    outline: #ffffFF dotted 1px;
+    text-decoration: underline;
+  }
+ .jquery_tabs_menu_contenido ul.tabs-list li.current a,
+ .jquery_tabs_menu_contenido ul.tabs-list li.current a:focus,
+ .jquery_tabs_menu_contenido ul.tabs-list li.current a:hover,
+ .jquery_tabs_menu_contenido ul.tabs-list li.current a:active {
+    background: #b20a1a;
+    border-bottom: 1px #ccc solid;
+    border-radius: 0.2em 0.2em 0 0;
+    color: #fff !important;
+    border-bottom: 0 none;
+    font-weight: normal;
+    text-decoration: none;
+  margin-bottom:1px;
+   padding: 0.75em 1em;
+  }
+  .jquery_tabs_menu_contenido .content {
+    border-top: 1px #ccc solid;
+    clear: both;
+    padding: 0;
+    position: relative;
+    top: -1px;
+    margin-bottom: -1px;
+  }
+
+  /* hiding texts visually */
+  .jquery_tabs_menu_contenido .tabhead {
+    position: absolute;
+    left: -32768px;
+  }
+
+  .jquery_tabs_menu_contenido .current-info,
+  .jquery_tabs_menu_contenido .accessibletabsanchor {
+    left: -999em;
+    position: absolute;
+  }
+
+   /** Avoid margin collapsing to enable correct sync of all tabs
+    *
+    * @workaround
+    * @affected all browsers
+    * @css-for all browsers
+    * @valid yes
+	*/
+  .jquery_tabs_menu_contenido .tab-content {
+    border-bottom: 1px transparent solid;
+    border-top: 1px transparent solid;
+    padding-top: 1.5em;
+    /*overflow: hidden;/*ACCESIBILIDAD*/
+	overflow: hidden;
+  }
+
+  /** Containing floats adjustment and stability fixes for Internet Explorer
+   *
+   * @workaround
+   * @affected IE 5.x/Win, IE6, IE7
+   * @css-for IE 5.x/Win, IE6, IE7
+   * @valid no
+   */
+  * html .jquery_tabs_menu_contenido {
+    zoom: 1;
+    width: auto;
+    position: relative;
+  }
+  * html .jquery_tabs_menu_contenido .tab-content {
+    border-bottom: 1px #fff solid;
+    border-top: 1px #fff solid;
+  }
+  * html .jquery_tabs_menu_contenido .content {
+    z-index: -1;
+  }
+
+  * + html .jquery_tabs_menu_contenido {
+    zoom: 1;
+    width: auto;
+  }
+
+  .jquery_tabs_menu_contenido * {
+    zoom: 1;
+  }
+  
+  
+  .jquery_tabs_menu_contenido ul.tabs-list li a:focus,
+  .jquery_tabs_menu_contenido ul.tabs-list li a:hover,
+  .jquery_tabs_menu_contenido ul.tabs-list li a:active {	background-color:#555555 ; color: #ffffff;
+  /*TRANSISTIONS*/
+	-webkit-transition: background 0.5s ease;
+	   -moz-transition: background 0.5s ease;
+	     -o-transition: background 0.5s ease;
+	    -ms-transition: background 0.5s ease;
+	        transition: background 0.5s ease; }
+
+
+
+		
+/* -- FIN TABS del menú de cuerpo de contenido -- */		
+.tabbody ul.pagination { width:100%;/*border:1px solid blue;*/ padding:.75em; background-color: #eee; background:#eee url(../../../../img/shadow_big.jpg) center bottom no-repeat;padding-bottom:2em; overflow: hidden;display:none}
+.tabbody ul.pagination li { display: inline-block; width:44%; line-height:2em;/* border:1px solid red;*/}
+.tabbody ul.pagination li.previous { /*border:1px solid red;*/ background: url(../../../../img/menu_sec_ico_izquierda_gris.jpg) left top no-repeat; padding-left:2.25em; float:left}
+.tabbody ul.pagination li.next { /*border:1px solid red;*/ text-align:right; background: url(../../../../img/menu_sec_ico_derecha_gris.jpg) right top no-repeat; padding-right:2.25em; float:right}
+
+	
+}
+
+@media screen and ( max-width: 930px ) {
+	.jquery_tabs_menu_contenido .tabbody { padding: 1.5em 0; padding-left:1em ; padding-right:1.5em }
+	.jquery_tabs_menu_contenido { margin: 0 -1.5em 0 -1em; }
+	
+	.jquery_tabs_menu_contenido .tabs-list { padding-left:0; padding-right:0;min-width:620px !important; }
+	.jquery_tabs_menu_contenido .tabs-list li  a { padding: 0.75em .6em !important; }
+	.jquery_tabs_menu_contenido .tabs-list li  {/*display:block ;
+	width:100% !important;*/ background-color:transparent; font-size:90% !important;}
+	
+	 }
+
+	 @media screen and ( max-width: 760px ) {
+	.jquery_tabs_menu_contenido .tabbody { padding: 1.5em 0; padding-left:.75em ; padding-right:0em }
+	.jquery_tabs_menu_contenido { margin: 0 0 0 0;  }
+	
+	.jquery_tabs_menu_contenido .tabs-list { padding:0 !important;width:100% !important; min-width:100% !important}
+	.jquery_tabs_menu_contenido .tabs-list li  {display:block ;
+	width:100% !important; background-color:#074D89; font-size:110% !important; }
+	.jquery_tabs_menu_contenido .tabs-list, 
+	.jquery_tabs_menu_contenido .tabs-list li a {
+	width:100%;  border:none !important; border-bottom:1px solid white !important;font-weight:bold !important;
+		border-radius:0 !important;}
+		.jquery_tabs_menu_contenido .tabs-list li a  {padding-left:1em !important}
+
+
+.tabbody ul.pagination { width:100%;/*border:1px solid blue;*/ padding:.75em; background-color: #eee; background:#eee url(../../../../img/shadow_big.jpg) center bottom no-repeat;padding-bottom:2em}
+.tabbody ul.pagination li { display: block; width:100%; line-height:2em}
+.tabbody ul.pagination li.previous { /*border:1px solid red;*/ background: url(../../../../img/menu_sec_ico_izquierda_gris.jpg) left top no-repeat; padding-left:2.25em}
+.tabbody ul.pagination li.next { /*border:1px solid red;*/ text-align:right; background: url(../../../../img/menu_sec_ico_derecha_gris.jpg) right top no-repeat; padding-right:2.25em; border-top:1px solid white}
+
+	 }
+@media screen and (max-width: 480px) {
+	.jquery_tabs_menu_contenido .tabbody { padding: 1.5em 0; padding-left:.5em ; padding-right:.5em }
+}
+/* Make tabs printable */
+@media print {
+  .jquery_tabs .tabs-list {
+    display: none !important;
+  }
+  .jquery_tabs .tabbody,
+  .jquery_tabs .tabhead {
+    display: block !important;
+  }
+}
+
+
+
+

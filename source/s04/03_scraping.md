@@ -10,7 +10,7 @@ Extracción de datos desde páginas web.
 - Extracción de datos no estructurados (p.e., sin APIs de datos)
 o con formatos incorrectos (páginas con errores de sintaxis)
 - Indexación (motores de búsqueda)
-- Minería de dato
+- Minería de datos
 - Monitorización (precios, cambios, etc.)
 
 ## Ejemplo
