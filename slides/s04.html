@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Ejemplo: <code>s.lo</code></li>
 </ul></li>
-<li>Caractere especiales: ¡escapar con <code>\</code>!</li>
+<li>Caracteres especiales: ¡escapar con <code>\</code>!</li>
 </ul>
 </section><section id="conceptos-básicos-ii" class="slide level2">
 <h2>Conceptos básicos (II)</h2>
@@ -181,6 +181,7 @@ abc{2,3} = abcc / abccc</code></pre>
 <ul>
 <li><code>^</code> = “principio de línea”</li>
 <li><code>$</code> = “final de línea”</li>
+<li><code>\b</code> = “límite de palabra”</li>
 </ul></li>
 </ul>
 </section><section id="ejemplos" class="slide level2">
@@ -228,25 +229,31 @@ abc{2,3} = abcc / abccc</code></pre>
 </section></section>
 <section><section id="expresiones-regulares-en-python" class="title-slide slide level1"><h1>Expresiones regulares en Python</h1></section><h4 id="expresiones-regulares-en-python-1">Expresiones regulares en Python</h4><section id="section-2" class="slide level2">
 <h2></h2>
-<p>Python soporta nativamente expresiones regulares mediante el módulo <code>re</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">&#39;a[bc]&#39;</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> r.match(<span class="st">&#39;ab&#39;</span>)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="op">&lt;</span>_sre.SRE_Match <span class="bu">object</span><span class="op">;</span> span<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">2</span>), match<span class="op">=</span><span class="st">&#39;ab&#39;</span><span class="op">&gt;</span></a></code></pre></div>
+<p>Python soporta nativamente expresiones regulares mediante el módulo <code>re</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> re</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> r <span class="op">=</span> re.<span class="bu">compile</span>(<span class="st">&#39;a[bc]&#39;</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> r.match(<span class="st">&#39;ab&#39;</span>)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="op">&lt;</span>_sre.SRE_Match <span class="bu">object</span><span class="op">;</span> span<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">2</span>), match<span class="op">=</span><span class="st">&#39;ab&#39;</span><span class="op">&gt;</span></a></code></pre></div>
 </section><section id="módulo-re-i" class="slide level2">
 <h2>Módulo <code>re</code> (I)</h2>
 <ul>
-<li><code>re.compile(patron, flags=0)</code></li>
-<li><code>re.search(patron, string, flags=0)</code></li>
-<li><code>re.match(patron, string, flags=0)</code></li>
-<li><code>re.split(patron, string, max=0, flags=0)</code></li>
-<li><code>re.findall(patron, string, flags=0)</code></li>
-<li><code>re.sub(patron, reempl, string, flags=0)</code></li>
+<li><code>re.compile(patron, flags=0)</code> -&gt; Compila expresiones</li>
+<li><code>re.search(patron, string, flags=0)</code> -&gt; Busca <code>patron</code> en cualquier sitio del <code>string</code></li>
+<li><code>re.match(patron, string, flags=0)</code> -&gt; Busca <code>patron</code> <strong>al principio</strong> del <code>string</code></li>
+<li><code>re.fullmatch(patron, string, flags=0)</code> -&gt; Comprueba que <code>string</code> concuerda completamente con <code>patron</code></li>
 </ul>
 <aside class="notes">
 <p>Procedimiento compilación -&gt; matching. Caching interno de expresiones.</p>
 </aside>
 </section><section id="módulo-re-ii" class="slide level2">
 <h2>Módulo <code>re</code> (II)</h2>
+<ul>
+<li><code>re.split(patron, string, max=0, flags=0)</code> -&gt; Divide <code>string</code> cuando se encuentra <code>patron</code></li>
+<li><code>re.findall(patron, string, flags=0)</code> -&gt; Devuelve una lista con todas las coincidencias de <code>patron</code> en <code>string</code></li>
+<li><code>re.sub(patron, reempl, string, flags=0)</code> -&gt; Reemplaza las apariciones de <code>patron</code> en <code>string</code></li>
+</ul>
+</section><section id="módulo-re-iii" class="slide level2">
+<h2>Módulo <code>re</code> (III)</h2>
 <ul>
 <li>Flags
 <ul>
@@ -260,6 +267,16 @@ abc{2,3} = abcc / abccc</code></pre>
 <aside class="notes">
 <p>Comentar prefijo r’string’.</p>
 </aside>
+</section><section id="módulo-re-iv" class="slide level2">
+<h2>Módulo <code>re</code> (IV)</h2>
+<ul>
+<li><code>re.search</code>, <code>re.match</code> y <code>re.fullmatch</code> devuelven <code>None</code> o un objeto <code>Match</code>
+<ul>
+<li><code>Match.group(num)</code> -&gt; grupo capturado (0 = todo el <em>match</em>, resto numerados)</li>
+<li><code>Match.groups()</code> -&gt; todos los grupos</li>
+<li><code>Match.start()</code> y <code>Match.end()</code> -&gt; Inicio y final de coincidencia (pueden aceptar el núm. del grupo).</li>
+</ul></li>
+</ul>
 </section><section id="ejemplos-1" class="slide level2">
 <h2>Ejemplos</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">re.sub(<span class="vs">r&#39;\. {2,}&#39;</span>, <span class="st">&#39;. &#39;</span> texto)</a>
@@ -276,6 +293,26 @@ abc{2,3} = abcc / abccc</code></pre>
 <li>…</li>
 </ul>
 <p><a href="https://www.regular-expressions.info/" target="_blank">https://www.regular-expressions.info/</a></p>
+</section><section id="ejercicios" class="slide level2">
+<h2>Ejercicios</h2>
+<ol type="1">
+<li><p>Escribir una función que compruebe que una cadena de caracteres sólo tiene caracteres de la <code>a</code> a la <code>f</code>, con un mínimo de 8.</p></li>
+<li><p>Escribir una función que compruebe que todas las iniciales de una frase son mayúscula.</p></li>
+<li><p>Escribir una función que compruebe que una cadena empieza por <code>a</code>, termina por <code>b</code>, y por el medio tiene al menos una <code>o</code>.</p></li>
+</ol>
+</section><section id="ejercicios-1" class="slide level2">
+<h2>Ejercicios</h2>
+<ol start="4" type="1">
+<li><p>Escribir una función que reemplace los espacios múltiples en una cadena de caracteres por un espacio sencillo.</p></li>
+<li><p>Escribir una función que divida una cadena en varias, haciendo corte cuando aparezcan <code>@</code>, <code>|</code> o <code>;</code> al menos 2 veces seguidas.</p></li>
+<li><p>Escribir una función que encuentre minúsculas seguidas de punto y uno o varios espacios.</p></li>
+</ol>
+</section><section id="ejercicios-2" class="slide level2">
+<h2>Ejercicios</h2>
+<ol start="7" type="1">
+<li><p>Escribir una función que encuentre todas las palabras que empiezan por <code>a</code> y terminan por <code>o</code> en un texto, sin importar mayúsculas/minúsculas.</p></li>
+<li><p>Escribir una función que reemplace números con el formato <code>1,234,567.89</code> por <code>1.234.567,89</code> en un texto.</p></li>
+</ol>
 </section></section>
 <section><section id="web-scraping" class="title-slide slide level1"><h1>Web scraping</h1></section><h4 id="web-scraping-1">Web scraping</h4><section id="qué-es" class="slide level2">
 <h2>Qué es</h2>
