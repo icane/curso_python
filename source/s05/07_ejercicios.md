@@ -1,36 +1,30 @@
-# pyjstat
-#### pyjstat
+# ejercicios
+#### ejercicios
 
-## qué es
+## ejercicio: filtrado y ordenación
 
-paquete Python para convertir JSON-stat a pandas dataframe
-
-[https://json-stat.org/](https://json-stat.org/)
-
-se puede visualizar en:
-
-- [http://jsonviewer.stack.hu/](http://jsonviewer.stack.hu/)
-- [https://json-stat.org/format/browser/](https://json-stat.org/format/browser/)
-- [https://json-stat.org/format/viewer/](https://json-stat.org/format/viewer/)
-- [http://json-stat.com/explorer/](http://json-stat.com/explorer/)
-
-
-## ejemplo: lectura de archivo
+importar datos desde:
 
 ~~~~python
-from pyjstat import pyjstat
-DATA_URL = 'http://www.icane.es/data/api/active-population-aged-16-more-gender-age-group-activity-base-2011.json-stat'
-dataset = pyjstat.Dataset.read(DATA_URL) # lee dataset de json-stat
-df = dataset.write('dataframe') # genera un dataframe
-print(df)
-
+DATA_URL = 'https://raw.githubusercontent.com/jokecamp/FootballData/master/UEFA_European_Championship/Euro%202012/Euro%202012%20stats%20TEAM.csv'
 ~~~~
 
-## ejemplo: consulta
+## ejercicio: filtrado y ordenación
 
-~~~~python
-query = [{'sexo': 'hombres'}, {'trimestre': '2016-1'}, {'grupo-de-edad': 'total'}, {'variables': 'parados'}]
-dataset.get_value(query)
-~~~~
+- seleccionar solo la columna `Goals`
+- ¿cuántos equipos participaron en la eurocopa 2012?
+- mostrar el número de columnas del dataset
+- mostrar solo las columnas: `Team`, `Yellow Cards` y `Red Cards` y asignarlas a un dataframe llamado `discipline`
+- ordenar equipos descendentemente por tarjetas rojas y después amarillas
+- calcular la media de tarjetas amarillas por equipo
+
+## ejercicio: filtrado y ordenación
+- mostrar equipos que han marcado más de 6 goles
+- mostrar equipos cuyo nombre empieza por 'G'
+- seleccionar las primeras 7 columnas
+- seleccionar todas las columnas excepto las 3 últimas
+- presentar solo la precisión de tiro para Inglaterra, Italia y Rusia
+
+
 
 

@@ -55,9 +55,9 @@ frame2.loc['tres'] # fila
 acepta:
 
 - URLs
-- separador (,)
-- delimitador (`None`)
-- cabecera (se infiere)
+- `sep`: separador (,)
+- `delimiter`: delimitador (`None`)
+- `header`: cabecera (se infiere)
 
 ## manejo básico
 
@@ -92,6 +92,34 @@ un dataframe se puede transponer
 frame2.T
 ~~~~
 
+## manejo básico
+
+cálculo de frecuencias
+
+~~~~python
+frame2.ca.value_counts()
+~~~~
+
+## manejo básico
+
+cálculo de valores únicos
+
+~~~~python
+frame2.ca.nunique()
+~~~~
+
+## manejo básico
+
+funciones básicas
+
+~~~~python
+frame2['pop'].mean()
+frame2['pop'].sum()
+frame2['pop'].max()
+frame2['pop'].min()
+frame2['pop'].median()
+~~~~
+
 ## inspección
 
 ~~~~python
@@ -99,6 +127,8 @@ frame2.describe() # información estadística
 frame2.info() # información sobre la estructura de datos
 frame2.tail()
 ~~~~
+
+## funciones básicas
 
 ## selección de columnas
 
@@ -108,7 +138,9 @@ un dataframe puede verse como un conjunto de series que comparten un índice (la
 frame2[['year', 'pop']] # selección columnas
 frame2[frame2['pop'] > 2] # filtrado con condición
 frame2[(frame2['pop'] > 2) & (frame2['year'] != 2002)] # filtrado con condición compuesta
-~~~~
+frame2.iloc[:, 0:2] # todas las filas, columnas 0 a 2 no incluida
+frame2.iloc[:, :-1] # todas las filas, todas las columnas excepto la última
+~~~~ 
 
 ## indexado
 
@@ -140,6 +172,35 @@ aunque hay [otras formas...]
 
 
 para modificar el propio dataframe, usar el atributo `inplace=True`
+
+## ejercicio inspección
+
+importar datos desde:
+
+~~~~python
+DATA_URL = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user'
+usuarios = pd.read_csv(DATA_URL, sep='|')
+~~~~
+
+asignar a una variable llamada `users` y utilizar `user_id` como 'indice
+
+## ejercicio inspección
+
+- ver las 25 primeras filas
+- ver las 10 últimas filas
+- obtener el número de observaciones en el dataset
+- obtener el número de columnas en el dataset
+- mostrar los nombres de las columnas
+- mostrar el índice del dataset
+
+## ejercicio inspección
+
+- mostrar los tipos de datos de cada columna
+- mostrar sólo la columna de ocupación
+- mostrar cuántas ocupaciones diferentes hay en el dataset
+- mostrar la ocupación más frecuente
+- resumir el dataframe
+- calcular la edad media de los usuarios
 
 ## joins: merge
 
@@ -199,6 +260,14 @@ animal_groups = animals.groupby("animal")
 animal_groups['weight'].mean()
 ~~~~
 
+## agg
+
+permite agregar por varias funciones según un eje
+
+~~~~python
+animal_groups['weight'].agg(['mean', 'median'])
+~~~~
+
 ## ejemplo
 
 análisis de dataset de netflix
@@ -250,6 +319,24 @@ df_med_by_year = df_by_year.median()
 df_med_by_year.head()
 df_med_by_year['user rating score']
 ~~~~
+
+## ejercicio: agrupaciones
+
+importar datos desde:
+
+~~~~python
+DATA_URL = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user'
+~~~~
+
+¡inspeccionar separadores!
+
+## ejercicio: agrupaciones
+
+- inspeccionar dataset
+- mostrar edad media por ocupación
+- para cada ocupación, calcular las edades mímina y máxima
+- para cada combinación de ocupación y sexo, calcular la edad media
+
 
 ## aplicar funciones a filas, columnas y elementos
 
@@ -344,4 +431,5 @@ def times100(x):
         return
 df.applymap(times100)
 ~~~~
+
 

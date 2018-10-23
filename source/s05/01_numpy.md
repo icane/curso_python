@@ -132,6 +132,11 @@ matrix = np.random.randn(4,4)
 matrix
 ~~~
 
+## ejercicios
+
+- crear un array 1D de números del 0 al 9
+- crear un array booleano de 3x3 con todos los valores a True
+
 ## tipos en ndarrays
 
 `dtype` es un objeto especial que contiene metadatos
@@ -242,7 +247,16 @@ arr = np.random.randn(5, 4)
 arr.mean()
 arr.mean(axis=1)
 arr.sum()
+~~~~
 
+## lógica condicional
+
+filtrar por condición
+
+~~~~python
+arr = np.arange(9)
+arr[arr > 2] # elementos mayores que dos
+arr[arr % 2 == 0] # elementos pares
 ~~~~
 
 ## lógica condicional
@@ -287,4 +301,9 @@ bools.all()
 arr = np.random.randn(100)
 (arr > 0).sum()
 ~~~~
+
+## ejercicio
+
+- extraer todos los números pares de un array
+- reemplazar números impares en array por -1
 
