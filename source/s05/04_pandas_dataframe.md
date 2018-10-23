@@ -141,7 +141,7 @@ aunque hay [otras formas...]
 
 para modificar el propio dataframe, usar el atributo `inplace=True`
 
-## joins
+## joins: merge
 
 inner join
 
@@ -156,7 +156,7 @@ right_frame
 pd.merge(left_frame, right_frame, on='key', how='inner')
 ~~~~
 
-## joins
+## joins: merge
 
 left, right, full outer join
 
@@ -166,11 +166,19 @@ pd.merge(left_frame, right_frame, on='key', how='right')
 pd.merge(left_frame, right_frame, on='key', how='outer')
 ~~~~
 
-## combinación
+## combinación: concat
 
 ~~~~python
 pd.concat([left_frame, right_frame]) # vertical
 pd.concat([left_frame, right_frame], axis=1) # horizontal
+~~~~
+
+## añadir filas al final: append
+
+los dos dataframes deben tener las mismas columnas
+
+~~~~python
+left_frame.append(left_frame)
 ~~~~
 
 ## groupby
@@ -202,7 +210,7 @@ df = pd.read_csv(NETFLIX_URL)
 
 ## ejemplo: limpieza
 
-- dropna(): elmina filas con valores nulos
+- dropna(): elimina filas con valores nulos
 - drop_duplicates(): elimina filas duplicadas
 
 ~~~~python
@@ -242,3 +250,98 @@ df_med_by_year = df_by_year.median()
 df_med_by_year.head()
 df_med_by_year['user rating score']
 ~~~~
+
+## aplicar funciones a filas, columnas y elementos
+
+- `.apply()`: función a arrays 1D a cada fila o columna
+- `.applymap()`: elemento a elemento en dataframe
+- `.map()`: elemento a elemento en series
+
+## funciones anónimas
+
+::: incremental
+
+son funciones definidas sin nombre
+
+`lambda arguments: expression`
+
+~~~~python
+def square_root(x):
+    return math.sqrt(x)
+
+square_root = lambda x: math.sqrt(x)
+~~~~
+
+se usan mucho para aplicar funciones a dataframes
+
+:::
+
+## ejemplo: aplicar operaciones en dataframes
+~~~~python
+import pandas as pd
+import numpy as np
+
+data = {'name': ['Pedro', 'Paco', 'Lorena', 'Juan', 'Patxi'], 
+        'year': [2012, 2012, 2013, 2014, 2014], 
+        'reports': [4, 24, 31, 2, 3],
+        'coverage': [25, 94, 57, 62, 70]}
+df = pd.DataFrame(data, index = ['Santander', 'Torrelavega', 'Laredo', 'Camargo', 'Astillero'])
+df
+~~~~
+
+## ejemplo
+
+crear función que pase a mayúsculas usando lambda
+
+~~~~python
+capitalizer = lambda x: x.upper()
+~~~~
+
+## ejemplo
+
+aplicar la función a la columna `name`
+
+~~~~python
+df['name'].apply(capitalizer)
+~~~~
+
+## ejemplo
+
+equivalente al anterior
+
+~~~~python
+df['name'].apply(lambda x: x.upper())
+~~~~
+
+## ejemplo
+
+mapear la función sobre cada elemento de la series `name`
+
+~~~~python
+df['name'].map(capitalizer)
+~~~~
+
+## ejemplo
+
+aplicar una raiz cuadrada a todas las celdas del dataframe
+
+~~~~python
+df = df.drop('name', axis=1) # eliminar la columna de texto
+df.applymap(np.sqrt)
+~~~~
+
+## ejemplo
+
+aplicar una función que multiplica por 100 los números
+
+~~~~python
+def times100(x):
+    if type(x) is str:
+        return x
+    elif x:
+        return 100 * x
+    else:
+        return
+df.applymap(times100)
+~~~~
+
