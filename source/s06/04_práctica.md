@@ -1,4 +1,7 @@
-## Interactivo/Práctico
+# Interactivo/Práctico
+#### Caso práctico
+
+##
 Abrir [cuaderno jupyter][nb_pract]
 
 ##

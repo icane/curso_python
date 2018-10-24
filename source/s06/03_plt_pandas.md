@@ -230,3 +230,4 @@ Es posible pasar argumentos para realizar personalizaciones rápidas.
   + propagando el último valor
   + o con valores preestablecidos
 - O interpolar `df.interpolate()`
+
