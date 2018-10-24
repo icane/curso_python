@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jesús Fernández (fernandez.cuesta@gmail.com)">
+  <meta name="keywords" content="python, intro, s06, visualización">
+  <title>Python para Análisis de datos: Introducción</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../css/theme/solarized.css" id="theme">
+  <link rel="stylesheet" href="../css/estilo.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python para Análisis de datos: Introducción</h1>
+  <p class="subtitle">Sesión 6</p>
+  <p class="author">Jesús Fernández (fernandez.cuesta@gmail.com)</p>
+  <p class="date">25 Octubre 2018</p>
+</section>
+
+<section><section id="visualización-de-datos" class="title-slide slide level1"><h1>Visualización de datos</h1></section><h4 id="visualización-de-datos-1">Visualización de datos</h4><section id="section" class="slide level2">
+<h2></h2>
+<p>Diferentes librerías para visualización de datos</p>
+<div>
+<div class="smaller">
+<ul>
+<li class="fragment"><a href="https://matplotlib.org/">Matplotlib</a>
+<ul>
+<li class="fragment">standard de-facto</li>
+<li class="fragment">hacer fácil tareas sencillas y posible tareas complejas</li>
+<li class="fragment">versátil, madura y extensa</li>
+<li class="fragment">integrado con pandas (&lt;100% )</li>
+<li class="fragment">acepta paquetes de terceros como <strong>extensiones</strong></li>
+</ul></li>
+<li class="fragment">Algunas extensiones de Matplotlib:
+<ul>
+<li class="fragment"><a href="https://seaborn.pydata.org/">Seaborn</a>
+<ul>
+<li class="fragment">funciona sobre <code>matplotlib</code></li>
+<li class="fragment">enfocado a análisis estadístico</li>
+</ul></li>
+<li class="fragment"><a href="https://github.com/SciTools/cartopy">Cartopy</a>, <a href="http://python-visualization.github.io/folium/">folium</a>
+<ul>
+<li class="fragment">visualización de datos en mapas</li>
+</ul></li>
+</ul></li>
+<li class="fragment"><a href="https://bokeh.pydata.org/">Bokeh</a>
+<ul>
+<li class="fragment">enfocado a gráficos interactivos</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section><section id="matplotlib" class="slide level2">
+<h2>Matplotlib</h2>
+<h4 id="pyplot-módulo-con-interfaz-parecida-a-matlab"><code>pyplot</code>: módulo con interfaz parecida a <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># from matplotlib import pyplot as plt</span></a></code></pre></div>
+<p>Importar las librerías necesarias</p>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<p>Partes de una figura</p>
+<p><img data-src="images/s06/anatomy_simple.png" alt="simple_anatomy" /><br />
+</p>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<p>Partes de una figura (II)</p>
+<p><img data-src="images/s06/anatomy.png" alt="fig_anatomy" style="width:50.0%" /><br />
+</p>
+</section><section id="section-3" class="slide level2">
+<h2></h2>
+<p>Los componentes más importantes son:</p>
+<div>
+<ul>
+<li class="fragment">Figura</li>
+<li class="fragment">Ejes (axes)
+<ul>
+<li class="fragment">región de la figura donde se visualizarán gráficos</li>
+</ul></li>
+<li class="fragment">Eje (axis)
+<ul>
+<li class="fragment">eje de coordenadas</li>
+</ul></li>
+<li class="fragment">Artist
+<ul>
+<li class="fragment">cualquier elemento (líneas, leyenda, etc., incluidos ejes)</li>
+</ul></li>
+</ul>
+</div>
+</section><section id="section-4" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<p>Como regla general seguiremos los siguientes pasos:</p>
+<ol type="1">
+<li>Crear figura</li>
+<li>Obtener ejes</li>
+<li>Dibujar sobre los ejes</li>
+</ol>
+<p><strong>Nota</strong>: 1 y 2 se pueden combinar en un mismo comando</p>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">N <span class="op">=</span> <span class="dv">1000</span></a>
+<a class="sourceLine" id="cb2-2" title="2">np.random.seed(<span class="dv">2983</span>)  <span class="co"># reproducibilidad</span></a>
+<a class="sourceLine" id="cb2-3" title="3"></a>
+<a class="sourceLine" id="cb2-4" title="4">fig <span class="op">=</span> plt.figure()  <span class="co"># crea figura</span></a>
+<a class="sourceLine" id="cb2-5" title="5">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># crea ejes</span></a>
+<a class="sourceLine" id="cb2-6" title="6">t <span class="op">=</span> pd.date_range(<span class="st">&#39;1/1/2018&#39;</span>, periods<span class="op">=</span><span class="dv">365</span>)</a>
+<a class="sourceLine" id="cb2-7" title="7">y <span class="op">=</span> np.random.randn(N).cumsum()</a>
+<a class="sourceLine" id="cb2-8" title="8">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a></code></pre></div>
+</section><section id="section-5" class="slide level2">
+<h2></h2>
+<p>De forma simplificada, los ejes y la figura se crean simultáneamente:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># fig = plt.figure()  # crea figura</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># ax = plt.subplot(1, 1, 1)  # crea ejes</span></a>
+<a class="sourceLine" id="cb3-3" title="3">(fix, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_rows, n_cols)</span></a>
+<a class="sourceLine" id="cb3-4" title="4">t <span class="op">=</span> pd.date_range(<span class="st">&#39;1/1/2018&#39;</span>, periods<span class="op">=</span><span class="dv">365</span>)</a>
+<a class="sourceLine" id="cb3-5" title="5">y <span class="op">=</span> np.random.randn(N).cumsum()</a>
+<a class="sourceLine" id="cb3-6" title="6">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a></code></pre></div>
+</section><section id="importante" class="slide level2">
+<h2>Importante</h2>
+<p>En un cuaderno los gráficos aparecerán automáticamente si la primera línea es:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="op">%</span>matplotlib inline</a></code></pre></div>
+<p>De lo contrario necesitaremos ejecutar:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="co"># [...]</span></a>
+<a class="sourceLine" id="cb5-2" title="2">ax.plot(t, y, <span class="st">&#39;g.-&#39;</span>)</a>
+<a class="sourceLine" id="cb5-3" title="3">plt.show()  <span class="co"># muestra el gráfico</span></a></code></pre></div>
+<p>… para mostrar cada gráfico</p>
+</section><section id="section-6" class="slide level2">
+<h2></h2>
+<h3 id="matplotlib-acepta-los-siguientes-tipos-de-datos">matplotlib acepta los siguientes tipos de datos:</h3>
+<ul>
+<li>Listas</li>
+<li>Diccionarios</li>
+<li><code>np.array</code></li>
+<li><code>pandas.DataFrame</code></li>
+</ul>
+<p>El tipo de datos nativo es <code>np.array</code>. El resto pueden -o no- funcionar.</p>
+</section><section id="section-7" class="slide level2">
+<h2></h2>
+<h4 id="plt.subplots"><code>plt.subplots()</code></h4>
+<div class="smaller">
+<p>Para crear una tupla (figura, ejes) usaremos:</p>
+</div>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<ul>
+<li><code>plt.subplots()</code>
+<ul>
+<li>sin argumentos: crea una figura con 1 area de dibujo</li>
+<li>(<code>nrows</code>, <code>ncols</code>): crea una figura con <code>nrows*ncols</code> areas</li>
+<li>devuelve la figura y todos los ejes</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">fig, (eje1, eje2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3">eje1.plot(t, y, <span class="st">&#39;g&#39;</span>)</a>
+<a class="sourceLine" id="cb6-4" title="4">eje2.plot(t, <span class="op">-</span>y[::<span class="op">-</span><span class="dv">1</span>])</a></code></pre></div>
+<p><img data-src="images/s06/subplots12.png" alt="subplots12" /><br />
+</p>
+</div>
+</div>
+</section><section id="section-8" class="slide level2">
+<h2></h2>
+<h4 id="plt.subplots-1"><code>plt.subplots()</code></h4>
+<div class="smaller">
+<p>Para crear una tupla (figura, ejes) usaremos:</p>
+</div>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<ul>
+<li><code>plt.subplots()</code>
+<ul>
+<li>sin argumentos: crea una figura con 1 area de dibujo</li>
+<li>(<code>nrows</code>, <code>ncols</code>): crea una figura con <code>nrows*ncols</code> areas</li>
+<li>devuelve la figura y todos los ejes</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">fig, ejes <span class="op">=</span> plt.subplots(</a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="dv">2</span>, <span class="dv">1</span>, sharex<span class="op">=</span><span class="va">True</span>,</a>
+<a class="sourceLine" id="cb7-3" title="3">    figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb7-4" title="4">    facecolor<span class="op">=</span><span class="st">&#39;#fabada&#39;</span></a>
+<a class="sourceLine" id="cb7-5" title="5">)</a>
+<a class="sourceLine" id="cb7-6" title="6">ejes[<span class="dv">0</span>].plot(t, y, <span class="st">&#39;g.&#39;</span>)</a>
+<a class="sourceLine" id="cb7-7" title="7">ejes[<span class="dv">1</span>].plot(t, <span class="dv">1</span><span class="op">/</span>y, <span class="st">&#39;.-&#39;</span>)</a></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/s06/subplots21.png" alt="subplots21" style="width:60.0%" /><br />
+</p>
+</div>
+</div>
+</section><section id="section-9" class="slide level2">
+<h2></h2>
+<h4 id="plt.subplot"><code>plt.subplot()</code></h4>
+<div class="smaller">
+<blockquote>
+<p><strong>¡Ojo!:</strong> <code>plt.subplot()</code> != <code>plt.subplots()</code></p>
+</blockquote>
+<ul>
+<li>(<code>nrows</code>, <code>ncols</code>, <code>index</code>): crea un eje</li>
+<li>devuelve 1 solo eje (al que se haga referencia)</li>
+</ul>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3">ax1 <span class="op">=</span> plt.subplot(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb8-4" title="4">ax1.plot(t, y, <span class="st">&#39;gs&#39;</span>)</a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6">ax2 <span class="op">=</span> plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb8-7" title="7">ax2.hist(y, alpha<span class="op">=</span>.<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb8-8" title="8"></a>
+<a class="sourceLine" id="cb8-9" title="9">ax3 <span class="op">=</span> plt.subplot(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb8-10" title="10">ax3.pcolormesh(</a>
+<a class="sourceLine" id="cb8-11" title="11">  np.tril(np.random.uniform(size<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>)),</a>
+<a class="sourceLine" id="cb8-12" title="12">          <span class="dv">-1</span>)</a>
+<a class="sourceLine" id="cb8-13" title="13">)</a></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/s06/subplot.png" alt="subplot" style="width:75.0%" /><br />
+</p>
+</div>
+</div>
+</div>
+</section><section id="guardar-una-figura-a-fichero" class="slide level2">
+<h2>Guardar una figura a fichero</h2>
+<div class="smaller">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3">iris <span class="op">=</span> load_iris()</a>
+<a class="sourceLine" id="cb9-4" title="4">plt.style.use(<span class="st">&#39;ggplot&#39;</span>)</a>
+<a class="sourceLine" id="cb9-5" title="5">fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb9-6" title="6">formatter <span class="op">=</span> plt.FuncFormatter(<span class="kw">lambda</span> i, <span class="op">*</span>args: iris.target_names[<span class="bu">int</span>(i)])</a>
+<a class="sourceLine" id="cb9-7" title="7"></a>
+<a class="sourceLine" id="cb9-8" title="8">plt.scatter(iris.data[:, <span class="dv">0</span>], iris.data[:, <span class="dv">1</span>], c<span class="op">=</span>iris.target)</a>
+<a class="sourceLine" id="cb9-9" title="9">plt.colorbar(ticks<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], <span class="bu">format</span><span class="op">=</span>formatter)</a>
+<a class="sourceLine" id="cb9-10" title="10"></a>
+<a class="sourceLine" id="cb9-11" title="11">figure.savefig(<span class="st">&#39;iris.pdf&#39;</span>)</a></code></pre></div>
+<p>Tipos de fichero soportados, según backend:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="bu">print</span>(fig.canvas.get_supported_filetypes())</a></code></pre></div>
+</div>
+</section></section>
+<section><section id="tipos-de-gráficos-más-importantes" class="title-slide slide level1"><h1>Tipos de gráficos más importantes</h1></section><h4 id="tipos-de-gráficos---lineplot">Tipos de gráficos - Lineplot</h4><section id="lineplot-.plot" class="slide level2">
+<h2>Lineplot (<code>.plot()</code>)</h2>
+</section><section id="section-10" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1">(fix, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_rows, n_cols)</span></a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3">x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb11-4" title="4">y <span class="op">=</span> np.exp(<span class="op">-</span>x<span class="op">/</span><span class="dv">2</span>) <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>x)</a>
+<a class="sourceLine" id="cb11-5" title="5">ax.plot(x, y, <span class="st">&#39;bo&#39;</span>)</a></code></pre></div>
+<p><img data-src="images/s06/plot.png" alt="plot" /><br />
+</p>
+</section><section id="section-11" class="slide level2">
+<h2></h2>
+<p>Dos gráficos al mismo tiempo:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1">(fig, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_rows, n_cols)</span></a>
+<a class="sourceLine" id="cb12-2" title="2"></a>
+<a class="sourceLine" id="cb12-3" title="3">x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb12-4" title="4">y1 <span class="op">=</span> np.exp(<span class="op">-</span>x <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> x)</a>
+<a class="sourceLine" id="cb12-5" title="5">y2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> np.exp(<span class="op">-</span>x) <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> x)</a>
+<a class="sourceLine" id="cb12-6" title="6">ax.plot(x, y1, <span class="st">&#39;bo&#39;</span>,</a>
+<a class="sourceLine" id="cb12-7" title="7">        x, y2, <span class="st">&#39;r--&#39;</span>)</a></code></pre></div>
+<p><img data-src="images/s06/plot2.png" alt="plot2" style="width:60.0%" /><br />
+</p>
+</section><section id="section-12" class="slide level2">
+<h2></h2>
+<p>Dos gráficos al mismo tiempo:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1">(fig, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_rows, n_cols)</span></a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3">x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb13-4" title="4">y1 <span class="op">=</span> np.exp(<span class="op">-</span>x <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> np.cos(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> x)</a>
+<a class="sourceLine" id="cb13-5" title="5">y2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> np.exp(<span class="op">-</span>x) <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> x)</a>
+<a class="sourceLine" id="cb13-6" title="6">ax.plot(x, y1, <span class="st">&#39;bo&#39;</span>)</a>
+<a class="sourceLine" id="cb13-7" title="7">ax.plot(x, y2, <span class="st">&#39;r--&#39;</span>)</a></code></pre></div>
+<p><img data-src="images/s06/plot2.png" alt="plot2" style="width:60.0%" /><br />
+</p>
+</section></section>
+<section><section id="scatterplot" class="title-slide slide level1"><h1>Scatterplot</h1></section><h4 id="tipos-de-gráficos---scatterplot">Tipos de gráficos - Scatterplot</h4><section id="section-13" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column smaller" style="width:60%;">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1">N <span class="op">=</span> <span class="dv">75</span></a>
+<a class="sourceLine" id="cb14-2" title="2">np.random.seed(<span class="dv">45987230</span>)</a>
+<a class="sourceLine" id="cb14-3" title="3"></a>
+<a class="sourceLine" id="cb14-4" title="4"></a>
+<a class="sourceLine" id="cb14-5" title="5">fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb14-6" title="6">                               figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb14-7" title="7">a <span class="op">=</span> np.random.randint(low<span class="op">=</span><span class="dv">1</span>, high<span class="op">=</span><span class="dv">11</span>, size<span class="op">=</span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb14-8" title="8">b <span class="op">=</span> a <span class="op">+</span> np.random.randint(<span class="dv">1</span>, <span class="dv">5</span>, size<span class="op">=</span>a.size)</a>
+<a class="sourceLine" id="cb14-9" title="9">x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, N)</a>
+<a class="sourceLine" id="cb14-10" title="10">t <span class="op">=</span> np.random.gamma(<span class="dv">5</span>, size<span class="op">=</span>N)</a>
+<a class="sourceLine" id="cb14-11" title="11">colors <span class="op">=</span> np.random.rand(N)</a>
+<a class="sourceLine" id="cb14-12" title="12"></a>
+<a class="sourceLine" id="cb14-13" title="13">ax1.scatter(x<span class="op">=</span>a, y<span class="op">=</span>b, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, c<span class="op">=</span><span class="st">&#39;r&#39;</span>,</a>
+<a class="sourceLine" id="cb14-14" title="14">            edgecolor<span class="op">=</span><span class="st">&#39;b&#39;</span>)</a>
+<a class="sourceLine" id="cb14-15" title="15">ax1.set_title(<span class="st">&#39;$a$ vs $b$&#39;</span>)</a>
+<a class="sourceLine" id="cb14-16" title="16">ax2.scatter(</a>
+<a class="sourceLine" id="cb14-17" title="17">    x, t,</a>
+<a class="sourceLine" id="cb14-18" title="18">    s<span class="op">=</span>np.random.randint(<span class="dv">10</span>,<span class="dv">800</span>, N),  <span class="co"># tamaño</span></a>
+<a class="sourceLine" id="cb14-19" title="19">    marker<span class="op">=</span><span class="st">&#39;v&#39;</span>,  <span class="co"># tipo de marcador</span></a>
+<a class="sourceLine" id="cb14-20" title="20">    c<span class="op">=</span>colors,  <span class="co"># colores</span></a>
+<a class="sourceLine" id="cb14-21" title="21">    alpha<span class="op">=</span><span class="fl">0.4</span>  <span class="co"># nivel de transparencia</span></a>
+<a class="sourceLine" id="cb14-22" title="22">)</a>
+<a class="sourceLine" id="cb14-23" title="23">ax2.set_title(<span class="st">&#39;$x$ vs $t$&#39;</span>)</a>
+<a class="sourceLine" id="cb14-24" title="24"></a>
+<a class="sourceLine" id="cb14-25" title="25">fig.suptitle(<span class="st">&quot;Scatterplot&quot;</span>)</a></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/s06/scatter.png" alt="scatter" /><br />
+</p>
+</div>
+</div>
+</section></section>
+<section><section id="barplot" class="title-slide slide level1"><h1>Barplot</h1></section><h4 id="tipos-de-gráficos---barplot">Tipos de gráficos - Barplot</h4><section id="section-14" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column smaller" style="width:55%;">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1">ax1.bar(ind,      <span class="co"># eje de abcisas</span></a>
+<a class="sourceLine" id="cb15-2" title="2">        men_std,  <span class="co"># eje de ordenadas</span></a>
+<a class="sourceLine" id="cb15-3" title="3">        width,    <span class="co"># anchura</span></a>
+<a class="sourceLine" id="cb15-4" title="4">        color<span class="op">=</span><span class="st">&#39;#0055ff&#39;</span>)</a>
+<a class="sourceLine" id="cb15-5" title="5">ax1.bar(ind,</a>
+<a class="sourceLine" id="cb15-6" title="6">        women_std,</a>
+<a class="sourceLine" id="cb15-7" title="7">        width,</a>
+<a class="sourceLine" id="cb15-8" title="8">        color<span class="op">=</span><span class="st">&#39;#fabada&#39;</span>,</a>
+<a class="sourceLine" id="cb15-9" title="9">        bottom<span class="op">=</span>men_std)</a>
+<a class="sourceLine" id="cb15-10" title="10"></a>
+<a class="sourceLine" id="cb15-11" title="11">ax1.set_ylabel(<span class="st">&#39;Scores&#39;</span>)</a>
+<a class="sourceLine" id="cb15-12" title="12">ax1.set_xlabel(<span class="st">&#39;Groups&#39;</span>)</a>
+<a class="sourceLine" id="cb15-13" title="13">ax1.set_title(<span class="st">&#39;Height std by group+gender&#39;</span>)</a>
+<a class="sourceLine" id="cb15-14" title="14">ax1.legend([<span class="st">&#39;men&#39;</span>, <span class="st">&#39;women&#39;</span>], loc<span class="op">=</span><span class="st">&#39;best&#39;</span>)</a>
+<a class="sourceLine" id="cb15-15" title="15"></a>
+<a class="sourceLine" id="cb15-16" title="16"><span class="co"># Barras horizontales</span></a>
+<a class="sourceLine" id="cb15-17" title="17"></a>
+<a class="sourceLine" id="cb15-18" title="18">ax2.barh(ind,        <span class="co"># eje de ordenadas</span></a>
+<a class="sourceLine" id="cb15-19" title="19">         men_means,  <span class="co"># eje de abcisas</span></a>
+<a class="sourceLine" id="cb15-20" title="20">         width,      <span class="co"># anchura</span></a>
+<a class="sourceLine" id="cb15-21" title="21">         color<span class="op">=</span><span class="st">&#39;#0055ff&#39;</span>)</a>
+<a class="sourceLine" id="cb15-22" title="22">ax2.barh(ind,</a>
+<a class="sourceLine" id="cb15-23" title="23">         women_means,</a>
+<a class="sourceLine" id="cb15-24" title="24">         width,</a>
+<a class="sourceLine" id="cb15-25" title="25">         color<span class="op">=</span><span class="st">&#39;#fabada&#39;</span>)</a>
+<a class="sourceLine" id="cb15-26" title="26"></a>
+<a class="sourceLine" id="cb15-27" title="27">ax2.legend([<span class="st">&#39;men&#39;</span>, <span class="st">&#39;women&#39;</span>], loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</a>
+<a class="sourceLine" id="cb15-28" title="28">ax2.set_title(<span class="st">&#39;Height mean by group+gender&#39;</span>)</a>
+<a class="sourceLine" id="cb15-29" title="29">ax2.set_ylabel(<span class="st">&#39;Groups&#39;</span>)</a></code></pre></div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="images/s06/barplot.png" alt="barplot" /><br />
+</p>
+</div>
+</div>
+</section></section>
+<section><section id="histograma" class="title-slide slide level1"><h1>Histograma</h1></section><h4 id="tipos-de-gráficos---histograma">Tipos de gráficos - Histograma</h4><section id="section-15" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1">fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb16-2" title="2">bins <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb16-3" title="3">x1 <span class="op">=</span> np.random.gamma(<span class="dv">10</span>, size<span class="op">=</span><span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb16-4" title="4">x2 <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb16-5" title="5"></a>
+<a class="sourceLine" id="cb16-6" title="6"></a>
+<a class="sourceLine" id="cb16-7" title="7">ax1, ax2 <span class="op">=</span> ax.flatten()</a>
+<a class="sourceLine" id="cb16-8" title="8"></a>
+<a class="sourceLine" id="cb16-9" title="9">(ax1_values, _, _) <span class="op">=</span> ax1.hist(x1, bins<span class="op">=</span>bins, facecolor<span class="op">=</span><span class="st">&#39;brown&#39;</span>, alpha<span class="op">=</span>.<span class="dv">7</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb16-10" title="10">(_, ax2_bins, _) <span class="op">=</span> ax2.hist(x2, alpha<span class="op">=</span>.<span class="dv">7</span>, cumulative<span class="op">=</span><span class="va">True</span>,</a>
+<a class="sourceLine" id="cb16-11" title="11">                            log<span class="op">=</span><span class="va">True</span>, orientation<span class="op">=</span><span class="st">&#39;horizontal&#39;</span>)</a></code></pre></div>
+</div>
+<p><img data-src="images/s06/hist.png" alt="hist" /><br />
+</p>
+</section></section>
+<section><section id="piechart" class="title-slide slide level1"><h1>Piechart</h1></section><h4 id="tipos-de-gráficos---piechart">Tipos de gráficos - Piechart</h4><section id="section-16" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1">colors <span class="op">=</span> [<span class="st">&#39;white&#39;</span>, <span class="st">&#39;black&#39;</span>]</a>
+<a class="sourceLine" id="cb17-2" title="2">labels <span class="op">=</span> [<span class="ss">f&#39;Fraction of this image which is </span><span class="sc">{</span>color<span class="sc">}</span><span class="ss">&#39;</span></a>
+<a class="sourceLine" id="cb17-3" title="3">          <span class="cf">for</span> color <span class="kw">in</span> colors]</a>
+<a class="sourceLine" id="cb17-4" title="4"></a>
+<a class="sourceLine" id="cb17-5" title="5">ax.pie(</a>
+<a class="sourceLine" id="cb17-6" title="6">    [<span class="dv">80</span>, <span class="dv">20</span>], explode<span class="op">=</span>(<span class="dv">0</span>, <span class="fl">.5</span>), labels<span class="op">=</span>labels,</a>
+<a class="sourceLine" id="cb17-7" title="7">    colors<span class="op">=</span>colors, shadow<span class="op">=</span><span class="va">True</span>, startangle<span class="op">=</span><span class="dv">90</span></a>
+<a class="sourceLine" id="cb17-8" title="8">)</a>
+<a class="sourceLine" id="cb17-9" title="9"><span class="co"># ejes iguales = asegurarnos de que se muestre</span></a>
+<a class="sourceLine" id="cb17-10" title="10"><span class="co"># como un círculo</span></a>
+<a class="sourceLine" id="cb17-11" title="11">ax.axis(<span class="st">&#39;equal&#39;</span>)<span class="op">;</span></a></code></pre></div>
+</div>
+<p><img data-src="images/s06/piechart.png" alt="piechart" /><br />
+</p>
+</section></section>
+<section><section id="elementos-y-parámetros" class="title-slide slide level1"><h1>Elementos y parámetros</h1></section><h4 id="elementos-de-visualización">Elementos de visualización</h4><section id="colorestilo-de-línea" class="slide level2">
+<h2>Color/estilo de línea</h2>
+<p>El color de línea para un gráfico individual se puede controlar mediante una cadena de texto (p.e. <code>'r--'</code>):</p>
+<div class="smaller">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1">colors <span class="op">=</span> {<span class="st">&#39;b&#39;</span>: <span class="st">&#39;blue&#39;</span>, <span class="st">&#39;g&#39;</span>: <span class="st">&#39;green&#39;</span>, <span class="st">&#39;r&#39;</span>: <span class="st">&#39;red&#39;</span>, <span class="st">&#39;c&#39;</span>: <span class="st">&#39;cyan&#39;</span>, <span class="st">&#39;m&#39;</span>: <span class="st">&#39;magenta&#39;</span>,</a>
+<a class="sourceLine" id="cb18-2" title="2">          <span class="st">&#39;y&#39;</span>: <span class="st">&#39;yellow&#39;</span>, <span class="st">&#39;k&#39;</span>: <span class="st">&#39;black&#39;</span>, <span class="st">&#39;w&#39;</span>: <span class="st">&#39;white&#39;</span>}</a>
+<a class="sourceLine" id="cb18-3" title="3"></a>
+<a class="sourceLine" id="cb18-4" title="4">lineStyles <span class="op">=</span> {<span class="st">&#39;-&#39;</span>: <span class="st">&#39;_draw_solid&#39;</span>, <span class="st">&#39;--&#39;</span>: <span class="st">&#39;_draw_dashed&#39;</span>, <span class="st">&#39;-.&#39;</span>: <span class="st">&#39;_draw_dash_dot&#39;</span>,</a>
+<a class="sourceLine" id="cb18-5" title="5">              <span class="st">&#39;:&#39;</span>: <span class="st">&#39;_draw_dotted&#39;</span>, <span class="st">&#39;None&#39;</span>: <span class="st">&#39;_draw_nothing&#39;</span>,</a>
+<a class="sourceLine" id="cb18-6" title="6">              <span class="st">&#39; &#39;</span>: <span class="st">&#39;_draw_nothing&#39;</span>, <span class="st">&#39;&#39;</span>: <span class="st">&#39;_draw_nothing&#39;</span>}</a>
+<a class="sourceLine" id="cb18-7" title="7"></a>
+<a class="sourceLine" id="cb18-8" title="8">markers <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb18-9" title="9">    <span class="st">&#39;.&#39;</span>: <span class="st">&#39;point&#39;</span>, <span class="st">&#39;,&#39;</span>: <span class="st">&#39;pixel&#39;</span>, <span class="st">&#39;o&#39;</span>: <span class="st">&#39;circle&#39;</span>, <span class="st">&#39;v&#39;</span>: <span class="st">&#39;triangle_down&#39;</span>,</a>
+<a class="sourceLine" id="cb18-10" title="10">    <span class="st">&#39;^&#39;</span>: <span class="st">&#39;triangle_up&#39;</span>, <span class="st">&#39;&lt;&#39;</span>: <span class="st">&#39;triangle_left&#39;</span>, <span class="st">&#39;&gt;&#39;</span>: <span class="st">&#39;triangle_right&#39;</span>,</a>
+<a class="sourceLine" id="cb18-11" title="11">    <span class="st">&#39;1&#39;</span>: <span class="st">&#39;tri_down&#39;</span>, <span class="st">&#39;2&#39;</span>: <span class="st">&#39;tri_up&#39;</span>, <span class="st">&#39;3&#39;</span>: <span class="st">&#39;tri_left&#39;</span>, <span class="st">&#39;4&#39;</span>: <span class="st">&#39;tri_right&#39;</span>,</a>
+<a class="sourceLine" id="cb18-12" title="12">    <span class="st">&#39;8&#39;</span>: <span class="st">&#39;octagon&#39;</span>, <span class="st">&#39;s&#39;</span>: <span class="st">&#39;square&#39;</span>, <span class="st">&#39;p&#39;</span>: <span class="st">&#39;pentagon&#39;</span>, <span class="st">&#39;*&#39;</span>: <span class="st">&#39;star&#39;</span>,</a>
+<a class="sourceLine" id="cb18-13" title="13">    <span class="st">&#39;h&#39;</span>: <span class="st">&#39;hexagon1&#39;</span>, <span class="st">&#39;H&#39;</span>: <span class="st">&#39;hexagon2&#39;</span>, <span class="st">&#39;+&#39;</span>: <span class="st">&#39;plus&#39;</span>, <span class="st">&#39;x&#39;</span>: <span class="st">&#39;x&#39;</span>, <span class="st">&#39;D&#39;</span>: <span class="st">&#39;diamond&#39;</span>,</a>
+<a class="sourceLine" id="cb18-14" title="14">    <span class="st">&#39;d&#39;</span>: <span class="st">&#39;thin_diamond&#39;</span>, <span class="st">&#39;|&#39;</span>: <span class="st">&#39;vline&#39;</span>, <span class="st">&#39;_&#39;</span>: <span class="st">&#39;hline&#39;</span>, <span class="st">&#39;P&#39;</span>: <span class="st">&#39;plus_filled&#39;</span>,</a>
+<a class="sourceLine" id="cb18-15" title="15">    <span class="st">&#39;X&#39;</span>: <span class="st">&#39;x_filled&#39;</span>, <span class="dv">0</span>: <span class="st">&#39;tickleft&#39;</span>, <span class="dv">1</span>: <span class="st">&#39;tickright&#39;</span>, <span class="dv">2</span>: <span class="st">&#39;tickup&#39;</span>, <span class="dv">3</span>: <span class="st">&#39;tickdown&#39;</span>,</a>
+<a class="sourceLine" id="cb18-16" title="16">    <span class="dv">4</span>: <span class="st">&#39;caretleft&#39;</span>, <span class="dv">5</span>: <span class="st">&#39;caretright&#39;</span>, <span class="dv">6</span>: <span class="st">&#39;caretup&#39;</span>, <span class="dv">7</span>: <span class="st">&#39;caretdown&#39;</span>,</a>
+<a class="sourceLine" id="cb18-17" title="17">    <span class="dv">8</span>: <span class="st">&#39;caretleftbase&#39;</span>, <span class="dv">9</span>: <span class="st">&#39;caretrightbase&#39;</span>, <span class="dv">10</span>: <span class="st">&#39;caretupbase&#39;</span>,</a>
+<a class="sourceLine" id="cb18-18" title="18">    <span class="dv">11</span>: <span class="st">&#39;caretdownbase&#39;</span>, <span class="st">&#39;None&#39;</span>: <span class="st">&#39;nothing&#39;</span>, <span class="va">None</span>: <span class="st">&#39;nothing&#39;</span>, <span class="st">&#39; &#39;</span>: <span class="st">&#39;nothing&#39;</span>,</a>
+<a class="sourceLine" id="cb18-19" title="19">    <span class="st">&#39;&#39;</span>: <span class="st">&#39;nothing&#39;</span></a>
+<a class="sourceLine" id="cb18-20" title="20">}</a></code></pre></div>
+</div>
+</section><section id="section-17" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column smaller" style="width:60%;">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1">N <span class="op">=</span> <span class="dv">50</span></a>
+<a class="sourceLine" id="cb19-2" title="2">np.random.seed(<span class="dv">4873</span>)</a>
+<a class="sourceLine" id="cb19-3" title="3"></a>
+<a class="sourceLine" id="cb19-4" title="4">x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, N)</a>
+<a class="sourceLine" id="cb19-5" title="5">k <span class="op">=</span> <span class="fl">0.8</span></a>
+<a class="sourceLine" id="cb19-6" title="6">y <span class="op">=</span> k <span class="op">+</span> np.sin(x) <span class="op">*</span> np.random.randn(N)</a>
+<a class="sourceLine" id="cb19-7" title="7"></a>
+<a class="sourceLine" id="cb19-8" title="8">(fig, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb19-9" title="9">ax.errorbar(x, y, yerr<span class="op">=</span>k, fmt<span class="op">=</span><span class="st">&#39;.r&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb19-10" title="10">ax.plot(x, <span class="dv">1</span> <span class="op">+</span> np.cos(np.pi<span class="op">*</span>x), <span class="st">&#39;--g&#39;</span>)</a>
+<a class="sourceLine" id="cb19-11" title="11">ax.plot(x, x<span class="op">/</span><span class="dv">5</span>, <span class="st">&#39;b&#39;</span>)</a></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/s06/color_linea.png" alt="color_linea" /><br />
+</p>
+</div>
+</div>
+</section><section id="xticksyticks" class="slide level2">
+<h2>xticks/yticks</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1">plt.yticks(rotation<span class="op">=</span><span class="st">&#39;vertical&#39;</span>)</a>
+<a class="sourceLine" id="cb20-2" title="2">plt.xticks(rotation<span class="op">=</span><span class="dv">20</span>)  <span class="co"># 20 grados en sentido antihorario</span></a></code></pre></div>
+<p><img data-src="images/s06/tick_rotation.png" alt="tick_rotation" style="width:80.0%" /><br />
+</p>
+</section><section id="section-18" class="slide level2">
+<h2></h2>
+<h4 id="títulos-y-anotaciones">Títulos y anotaciones</h4>
+<p><img data-src="images/s06/titulos.png" alt="titulos" style="width:60.0%" /><br />
+</p>
+<div class="smaller">
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<ul>
+<li>Título de la figura</li>
+<li>Título de cada <code>subplot</code> (<code>Axes</code>)</li>
+<li>Título de cada eje (<code>Axis</code>)</li>
+<li>Anotaciones</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1">fig.suptitle(<span class="st">&#39;Niveles de alcohol y flavonoides&#39;</span>,</a>
+<a class="sourceLine" id="cb21-2" title="2">             <span class="st">&#39;(muestra de 178 vinos)&#39;</span>)</a>
+<a class="sourceLine" id="cb21-3" title="3">ax.set_title(<span class="st">&#39;Vinos de 3 clases&#39;</span>)</a>
+<a class="sourceLine" id="cb21-4" title="4">ax.set_xlabel(<span class="st">&#39;Alcohol (°)&#39;</span>)</a>
+<a class="sourceLine" id="cb21-5" title="5">ax.set_ylabel(<span class="st">&#39;Flavonoides (ppm)&#39;</span>)</a>
+<a class="sourceLine" id="cb21-6" title="6">ax.annotate(</a>
+<a class="sourceLine" id="cb21-7" title="7">    <span class="st">&#39;Viña Arcada&#39;</span>, xy<span class="op">=</span>(<span class="fl">11.8</span>, <span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb21-8" title="8">     xytext<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">.5</span>),</a>
+<a class="sourceLine" id="cb21-9" title="9">    arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, shrink<span class="op">=</span><span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb21-10" title="10">)</a></code></pre></div>
+</div>
+</div>
+</div>
+</section><section id="section-19" class="slide level2">
+<h2></h2>
+<h3 id="leyenda">Leyenda</h3>
+<div class="smaller">
+<ul>
+<li>Se genera automáticamente según datos inferidos de las etiquetas</li>
+</ul>
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1">(line1, ) <span class="op">=</span> ax.plot([<span class="fl">1.5</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
+<a class="sourceLine" id="cb22-2" title="2">                    label<span class="op">=</span><span class="st">&#39;IPC&#39;</span>)</a>
+<a class="sourceLine" id="cb22-3" title="3">(line2, ) <span class="op">=</span> ax.plot([<span class="dv">1</span>, <span class="fl">1.2</span>, <span class="fl">1.3</span>],</a>
+<a class="sourceLine" id="cb22-4" title="4">                    label<span class="op">=</span><span class="st">&#39;Salarios&#39;</span>)</a>
+<a class="sourceLine" id="cb22-5" title="5">ax.legend(loc<span class="op">=</span><span class="st">&#39;upper left&#39;</span>)</a></code></pre></div>
+<p><code>loc</code>: define dónde emplazar la leyenda</p>
+<blockquote>
+<p><strong>best</strong>, upper right, upper left, lower left, lower right, right, center left, center right, lower center, upper center, center</p>
+</blockquote>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/s06/legend.png" alt="legend" /><br />
+</p>
+</div>
+</div>
+</div>
+<p>:::</p>
+</section></section>
+<section><section id="estilos" class="title-slide slide level1"><h1>Estilos</h1></section><h4 id="estilos-1">Estilos</h4><section id="section-20" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<div>
+<ul>
+<li class="fragment">Aplican a todos los gráficos generados</li>
+<li class="fragment">Estilo por defecto en <code>matplotlib.rcParams</code>
+<ul>
+<li class="fragment">pueden modificarse dinámicamente</li>
+</ul></li>
+<li class="fragment"><p>Podemos cambiar a estilos preconfigurados:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1"><span class="bu">print</span>(plt.style.available)</a>
+<a class="sourceLine" id="cb23-2" title="2">plt.style.use(<span class="st">&#39;ggplot&#39;</span>)</a></code></pre></div></li>
+<li class="fragment"><p>y/o modificar parámetros individualmente</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1">plt.rcParams[<span class="st">&quot;figure.figsize&quot;</span>] <span class="op">=</span> (<span class="fl">20.0</span>, <span class="fl">15.0</span>)</a>
+<a class="sourceLine" id="cb24-2" title="2">plt.rcParams[<span class="st">&#39;font.family&#39;</span>] <span class="op">=</span> [<span class="st">&#39;monospace&#39;</span>]</a></code></pre></div></li>
+<li class="fragment">Los cambios aplican a todos los gráficos
+<ul>
+<li class="fragment"><p>salvo cambio temporal de estilos:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="cf">with</span> plt.style.context((<span class="st">&#39;dark_background&#39;</span>)):</a>
+<a class="sourceLine" id="cb25-2" title="2">    plt.plot(np.sin(np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi)), <span class="st">&#39;r-o&#39;</span>)</a></code></pre></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section><section id="otros-estilos" class="slide level2">
+<h2>Otros estilos</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1"><span class="cf">with</span> plt.xkcd():</a>
+<a class="sourceLine" id="cb26-2" title="2">    ...</a></code></pre></div>
+<p><img data-src="images/s06/xkcd.png" alt="xkcd" /><br />
+</p>
+</section><section id="otros-estilos-1" class="slide level2">
+<h2>Otros estilos</h2>
+<p>seaborn</p>
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" title="1"><span class="im">import</span> seaborn <span class="im">as</span> sns</a>
+<a class="sourceLine" id="cb27-2" title="2"></a>
+<a class="sourceLine" id="cb27-3" title="3">sns.<span class="bu">set</span>()</a>
+<a class="sourceLine" id="cb27-4" title="4">sns.set_context(<span class="st">&quot;talk&quot;</span>)</a></code></pre></div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/s06/overlay.png" alt="overlay" /><br />
+</p>
+</div>
+</div>
+<p>:::</p>
+</section></section>
+<section><section id="integración-con-pandas" class="title-slide slide level1"><h1>Integración con pandas</h1></section><h4 id="visualización-de-datos-con-pandas">Visualización de datos con pandas</h4><section id="section-21" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<p>pyplot está (parcialmente) integrado en pandas</p>
+<div>
+<ul>
+<li class="fragment">Podemos dibujar directamente desde un dataframe de pandas</li>
+<li class="fragment">se devuelve un objeto “<em><code>Axes</code></em>” sobre el que poder trabajar
+<ul>
+<li class="fragment">no es necesario crear con antelación la figura y los ejes</li>
+<li class="fragment">… aunque suele ser lo recomendable</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column smaller" style="width:60%;">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1">fig, ax <span class="op">=</span> plt.subplots()</a>
+<a class="sourceLine" id="cb28-2" title="2">ax2 <span class="op">=</span> df.plot.scatter(</a>
+<a class="sourceLine" id="cb28-3" title="3">    <span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, c<span class="op">=</span><span class="st">&#39;c&#39;</span>, s<span class="op">=</span>df[<span class="st">&#39;d&#39;</span>],</a>
+<a class="sourceLine" id="cb28-4" title="4">    colormap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span>.<span class="dv">5</span>,</a>
+<a class="sourceLine" id="cb28-5" title="5">    title<span class="op">=</span><span class="st">&#39;Scatter con pandas&#39;</span>, rot<span class="op">=</span><span class="st">&#39;vertical&#39;</span>,</a>
+<a class="sourceLine" id="cb28-6" title="6">    ax <span class="op">=</span> ax<span class="op">;</span></a>
+<a class="sourceLine" id="cb28-7" title="7">)</a>
+<a class="sourceLine" id="cb28-8" title="8"></a>
+<a class="sourceLine" id="cb28-9" title="9">ax.annotate(</a>
+<a class="sourceLine" id="cb28-10" title="10">    <span class="st">&#39;Defecto&#39;</span>, xy<span class="op">=</span>(<span class="fl">1.9</span>, <span class="dv">-17</span>),</a>
+<a class="sourceLine" id="cb28-11" title="11">     xytext<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">-20</span>),</a>
+<a class="sourceLine" id="cb28-12" title="12">    arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, shrink<span class="op">=</span><span class="fl">0.05</span>)</a>
+<a class="sourceLine" id="cb28-13" title="13"></a>
+<a class="sourceLine" id="cb28-14" title="14">ax2 <span class="op">==</span> ax</a>
+<a class="sourceLine" id="cb28-15" title="15"><span class="va">True</span></a></code></pre></div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" /><br />
+</p>
+</div>
+</div>
+</section><section id="section-22" class="slide level2">
+<h2></h2>
+<p>Visualizar datos usando la interfaz de <code>pandas</code> es conveniente y mucho más sencillo:</p>
+<div class="smaller">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" title="1">provincias <span class="op">=</span> [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Madrid&#39;</span>, <span class="st">&#39;Murcia&#39;</span>, <span class="st">&#39;León&#39;, &#39;</span>Albacete<span class="st">&#39;]</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="st">index = np.arange(len(provincias)) + 0.3</span></a>
+<a class="sourceLine" id="cb29-3" title="3"></a>
+<a class="sourceLine" id="cb29-4" title="4"><span class="st">y_offset = np.zeros(len(marriages.Total.columns))</span></a>
+<a class="sourceLine" id="cb29-5" title="5"><span class="st">cell_text = []</span></a>
+<a class="sourceLine" id="cb29-6" title="6"></a>
+<a class="sourceLine" id="cb29-7" title="7"><span class="st">for row in marriages.Total.columns:</span></a>
+<a class="sourceLine" id="cb29-8" title="8"><span class="st">    _data = marriages.Total.loc[provincias, row]</span></a>
+<a class="sourceLine" id="cb29-9" title="9"><span class="st">    plt.bar(index, _data, bottom=y_offset, width=0.5)</span></a>
+<a class="sourceLine" id="cb29-10" title="10"><span class="st">    y_offset = y_offset + _data</span></a>
+<a class="sourceLine" id="cb29-11" title="11"><span class="st">    cell_text.append([&quot;</span><span class="sc">%1.1f</span><span class="st">&quot; % (x / 1000.0) for x in y_offset])</span></a>
+<a class="sourceLine" id="cb29-12" title="12"><span class="st">cell_text.reverse()</span></a>
+<a class="sourceLine" id="cb29-13" title="13"><span class="st">the_table = plt.table(cellText=cell_text,</span></a>
+<a class="sourceLine" id="cb29-14" title="14"><span class="st">                      rowLabels=marriages.Total.columns,</span></a>
+<a class="sourceLine" id="cb29-15" title="15"><span class="st">                      colLabels=provincias,</span></a>
+<a class="sourceLine" id="cb29-16" title="16"><span class="st">                      loc=&#39;</span>bottom<span class="st">&#39;)</span></a>
+<a class="sourceLine" id="cb29-17" title="17"><span class="st">plt.legend(marriages.Total.columns)</span></a>
+<a class="sourceLine" id="cb29-18" title="18"><span class="st">plt.title(&#39;</span>Total Matrimonios en <span class="dv">2017</span><span class="st">&#39;)</span></a></code></pre></div>
+<p>Equivale a:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1">provincias <span class="op">=</span> [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Madrid&#39;</span>, <span class="st">&#39;Murcia&#39;</span>, <span class="st">&#39;León&#39;, &#39;</span>Albacete<span class="st">&#39;]</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="st">ax = marriages.Total.loc[provincias].plot.bar(stacked=True,</span></a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="st">    table=True, title=&#39;</span>Total Matrimonios en <span class="dv">2017</span><span class="st">&#39;)</span></a></code></pre></div>
+</div>
+</section><section id="section-23" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" title="1">provincias <span class="op">=</span> [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Madrid&#39;</span>, <span class="st">&#39;Murcia&#39;</span>, <span class="st">&#39;León&#39;, &#39;</span>Albacete<span class="st">&#39;]</span></a>
+<a class="sourceLine" id="cb31-2" title="2"><span class="st">ax = marriages.Total.loc[provincias].plot.bar(</span></a>
+<a class="sourceLine" id="cb31-3" title="3"><span class="st">    stacked=True, table=True,</span></a>
+<a class="sourceLine" id="cb31-4" title="4"><span class="st">    title=&#39;</span>Total Matrimonios en <span class="dv">2017</span><span class="st">&#39;</span></a>
+<a class="sourceLine" id="cb31-5" title="5"><span class="st">)</span></a></code></pre></div>
+</div>
+<p><img data-src="images/s06/barplot_stacked.png" alt="barplot_stacked" /><br />
+</p>
+</section><section id="section-24" class="slide level2">
+<h2></h2>
+<p>Generalmente las opciones más usadas en cada tipo de gráfico (título, ejes y posición, color, tamaño de línea, …) son directamente accesibles desde <code>pandas.DataFrame.plot()</code>.</p>
+<p>Para el resto, usar <code>matplotlib</code> refiriéndonos al objeto a modificar:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1">ax <span class="op">=</span> df.plot(kind<span class="op">=</span><span class="st">&#39;scatter&#39;</span>, ...)  <span class="co"># df.plot.scatter(...)</span></a>
+<a class="sourceLine" id="cb32-2" title="2">ax.set_yticks(rotation<span class="op">=</span><span class="st">&#39;vertical&#39;</span>)</a></code></pre></div>
+</section></section>
+<section><section id="tipos-de-gráficos-disponibles" class="title-slide slide level1"><h1>Tipos de gráficos disponibles</h1></section><h4 id="tipos-de-gráficos-con-pandas">Tipos de gráficos con <code>pandas</code></h4><section id="section-25" class="slide level2">
+<h2></h2>
+<ul>
+<li>Scatter</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" title="1">df.plot.scatter(</a>
+<a class="sourceLine" id="cb33-2" title="2">    <span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, c<span class="op">=</span><span class="st">&#39;c&#39;</span>, s<span class="op">=</span>df[<span class="st">&#39;d&#39;</span>],</a>
+<a class="sourceLine" id="cb33-3" title="3">    colormap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span>.<span class="dv">5</span>,</a>
+<a class="sourceLine" id="cb33-4" title="4">    title<span class="op">=</span><span class="st">&#39;Scatter con pandas&#39;</span>, rot<span class="op">=</span><span class="st">&#39;vertical&#39;</span>,</a>
+<a class="sourceLine" id="cb33-5" title="5">    ax <span class="op">=</span> ax<span class="op">;</span></a>
+<a class="sourceLine" id="cb33-6" title="6">)</a></code></pre></div>
+<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" /><br />
+</p>
+</section><section id="section-26" class="slide level2">
+<h2></h2>
+<ul>
+<li>Histograma</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" title="1">df.hist(sharey<span class="op">=</span><span class="va">True</span>, log<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<p><img data-src="images/s06/pd_hist.png" alt="pd_hist" style="width:50.0%" /><br />
+</p>
+</section><section id="section-27" class="slide level2">
+<h2></h2>
+<p>Series temporales</p>
+<p><img data-src="images/s06/ts.png" alt="ts" /><br />
+</p>
+</section><section id="section-28" class="slide level2">
+<h2></h2>
+<p>Boxplots</p>
+<div class="smaller">
+
+</div>
+<div class="columns">
+<div class="column smaller" style="width:40%;">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" title="1">df.boxplot(by<span class="op">=</span><span class="st">&#39;origin&#39;</span>, ax<span class="op">=</span>ax)</a></code></pre></div>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/s06/pd_boxplot.png" alt="pd_boxplot" /><br />
+</p>
+</div>
+</div>
+<p>:::</p>
+</section><section id="section-29" class="slide level2">
+<h2></h2>
+<p>Area</p>
+<div class="smaller">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1">np.random.seed(<span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb36-2" title="2">N <span class="op">=</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb36-3" title="3">data <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Grupo A&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
+<a class="sourceLine" id="cb36-4" title="4">                     <span class="st">&#39;Grupo B&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
+<a class="sourceLine" id="cb36-5" title="5">                     <span class="st">&#39;Grupo C&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N)},</a>
+<a class="sourceLine" id="cb36-6" title="6">                    index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, N<span class="op">+</span><span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb36-7" title="7">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb36-8" title="8">data.plot.area(stacked<span class="op">=</span><span class="va">False</span>, alpha<span class="op">=</span>.<span class="dv">6</span>, title<span class="op">=</span><span class="st">&#39;Gráfico de área&#39;</span>, ax<span class="op">=</span>ax)</a>
+<a class="sourceLine" id="cb36-9" title="9">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb36-10" title="10">data.plot.area(title<span class="op">=</span><span class="st">&#39;Gráfico de área (apilado)&#39;</span>, ax<span class="op">=</span>ax)<span class="op">;</span></a></code></pre></div>
+<p><img data-src="images/s06/pd_area.png" alt="pd_area" /><br />
+</p>
+</div>
+</section><section id="section-30" class="slide level2">
+<h2></h2>
+<p>Pie</p>
+<div class="smaller">
+
+</div>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" title="1">ax <span class="op">=</span> df1.plot.pie(cmap<span class="op">=</span>cmap,</a>
+<a class="sourceLine" id="cb37-2" title="2">                  title<span class="op">=</span><span class="st">&#39;Cilindros&#39;</span>,</a>
+<a class="sourceLine" id="cb37-3" title="3">                  autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%.2f</span><span class="st">&#39;</span>, ax<span class="op">=</span>ax)</a></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/s06/pd_pie.png" alt="pd_pie" /><br />
+</p>
+</div>
+</div>
+</section></section>
+<section><section id="parámetros-comunes" class="title-slide slide level1"><h1>Parámetros comunes</h1></section><h4 id="parámetros-comunes-en-pandas">Parámetros comunes en <code>pandas</code></h4><section id="section-31" class="slide level2">
+<h2></h2>
+<h3 id="pd.dataframe.plot"><code>pd.DataFrame.plot()</code></h3>
+<div class="smaller">
+<p>Es posible pasar argumentos para realizar personalizaciones rápidas.</p>
+<ul>
+<li>Existen opciones específicas para cada tipo de visualización</li>
+<li>También hay opciones <strong>comunes</strong> a todos ellos</li>
+<li>Además, podremos usar las primitivas de <code>matplotlib</code>, bien como argumentos adicionales o sobre los ejes</li>
+</ul>
+</div>
+</section><section id="section-32" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>ax</code>: ejes donde dibujar [opcional]</li>
+</ul>
+</section><section id="section-33" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>subplots [True|False]</code>: subplot para cada columna dibujada</li>
+</ul>
+</section><section id="section-34" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>sharex/sharey</code>: compartir ejes (subplots)</li>
+</ul>
+</section><section id="section-35" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>figsize</code>: tamaño de la figura</li>
+</ul>
+</section><section id="section-36" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>title</code>:
+<ul>
+<li><code>str</code>: título de la figura</li>
+<li><code>list(str)</code>: título de cada subplot</li>
+</ul></li>
+</ul>
+</section><section id="section-37" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>grid [True|False]</code>: dibujar cuadrícula</li>
+</ul>
+</section><section id="section-38" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>xlim, ylim</code>: tuplas <code>(lo, hi)</code> para delimitar visualización</li>
+</ul>
+</section><section id="section-39" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>colormap</code>: mapa de colores (<code>matplotlib.cm.</code>)</li>
+</ul>
+</section><section id="section-40" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>table [True|False]</code>: mostrar tabla bajo el gráfico</li>
+</ul>
+</section><section id="section-41" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>stacked [True|False]</code>: apilar datos</li>
+</ul>
+</section><section id="section-42" class="slide level2">
+<h2></h2>
+<ul>
+<li><code>secondary_y</code>: segundo eje de ordenadas</li>
+</ul>
+</section><section id="nan" class="slide level2">
+<h2>NaN</h2>
+<ul>
+<li>Por defecto ignora los datos ausentes (<code>NaN</code>)</li>
+<li>Podemos “rellenar los huecos”: <code>df.fillna()</code>
+<ul>
+<li>propagando el último valor</li>
+<li>o con valores preestablecidos</li>
+</ul></li>
+<li>O interpolar <code>df.interpolate()</code></li>
+</ul>
+</section><section id="alternativas-seaborn" class="slide level2">
+<h2>Alternativas: <code>seaborn</code></h2>
+<p>Simplifica (aún más) ciertas tareas de visualización</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1">sns.<span class="bu">set</span>()  <span class="co"># tema por defecto</span></a>
+<a class="sourceLine" id="cb38-2" title="2">crashes <span class="op">=</span> sns.load_dataset(<span class="st">&quot;car_crashes&quot;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="cf">with</span> sns.color_palette(<span class="st">&quot;husl&quot;</span>, <span class="dv">8</span>):</a>
+<a class="sourceLine" id="cb38-4" title="4">    sns.jointplot(<span class="st">&quot;speeding&quot;</span>, <span class="st">&quot;alcohol&quot;</span>, crashes, kind<span class="op">=</span><span class="st">&#39;reg&#39;</span>)<span class="op">;</span></a></code></pre></div>
+<p><img data-src="images/s06/sns_scatter.png" alt="seaborn_scatter" /><br />
+</p>
+</section><section id="section-43" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="im">from</span> scipy.stats <span class="im">import</span> gaussian_kde</a>
+<a class="sourceLine" id="cb39-2" title="2"></a>
+<a class="sourceLine" id="cb39-3" title="3">ax1 <span class="op">=</span> plt.subplot2grid((<span class="dv">4</span>, <span class="dv">4</span>), (<span class="dv">1</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">3</span>, rowspan<span class="op">=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb39-4" title="4">ax2 <span class="op">=</span> plt.subplot2grid((<span class="dv">4</span>, <span class="dv">4</span>), (<span class="dv">0</span>, <span class="dv">0</span>), colspan<span class="op">=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb39-5" title="5">ax3 <span class="op">=</span> plt.subplot2grid((<span class="dv">4</span>, <span class="dv">4</span>), (<span class="dv">1</span>, <span class="dv">3</span>), rowspan<span class="op">=</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb39-6" title="6"></a>
+<a class="sourceLine" id="cb39-7" title="7">crashes.plot.kde(y<span class="op">=</span><span class="st">&#39;speeding&#39;</span>, ax<span class="op">=</span>ax2, sharex<span class="op">=</span>ax1, legend<span class="op">=</span><span class="va">None</span>)</a>
+<a class="sourceLine" id="cb39-8" title="8">crashes.plot.hist(y<span class="op">=</span><span class="st">&#39;speeding&#39;</span>, bins<span class="op">=</span><span class="dv">6</span>, ax<span class="op">=</span>ax2, sharex<span class="op">=</span>ax1, normed<span class="op">=</span><span class="va">True</span>,</a>
+<a class="sourceLine" id="cb39-9" title="9">    legend<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span>.<span class="dv">5</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</a>
+<a class="sourceLine" id="cb39-10" title="10">crashes.plot.scatter(x<span class="op">=</span><span class="st">&#39;speeding&#39;</span>, y<span class="op">=</span><span class="st">&#39;alcohol&#39;</span>, ax<span class="op">=</span>ax1, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, s<span class="op">=</span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb39-11" title="11"></a>
+<a class="sourceLine" id="cb39-12" title="12">ax2.set_ylabel(<span class="st">&#39;&#39;</span>)</a>
+<a class="sourceLine" id="cb39-13" title="13">ax2.set_yticks<span class="op">=</span>[]</a>
+<a class="sourceLine" id="cb39-14" title="14">ax2.set_yticklabels<span class="op">=</span>[]</a>
+<a class="sourceLine" id="cb39-15" title="15"></a>
+<a class="sourceLine" id="cb39-16" title="16"><span class="co"># No está soportado directamente el rotado en kde</span></a>
+<a class="sourceLine" id="cb39-17" title="17">kde_speeding <span class="op">=</span> gaussian_kde(crashes.alcohol)</a>
+<a class="sourceLine" id="cb39-18" title="18">y <span class="op">=</span> np.linspace(np.amin(crashes.alcohol), np.amax(crashes.alcohol), <span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb39-19" title="19">ax3.plot(kde_speeding(y), y)</a>
+<a class="sourceLine" id="cb39-20" title="20">crashes.plot.hist(y<span class="op">=</span><span class="st">&#39;alcohol&#39;</span>, ax<span class="op">=</span>ax3, sharey<span class="op">=</span>ax1, normed<span class="op">=</span><span class="va">True</span>, legend<span class="op">=</span><span class="va">None</span>,</a>
+<a class="sourceLine" id="cb39-21" title="21">    orientation<span class="op">=</span><span class="st">&#39;horizontal&#39;</span>, alpha<span class="op">=</span>.<span class="dv">5</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</a></code></pre></div>
+</div>
+<ul>
+<li>Hexbin</li>
+</ul>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1">x, y <span class="op">=</span> np.random.multivariate_normal(mean, cov, <span class="dv">1000</span>).T</a>
+<a class="sourceLine" id="cb40-2" title="2"><span class="cf">with</span> sns.axes_style(<span class="st">&quot;white&quot;</span>):</a>
+<a class="sourceLine" id="cb40-3" title="3">    sns.jointplot(x<span class="op">=</span>x, y<span class="op">=</span>y, kind<span class="op">=</span><span class="st">&quot;hex&quot;</span>, color<span class="op">=</span><span class="st">&quot;k&quot;</span>)<span class="op">;</span></a></code></pre></div>
+<!-- enlaces -->
+<!-- https://jakevdp.github.io/PythonDataScienceHandbook/index.html -->
+<!-- https://seaborn.pydata.org/examples/index.html -->
+<!-- images -->
+</section></section>
+    </div>
+  </div>
+
+  <script src="../lib/js/head.min.js"></script>
+  <script src="../js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'fast', // default/fast/slow
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/zoom-js/zoom.js', async: true },
+          { src: '../plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -158,7 +158,7 @@ anaconda: 18 min
  `jsonschema`      `bokeh`
  ----------------- ---------------
 
-## {data-background-image="images/venv_navigator.gif" data-background-size=80%}
+## {data-background-image="images/s01/venv_navigator.gif" data-background-size=80%}
 
 # Práctica II
 #### Práctica II: Entorno virtual en modo texto
