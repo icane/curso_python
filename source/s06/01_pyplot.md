@@ -117,7 +117,9 @@ plt.show()  # muestra el gráfico
 - `np.array`
 - `pandas.DataFrame`
 
-El tipo de datos nativo es `np.array`. El resto pueden -o no- funcionar.
+El tipo de datos nativo es `np.array`.
+
+El resto puede -o no- funcionar.
 
 ##
 #### `plt.subplots()`

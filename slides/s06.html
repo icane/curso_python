@@ -219,7 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>np.array</code></li>
 <li><code>pandas.DataFrame</code></li>
 </ul>
-<p>El tipo de datos nativo es <code>np.array</code>. El resto pueden -o no- funcionar.</p>
+<p>El tipo de datos nativo es <code>np.array</code>.</p>
+<p>El resto puede -o no- funcionar.</p>
 </section><section id="section-7" class="slide level2">
 <h2></h2>
 <h4 id="plt.subplots"><code>plt.subplots()</code></h4>
@@ -970,6 +971,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1">x, y <span class="op">=</span> np.random.multivariate_normal(mean, cov, <span class="dv">1000</span>).T</a>
 <a class="sourceLine" id="cb40-2" title="2"><span class="cf">with</span> sns.axes_style(<span class="st">&quot;white&quot;</span>):</a>
 <a class="sourceLine" id="cb40-3" title="3">    sns.jointplot(x<span class="op">=</span>x, y<span class="op">=</span>y, kind<span class="op">=</span><span class="st">&quot;hex&quot;</span>, color<span class="op">=</span><span class="st">&quot;k&quot;</span>)<span class="op">;</span></a></code></pre></div>
+<p><a href="https://seaborn.pydata.org/examples/index.html">+ ejemplos</a></p>
 </section></section>
 <section><section id="geovisualización" class="title-slide slide level1"><h1>Geovisualización</h1></section><section id="section-48" class="slide level2">
 <h2></h2>
@@ -988,8 +990,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p>Folium</p>
 <p><a href="https://nbviewer.jupyter.org/github/python-visualization/folium/tree/master/examples/">ejemplos online</a></p>
+</section></section>
+<section><section id="cuadernos-jupyter" class="title-slide slide level1"><h1>Cuadernos <code>jupyter</code></h1></section><section id="section-51" class="slide level2">
+<h2></h2>
+<ul>
+<li><a href="code/s06/visualización_con_matplotlib.ipynb">matplotlib/pyplot</a></li>
+<li><a href="code/s06/visualización_con_pandas.ipynb">pandas</a></li>
+<li><a href="code/s06/práctica.ipynb">caso práctico</a></li>
+</ul>
 <!-- enlaces -->
-<!-- https://seaborn.pydata.org/examples/index.html -->
 <!-- images -->
 <!-- práctica -->
 </section></section>

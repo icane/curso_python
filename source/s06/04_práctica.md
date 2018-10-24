@@ -1,5 +1,5 @@
 ## Interactivo/Práctico
-Abrir [cuaderno jupyter]
+Abrir [cuaderno jupyter][nb_pract]
 
 ##
 1. `ax`: ejes sobre los que dibujar

@@ -65,3 +65,6 @@ x, y = np.random.multivariate_normal(mean, cov, 1000).T
 with sns.axes_style("white"):
     sns.jointplot(x=x, y=y, kind="hex", color="k");
 ~~~
+
+[+ ejemplos][seaborn_ex]
+
