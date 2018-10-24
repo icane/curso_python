@@ -254,7 +254,7 @@ proyecto/
 - `In[n]` identifica las entradas de comandos
 - comandos _mágicos_ (solamente para `ipython`)
   + comienzan por el caracter '`%`'
-  + ejemplo: `%edit` (=`F2`), `%pylab`
+  + ejemplo: `%edit`, `%pylab`
 - `Ctrl+R` activa la búsqueda en el historial
   + `%hist`, `%history` para visualizarlo
 - `_` guarda la salida del último comando &sup3;
@@ -318,7 +318,7 @@ False
 ::: incremental
 - Importa el módulo `numpy`
   + `import numpy as np`
-  + o bien (ipython): `%pylab`
+  + o bien (ipython): `%pylab` (no recomendado)
 - Crea un array `a` de 1000 puntos entre [0,1]
   + Ejecuta el método `np.linspace`
 - Calcula el seno de '2·π·a'
@@ -331,12 +331,14 @@ False
 ## Solución
 ##
 ~~~python
-%pylab
+%matplotlib inline
+import numpy as np
+from matplotlib import pyplot as plt
+
 
 a = np.linspace(0, 1, 1000)
 b = sin(2*np.pi*a)
 
-%matplotlib inline
 plt.plot(a, b)
 ~~~
 

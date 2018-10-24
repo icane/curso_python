@@ -286,7 +286,7 @@ fuente: [stackoverflow][stackoverflow_trends]
 ::::::::::::::
 
 
-# ¿? {data-background-image="images/python_words.gif"} 
+# ¿? {data-background-image="images/s01/python_words.gif"} 
 ## 
 ![Guido van Rossum, 1995]
 

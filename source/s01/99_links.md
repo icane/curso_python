@@ -34,41 +34,41 @@
 
 <!-- imágenes -->
 
-[conda_envs]: images/envs_graph.jpg
-[conda_platform]: images/conda_platform.jpeg
-[entornos]: images/conda_envs.svg
-[exec_compiler]: images/exec_compiler.png
-[exec_interpreter]: images/exec_interpreter.png
-[GIL]: images/GIL.png { width=70% }
-[Guido van Rossum, 1995]: images/guido.jpg  { width=40% }
-[Guido van Rossum, 1999]: images/guido2.gif  { width=40% }
-[hierarchy]: images/hierarchy.svg
-[https://xkcd.com/1987]: images/xkcd1987.png
-[ieee_graph]: images/ieee_graph.jpeg
-[logo_ansible]: images/ansible_logo.png { .logo }
-[logo_celery]: images/logo_celery.png { .logo }
-[logo_django]: images/logo_django.png { .logo }
-[logo_fabric]: images/logo_fabric.png { .logo }
-[logo_flask]: images/flask_logo.png { .logo }
-[logo_jinja2]: images/jinja_logo.png { .logo }
-[logo_keras]: images/keras_logo.png { .logo }
-[logo_pandas]: images/pandas_logo.png { .logo }
-[logo_pyramid]: images/pyramid_logo.png { .logo }
-[logo_pytorch]: images/pytorch_logo.png { .logo }
-[logo_requests]: images/requests_logo.png {.logo}
-[logo_scikit]: images/scikit_logo.png { .logo }
-[logo_scipy]: images/scipy_logo.png { .logo }
-[logo_tensorflow]: images/tensorflow_logo.png { .logo }
-[poll_results]: images/poll_results.png
-[python_logo]: images/python_logo.png
-[Python_logo_1990s]: images/Python_logo_1990s.svg
-[R vs Python]: images/R_vs_Python.png
-[setup]: images/anaconda.gif
-[simpson]: images/simpson.gif
-[stackoverflow_graph]: images/SOtrend.svg
-[stackoverflow_top]: images/SO_py_vs_other.svg
-[timeline]: images/timeline.png
-[venv_navigator]: images/venv_navigator.gif
+[conda_envs]: images/s01/envs_graph.jpg
+[conda_platform]: images/s01/conda_platform.jpeg
+[entornos]: images/s01/conda_envs.svg
+[exec_compiler]: images/s01/exec_compiler.png
+[exec_interpreter]: images/s01/exec_interpreter.png
+[GIL]: images/s01/GIL.png { width=70% }
+[Guido van Rossum, 1995]: images/s01/guido.jpg  { width=40% }
+[Guido van Rossum, 1999]: images/s01/guido2.gif  { width=40% }
+[hierarchy]: images/s01/hierarchy.svg
+[https://xkcd.com/1987]: images/s01/xkcd1987.png
+[ieee_graph]: images/s01/ieee_graph.jpeg
+[logo_ansible]: images/s01/ansible_logo.png { .logo }
+[logo_celery]: images/s01/logo_celery.png { .logo }
+[logo_django]: images/s01/logo_django.png { .logo }
+[logo_fabric]: images/s01/logo_fabric.png { .logo }
+[logo_flask]: images/s01/flask_logo.png { .logo }
+[logo_jinja2]: images/s01/jinja_logo.png { .logo }
+[logo_keras]: images/s01/keras_logo.png { .logo }
+[logo_pandas]: images/s01/pandas_logo.png { .logo }
+[logo_pyramid]: images/s01/pyramid_logo.png { .logo }
+[logo_pytorch]: images/s01/pytorch_logo.png { .logo }
+[logo_requests]: images/s01/requests_logo.png {.logo}
+[logo_scikit]: images/s01/scikit_logo.png { .logo }
+[logo_scipy]: images/s01/scipy_logo.png { .logo }
+[logo_tensorflow]: images/s01/tensorflow_logo.png { .logo }
+[poll_results]: images/s01/poll_results.png
+[python_logo]: images/s01/python_logo.png
+[Python_logo_1990s]: images/s01/Python_logo_1990s.svg
+[R vs Python]: images/s01/R_vs_Python.png
+[setup]: images/s01/anaconda.gif
+[simpson]: images/s01/simpson.gif
+[stackoverflow_graph]: images/s01/SOtrend.svg
+[stackoverflow_top]: images/s01/SO_py_vs_other.svg
+[timeline]: images/s01/timeline.png
+[venv_navigator]: images/s01/venv_navigator.gif
 
 <!-- código -->
 
