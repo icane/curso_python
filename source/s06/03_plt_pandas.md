@@ -104,8 +104,9 @@ ax.set_yticks(rotation='vertical')
 #### Tipos de gráficos con `pandas`
 
 ##
-- Scatter
+::: { .smaller }
 
+- Scatter
 ~~~python
 df.plot.scatter(
     'a', 'b', c='c', s=df['d'],
@@ -116,6 +117,7 @@ df.plot.scatter(
 ~~~
 
 ![pd_scatter]\
+:::
 
 ##
 - Histograma
@@ -154,24 +156,41 @@ df.boxplot(by='origin', ax=ax)
 Area
 
 ::: { .smaller }
+
+::::::::::::: {.columns}
+::: {.column width="60%" .smaller}
 ~~~python
 np.random.seed(0)
 N = 5
-data = pd.DataFrame({'Grupo A': np.random.randint(1, 20, N),
-                     'Grupo B': np.random.randint(1, 20, N),
-                     'Grupo C': np.random.randint(1, 20, N)},
-                    index=range(1, N+1))
-ax = plt.subplot(1, 2, 1)
-data.plot.area(stacked=False, alpha=.6, title='Gráfico de área', ax=ax)
-ax = plt.subplot(1, 2, 2)
-data.plot.area(title='Gráfico de área (apilado)', ax=ax);
-~~~
+data = pd.DataFrame(
+    {'Grupo A': np.random.randint(1, 20, N),
+     'Grupo B': np.random.randint(1, 20, N),
+     'Grupo C': np.random.randint(1, 20, N)},
+    index=range(1, N+1)
+)
 
+ax = plt.subplot(1, 2, 1)
+data.plot.area(
+    stacked=False,
+    alpha=.6,
+    title='Gráfico de área',
+    ax=ax)
+
+ax = plt.subplot(1, 2, 2)
+data.plot.area(
+    title='Gráfico de área (apilado)',
+    ax=ax)
+~~~
+:::
+::: {.column width="40%"}
 ![pd_area]\
+:::
+::::::::::::::
+
 :::
 
 ##
-Pie
+Circular
 
 ::: { .smaller }
 :::
@@ -189,8 +208,8 @@ ax = df1.plot.pie(cmap=cmap,
 ::::::::::::::
 
 
-# Parámetros comunes
-#### Parámetros comunes en `pandas`
+# Parámetros opcionales
+#### Parámetros opcionales en `pandas`
 
 ##
 ### `pd.DataFrame.plot()`
@@ -203,41 +222,6 @@ Es posible pasar argumentos para realizar personalizaciones rápidas.
 - Además, podremos usar las primitivas de `matplotlib`, bien como
   argumentos adicionales o sobre los ejes
 :::
-
-##
-- `ax`: ejes donde dibujar [opcional]
-
-##
-- `subplots [True|False]`: subplot para cada columna dibujada
-
-##
-- `sharex/sharey`: compartir ejes (subplots)
-
-##
-- `figsize`: tamaño de la figura
-
-##
-- `title`:
-  + `str`: título de la figura
-  + `list(str)`: título de cada subplot
-
-##
-- `grid [True|False]`: dibujar cuadrícula
-
-##
-- `xlim, ylim`: tuplas `(lo, hi)` para delimitar visualización
-
-##
-- `colormap`: mapa de colores (`matplotlib.cm.`)
-
-##
-- `table [True|False]`: mostrar tabla bajo el gráfico
-
-##
-- `stacked [True|False]`: apilar datos
-
-##
-- `secondary_y`: segundo eje de ordenadas
 
 ## NaN
 

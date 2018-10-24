@@ -7,7 +7,16 @@
 - Oficialmente reemplazada por [cartopy]
 - Alternativa: [folium]
 
-
 ![geo_1]\
 
+##
+
 ![geo_2]\
+
+
+##
+
+Folium
+
+[ejemplos online][folium_nb]
+

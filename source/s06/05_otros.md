@@ -1,18 +1,35 @@
 
-## Alternativas: `seaborn`
-
-Simplifica (aún más) ciertas tareas de visualización
-
-~~~python
-sns.set()  # tema por defecto
-crashes = sns.load_dataset("car_crashes");
-with sns.color_palette("husl", 8):
-    sns.jointplot("speeding", "alcohol", crashes, kind='reg');
-~~~
-
-![seaborn_scatter]\
+# Alternativas: `seaborn`
+#### seaborn
 
 ##
+Simplifica (aún más) ciertas tareas de visualización
+
+::::::::::::: {.columns}
+::: {.column width="50%" .smaller}
+~~~python
+sns.set()  # tema por defecto
+crashes = sns.load_dataset("car_crashes")
+
+with sns.color_palette("husl", 8):
+    sns.jointplot(
+        "speeding",
+        "alcohol",
+        crashes,
+        kind='reg'
+    )
+~~~
+:::
+::: {.column width="50%"}
+![seaborn_scatter]\
+:::
+::::::::::::::
+
+
+##
+
+Con `matplotlib`: ...
+
 :::{ .smaller }
 ~~~python
 from scipy.stats import gaussian_kde
@@ -39,7 +56,7 @@ crashes.plot.hist(y='alcohol', ax=ax3, sharey=ax1, normed=True, legend=None,
 ~~~
 :::
 
-
+##
 
 - Hexbin
 

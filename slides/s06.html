@@ -654,7 +654,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb28-14" title="14">ax2 <span class="op">==</span> ax</a>
 <a class="sourceLine" id="cb28-15" title="15"><span class="va">True</span></a></code></pre></div>
 </div><div class="column" style="width:40%;">
-<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" /><br />
+<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" style="width:50.0%" /><br />
 </p>
 </div>
 </div>
@@ -705,6 +705,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section></section>
 <section><section id="tipos-de-gráficos-disponibles" class="title-slide slide level1"><h1>Tipos de gráficos disponibles</h1></section><h4 id="tipos-de-gráficos-con-pandas">Tipos de gráficos con <code>pandas</code></h4><section id="section-25" class="slide level2">
 <h2></h2>
+<div class="smaller">
 <ul>
 <li>Scatter</li>
 </ul>
@@ -714,8 +715,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb33-4" title="4">    title<span class="op">=</span><span class="st">&#39;Scatter con pandas&#39;</span>, rot<span class="op">=</span><span class="st">&#39;vertical&#39;</span>,</a>
 <a class="sourceLine" id="cb33-5" title="5">    ax <span class="op">=</span> ax<span class="op">;</span></a>
 <a class="sourceLine" id="cb33-6" title="6">)</a></code></pre></div>
-<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" /><br />
+<p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" style="width:50.0%" /><br />
 </p>
+</div>
 </section><section id="section-26" class="slide level2">
 <h2></h2>
 <ul>
@@ -748,22 +750,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p>Area</p>
 <div class="smaller">
+<div class="columns">
+<div class="column smaller" style="width:60%;">
 <div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1">np.random.seed(<span class="dv">0</span>)</a>
 <a class="sourceLine" id="cb36-2" title="2">N <span class="op">=</span> <span class="dv">5</span></a>
-<a class="sourceLine" id="cb36-3" title="3">data <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Grupo A&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
-<a class="sourceLine" id="cb36-4" title="4">                     <span class="st">&#39;Grupo B&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
-<a class="sourceLine" id="cb36-5" title="5">                     <span class="st">&#39;Grupo C&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N)},</a>
-<a class="sourceLine" id="cb36-6" title="6">                    index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, N<span class="op">+</span><span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb36-7" title="7">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb36-8" title="8">data.plot.area(stacked<span class="op">=</span><span class="va">False</span>, alpha<span class="op">=</span>.<span class="dv">6</span>, title<span class="op">=</span><span class="st">&#39;Gráfico de área&#39;</span>, ax<span class="op">=</span>ax)</a>
-<a class="sourceLine" id="cb36-9" title="9">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb36-10" title="10">data.plot.area(title<span class="op">=</span><span class="st">&#39;Gráfico de área (apilado)&#39;</span>, ax<span class="op">=</span>ax)<span class="op">;</span></a></code></pre></div>
+<a class="sourceLine" id="cb36-3" title="3">data <span class="op">=</span> pd.DataFrame(</a>
+<a class="sourceLine" id="cb36-4" title="4">    {<span class="st">&#39;Grupo A&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
+<a class="sourceLine" id="cb36-5" title="5">     <span class="st">&#39;Grupo B&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N),</a>
+<a class="sourceLine" id="cb36-6" title="6">     <span class="st">&#39;Grupo C&#39;</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">20</span>, N)},</a>
+<a class="sourceLine" id="cb36-7" title="7">    index<span class="op">=</span><span class="bu">range</span>(<span class="dv">1</span>, N<span class="op">+</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb36-8" title="8">)</a>
+<a class="sourceLine" id="cb36-9" title="9"></a>
+<a class="sourceLine" id="cb36-10" title="10">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb36-11" title="11">data.plot.area(</a>
+<a class="sourceLine" id="cb36-12" title="12">    stacked<span class="op">=</span><span class="va">False</span>,</a>
+<a class="sourceLine" id="cb36-13" title="13">    alpha<span class="op">=</span>.<span class="dv">6</span>,</a>
+<a class="sourceLine" id="cb36-14" title="14">    title<span class="op">=</span><span class="st">&#39;Gráfico de área&#39;</span>,</a>
+<a class="sourceLine" id="cb36-15" title="15">    ax<span class="op">=</span>ax)</a>
+<a class="sourceLine" id="cb36-16" title="16"></a>
+<a class="sourceLine" id="cb36-17" title="17">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb36-18" title="18">data.plot.area(</a>
+<a class="sourceLine" id="cb36-19" title="19">    title<span class="op">=</span><span class="st">&#39;Gráfico de área (apilado)&#39;</span>,</a>
+<a class="sourceLine" id="cb36-20" title="20">    ax<span class="op">=</span>ax)</a></code></pre></div>
+</div><div class="column" style="width:40%;">
 <p><img data-src="images/s06/pd_area.png" alt="pd_area" /><br />
 </p>
 </div>
+</div>
+</div>
 </section><section id="section-30" class="slide level2">
 <h2></h2>
-<p>Pie</p>
+<p>Circular</p>
 <div class="smaller">
 
 </div>
@@ -778,7 +795,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section></section>
-<section><section id="parámetros-comunes" class="title-slide slide level1"><h1>Parámetros comunes</h1></section><h4 id="parámetros-comunes-en-pandas">Parámetros comunes en <code>pandas</code></h4><section id="section-31" class="slide level2">
+<section><section id="parámetros-opcionales" class="title-slide slide level1"><h1>Parámetros opcionales</h1></section><h4 id="parámetros-opcionales-en-pandas">Parámetros opcionales en <code>pandas</code></h4><section id="section-31" class="slide level2">
 <h2></h2>
 <h3 id="pd.dataframe.plot"><code>pd.DataFrame.plot()</code></h3>
 <div class="smaller">
@@ -789,65 +806,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Además, podremos usar las primitivas de <code>matplotlib</code>, bien como argumentos adicionales o sobre los ejes</li>
 </ul>
 </div>
-</section><section id="section-32" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>ax</code>: ejes donde dibujar [opcional]</li>
-</ul>
-</section><section id="section-33" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>subplots [True|False]</code>: subplot para cada columna dibujada</li>
-</ul>
-</section><section id="section-34" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>sharex/sharey</code>: compartir ejes (subplots)</li>
-</ul>
-</section><section id="section-35" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>figsize</code>: tamaño de la figura</li>
-</ul>
-</section><section id="section-36" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>title</code>:
-<ul>
-<li><code>str</code>: título de la figura</li>
-<li><code>list(str)</code>: título de cada subplot</li>
-</ul></li>
-</ul>
-</section><section id="section-37" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>grid [True|False]</code>: dibujar cuadrícula</li>
-</ul>
-</section><section id="section-38" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>xlim, ylim</code>: tuplas <code>(lo, hi)</code> para delimitar visualización</li>
-</ul>
-</section><section id="section-39" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>colormap</code>: mapa de colores (<code>matplotlib.cm.</code>)</li>
-</ul>
-</section><section id="section-40" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>table [True|False]</code>: mostrar tabla bajo el gráfico</li>
-</ul>
-</section><section id="section-41" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>stacked [True|False]</code>: apilar datos</li>
-</ul>
-</section><section id="section-42" class="slide level2">
-<h2></h2>
-<ul>
-<li><code>secondary_y</code>: segundo eje de ordenadas</li>
-</ul>
 </section><section id="nan" class="slide level2">
 <h2>NaN</h2>
 <ul>
@@ -857,19 +815,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>propagando el último valor</li>
 <li>o con valores preestablecidos</li>
 </ul></li>
-<li>O interpolar <code>df.interpolate()</code></li>
+<li>O interpolar <code>df.interpolate()</code> ## Interactivo/Práctico Abrir <a href="code/s06/práctica.ipynb">cuaderno jupyter</a></li>
 </ul>
-</section><section id="alternativas-seaborn" class="slide level2">
-<h2>Alternativas: <code>seaborn</code></h2>
-<p>Simplifica (aún más) ciertas tareas de visualización</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1">sns.<span class="bu">set</span>()  <span class="co"># tema por defecto</span></a>
-<a class="sourceLine" id="cb38-2" title="2">crashes <span class="op">=</span> sns.load_dataset(<span class="st">&quot;car_crashes&quot;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb38-3" title="3"><span class="cf">with</span> sns.color_palette(<span class="st">&quot;husl&quot;</span>, <span class="dv">8</span>):</a>
-<a class="sourceLine" id="cb38-4" title="4">    sns.jointplot(<span class="st">&quot;speeding&quot;</span>, <span class="st">&quot;alcohol&quot;</span>, crashes, kind<span class="op">=</span><span class="st">&#39;reg&#39;</span>)<span class="op">;</span></a></code></pre></div>
-<p><img data-src="images/s06/sns_scatter.png" alt="seaborn_scatter" /><br />
+</section><section id="section-32" class="slide level2">
+<h2></h2>
+<ol type="1">
+<li><code>ax</code>: ejes sobre los que dibujar</li>
+</ol>
+<p><img data-src="images/s06/practica_01.png" alt="practica_01" /><br />
+</p>
+</section><section id="section-33" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<ol start="2" type="1">
+<li><code>subplots [True|False]</code>: subplot para cada columna dibujada
+<ul>
+<li><code>layout</code>: (<code>n_filas</code>, <code>n_columnas</code>), opcional con <code>subplot=True</code></li>
+</ul></li>
+</ol>
+<p><img data-src="images/s06/practica_02.png" alt="practica_02" /><br />
+</p>
+</div>
+</section><section id="section-34" class="slide level2">
+<h2></h2>
+<ol start="3" type="1">
+<li><code>sharex/sharey</code>: compartir ejes (subplots)</li>
+</ol>
+<p><img data-src="images/s06/practica_03.png" alt="practica_03" /><br />
+</p>
+</section><section id="section-35" class="slide level2">
+<h2></h2>
+<ol start="4" type="1">
+<li><code>title</code>:
+<ul>
+<li><code>str</code>: título de la figura</li>
+<li><code>list(str)</code>: título de cada subplot</li>
+</ul></li>
+</ol>
+<p><img data-src="images/s06/practica_04.png" alt="practica_04" /><br />
+</p>
+</section><section id="section-36" class="slide level2">
+<h2></h2>
+<ol start="5" type="1">
+<li><code>figsize</code>: tamaño de la figura</li>
+</ol>
+<p><img data-src="images/s06/practica_05.png" alt="practica_05" /><br />
+</p>
+</section><section id="section-37" class="slide level2">
+<h2></h2>
+<ol start="6" type="1">
+<li><code>stacked [True|False]</code>: apilar datos</li>
+</ol>
+<p><img data-src="images/s06/practica_06.png" alt="practica_06" /><br />
+</p>
+</section><section id="section-38" class="slide level2">
+<h2></h2>
+<ol start="7" type="1">
+<li><code>grid [True|False]</code>: dibujar cuadrícula</li>
+</ol>
+<p><img data-src="images/s06/practica_07.png" alt="practica_07" /><br />
+</p>
+</section><section id="section-39" class="slide level2">
+<h2></h2>
+<ol start="8" type="1">
+<li><code>rot</code>: <code>'horizontal'</code>, <code>'vertical'</code>, o número (en grados)</li>
+</ol>
+<p><img data-src="images/s06/practica_08.png" alt="practica_08" /><br />
+</p>
+</section><section id="section-40" class="slide level2">
+<h2></h2>
+<ol start="9" type="1">
+<li><code>xlim, ylim</code>: tuplas <code>(lo, hi)</code> para delimitar visualización</li>
+</ol>
+<p><img data-src="images/s06/practica_09.png" alt="practica_09" /><br />
+</p>
+</section><section id="section-41" class="slide level2">
+<h2></h2>
+<ol start="10" type="1">
+<li><code>colormap</code>: mapa de colores (<code>matplotlib.cm.</code>)</li>
+</ol>
+<p><img data-src="images/s06/practica_10.png" alt="practica_10" /><br />
+</p>
+</section><section id="section-42" class="slide level2">
+<h2></h2>
+<ol start="11" type="1">
+<li><code>secondary_y</code>: segundo eje de ordenadas</li>
+</ol>
+<p><img data-src="images/s06/practica_11.png" alt="practica_11" /><br />
 </p>
 </section><section id="section-43" class="slide level2">
 <h2></h2>
+<ol start="12" type="1">
+<li><code>table [True|False]</code>: mostrar tabla bajo el gráfico</li>
+</ol>
+<p><img data-src="images/s06/practica_12.png" alt="practica_12" /><br />
+</p>
+</section><section id="section-44" class="slide level2">
+<h2></h2>
+<p><strong>BONUS</strong> Generar un gráfico circular con estilo <code>xkcd</code></p>
+<p><img data-src="images/s06/practica_99.png" alt="practica_99" /><br />
+</p>
+</section></section>
+<section><section id="alternativas-seaborn" class="title-slide slide level1"><h1>Alternativas: <code>seaborn</code></h1></section><h4 id="seaborn">seaborn</h4><section id="section-45" class="slide level2">
+<h2></h2>
+<p>Simplifica (aún más) ciertas tareas de visualización</p>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" title="1">sns.<span class="bu">set</span>()  <span class="co"># tema por defecto</span></a>
+<a class="sourceLine" id="cb38-2" title="2">crashes <span class="op">=</span> sns.load_dataset(<span class="st">&quot;car_crashes&quot;</span>)</a>
+<a class="sourceLine" id="cb38-3" title="3"></a>
+<a class="sourceLine" id="cb38-4" title="4"><span class="cf">with</span> sns.color_palette(<span class="st">&quot;husl&quot;</span>, <span class="dv">8</span>):</a>
+<a class="sourceLine" id="cb38-5" title="5">    sns.jointplot(</a>
+<a class="sourceLine" id="cb38-6" title="6">        <span class="st">&quot;speeding&quot;</span>,</a>
+<a class="sourceLine" id="cb38-7" title="7">        <span class="st">&quot;alcohol&quot;</span>,</a>
+<a class="sourceLine" id="cb38-8" title="8">        crashes,</a>
+<a class="sourceLine" id="cb38-9" title="9">        kind<span class="op">=</span><span class="st">&#39;reg&#39;</span></a>
+<a class="sourceLine" id="cb38-10" title="10">    )</a></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/s06/sns_scatter.png" alt="seaborn_scatter" /><br />
+</p>
+</div>
+</div>
+</section><section id="section-46" class="slide level2">
+<h2></h2>
+<p>Con <code>matplotlib</code>: …</p>
 <div class="smaller">
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="im">from</span> scipy.stats <span class="im">import</span> gaussian_kde</a>
 <a class="sourceLine" id="cb39-2" title="2"></a>
@@ -893,16 +962,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb39-20" title="20">crashes.plot.hist(y<span class="op">=</span><span class="st">&#39;alcohol&#39;</span>, ax<span class="op">=</span>ax3, sharey<span class="op">=</span>ax1, normed<span class="op">=</span><span class="va">True</span>, legend<span class="op">=</span><span class="va">None</span>,</a>
 <a class="sourceLine" id="cb39-21" title="21">    orientation<span class="op">=</span><span class="st">&#39;horizontal&#39;</span>, alpha<span class="op">=</span>.<span class="dv">5</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</a></code></pre></div>
 </div>
+</section><section id="section-47" class="slide level2">
+<h2></h2>
 <ul>
 <li>Hexbin</li>
 </ul>
 <div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1">x, y <span class="op">=</span> np.random.multivariate_normal(mean, cov, <span class="dv">1000</span>).T</a>
 <a class="sourceLine" id="cb40-2" title="2"><span class="cf">with</span> sns.axes_style(<span class="st">&quot;white&quot;</span>):</a>
 <a class="sourceLine" id="cb40-3" title="3">    sns.jointplot(x<span class="op">=</span>x, y<span class="op">=</span>y, kind<span class="op">=</span><span class="st">&quot;hex&quot;</span>, color<span class="op">=</span><span class="st">&quot;k&quot;</span>)<span class="op">;</span></a></code></pre></div>
+</section></section>
+<section><section id="geovisualización" class="title-slide slide level1"><h1>Geovisualización</h1></section><section id="section-48" class="slide level2">
+<h2></h2>
+<ul>
+<li>Librería standard <em>de facto</em>: matplotlib-toolkit (<strong>obsoleta</strong>)</li>
+<li>Oficialmente reemplazada por <a href="https://github.com/SciTools/cartopy">cartopy</a></li>
+<li>Alternativa: <a href="http://python-visualization.github.io/folium/">folium</a></li>
+</ul>
+<p><img data-src="images/s06/geo_1.png" alt="geo_1" /><br />
+</p>
+</section><section id="section-49" class="slide level2">
+<h2></h2>
+<p><img data-src="images/s06/geo_2.png" alt="geo_2" /><br />
+</p>
+</section><section id="section-50" class="slide level2">
+<h2></h2>
+<p>Folium</p>
+<p><a href="https://nbviewer.jupyter.org/github/python-visualization/folium/tree/master/examples/">ejemplos online</a></p>
 <!-- enlaces -->
-<!-- https://jakevdp.github.io/PythonDataScienceHandbook/index.html -->
 <!-- https://seaborn.pydata.org/examples/index.html -->
 <!-- images -->
+<!-- práctica -->
 </section></section>
     </div>
   </div>
