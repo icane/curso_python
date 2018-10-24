@@ -11,21 +11,24 @@ df = pd.read_csv(DATA_URL)
 df.head()
 ~~~~
 
+::: notes
+PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE
+:::
 
 ## añadir columna de totales
- 
-:::incremental
 
 ~~~~python
 df["total"] = df["Jan"] + df["Feb"] + df["Mar"]
 df.head()
 ~~~~
 
+::: notes
+PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE
+:::
+
 ## análisis básico a nivel de columna
 
 - ¿total, media, mínimo, máximo del mes de enero?
-
-:::incremental
 
 ~~~~python
 df["Jan"].sum()
@@ -34,9 +37,11 @@ df["Jan"].min()
 df["Jan"].max()
 ~~~~
 
-## añadir subtotales por mes y total general
+::: notes
+PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE
+:::
 
-:::incremental
+## añadir subtotales por mes y total general
 
 ~~~~python
 sum_row = df[["Jan","Feb","Mar","total"]].sum() # suma para cada columna

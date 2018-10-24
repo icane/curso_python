@@ -59,6 +59,10 @@ acepta:
 - `delimiter`: delimitador (`None`)
 - `header`: cabecera (se infiere)
 
+## escritura desde archivo
+
+`.write_csv()`
+
 ## manejo básico
 
 - se puede obtener una lista de columnas
@@ -110,7 +114,7 @@ frame2.ca.nunique()
 
 ## manejo básico
 
-funciones básicas
+funciones estadísticas
 
 ~~~~python
 frame2['pop'].mean()
@@ -120,6 +124,15 @@ frame2['pop'].min()
 frame2['pop'].median()
 ~~~~
 
+## manejo básico
+
+valores nulos: `isnull()`: `NaN, None/NaN, NaT`
+
+~~~~python
+array = np.array([[1, np.nan, 3], [4, 5, np.nan]])
+pd.isnull(array)
+~~~~
+
 ## inspección
 
 ~~~~python
@@ -127,8 +140,6 @@ frame2.describe() # información estadística
 frame2.info() # información sobre la estructura de datos
 frame2.tail()
 ~~~~
-
-## funciones básicas
 
 ## selección de columnas
 
@@ -182,7 +193,7 @@ DATA_URL = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.use
 usuarios = pd.read_csv(DATA_URL, sep='|')
 ~~~~
 
-asignar a una variable llamada `users` y utilizar `user_id` como 'indice
+asignar a una variable llamada `users` y utilizar `user_id` como índice
 
 ## ejercicio inspección
 
@@ -376,6 +387,10 @@ df = pd.DataFrame(data, index = ['Santander', 'Torrelavega', 'Laredo', 'Camargo'
 df
 ~~~~
 
+::: notes
+PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE
+:::
+
 ## ejemplo
 
 crear función que pase a mayúsculas usando lambda
@@ -383,6 +398,10 @@ crear función que pase a mayúsculas usando lambda
 ~~~~python
 capitalizer = lambda x: x.upper()
 ~~~~
+
+::: notes
+PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE
+:::
 
 ## ejemplo
 

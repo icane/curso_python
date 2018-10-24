@@ -10,7 +10,7 @@
 
 ## numpy
 
-es la biblioteca principal para computación científica en Python.
+es la biblioteca principal para computación científica en Python
 
 - su principal estructura de datos es el array multidimensional
 - recuerda a Matlab
@@ -22,7 +22,7 @@ es la biblioteca principal para computación científica en Python.
 - almacena datos en bloques contiguos de memoria
 - contiene funciones matemáticas sobre arrays sin necesidad de bucles
 - implementa funcionalidades de álgebra lineal
-- ofrece una API en C para conectar `numpy` con C o Fortran
+- ofrece una API en `C` para conectar `numpy` con `C` o `Fortran`
 
 ## prueba de rendimiento
 
@@ -95,7 +95,7 @@ arr1
 
 ## crear ndarrays
 
-una lista de listas de la misma longitud se convierte a array multidimensional:
+una lista de listas de la misma longitud se convierte a array multidimensional
 
 ~~~python
 data2 = [[1, 2, 3, 4], [5, 6, 7, 8]]
@@ -110,11 +110,13 @@ arr2.dtype # tipo de datos
 
 - otras funciones: `zeros`, `ones`, `empty`, `full`, `arange`
 - para varias dimensiones, pasar una tupla como argumento
+- aceptan `dtype` como argumento
 
 ~~~python
 np.zeros(10)
 np.zeros((3, 6))
 np.ones(7)
+np.ones(7, dtype=bool)
 np.empty((2,3,2))
 np.full((2,2), np.inf)
 np.arange(15)
@@ -131,11 +133,6 @@ arr
 matrix = np.random.randn(4,4)
 matrix
 ~~~
-
-## ejercicios
-
-- crear un array 1D de números del 0 al 9
-- crear un array booleano de 3x3 con todos los valores a True
 
 ## tipos en ndarrays
 
@@ -158,6 +155,20 @@ float_arr.dtype
 ::: notes
 astype siempre crea un array nuevo
 float64 y float32 tienen errores en punto flotante
+:::
+
+## ejercicios
+
+- crear un array 1D de números del 0 al 9
+- crear un array booleano de 3x3 con todos los valores a True
+
+::: notes
+~~~~python
+arr = np.arange(10)
+
+np.full((3, 3), True, dtype=bool)
+np.ones((3,3), dtype=bool)
+~~~~
 :::
 
 ## operaciones vectoriales
@@ -248,6 +259,8 @@ arr.mean()
 arr.mean(axis=1)
 arr.sum()
 ~~~~
+
+[statistics]
 
 ## lógica condicional
 

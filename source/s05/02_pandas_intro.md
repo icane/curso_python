@@ -1,7 +1,7 @@
 # introducción a pandas
 #### introducción a pandas
 
-## qué es
+## qué es {.slide: style="font-size: 30px;"}
 
 paquete Python con estructuras de datos flexibles, expresivas y eficientes para trabajar con datos relacionados o etiquetados
 

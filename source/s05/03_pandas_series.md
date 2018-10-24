@@ -63,6 +63,26 @@ metrics = ['visitas',  'hits', 'visitantes', 'tpv']
 obj4 = pd.Series(my_dict, index=metrics)
 ~~~~
 
+## ejercicio
+
+crear una serie desde lista, array y dict
+
+~~~~python
+import numpy as np
+mylist = list('abcedfghijklmnopqrstuvwxyz')
+myarr = np.arange(26)
+mydict = dict(zip(mylist, myarr))
+~~~~
+
+::: notes
+~~~~python
+ser1 = pd.Series(mylist)
+ser2 = pd.Series(myarr)
+ser3 = pd.Series(mydict)
+print(ser3.head())
+~~~~
+:::
+
 ## operaciones desde numpy
 
 se pueden aplicar operaciones sin modificar la estructura
@@ -76,4 +96,36 @@ np.square(obj3)
 ~~~~python
 obj3 + obj4
 ~~~~
+
+## ejercicio
+
+obtener los elementos de A que no están en B
+
+usar `~` , `isin`
+
+~~~~python
+ser1 = pd.Series([1, 2, 3, 4, 5])
+ser2 = pd.Series([4, 5, 6, 7, 8])
+~~~~
+
+::: notes
+~~~~python
+ser1[~ser1.isin(ser2)]
+~~~~
+:::
+
+## ejercicio
+
+obtener la media y la desviación estándar de una serie
+
+~~~~python
+s = pd.Series([1,2,3,4,5,6,7,8,9,5,3])
+~~~~
+
+::: notes
+~~~~python
+s.mean()
+s.std()
+~~~~
+:::
 

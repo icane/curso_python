@@ -33,4 +33,13 @@ query = [{'sexo': 'hombres'}, {'trimestre': '2016-1'}, {'grupo-de-edad': 'total'
 dataset.get_value(query)
 ~~~~
 
+>obtener el total de activos mujeres para todos los grupos de edad en el segundo trimestre de 2017
+
+::: notes
+~~~~python
+query = [{'sexo': 'mujeres'}, {'trimestre': '2017-2'}, {'grupo-de-edad': 'total'}, {'variables': 'activos'}]
+dataset.get_value(query)
+128.8
+~~~~
+:::
 
