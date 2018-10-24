@@ -320,3 +320,14 @@ arr = np.random.randn(100)
 - extraer todos los números pares de un array
 - reemplazar números impares en array por -1
 
+~~~~python
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+~~~~
+
+::: notes
+~~~~python
+arr[arr % 2 == 0]
+arr[arr % 2 == 1] = -1
+~~~~
+:::
+
