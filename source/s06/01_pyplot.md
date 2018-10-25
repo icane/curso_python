@@ -236,7 +236,7 @@ print(fig.canvas.get_supported_filetypes())
 #### Tipos de gráficos - Lineplot
 
 ## Lineplot (`.plot()`)
-
+Tipo de gráfico por defecto
 ##
 ~~~python
 (fix, ax) = plt.subplots(1, 1)  # (n_rows, n_cols)
@@ -279,7 +279,7 @@ ax.plot(x, y2, 'r--')
 
 ![plot2]\
 
-# Scatterplot
+# Gráfico de dispersión
 #### Tipos de gráficos - Scatterplot
 
 ##
@@ -319,7 +319,7 @@ fig.suptitle("Scatterplot")
 ::::::::::::::
 
 
-# Barplot
+# Gráfico de barras
 #### Tipos de gráficos - Barplot
 
 ##
@@ -384,7 +384,7 @@ ax1, ax2 = ax.flatten()
 
 ![hist]\
 
-# Piechart
+# Diagrama circular
 #### Tipos de gráficos - Piechart
 
 ##

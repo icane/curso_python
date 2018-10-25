@@ -22,6 +22,7 @@
 [hist]: images/s06/hist.png
 [legend]: images/s06/legend.png
 [overlay]: images/s06/overlay.png
+[pandas_plot]: images/s06/pandas_plot.png
 [pd_area]: images/s06/pd_area.png
 [pd_boxplot]: images/s06/pd_boxplot.png
 [pd_hist]: images/s06/pd_hist.png { width=50% }
@@ -36,8 +37,8 @@
 [subplot]: images/s06/subplot.png { width=75% }
 [subplots12]: images/s06/subplots12.png
 [subplots21]: images/s06/subplots21.png { width=60% }
-[tick_rotation]: images/s06/tick_rotation.png { width=80% }
-[titulos]: images/s06/titulos.png { width=60% }
+[tick_rotation]: images/s06/tick_rotation.png { width=50% }
+[titulos]: images/s06/titulos.png { width=45% }
 [ts]: images/s06/ts.png
 [xkcd]: images/s06/xkcd.png
 

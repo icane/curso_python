@@ -67,7 +67,7 @@ plt.xticks(rotation=20)  # 20 grados en sentido antihorario
 
 
 ##
-#### Títulos y anotaciones
+#### Títulos, etiquetas y anotaciones
 
 ![titulos]\
 
