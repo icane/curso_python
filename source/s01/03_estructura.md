@@ -319,9 +319,9 @@ False
 - Importa el módulo `numpy`
   + `import numpy as np`
   + o bien (ipython): `%pylab` (no recomendado)
-- Crea un array `a` de 1000 puntos entre [0,1]
+- Crea un array `a` de 1000 puntos entre [0, 1]
   + Ejecuta el método `np.linspace`
-- Calcula el seno de '2·π·a'
+- Calcula el seno de $2\cdot\pi\cdot a$
   + Usa la constante `np.pi`
 - Activa el modo gráfico integrado
   + `%matplotlib inline`

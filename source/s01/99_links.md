@@ -36,13 +36,13 @@
 
 [conda_envs]: images/s01/envs_graph.jpg
 [conda_platform]: images/s01/conda_platform.jpeg
-[entornos]: images/s01/conda_envs.svg
+[entornos]: images/s01/conda_envs.png
 [exec_compiler]: images/s01/exec_compiler.png
 [exec_interpreter]: images/s01/exec_interpreter.png
 [GIL]: images/s01/GIL.png { width=70% }
 [Guido van Rossum, 1995]: images/s01/guido.jpg  { width=40% }
 [Guido van Rossum, 1999]: images/s01/guido2.gif  { width=40% }
-[hierarchy]: images/s01/hierarchy.svg
+[hierarchy]: images/s01/hierarchy.png
 [https://xkcd.com/1987]: images/s01/xkcd1987.png
 [ieee_graph]: images/s01/ieee_graph.jpeg
 [logo_ansible]: images/s01/ansible_logo.png { .logo }
