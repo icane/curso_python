@@ -9,8 +9,8 @@
 [Matplotlib]: https://matplotlib.org/
 [Seaborn]: https://seaborn.pydata.org/
 [seaborn_ex]: https://seaborn.pydata.org/examples/index.html
-[nb_mpl]: code/s06/visualización_con_matplotlib.ipynb
-[nb_pd]: code/s06/visualización_con_pandas.ipynb
+[nb_mpl]: code/s06/visualizacion_con_matplotlib.ipynb
+[nb_pd]: code/s06/visualizacion_con_pandas.ipynb
 
 <!-- images -->
 [barplot]: images/s06/barplot.png
@@ -43,7 +43,8 @@
 [xkcd]: images/s06/xkcd.png
 
 <!-- práctica -->
-[nb_pract]: code/s06/práctica.ipynb
+[nb_practice]: code/s06/practica.ipynb
+[nb_solution]: code/s06/soluciones.ipynb
 [practica_01]: images/s06/practica_01.png
 [practica_02]: images/s06/practica_02.png
 [practica_03]: images/s06/practica_03.png
