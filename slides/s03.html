@@ -34,7 +34,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -224,46 +224,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="section" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">midic <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="st">&#39;clave1&#39;</span>: <span class="st">&#39;valor1&#39;</span>,</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="st">&#39;clave2&#39;</span>: <span class="dv">23</span>,</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="st">&#39;clave3&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="st">&#39;clave4&#39;</span>: {</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">        <span class="st">&#39;subclave1&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">    }</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1">midic <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="st">&#39;clave1&#39;</span>: <span class="st">&#39;valor1&#39;</span>,</a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="st">&#39;clave2&#39;</span>: <span class="dv">23</span>,</a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="st">&#39;clave3&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="st">&#39;clave4&#39;</span>: {</a>
+<a class="sourceLine" id="cb1-6" title="6">        <span class="st">&#39;subclave1&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb1-7" title="7">    }</a>
+<a class="sourceLine" id="cb1-8" title="8">}</a></code></pre></div>
 </section><section id="section-1" class="slide level2">
 <h2></h2>
 <p>La clase más simple:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">class</span> MiClase:</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="cf">pass</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">class</span> MiClase:</a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="cf">pass</span></a></code></pre></div>
 </section><section id="section-2" class="slide level2">
 <h2></h2>
 <p>Una clase más completa:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">class</span> Persona:</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="co">&quot;&quot;&quot;Una clase para almacenar datos de personas&quot;&quot;&quot;</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">    </a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">    nombre <span class="op">=</span> <span class="va">None</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">    apellidos <span class="op">=</span> <span class="va">None</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">    email <span class="op">=</span> <span class="va">None</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">    </a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">    </a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a>
-<a class="sourceLine" id="cb3-11" data-line-number="11">    </a>
-<a class="sourceLine" id="cb3-12" data-line-number="12">    </a>
-<a class="sourceLine" id="cb3-13" data-line-number="13">    <span class="kw">def</span> linea_email(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb3-14" data-line-number="14">        <span class="cf">return</span> <span class="st">&quot;</span><span class="sc">{1}</span><span class="st">, </span><span class="sc">{0}</span><span class="st"> &lt;</span><span class="sc">{2}</span><span class="st">&gt;&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos, <span class="va">self</span>.email)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">class</span> Persona:</a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="co">&quot;&quot;&quot;Una clase para almacenar datos de personas&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb3-3" title="3">    </a>
+<a class="sourceLine" id="cb3-4" title="4">    nombre <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb3-5" title="5">    apellidos <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb3-6" title="6">    email <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb3-7" title="7">    </a>
+<a class="sourceLine" id="cb3-8" title="8">    </a>
+<a class="sourceLine" id="cb3-9" title="9">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb3-10" title="10">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a>
+<a class="sourceLine" id="cb3-11" title="11">    </a>
+<a class="sourceLine" id="cb3-12" title="12">    </a>
+<a class="sourceLine" id="cb3-13" title="13">    <span class="kw">def</span> linea_email(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb3-14" title="14">        <span class="cf">return</span> <span class="st">&quot;</span><span class="sc">{1}</span><span class="st">, </span><span class="sc">{0}</span><span class="st"> &lt;</span><span class="sc">{2}</span><span class="st">&gt;&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos, <span class="va">self</span>.email)</a></code></pre></div>
 </section><section id="section-3" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> p <span class="op">=</span> Persona()</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> p.nombre <span class="op">=</span> <span class="st">&#39;Alejandro&#39;</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> p.apellidos <span class="op">=</span> <span class="st">&#39;Villar&#39;</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> p.email <span class="op">=</span> <span class="st">&#39;avillar@ticnor.es&#39;</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> p.saludar()</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">Hola, Alejandro Villar</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(p.linea_email())</a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">Villar, Alejandro <span class="op">&lt;</span>avillar<span class="op">@</span>ticnor.es<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;&gt;&gt;</span> p <span class="op">=</span> Persona()</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="op">&gt;&gt;&gt;</span> p.nombre <span class="op">=</span> <span class="st">&#39;Alejandro&#39;</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="op">&gt;&gt;&gt;</span> p.apellidos <span class="op">=</span> <span class="st">&#39;Villar&#39;</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="op">&gt;&gt;&gt;</span> p.email <span class="op">=</span> <span class="st">&#39;avillar@ticnor.es&#39;</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="op">&gt;&gt;&gt;</span> p.saludar()</a>
+<a class="sourceLine" id="cb4-6" title="6">Hola, Alejandro Villar</a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(p.linea_email())</a>
+<a class="sourceLine" id="cb4-8" title="8">Villar, Alejandro <span class="op">&lt;</span>avillar<span class="op">@</span>ticnor.es<span class="op">&gt;</span></a></code></pre></div>
 </section><section id="self-i" class="slide level2">
 <h2><code>self</code> (I)</h2>
 <ul>
@@ -274,9 +274,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="self-ii" class="slide level2">
 <h2><code>self</code> (II)</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> p.saludar()  <span class="co"># No hay self</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb5-2" title="2">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1"><span class="op">&gt;&gt;&gt;</span> p.saludar()  <span class="co"># No hay self</span></a></code></pre></div>
 </section><section id="constructor" class="slide level2">
 <h2>Constructor</h2>
 <p>Realizar tareas de inicialización, según se crea la clase.</p>
@@ -288,86 +288,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="section-4" class="slide level2">
 <h2></h2>
 <p>Constructor sin argumentos</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">class</span> Persona:</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">        <span class="va">self</span>.nombre <span class="op">=</span> <span class="st">&#39;Pendiente&#39;</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">        <span class="bu">print</span>(<span class="st">&quot;Persona inicializada&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> p <span class="op">=</span> Persona()</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">Persona inicializada</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> p.nombre</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">&#39;Pendiente&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">class</span> Persona:</a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb7-3" title="3">        <span class="va">self</span>.nombre <span class="op">=</span> <span class="st">&#39;Pendiente&#39;</span></a>
+<a class="sourceLine" id="cb7-4" title="4">        <span class="bu">print</span>(<span class="st">&quot;Persona inicializada&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&gt;&gt;&gt;</span> p <span class="op">=</span> Persona()</a>
+<a class="sourceLine" id="cb8-2" title="2">Persona inicializada</a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="op">&gt;&gt;&gt;</span> p.nombre</a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="co">&#39;Pendiente&#39;</span></a></code></pre></div>
 <aside class="notes">
 <p>Mencionar dict implícito de atributos en objeto.</p>
 </aside>
 </section><section id="section-5" class="slide level2">
 <h2></h2>
 <p>Constructor con argumentos</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">class</span> Persona:</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, apellidos<span class="op">=</span><span class="st">&quot;Sin apellidos&quot;</span>):</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">        <span class="va">self</span>.nombre <span class="op">=</span> nombre</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">        <span class="va">self</span>.apellidos <span class="op">=</span> apellidos</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&quot;Persona inicializada&quot;</span>)</a>
-<a class="sourceLine" id="cb9-6" data-line-number="6">    </a>
-<a class="sourceLine" id="cb9-7" data-line-number="7">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb9-8" data-line-number="8">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> p1 <span class="op">=</span> Persona(<span class="st">&#39;Pedro&#39;</span>)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">Persona inicializada</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="op">&gt;&gt;&gt;</span> p2 <span class="op">=</span> Persona(<span class="st">&#39;Juan&#39;</span>, <span class="st">&#39;Pérez&#39;</span>)</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">Persona inicializada</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="op">&gt;&gt;&gt;</span> p1.saludar()</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">Hola, Pedro Sin apellidos</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="op">&gt;&gt;&gt;</span> p2.saludar()</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">Hola, Juan Pérez</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">class</span> Persona:</a>
+<a class="sourceLine" id="cb9-2" title="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre, apellidos<span class="op">=</span><span class="st">&quot;Sin apellidos&quot;</span>):</a>
+<a class="sourceLine" id="cb9-3" title="3">        <span class="va">self</span>.nombre <span class="op">=</span> nombre</a>
+<a class="sourceLine" id="cb9-4" title="4">        <span class="va">self</span>.apellidos <span class="op">=</span> apellidos</a>
+<a class="sourceLine" id="cb9-5" title="5">        <span class="bu">print</span>(<span class="st">&quot;Persona inicializada&quot;</span>)</a>
+<a class="sourceLine" id="cb9-6" title="6">    </a>
+<a class="sourceLine" id="cb9-7" title="7">    <span class="kw">def</span> saludar(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb9-8" title="8">        <span class="bu">print</span>(<span class="st">&quot;Hola, </span><span class="sc">{0}</span><span class="st"> </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.nombre, <span class="va">self</span>.apellidos))</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="op">&gt;&gt;&gt;</span> p1 <span class="op">=</span> Persona(<span class="st">&#39;Pedro&#39;</span>)</a>
+<a class="sourceLine" id="cb10-2" title="2">Persona inicializada</a>
+<a class="sourceLine" id="cb10-3" title="3"><span class="op">&gt;&gt;&gt;</span> p2 <span class="op">=</span> Persona(<span class="st">&#39;Juan&#39;</span>, <span class="st">&#39;Pérez&#39;</span>)</a>
+<a class="sourceLine" id="cb10-4" title="4">Persona inicializada</a>
+<a class="sourceLine" id="cb10-5" title="5"><span class="op">&gt;&gt;&gt;</span> p1.saludar()</a>
+<a class="sourceLine" id="cb10-6" title="6">Hola, Pedro Sin apellidos</a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="op">&gt;&gt;&gt;</span> p2.saludar()</a>
+<a class="sourceLine" id="cb10-8" title="8">Hola, Juan Pérez</a></code></pre></div>
 </section><section id="variables-de-clase-y-de-instancia" class="slide level2">
 <h2>Variables de clase y de instancia</h2>
 <ul>
 <li>De clase: compartida por todas las instancias</li>
 <li>De instancia: única para cada instancia</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">class</span> Coche:</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">    ruedas <span class="op">=</span> <span class="dv">4</span>          <span class="co"># Variable de clase</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">    </a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca):</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">        <span class="va">self</span>.marca <span class="op">=</span> marca   <span class="co"># Variable de instancia</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">class</span> Coche:</a>
+<a class="sourceLine" id="cb11-2" title="2">    ruedas <span class="op">=</span> <span class="dv">4</span>          <span class="co"># Variable de clase</span></a>
+<a class="sourceLine" id="cb11-3" title="3">    </a>
+<a class="sourceLine" id="cb11-4" title="4">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, marca):</a>
+<a class="sourceLine" id="cb11-5" title="5">        <span class="va">self</span>.marca <span class="op">=</span> marca   <span class="co"># Variable de instancia</span></a></code></pre></div>
 </section><section id="section-6" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> honda <span class="op">=</span> Coche(<span class="st">&quot;Honda&quot;</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> honda.ruedas</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="dv">4</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> Coche.ruedas</a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="dv">4</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="op">&gt;&gt;&gt;</span> honda.marca</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">&#39;Honda&#39;</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="op">&gt;&gt;&gt;</span> Coche.marca</a>
-<a class="sourceLine" id="cb12-9" data-line-number="9">Traceback (most recent call last):</a>
-<a class="sourceLine" id="cb12-10" data-line-number="10">  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="pp">AttributeError</span>: <span class="bu">type</span> <span class="bu">object</span> <span class="st">&#39;Coche&#39;</span> has no attribute <span class="st">&#39;marca&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="op">&gt;&gt;&gt;</span> honda <span class="op">=</span> Coche(<span class="st">&quot;Honda&quot;</span>)</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="op">&gt;&gt;&gt;</span> honda.ruedas</a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="dv">4</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="op">&gt;&gt;&gt;</span> Coche.ruedas</a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="dv">4</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="op">&gt;&gt;&gt;</span> honda.marca</a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="co">&#39;Honda&#39;</span></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="op">&gt;&gt;&gt;</span> Coche.marca</a>
+<a class="sourceLine" id="cb12-9" title="9">Traceback (most recent call last):</a>
+<a class="sourceLine" id="cb12-10" title="10">  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="pp">AttributeError</span>: <span class="bu">type</span> <span class="bu">object</span> <span class="st">&#39;Coche&#39;</span> has no attribute <span class="st">&#39;marca&#39;</span></a></code></pre></div>
 </section><section id="variables-y-métodos-privados" class="slide level2">
 <h2>Variables y métodos “privados”</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">class</span> Empleado:</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">    estado <span class="op">=</span> <span class="st">&#39;Ocupado&#39;</span>  <span class="co"># Pública</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">    __empresa <span class="op">=</span> <span class="va">None</span>    <span class="co"># Privada</span></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4">    __historial <span class="op">=</span> []    <span class="co"># Privada</span></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">    </a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">    <span class="kw">def</span> set_empresa(<span class="va">self</span>, empresa):   <span class="co"># Público</span></a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">        <span class="va">self</span>.__empresa <span class="op">=</span> empresa</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8">        <span class="va">self</span>.__actualizar_historial()</a>
-<a class="sourceLine" id="cb13-9" data-line-number="9">        </a>
-<a class="sourceLine" id="cb13-10" data-line-number="10">    <span class="kw">def</span> __actualizar_historial(<span class="va">self</span>): <span class="co"># Privado</span></a>
-<a class="sourceLine" id="cb13-11" data-line-number="11">        <span class="va">self</span>.__historial.append(<span class="va">self</span>.__empresa)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">class</span> Empleado:</a>
+<a class="sourceLine" id="cb13-2" title="2">    estado <span class="op">=</span> <span class="st">&#39;Ocupado&#39;</span>  <span class="co"># Pública</span></a>
+<a class="sourceLine" id="cb13-3" title="3">    __empresa <span class="op">=</span> <span class="va">None</span>    <span class="co"># Privada</span></a>
+<a class="sourceLine" id="cb13-4" title="4">    __historial <span class="op">=</span> []    <span class="co"># Privada</span></a>
+<a class="sourceLine" id="cb13-5" title="5">    </a>
+<a class="sourceLine" id="cb13-6" title="6">    <span class="kw">def</span> set_empresa(<span class="va">self</span>, empresa):   <span class="co"># Público</span></a>
+<a class="sourceLine" id="cb13-7" title="7">        <span class="va">self</span>.__empresa <span class="op">=</span> empresa</a>
+<a class="sourceLine" id="cb13-8" title="8">        <span class="va">self</span>.__actualizar_historial()</a>
+<a class="sourceLine" id="cb13-9" title="9">        </a>
+<a class="sourceLine" id="cb13-10" title="10">    <span class="kw">def</span> __actualizar_historial(<span class="va">self</span>): <span class="co"># Privado</span></a>
+<a class="sourceLine" id="cb13-11" title="11">        <span class="va">self</span>.__historial.append(<span class="va">self</span>.__empresa)</a></code></pre></div>
 <aside class="notes">
 <p>Name mangling</p>
 </aside>
 </section><section id="herencia-i" class="slide level2">
 <h2>Herencia (I)</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">class</span> Persona: <span class="co"># Igual que class Persona(object)</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">    <span class="cf">pass</span></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="kw">class</span> Empleado(Persona):</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">    <span class="cf">pass</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="kw">class</span> Multifuncion(Impresora, Escaner):</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8">    <span class="cf">pass</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">class</span> Persona: <span class="co"># Igual que class Persona(object)</span></a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="cf">pass</span></a>
+<a class="sourceLine" id="cb14-3" title="3"></a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="kw">class</span> Empleado(Persona):</a>
+<a class="sourceLine" id="cb14-5" title="5">    <span class="cf">pass</span></a>
+<a class="sourceLine" id="cb14-6" title="6"></a>
+<a class="sourceLine" id="cb14-7" title="7"><span class="kw">class</span> Multifuncion(Impresora, Escaner):</a>
+<a class="sourceLine" id="cb14-8" title="8">    <span class="cf">pass</span></a></code></pre></div>
 </section><section id="herencia-ii" class="slide level2">
 <h2>Herencia (II)</h2>
 <ul>
@@ -380,89 +380,89 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="herencia-iii" class="slide level2">
 <h2>Herencia (III)</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> e <span class="op">=</span> Empleado()</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(e, Empleado)</a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="va">True</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(e, Persona)</a>
-<a class="sourceLine" id="cb15-5" data-line-number="5"><span class="va">True</span></a>
-<a class="sourceLine" id="cb15-6" data-line-number="6"><span class="op">&gt;&gt;&gt;</span> <span class="bu">issubclass</span>(Empleado, Persona)</a>
-<a class="sourceLine" id="cb15-7" data-line-number="7"><span class="va">True</span></a>
-<a class="sourceLine" id="cb15-8" data-line-number="8"><span class="op">&gt;&gt;&gt;</span> mf <span class="op">=</span> Multifuncion()</a>
-<a class="sourceLine" id="cb15-9" data-line-number="9"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Multifuncion)</a>
-<a class="sourceLine" id="cb15-10" data-line-number="10"><span class="va">True</span></a>
-<a class="sourceLine" id="cb15-11" data-line-number="11"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Impresora)</a>
-<a class="sourceLine" id="cb15-12" data-line-number="12"><span class="va">True</span></a>
-<a class="sourceLine" id="cb15-13" data-line-number="13"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Persona)</a>
-<a class="sourceLine" id="cb15-14" data-line-number="14"><span class="va">False</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="op">&gt;&gt;&gt;</span> e <span class="op">=</span> Empleado()</a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(e, Empleado)</a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="va">True</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(e, Persona)</a>
+<a class="sourceLine" id="cb15-5" title="5"><span class="va">True</span></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="op">&gt;&gt;&gt;</span> <span class="bu">issubclass</span>(Empleado, Persona)</a>
+<a class="sourceLine" id="cb15-7" title="7"><span class="va">True</span></a>
+<a class="sourceLine" id="cb15-8" title="8"><span class="op">&gt;&gt;&gt;</span> mf <span class="op">=</span> Multifuncion()</a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Multifuncion)</a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="va">True</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Impresora)</a>
+<a class="sourceLine" id="cb15-12" title="12"><span class="va">True</span></a>
+<a class="sourceLine" id="cb15-13" title="13"><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(mf, Persona)</a>
+<a class="sourceLine" id="cb15-14" title="14"><span class="va">False</span></a></code></pre></div>
 </section><section id="herencia-iv" class="slide level2">
 <h2>Herencia (IV)</h2>
 <h3 id="overriding-de-métodos">Overriding de métodos</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">class</span> Transformador:</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">    <span class="kw">def</span> transformar(<span class="va">self</span>, texto):</a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">        <span class="cf">return</span> texto</a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5">        </a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="kw">class</span> Mayusculas(Transformador):</a>
-<a class="sourceLine" id="cb16-7" data-line-number="7">    <span class="kw">def</span> transformar(<span class="va">self</span>, texto):</a>
-<a class="sourceLine" id="cb16-8" data-line-number="8">        <span class="cf">return</span> texto.upper()</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">class</span> Transformador:</a>
+<a class="sourceLine" id="cb16-2" title="2">    <span class="kw">def</span> transformar(<span class="va">self</span>, texto):</a>
+<a class="sourceLine" id="cb16-3" title="3">        <span class="cf">return</span> texto</a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5">        </a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="kw">class</span> Mayusculas(Transformador):</a>
+<a class="sourceLine" id="cb16-7" title="7">    <span class="kw">def</span> transformar(<span class="va">self</span>, texto):</a>
+<a class="sourceLine" id="cb16-8" title="8">        <span class="cf">return</span> texto.upper()</a></code></pre></div>
 </section><section id="herencia-v" class="slide level2">
 <h2>Herencia (V)</h2>
 <ul>
 <li><code>super()</code> permite llamar a métodos definidos en las clases ancestro</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">class</span> Mamifero:</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&quot;Soy un mamífero&quot;</span>)</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">    <span class="kw">def</span> comer(<span class="va">self</span>, comida):</a>
-<a class="sourceLine" id="cb17-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&quot;Como </span><span class="sc">{0}</span><span class="st">&quot;</span>.<span class="bu">format</span>(comida))</a>
-<a class="sourceLine" id="cb17-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="kw">class</span> Raton(Mamifero):</a>
-<a class="sourceLine" id="cb17-8" data-line-number="8">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb17-9" data-line-number="9">        <span class="bu">super</span>().<span class="fu">__init__</span>()</a>
-<a class="sourceLine" id="cb17-10" data-line-number="10">        <span class="bu">print</span>(<span class="st">&quot;Soy un ratón&quot;)  </span></a>
-<a class="sourceLine" id="cb17-11" data-line-number="11"><span class="st">    def comer(self, comida):</span></a>
-<a class="sourceLine" id="cb17-12" data-line-number="12"><span class="st">        super().comer(comida)</span></a>
-<a class="sourceLine" id="cb17-13" data-line-number="13"><span class="st">        print(&quot;</span>y lo royo<span class="st">&quot;) # o roo o roigo</span></a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">class</span> Mamifero:</a>
+<a class="sourceLine" id="cb17-2" title="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb17-3" title="3">        <span class="bu">print</span>(<span class="st">&quot;Soy un mamífero&quot;</span>)</a>
+<a class="sourceLine" id="cb17-4" title="4">    <span class="kw">def</span> comer(<span class="va">self</span>, comida):</a>
+<a class="sourceLine" id="cb17-5" title="5">        <span class="bu">print</span>(<span class="st">&quot;Como </span><span class="sc">{0}</span><span class="st">&quot;</span>.<span class="bu">format</span>(comida))</a>
+<a class="sourceLine" id="cb17-6" title="6"></a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="kw">class</span> Raton(Mamifero):</a>
+<a class="sourceLine" id="cb17-8" title="8">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb17-9" title="9">        <span class="bu">super</span>().<span class="fu">__init__</span>()</a>
+<a class="sourceLine" id="cb17-10" title="10">        <span class="bu">print</span>(<span class="st">&quot;Soy un ratón&quot;)  </span></a>
+<a class="sourceLine" id="cb17-11" title="11"><span class="st">    def comer(self, comida):</span></a>
+<a class="sourceLine" id="cb17-12" title="12"><span class="st">        super().comer(comida)</span></a>
+<a class="sourceLine" id="cb17-13" title="13"><span class="st">        print(&quot;</span>y lo royo<span class="st">&quot;) # o roo o roigo</span></a></code></pre></div>
 <aside class="notes">
 <p>¡Aclarar que se puede usar en cualquier método, no sólo en el contructor!</p>
 </aside>
 </section><section id="herencia-vi" class="slide level2">
 <h2>Herencia (VI)</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">class</span> A:</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&quot;Ping - A&quot;</span>)</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb18-5" data-line-number="5">        </a>
-<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="kw">class</span> B:</a>
-<a class="sourceLine" id="cb18-7" data-line-number="7">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb18-8" data-line-number="8">        <span class="bu">print</span>(<span class="st">&quot;Ping - B&quot;</span>)</a>
-<a class="sourceLine" id="cb18-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb18-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="kw">class</span> BA(B, A):</a>
-<a class="sourceLine" id="cb18-12" data-line-number="12">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb18-13" data-line-number="13">        <span class="bu">super</span>().ping() <span class="co"># Llama a B.ping</span></a>
-<a class="sourceLine" id="cb18-14" data-line-number="14">        A.ping(<span class="va">self</span>)   <span class="co"># Llama a A.ping</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">class</span> A:</a>
+<a class="sourceLine" id="cb18-2" title="2">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb18-3" title="3">        <span class="bu">print</span>(<span class="st">&quot;Ping - A&quot;</span>)</a>
+<a class="sourceLine" id="cb18-4" title="4"></a>
+<a class="sourceLine" id="cb18-5" title="5">        </a>
+<a class="sourceLine" id="cb18-6" title="6"><span class="kw">class</span> B:</a>
+<a class="sourceLine" id="cb18-7" title="7">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb18-8" title="8">        <span class="bu">print</span>(<span class="st">&quot;Ping - B&quot;</span>)</a>
+<a class="sourceLine" id="cb18-9" title="9"></a>
+<a class="sourceLine" id="cb18-10" title="10"></a>
+<a class="sourceLine" id="cb18-11" title="11"><span class="kw">class</span> BA(B, A):</a>
+<a class="sourceLine" id="cb18-12" title="12">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb18-13" title="13">        <span class="bu">super</span>().ping() <span class="co"># Llama a B.ping</span></a>
+<a class="sourceLine" id="cb18-14" title="14">        A.ping(<span class="va">self</span>)   <span class="co"># Llama a A.ping</span></a></code></pre></div>
 </section><section id="herencia-vii" class="slide level2">
 <h2>Herencia (VII)</h2>
 <p><em>Linearization</em></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">class</span> A:</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb19-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&quot;Ping - A&quot;</span>)</a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">class</span> B(A):</a>
-<a class="sourceLine" id="cb19-6" data-line-number="6">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb19-7" data-line-number="7">        <span class="bu">print</span>(<span class="st">&quot;Ping - B&quot;</span>)</a>
-<a class="sourceLine" id="cb19-8" data-line-number="8">        <span class="bu">super</span>().ping()</a>
-<a class="sourceLine" id="cb19-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb19-10" data-line-number="10"><span class="kw">class</span> C(A):</a>
-<a class="sourceLine" id="cb19-11" data-line-number="11">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb19-12" data-line-number="12">        <span class="bu">print</span>(<span class="st">&quot;Ping - C&quot;</span>)</a>
-<a class="sourceLine" id="cb19-13" data-line-number="13">        <span class="bu">super</span>().ping()</a>
-<a class="sourceLine" id="cb19-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb19-15" data-line-number="15"><span class="kw">class</span> D(B, C):</a>
-<a class="sourceLine" id="cb19-16" data-line-number="16">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
-<a class="sourceLine" id="cb19-17" data-line-number="17">        <span class="bu">print</span>(<span class="st">&quot;Ping - D&quot;</span>)</a>
-<a class="sourceLine" id="cb19-18" data-line-number="18">        <span class="bu">super</span>().ping()</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">class</span> A:</a>
+<a class="sourceLine" id="cb19-2" title="2">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb19-3" title="3">        <span class="bu">print</span>(<span class="st">&quot;Ping - A&quot;</span>)</a>
+<a class="sourceLine" id="cb19-4" title="4"></a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="kw">class</span> B(A):</a>
+<a class="sourceLine" id="cb19-6" title="6">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb19-7" title="7">        <span class="bu">print</span>(<span class="st">&quot;Ping - B&quot;</span>)</a>
+<a class="sourceLine" id="cb19-8" title="8">        <span class="bu">super</span>().ping()</a>
+<a class="sourceLine" id="cb19-9" title="9"></a>
+<a class="sourceLine" id="cb19-10" title="10"><span class="kw">class</span> C(A):</a>
+<a class="sourceLine" id="cb19-11" title="11">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb19-12" title="12">        <span class="bu">print</span>(<span class="st">&quot;Ping - C&quot;</span>)</a>
+<a class="sourceLine" id="cb19-13" title="13">        <span class="bu">super</span>().ping()</a>
+<a class="sourceLine" id="cb19-14" title="14"></a>
+<a class="sourceLine" id="cb19-15" title="15"><span class="kw">class</span> D(B, C):</a>
+<a class="sourceLine" id="cb19-16" title="16">    <span class="kw">def</span> ping(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb19-17" title="17">        <span class="bu">print</span>(<span class="st">&quot;Ping - D&quot;</span>)</a>
+<a class="sourceLine" id="cb19-18" title="18">        <span class="bu">super</span>().ping()</a></code></pre></div>
 <aside class="notes">
 <p>linearization (para nota)</p>
 </aside>

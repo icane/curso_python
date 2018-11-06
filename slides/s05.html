@@ -34,7 +34,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -130,12 +130,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="prueba-de-rendimiento" class="slide level2">
 <h2>prueba de rendimiento</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">my_array <span class="op">=</span> np.arange(<span class="dv">1000000</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">my_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1000000</span>))</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_array_2 <span class="op">=</span> my_arr <span class="op">*</span> <span class="dv">2</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_list_2 <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> my_list]</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb1-2" title="2">my_array <span class="op">=</span> np.arange(<span class="dv">1000000</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3">my_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1000000</span>))</a>
+<a class="sourceLine" id="cb1-4" title="4"></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_array_2 <span class="op">=</span> my_arr <span class="op">*</span> <span class="dv">2</span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="op">%</span>time <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): my_list_2 <span class="op">=</span> [x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> my_list]</a></code></pre></div>
 </section><section id="tipos-de-datos-precisos" class="slide level2 slide:" style="font-size: 30px;">
 <h2>tipos de datos precisos</h2>
 <table>
@@ -228,32 +228,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="ndarrays-1" class="slide level2">
 <h2>ndarrays</h2>
-<p><img data-src="images/content_arrays-axes.png" alt="arrays" /><br />
+<p><img data-src="images/s05/content_arrays-axes.png" alt="arrays" /><br />
 </p>
 </section><section id="ndarrays-2" class="slide level2">
 <h2>ndarrays</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">data <span class="op">=</span> np.random.randn(<span class="dv">2</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">data</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">data <span class="op">*</span> <span class="dv">10</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">data <span class="op">+</span> data</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">data <span class="op">=</span> np.random.randn(<span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2">data</a>
+<a class="sourceLine" id="cb2-3" title="3">data <span class="op">*</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb2-4" title="4">data <span class="op">+</span> data</a></code></pre></div>
 </section><section id="crear-ndarrays" class="slide level2">
 <h2>crear ndarrays</h2>
 <ul>
 <li>forma más fácil: función <code>array()</code></li>
 <li>acepta cualquier objeto de tipo secuencia</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1">data1 <span class="op">=</span> [<span class="dv">6</span>, <span class="fl">7.5</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">arr1 <span class="op">=</span> np.array(data1)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">arr1</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">data1 <span class="op">=</span> [<span class="dv">6</span>, <span class="fl">7.5</span>, <span class="dv">8</span>, <span class="dv">0</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb3-2" title="2">arr1 <span class="op">=</span> np.array(data1)</a>
+<a class="sourceLine" id="cb3-3" title="3">arr1</a></code></pre></div>
 </section><section id="crear-ndarrays-1" class="slide level2">
 <h2>crear ndarrays</h2>
 <p>una lista de listas de la misma longitud se convierte a array multidimensional</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">data2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]]</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">arr2 <span class="op">=</span> np.array(data2)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">arr2</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">arr2.ndim <span class="co"># dimension</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">arr2.shape <span class="co"># forma</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">arr2.dtype <span class="co"># tipo de datos</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1">data2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]]</a>
+<a class="sourceLine" id="cb4-2" title="2">arr2 <span class="op">=</span> np.array(data2)</a>
+<a class="sourceLine" id="cb4-3" title="3">arr2</a>
+<a class="sourceLine" id="cb4-4" title="4">arr2.ndim <span class="co"># dimension</span></a>
+<a class="sourceLine" id="cb4-5" title="5">arr2.shape <span class="co"># forma</span></a>
+<a class="sourceLine" id="cb4-6" title="6">arr2.dtype <span class="co"># tipo de datos</span></a></code></pre></div>
 </section><section id="crear-ndarrays-2" class="slide level2">
 <h2>crear ndarrays</h2>
 <ul>
@@ -261,32 +261,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>para varias dimensiones, pasar una tupla como argumento</li>
 <li>aceptan <code>dtype</code> como argumento</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1">np.zeros(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">np.zeros((<span class="dv">3</span>, <span class="dv">6</span>))</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">np.ones(<span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">np.ones(<span class="dv">7</span>, dtype<span class="op">=</span><span class="bu">bool</span>)</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">np.empty((<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">np.full((<span class="dv">2</span>,<span class="dv">2</span>), np.inf)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">np.arange(<span class="dv">15</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1">np.zeros(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2">np.zeros((<span class="dv">3</span>, <span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb5-3" title="3">np.ones(<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb5-4" title="4">np.ones(<span class="dv">7</span>, dtype<span class="op">=</span><span class="bu">bool</span>)</a>
+<a class="sourceLine" id="cb5-5" title="5">np.empty((<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb5-6" title="6">np.full((<span class="dv">2</span>,<span class="dv">2</span>), np.inf)</a>
+<a class="sourceLine" id="cb5-7" title="7">np.arange(<span class="dv">15</span>)</a></code></pre></div>
 </section><section id="crear-ndarrays-3" class="slide level2">
 <h2>crear ndarrays</h2>
 <p>valores aleatorios: <code>np.random.randn()</code></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">arr</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">matrix <span class="op">=</span> np.random.randn(<span class="dv">4</span>,<span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">matrix</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2">arr</a>
+<a class="sourceLine" id="cb6-3" title="3"></a>
+<a class="sourceLine" id="cb6-4" title="4">matrix <span class="op">=</span> np.random.randn(<span class="dv">4</span>,<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb6-5" title="5">matrix</a></code></pre></div>
 </section><section id="tipos-en-ndarrays" class="slide level2">
 <h2>tipos en ndarrays</h2>
 <p><code>dtype</code> es un objeto especial que contiene metadatos <strong>importante</strong>: <code>astype</code> para convertir tipos</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.float64)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">arr2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.int32)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">arr1.dtype</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">arr2.dtype</a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">float_arr <span class="op">=</span> arr2.astype(np.float64)</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8">float_arr.dtype</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.float64)</a>
+<a class="sourceLine" id="cb7-2" title="2">arr2 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], dtype<span class="op">=</span>np.int32)</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4">arr1.dtype</a>
+<a class="sourceLine" id="cb7-5" title="5">arr2.dtype</a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7">float_arr <span class="op">=</span> arr2.astype(np.float64)</a>
+<a class="sourceLine" id="cb7-8" title="8">float_arr.dtype</a></code></pre></div>
 <p>¿qué pasa al convertir de <code>float</code> a <code>int</code>?</p>
 <aside class="notes">
 <p>astype siempre crea un array nuevo float64 y float32 tienen errores en punto flotante</p>
@@ -298,10 +298,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>crear un array booleano de 3x3 con todos los valores a True</li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">np.full((<span class="dv">3</span>, <span class="dv">3</span>), <span class="va">True</span>, dtype<span class="op">=</span><span class="bu">bool</span>)</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">np.ones((<span class="dv">3</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">bool</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb8-2" title="2"></a>
+<a class="sourceLine" id="cb8-3" title="3">np.full((<span class="dv">3</span>, <span class="dv">3</span>), <span class="va">True</span>, dtype<span class="op">=</span><span class="bu">bool</span>)</a>
+<a class="sourceLine" id="cb8-4" title="4">np.ones((<span class="dv">3</span>,<span class="dv">3</span>), dtype<span class="op">=</span><span class="bu">bool</span>)</a></code></pre></div>
 </aside>
 </section><section id="operaciones-vectoriales" class="slide level2">
 <h2>operaciones vectoriales</h2>
@@ -309,82 +309,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>sin bucles for</li>
 <li>entre arrays de la misma longitud, elemento a elemento</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">arr <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">3.</span>], [<span class="fl">4.</span>, <span class="fl">5.</span>, <span class="fl">6.</span>]])</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">arr <span class="op">*</span> arr</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1">arr <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">3.</span>], [<span class="fl">4.</span>, <span class="fl">5.</span>, <span class="fl">6.</span>]])</a>
+<a class="sourceLine" id="cb9-2" title="2">arr <span class="op">*</span> arr</a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
 </section><section id="operaciones-matriciales" class="slide level2">
 <h2>operaciones matriciales</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">A <span class="op">=</span> np.array( [[<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>]] )</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">B <span class="op">=</span> np.array( [[<span class="dv">2</span>,<span class="dv">0</span>], [<span class="dv">3</span>,<span class="dv">4</span>]] )</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">A <span class="op">@</span> B </a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">A.dot(B)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1">A <span class="op">=</span> np.array( [[<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">0</span>,<span class="dv">1</span>]] )</a>
+<a class="sourceLine" id="cb10-2" title="2">B <span class="op">=</span> np.array( [[<span class="dv">2</span>,<span class="dv">0</span>], [<span class="dv">3</span>,<span class="dv">4</span>]] )</a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4">A <span class="op">@</span> B </a>
+<a class="sourceLine" id="cb10-5" title="5">A.dot(B)</a></code></pre></div>
 </section><section id="más-álgebra-lineal" class="slide level2">
 <h2>más álgebra lineal</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="im">from</span> numpy.linalg <span class="im">import</span> inv, qr</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3">X <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">mat <span class="op">=</span> X.T.dot(X)</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">inv(mat)</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6">mat.dot(inv(mat))</a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">q, r <span class="op">=</span> qr(mat)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="im">from</span> numpy.linalg <span class="im">import</span> inv, qr</a>
+<a class="sourceLine" id="cb11-2" title="2"></a>
+<a class="sourceLine" id="cb11-3" title="3">X <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb11-4" title="4">mat <span class="op">=</span> X.T.dot(X)</a>
+<a class="sourceLine" id="cb11-5" title="5">inv(mat)</a>
+<a class="sourceLine" id="cb11-6" title="6">mat.dot(inv(mat))</a>
+<a class="sourceLine" id="cb11-7" title="7"></a>
+<a class="sourceLine" id="cb11-8" title="8">q, r <span class="op">=</span> qr(mat)</a></code></pre></div>
 <p><a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.linalg.html">linear algebra</a><br />
 </p>
 </section><section id="indexado-y-rebanado-básicos" class="slide level2">
 <h2>indexado y rebanado básicos</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">arr[<span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">arr[<span class="dv">5</span>:<span class="dv">8</span>]</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">arr[<span class="dv">5</span>:<span class="dv">8</span>] <span class="op">=</span> <span class="dv">12</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb12-2" title="2">arr[<span class="dv">5</span>]</a>
+<a class="sourceLine" id="cb12-3" title="3">arr[<span class="dv">5</span>:<span class="dv">8</span>]</a>
+<a class="sourceLine" id="cb12-4" title="4">arr[<span class="dv">5</span>:<span class="dv">8</span>] <span class="op">=</span> <span class="dv">12</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="dv">1</span> <span class="op">/</span> arr</a></code></pre></div>
 <p>las rebanadas son vistas del array original; si se modifica una vista, se refleja en el original</p>
 <p><strong>¡¡no se copian!!</strong></p>
 </section><section id="indexado-y-rebanado-básicos-1" class="slide level2">
 <h2>indexado y rebanado básicos</h2>
 <p>con dos dimensiones</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">arr2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">arr2d[<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">arr2d[<span class="dv">0</span>][<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">arr2d[:<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">arr2d[:<span class="dv">2</span>, <span class="dv">1</span>:]</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1">arr2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</a>
+<a class="sourceLine" id="cb13-2" title="2">arr2d[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb13-3" title="3">arr2d[<span class="dv">0</span>][<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb13-4" title="4"></a>
+<a class="sourceLine" id="cb13-5" title="5">arr2d[:<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb13-6" title="6">arr2d[:<span class="dv">2</span>, <span class="dv">1</span>:]</a></code></pre></div>
 </section><section id="funciones-universales" class="slide level2">
 <h2>funciones universales</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">np.sqrt(arr) <span class="co"># raíz cuadrada</span></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">np.exp(arr) <span class="co"># e elevado a</span></a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">x <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">y <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb14-9" data-line-number="9">np.maximum(x, y) <span class="co"># máximo elemento a elemento</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1">arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3">np.sqrt(arr) <span class="co"># raíz cuadrada</span></a>
+<a class="sourceLine" id="cb14-4" title="4">np.exp(arr) <span class="co"># e elevado a</span></a>
+<a class="sourceLine" id="cb14-5" title="5"></a>
+<a class="sourceLine" id="cb14-6" title="6">x <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb14-7" title="7">y <span class="op">=</span> np.random.randn(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb14-8" title="8"></a>
+<a class="sourceLine" id="cb14-9" title="9">np.maximum(x, y) <span class="co"># máximo elemento a elemento</span></a></code></pre></div>
 <p><a href="https://docs.scipy.org/doc/numpy-1.15.1/reference/ufuncs.html#available-ufuncs">ufuncs</a><br />
 </p>
 </section><section id="funciones-estadísticas" class="slide level2">
 <h2>funciones estadísticas</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3">arr.mean()</a>
-<a class="sourceLine" id="cb15-4" data-line-number="4">arr.mean(axis<span class="op">=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb15-5" data-line-number="5">arr.<span class="bu">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1">arr <span class="op">=</span> np.random.randn(<span class="dv">5</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb15-2" title="2"></a>
+<a class="sourceLine" id="cb15-3" title="3">arr.mean()</a>
+<a class="sourceLine" id="cb15-4" title="4">arr.mean(axis<span class="op">=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb15-5" title="5">arr.<span class="bu">sum</span>()</a></code></pre></div>
 <p><a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.statistics.html">statistics</a></p>
 </section><section id="lógica-condicional" class="slide level2">
 <h2>lógica condicional</h2>
 <p>filtrar por condición</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1">arr <span class="op">=</span> np.arange(<span class="dv">9</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">arr[arr <span class="op">&gt;</span> <span class="dv">2</span>] <span class="co"># elementos mayores que dos</span></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3">arr[arr <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>] <span class="co"># elementos pares</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1">arr <span class="op">=</span> np.arange(<span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb16-2" title="2">arr[arr <span class="op">&gt;</span> <span class="dv">2</span>] <span class="co"># elementos mayores que dos</span></a>
+<a class="sourceLine" id="cb16-3" title="3">arr[arr <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>] <span class="co"># elementos pares</span></a></code></pre></div>
 </section><section id="lógica-condicional-1" class="slide level2">
 <h2>lógica condicional</h2>
 <p>ej: obtener <code>x</code> si <code>cond</code> es <code>True</code>; si no, obtener <code>y</code></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1">x <span class="op">=</span> np.array([<span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">1.3</span>, <span class="fl">1.4</span>, <span class="fl">1.5</span>])</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">y <span class="op">=</span> np.array([<span class="fl">2.1</span>, <span class="fl">2.2</span>, <span class="fl">2.3</span>, <span class="fl">2.4</span>, <span class="fl">2.5</span>])</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">cond <span class="op">=</span> np.array([<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb17-5" data-line-number="5">result <span class="op">=</span> np.where(cond, xarr, yarr)</a>
-<a class="sourceLine" id="cb17-6" data-line-number="6">result</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1">x <span class="op">=</span> np.array([<span class="fl">1.1</span>, <span class="fl">1.2</span>, <span class="fl">1.3</span>, <span class="fl">1.4</span>, <span class="fl">1.5</span>])</a>
+<a class="sourceLine" id="cb17-2" title="2">y <span class="op">=</span> np.array([<span class="fl">2.1</span>, <span class="fl">2.2</span>, <span class="fl">2.3</span>, <span class="fl">2.4</span>, <span class="fl">2.5</span>])</a>
+<a class="sourceLine" id="cb17-3" title="3">cond <span class="op">=</span> np.array([<span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
+<a class="sourceLine" id="cb17-4" title="4"></a>
+<a class="sourceLine" id="cb17-5" title="5">result <span class="op">=</span> np.where(cond, xarr, yarr)</a>
+<a class="sourceLine" id="cb17-6" title="6">result</a></code></pre></div>
 </section><section id="lógica-condicional-2" class="slide level2">
 <h2>lógica condicional</h2>
 <p>ejemplo:</p>
@@ -392,28 +392,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Generar una matriz de 4x4 con valores aleatorios. Reemplazar todos los valores positivos con 2 y los valores negativos con -2.</p>
 </blockquote>
 <aside class="notes">
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>, <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2">np.where(arr <span class="op">&gt;</span> <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1">arr <span class="op">=</span> np.random.randn(<span class="dv">4</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb18-2" title="2">np.where(arr <span class="op">&gt;</span> <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-2</span>)</a></code></pre></div>
 </aside>
 </section><section id="arrays-booleanos" class="slide level2">
 <h2>arrays booleanos</h2>
 <p><code>any()</code>, <code>all()</code></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1">bools <span class="op">=</span> np.array([<span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
-<a class="sourceLine" id="cb19-2" data-line-number="2">bools.<span class="bu">any</span>()</a>
-<a class="sourceLine" id="cb19-3" data-line-number="3">bools.<span class="bu">all</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1">bools <span class="op">=</span> np.array([<span class="va">False</span>, <span class="va">False</span>, <span class="va">True</span>, <span class="va">False</span>])</a>
+<a class="sourceLine" id="cb19-2" title="2">bools.<span class="bu">any</span>()</a>
+<a class="sourceLine" id="cb19-3" title="3">bools.<span class="bu">all</span>()</a></code></pre></div>
 <p>¿cómo contar True en un array booleano?</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1">arr <span class="op">=</span> np.random.randn(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">(arr <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1">arr <span class="op">=</span> np.random.randn(<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb20-2" title="2">(arr <span class="op">&gt;</span> <span class="dv">0</span>).<span class="bu">sum</span>()</a></code></pre></div>
 </section><section id="ejercicio" class="slide level2">
 <h2>ejercicio</h2>
 <ul>
 <li>extraer todos los números pares de un array</li>
 <li>reemplazar números impares en array por -1</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1">arr <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1">arr <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</a></code></pre></div>
 <aside class="notes">
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1">arr[arr <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">arr[arr <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>] <span class="op">=</span> <span class="dv">-1</span></a></code></pre></div>
+<pre><code>arr[arr % 2 == 0]
+arr[arr % 2 == 1] = -1</code></pre>
 </aside>
 </section></section>
 <section><section id="introducción-a-pandas" class="title-slide slide level1"><h1>introducción a pandas</h1></section><h4 id="introducción-a-pandas-1">introducción a pandas</h4><section id="qué-es" class="slide level2 slide:" style="font-size: 30px;">
@@ -441,76 +441,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section><section id="series" class="title-slide slide level1"><h1>series</h1></section><h4 id="series-1">series</h4><section id="qué-son" class="slide level2">
 <h2>qué son</h2>
 <p>objetos de una dimensión similares a un array que contienen una secuencia de valores y un array asociado de etiquetas (índice)</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">obj <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb23-3" data-line-number="3">obj</a>
-<a class="sourceLine" id="cb23-4" data-line-number="4">obj.values</a>
-<a class="sourceLine" id="cb23-5" data-line-number="5">obj.index</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb23-2" title="2">obj <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb23-3" title="3">obj</a>
+<a class="sourceLine" id="cb23-4" title="4">obj.values</a>
+<a class="sourceLine" id="cb23-5" title="5">obj.index</a></code></pre></div>
 <p>si no se especifica índice, se crea uno con enteros de 0 a N-1</p>
 </section><section id="índices" class="slide level2">
 <h2>índices</h2>
 <p>a veces es deseable crear una serie con un índice etiquetado</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2">obj2 <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Febrero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>])</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3">obj2</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb24-2" title="2">obj2 <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-5</span>, <span class="dv">3</span>], index<span class="op">=</span>[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Febrero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>])</a>
+<a class="sourceLine" id="cb24-3" title="3">obj2</a></code></pre></div>
 </section><section id="índices-1" class="slide level2">
 <h2>índices</h2>
 <p>en contraposición a los arrays, pueden usarse las etiquetas para la selección de valores</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb25-2" data-line-number="2">obj2[<span class="st">&#39;Marzo&#39;</span>]</a>
-<a class="sourceLine" id="cb25-3" data-line-number="3">obj2[<span class="st">&#39;Abril&#39;</span>] <span class="op">=</span> <span class="dv">10</span></a>
-<a class="sourceLine" id="cb25-4" data-line-number="4">obj2[[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb25-2" title="2">obj2[<span class="st">&#39;Marzo&#39;</span>]</a>
+<a class="sourceLine" id="cb25-3" title="3">obj2[<span class="st">&#39;Abril&#39;</span>] <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb25-4" title="4">obj2[[<span class="st">&#39;Enero&#39;</span>, <span class="st">&#39;Marzo&#39;</span>, <span class="st">&#39;Abril&#39;</span>]]</a></code></pre></div>
 </section><section id="filtrado-simple" class="slide level2">
 <h2>filtrado simple</h2>
 <p>la relación valor-índice se preserva</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">obj2[obj2 <span class="op">&gt;</span> <span class="dv">0</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1">obj2[obj2 <span class="op">&gt;</span> <span class="dv">0</span>]</a></code></pre></div>
 </section><section id="desde-diccionario" class="slide level2">
 <h2>desde diccionario</h2>
 <p>la relación diccionario - series es directa</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1">my_dict <span class="op">=</span> {<span class="st">&#39;visitantes&#39;</span>: <span class="dv">2000</span>, <span class="st">&#39;visitas&#39;</span>: <span class="dv">50000</span>, <span class="st">&#39;hits&#39;</span>: <span class="dv">200000</span>}</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">obj3 <span class="op">=</span> pd.Series(my_dict)</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">obj3</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" title="1">my_dict <span class="op">=</span> {<span class="st">&#39;visitantes&#39;</span>: <span class="dv">2000</span>, <span class="st">&#39;visitas&#39;</span>: <span class="dv">50000</span>, <span class="st">&#39;hits&#39;</span>: <span class="dv">200000</span>}</a>
+<a class="sourceLine" id="cb27-2" title="2">obj3 <span class="op">=</span> pd.Series(my_dict)</a>
+<a class="sourceLine" id="cb27-3" title="3">obj3</a></code></pre></div>
 </section><section id="desde-diccionario-1" class="slide level2">
 <h2>desde diccionario</h2>
 <p>se puede cambiar el orden de las claves</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1">metrics <span class="op">=</span> [<span class="st">&#39;visitas&#39;</span>,  <span class="st">&#39;hits&#39;</span>, <span class="st">&#39;visitantes&#39;</span>, <span class="st">&#39;tpv&#39;</span>]</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2">obj4 <span class="op">=</span> pd.Series(my_dict, index<span class="op">=</span>metrics)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1">metrics <span class="op">=</span> [<span class="st">&#39;visitas&#39;</span>,  <span class="st">&#39;hits&#39;</span>, <span class="st">&#39;visitantes&#39;</span>, <span class="st">&#39;tpv&#39;</span>]</a>
+<a class="sourceLine" id="cb28-2" title="2">obj4 <span class="op">=</span> pd.Series(my_dict, index<span class="op">=</span>metrics)</a></code></pre></div>
 </section><section id="ejercicio-1" class="slide level2">
 <h2>ejercicio</h2>
 <p>crear una serie desde lista, array y dict</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb29-2" data-line-number="2">mylist <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;abcedfghijklmnopqrstuvwxyz&#39;</span>)</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3">myarr <span class="op">=</span> np.arange(<span class="dv">26</span>)</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4">mydict <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(mylist, myarr))</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" title="1"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb29-2" title="2">mylist <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;abcedfghijklmnopqrstuvwxyz&#39;</span>)</a>
+<a class="sourceLine" id="cb29-3" title="3">myarr <span class="op">=</span> np.arange(<span class="dv">26</span>)</a>
+<a class="sourceLine" id="cb29-4" title="4">mydict <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(mylist, myarr))</a></code></pre></div>
 <aside class="notes">
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1">ser1 <span class="op">=</span> pd.Series(mylist)</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">ser2 <span class="op">=</span> pd.Series(myarr)</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">ser3 <span class="op">=</span> pd.Series(mydict)</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="bu">print</span>(ser3.head())</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1">ser1 <span class="op">=</span> pd.Series(mylist)</a>
+<a class="sourceLine" id="cb30-2" title="2">ser2 <span class="op">=</span> pd.Series(myarr)</a>
+<a class="sourceLine" id="cb30-3" title="3">ser3 <span class="op">=</span> pd.Series(mydict)</a>
+<a class="sourceLine" id="cb30-4" title="4"><span class="bu">print</span>(ser3.head())</a></code></pre></div>
 </aside>
 </section><section id="operaciones-desde-numpy" class="slide level2">
 <h2>operaciones desde numpy</h2>
 <p>se pueden aplicar operaciones sin modificar la estructura</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1">np.square(obj3)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" title="1">np.square(obj3)</a></code></pre></div>
 </section><section id="alineación-automática" class="slide level2">
 <h2>alineación automática</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1">obj3 <span class="op">+</span> obj4</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1">obj3 <span class="op">+</span> obj4</a></code></pre></div>
 </section><section id="ejercicio-2" class="slide level2">
 <h2>ejercicio</h2>
 <p>obtener los elementos de A que no están en B</p>
 <p>usar <code>~</code> , <code>isin</code></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">ser1 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2">ser2 <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" title="1">ser1 <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</a>
+<a class="sourceLine" id="cb33-2" title="2">ser2 <span class="op">=</span> pd.Series([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>])</a></code></pre></div>
 <aside class="notes">
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">ser1[<span class="op">~</span>ser1.isin(ser2)]</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" title="1">ser1[<span class="op">~</span>ser1.isin(ser2)]</a></code></pre></div>
 </aside>
 </section><section id="ejercicio-3" class="slide level2">
 <h2>ejercicio</h2>
 <p>obtener la media y la desviación estándar de una serie</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">3</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" title="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">3</span>])</a></code></pre></div>
 <aside class="notes">
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">s.mean()</a>
-<a class="sourceLine" id="cb36-2" data-line-number="2">s.std()</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" title="1">s.mean()</a>
+<a class="sourceLine" id="cb36-2" title="2">s.std()</a></code></pre></div>
 </aside>
 </section></section>
 <section><section id="dataframes" class="title-slide slide level1"><h1>dataframes</h1></section><h4 id="dataframes-1">dataframes</h4><section id="qué-son-1" class="slide level2">
@@ -518,11 +518,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>objetos que representan una tabla rectangular conteniendo una colección ordenada de columnas, cada una de las cuales puede ser de un tipo de datos distinto</p>
 </blockquote>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">data <span class="op">=</span> {<span class="st">&#39;ca&#39;</span>: [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Canarias&#39;</span>, <span class="st">&#39;Canarias&#39;</span>],</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">&#39;year&#39;</span>: [<span class="dv">2000</span>, <span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2001</span>, <span class="dv">2002</span>],</a>
-<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="st">&#39;pop&#39;</span>: [<span class="fl">1.5</span>, <span class="fl">1.7</span>, <span class="fl">3.6</span>, <span class="fl">2.4</span>, <span class="fl">2.9</span>]}</a>
-<a class="sourceLine" id="cb37-4" data-line-number="4">frame <span class="op">=</span> pd.DataFrame(data) <span class="co"># inicialización con list of dicts</span></a>
-<a class="sourceLine" id="cb37-5" data-line-number="5">frame.head() <span class="co"># visualizar las 5 primeras filas</span></a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" title="1">data <span class="op">=</span> {<span class="st">&#39;ca&#39;</span>: [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Canarias&#39;</span>, <span class="st">&#39;Canarias&#39;</span>],</a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="st">&#39;year&#39;</span>: [<span class="dv">2000</span>, <span class="dv">2001</span>, <span class="dv">2002</span>, <span class="dv">2001</span>, <span class="dv">2002</span>],</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="st">&#39;pop&#39;</span>: [<span class="fl">1.5</span>, <span class="fl">1.7</span>, <span class="fl">3.6</span>, <span class="fl">2.4</span>, <span class="fl">2.9</span>]}</a>
+<a class="sourceLine" id="cb37-4" title="4">frame <span class="op">=</span> pd.DataFrame(data) <span class="co"># inicialización con list of dicts</span></a>
+<a class="sourceLine" id="cb37-5" title="5">frame.head() <span class="co"># visualizar las 5 primeras filas</span></a></code></pre></div>
 </section><section id="ejemplo" class="slide level2 slide:" style="font-size: 30px;">
 <h2>ejemplo</h2>
 <pre class="csv"><code>    Trimestre         Sexo  ...                           Variables  value
@@ -546,12 +546,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>una columna se puede recuperar como un objeto de tipo series</li>
 <li>también pueden recuperarse filas</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1">pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;state&#39;</span>, <span class="st">&#39;pop&#39;</span>])</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">frame2 <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;ca&#39;</span>, <span class="st">&#39;pop&#39;</span>, <span class="st">&#39;debt&#39;</span>],</a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">                      index<span class="op">=</span>[<span class="st">&#39;uno&#39;</span>, <span class="st">&#39;dos&#39;</span>, <span class="st">&#39;tres&#39;</span>, <span class="st">&#39;cuatro&#39;</span>, <span class="st">&#39;cinco&#39;</span>])</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4">frame2</a>
-<a class="sourceLine" id="cb39-5" data-line-number="5">frame2[<span class="st">&#39;ca&#39;</span>] <span class="co"># columna</span></a>
-<a class="sourceLine" id="cb39-6" data-line-number="6">frame2.loc[<span class="st">&#39;tres&#39;</span>] <span class="co"># fila</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1">pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;state&#39;</span>, <span class="st">&#39;pop&#39;</span>])</a>
+<a class="sourceLine" id="cb39-2" title="2">frame2 <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;ca&#39;</span>, <span class="st">&#39;pop&#39;</span>, <span class="st">&#39;debt&#39;</span>],</a>
+<a class="sourceLine" id="cb39-3" title="3">                      index<span class="op">=</span>[<span class="st">&#39;uno&#39;</span>, <span class="st">&#39;dos&#39;</span>, <span class="st">&#39;tres&#39;</span>, <span class="st">&#39;cuatro&#39;</span>, <span class="st">&#39;cinco&#39;</span>])</a>
+<a class="sourceLine" id="cb39-4" title="4">frame2</a>
+<a class="sourceLine" id="cb39-5" title="5">frame2[<span class="st">&#39;ca&#39;</span>] <span class="co"># columna</span></a>
+<a class="sourceLine" id="cb39-6" title="6">frame2.loc[<span class="st">&#39;tres&#39;</span>] <span class="co"># fila</span></a></code></pre></div>
 </section><section id="lectura-desde-archivo" class="slide level2">
 <h2>lectura desde archivo</h2>
 <p><code>.read_csv()</code></p>
@@ -572,67 +572,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>el atributo <code>dtypes</code> indica el tipo de dato de cada columna</li>
 <li>las dimensiones del dataframe se obtienen con <code>.shape</code></li>
 </ul>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1">frame2.columns</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2">frame2.dtypes</a>
-<a class="sourceLine" id="cb40-3" data-line-number="3">frame2.shape</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1">frame2.columns</a>
+<a class="sourceLine" id="cb40-2" title="2">frame2.dtypes</a>
+<a class="sourceLine" id="cb40-3" title="3">frame2.shape</a></code></pre></div>
 </section><section id="manejo-básico-1" class="slide level2">
 <h2>manejo básico</h2>
 <p>la serie devuelta al recuperar una columna es una vista</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">vals <span class="op">=</span> frame[<span class="st">&#39;pop&#39;</span>]</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">vals[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb41-3" data-line-number="3">vals</a>
-<a class="sourceLine" id="cb41-4" data-line-number="4">data</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" title="1">vals <span class="op">=</span> frame[<span class="st">&#39;pop&#39;</span>]</a>
+<a class="sourceLine" id="cb41-2" title="2">vals[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb41-3" title="3">vals</a>
+<a class="sourceLine" id="cb41-4" title="4">data</a></code></pre></div>
 <p>usar <code>copy()</code> para eliminar el warning</p>
 </section><section id="manejo-básico-2" class="slide level2">
 <h2>manejo básico</h2>
 <p>un dataframe se puede transponer</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">frame2.T</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" title="1">frame2.T</a></code></pre></div>
 </section><section id="manejo-básico-3" class="slide level2">
 <h2>manejo básico</h2>
 <p>cálculo de frecuencias</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1">frame2.ca.value_counts()</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" title="1">frame2.ca.value_counts()</a></code></pre></div>
 </section><section id="manejo-básico-4" class="slide level2">
 <h2>manejo básico</h2>
 <p>cálculo de valores únicos</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1">frame2.ca.nunique()</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" title="1">frame2.ca.nunique()</a></code></pre></div>
 </section><section id="manejo-básico-5" class="slide level2">
 <h2>manejo básico</h2>
 <p>funciones estadísticas</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">frame2[<span class="st">&#39;pop&#39;</span>].mean()</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">sum</span>()</a>
-<a class="sourceLine" id="cb45-3" data-line-number="3">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">max</span>()</a>
-<a class="sourceLine" id="cb45-4" data-line-number="4">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">min</span>()</a>
-<a class="sourceLine" id="cb45-5" data-line-number="5">frame2[<span class="st">&#39;pop&#39;</span>].median()</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" title="1">frame2[<span class="st">&#39;pop&#39;</span>].mean()</a>
+<a class="sourceLine" id="cb45-2" title="2">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">sum</span>()</a>
+<a class="sourceLine" id="cb45-3" title="3">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">max</span>()</a>
+<a class="sourceLine" id="cb45-4" title="4">frame2[<span class="st">&#39;pop&#39;</span>].<span class="bu">min</span>()</a>
+<a class="sourceLine" id="cb45-5" title="5">frame2[<span class="st">&#39;pop&#39;</span>].median()</a></code></pre></div>
 </section><section id="manejo-básico-6" class="slide level2">
 <h2>manejo básico</h2>
 <p>valores nulos: <code>isnull()</code>: <code>NaN, None/NaN, NaT</code></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">array <span class="op">=</span> np.array([[<span class="dv">1</span>, np.nan, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, np.nan]])</a>
-<a class="sourceLine" id="cb46-2" data-line-number="2">pd.isnull(array)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" title="1">array <span class="op">=</span> np.array([[<span class="dv">1</span>, np.nan, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, np.nan]])</a>
+<a class="sourceLine" id="cb46-2" title="2">pd.isnull(array)</a></code></pre></div>
 </section><section id="inspección" class="slide level2">
 <h2>inspección</h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">frame2.describe() <span class="co"># información estadística</span></a>
-<a class="sourceLine" id="cb47-2" data-line-number="2">frame2.info() <span class="co"># información sobre la estructura de datos</span></a>
-<a class="sourceLine" id="cb47-3" data-line-number="3">frame2.tail()</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" title="1">frame2.describe() <span class="co"># información estadística</span></a>
+<a class="sourceLine" id="cb47-2" title="2">frame2.info() <span class="co"># información sobre la estructura de datos</span></a>
+<a class="sourceLine" id="cb47-3" title="3">frame2.tail()</a></code></pre></div>
 </section><section id="selección-de-columnas" class="slide level2">
 <h2>selección de columnas</h2>
 <p>un dataframe puede verse como un conjunto de series que comparten un índice (las cabeceras de las columnas)</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">frame2[[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;pop&#39;</span>]] <span class="co"># selección columnas</span></a>
-<a class="sourceLine" id="cb48-2" data-line-number="2">frame2[frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>] <span class="co"># filtrado con condición</span></a>
-<a class="sourceLine" id="cb48-3" data-line-number="3">frame2[(frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>) <span class="op">&amp;</span> (frame2[<span class="st">&#39;year&#39;</span>] <span class="op">!=</span> <span class="dv">2002</span>)] <span class="co"># filtrado con condición compuesta</span></a>
-<a class="sourceLine" id="cb48-4" data-line-number="4">frame2.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>] <span class="co"># todas las filas, columnas 0 a 2 no incluida</span></a>
-<a class="sourceLine" id="cb48-5" data-line-number="5">frame2.iloc[:, :<span class="op">-</span><span class="dv">1</span>] <span class="co"># todas las filas, todas las columnas excepto la última</span></a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" title="1">frame2[[<span class="st">&#39;year&#39;</span>, <span class="st">&#39;pop&#39;</span>]] <span class="co"># selección columnas</span></a>
+<a class="sourceLine" id="cb48-2" title="2">frame2[frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>] <span class="co"># filtrado con condición</span></a>
+<a class="sourceLine" id="cb48-3" title="3">frame2[(frame2[<span class="st">&#39;pop&#39;</span>] <span class="op">&gt;</span> <span class="dv">2</span>) <span class="op">&amp;</span> (frame2[<span class="st">&#39;year&#39;</span>] <span class="op">!=</span> <span class="dv">2002</span>)] <span class="co"># filtrado con condición compuesta</span></a>
+<a class="sourceLine" id="cb48-4" title="4">frame2.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>] <span class="co"># todas las filas, columnas 0 a 2 no incluida</span></a>
+<a class="sourceLine" id="cb48-5" title="5">frame2.iloc[:, :<span class="op">-</span><span class="dv">1</span>] <span class="co"># todas las filas, todas las columnas excepto la última</span></a></code></pre></div>
 </section><section id="indexado" class="slide level2">
 <h2>indexado</h2>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1">frame4 <span class="op">=</span> frame2.set_index(<span class="st">&#39;year&#39;</span>)</a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">frame4</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" title="1">frame4 <span class="op">=</span> frame2.set_index(<span class="st">&#39;year&#39;</span>)</a>
+<a class="sourceLine" id="cb49-2" title="2">frame4</a></code></pre></div>
 </section><section id="selección-de-filas" class="slide level2">
 <h2>selección de filas</h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1">frame2.iloc[<span class="dv">3</span>] <span class="co"># posición</span></a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">frame2.iloc[[<span class="dv">3</span>,<span class="dv">4</span>]] <span class="co"># posición</span></a>
-<a class="sourceLine" id="cb50-3" data-line-number="3">frame4.loc[<span class="dv">2001</span>] <span class="co"># etiqueta</span></a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" title="1">frame2.iloc[<span class="dv">3</span>] <span class="co"># posición</span></a>
+<a class="sourceLine" id="cb50-2" title="2">frame2.iloc[[<span class="dv">3</span>,<span class="dv">4</span>]] <span class="co"># posición</span></a>
+<a class="sourceLine" id="cb50-3" title="3">frame4.loc[<span class="dv">2001</span>] <span class="co"># etiqueta</span></a></code></pre></div>
 </section><section id="reseteo-de-índice" class="slide level2">
 <h2>reseteo de índice</h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1">frame4.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" title="1">frame4.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 </section><section id="resumen-de-selección" class="slide level2">
 <h2>resumen de selección</h2>
 <ul>
@@ -644,8 +644,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="ejercicio-inspección" class="slide level2">
 <h2>ejercicio inspección</h2>
 <p>importar datos desde:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user&#39;</span></a>
-<a class="sourceLine" id="cb52-2" data-line-number="2">usuarios <span class="op">=</span> pd.read_csv(DATA_URL, sep<span class="op">=</span><span class="st">&#39;|&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" title="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user&#39;</span></a>
+<a class="sourceLine" id="cb52-2" title="2">usuarios <span class="op">=</span> pd.read_csv(DATA_URL, sep<span class="op">=</span><span class="st">&#39;|&#39;</span>)</a></code></pre></div>
 <p>asignar a una variable llamada <code>users</code> y utilizar <code>user_id</code> como índice</p>
 </section><section id="ejercicio-inspección-1" class="slide level2">
 <h2>ejercicio inspección</h2>
@@ -670,78 +670,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="joins-merge" class="slide level2">
 <h2>joins: merge</h2>
 <p>inner join</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1">left_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">5</span>), </a>
-<a class="sourceLine" id="cb53-2" data-line-number="2">                           <span class="st">&#39;left_value&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>]})</a>
-<a class="sourceLine" id="cb53-3" data-line-number="3">right_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">7</span>), </a>
-<a class="sourceLine" id="cb53-4" data-line-number="4">                           <span class="st">&#39;right_value&#39;</span>: [<span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>]})</a>
-<a class="sourceLine" id="cb53-5" data-line-number="5">left_frame</a>
-<a class="sourceLine" id="cb53-6" data-line-number="6">right_frame</a>
-<a class="sourceLine" id="cb53-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb53-8" data-line-number="8">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" title="1">left_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">5</span>), </a>
+<a class="sourceLine" id="cb53-2" title="2">                           <span class="st">&#39;left_value&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>]})</a>
+<a class="sourceLine" id="cb53-3" title="3">right_frame <span class="op">=</span> pd.DataFrame({<span class="st">&#39;key&#39;</span>: <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">7</span>), </a>
+<a class="sourceLine" id="cb53-4" title="4">                           <span class="st">&#39;right_value&#39;</span>: [<span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>]})</a>
+<a class="sourceLine" id="cb53-5" title="5">left_frame</a>
+<a class="sourceLine" id="cb53-6" title="6">right_frame</a>
+<a class="sourceLine" id="cb53-7" title="7"></a>
+<a class="sourceLine" id="cb53-8" title="8">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;inner&#39;</span>)</a></code></pre></div>
 </section><section id="joins-merge-1" class="slide level2">
 <h2>joins: merge</h2>
 <p>left, right, full outer join</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" data-line-number="1">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</a>
-<a class="sourceLine" id="cb54-2" data-line-number="2">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;right&#39;</span>)</a>
-<a class="sourceLine" id="cb54-3" data-line-number="3">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;outer&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" title="1">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;left&#39;</span>)</a>
+<a class="sourceLine" id="cb54-2" title="2">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;right&#39;</span>)</a>
+<a class="sourceLine" id="cb54-3" title="3">pd.merge(left_frame, right_frame, on<span class="op">=</span><span class="st">&#39;key&#39;</span>, how<span class="op">=</span><span class="st">&#39;outer&#39;</span>)</a></code></pre></div>
 </section><section id="combinación-concat" class="slide level2">
 <h2>combinación: concat</h2>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" data-line-number="1">pd.concat([left_frame, right_frame]) <span class="co"># vertical</span></a>
-<a class="sourceLine" id="cb55-2" data-line-number="2">pd.concat([left_frame, right_frame], axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># horizontal</span></a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb55-1" title="1">pd.concat([left_frame, right_frame]) <span class="co"># vertical</span></a>
+<a class="sourceLine" id="cb55-2" title="2">pd.concat([left_frame, right_frame], axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># horizontal</span></a></code></pre></div>
 </section><section id="añadir-filas-al-final-append" class="slide level2">
 <h2>añadir filas al final: append</h2>
 <p>los dos dataframes deben tener las mismas columnas</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" data-line-number="1">left_frame.append(left_frame)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb56-1" title="1">left_frame.append(left_frame)</a></code></pre></div>
 </section><section id="groupby" class="slide level2">
 <h2>groupby</h2>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" data-line-number="1">ANIMALS_URL<span class="op">=</span><span class="st">&#39;https://gist.githubusercontent.com/predicador37/bccac851999eaf10b6a4b8cec1aef742/raw/beaf295909b9e7d495b49f793fcb9896a8b0fe37/animals.csv&#39;</span></a>
-<a class="sourceLine" id="cb57-2" data-line-number="2">animals <span class="op">=</span> pd.read_csv(ANIMALS_URL)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb57-1" title="1">ANIMALS_URL<span class="op">=</span><span class="st">&#39;https://gist.githubusercontent.com/predicador37/bccac851999eaf10b6a4b8cec1aef742/raw/beaf295909b9e7d495b49f793fcb9896a8b0fe37/animals.csv&#39;</span></a>
+<a class="sourceLine" id="cb57-2" title="2">animals <span class="op">=</span> pd.read_csv(ANIMALS_URL)</a></code></pre></div>
 </section><section id="groupby-1" class="slide level2">
 <h2>groupby</h2>
 <p>¿cuál es el peso medio por animal?</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="co"># Agrupar por cada categoría de animal</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2">animal_groups <span class="op">=</span> animals.groupby(<span class="st">&quot;animal&quot;</span>)</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="co"># Aplicar la media aritmética a la columna de peso</span></a>
-<a class="sourceLine" id="cb58-4" data-line-number="4">animal_groups[<span class="st">&#39;weight&#39;</span>].mean()</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb58-1" title="1"><span class="co"># Agrupar por cada categoría de animal</span></a>
+<a class="sourceLine" id="cb58-2" title="2">animal_groups <span class="op">=</span> animals.groupby(<span class="st">&quot;animal&quot;</span>)</a>
+<a class="sourceLine" id="cb58-3" title="3"><span class="co"># Aplicar la media aritmética a la columna de peso</span></a>
+<a class="sourceLine" id="cb58-4" title="4">animal_groups[<span class="st">&#39;weight&#39;</span>].mean()</a></code></pre></div>
 </section><section id="agg" class="slide level2">
 <h2>agg</h2>
 <p>permite agregar por varias funciones según un eje</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" data-line-number="1">animal_groups[<span class="st">&#39;weight&#39;</span>].agg([<span class="st">&#39;mean&#39;</span>, <span class="st">&#39;median&#39;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb59-1" title="1">animal_groups[<span class="st">&#39;weight&#39;</span>].agg([<span class="st">&#39;mean&#39;</span>, <span class="st">&#39;median&#39;</span>])</a></code></pre></div>
 </section><section id="ejemplo-1" class="slide level2">
 <h2>ejemplo</h2>
 <p>análisis de dataset de netflix</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" data-line-number="1">NETFLIX_URL<span class="op">=</span><span class="st">&#39;https://gist.githubusercontent.com/predicador37/d081821c1538cc6c261a3ac3eef9cb7d/raw/934117f2768b8fa42350441e84b07395929803a5/gistfile1.txt&#39;</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2">df <span class="op">=</span> pd.read_csv(NETFLIX_URL)</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb60-1" title="1">NETFLIX_URL<span class="op">=</span><span class="st">&#39;https://gist.githubusercontent.com/predicador37/d081821c1538cc6c261a3ac3eef9cb7d/raw/934117f2768b8fa42350441e84b07395929803a5/gistfile1.txt&#39;</span></a>
+<a class="sourceLine" id="cb60-2" title="2">df <span class="op">=</span> pd.read_csv(NETFLIX_URL)</a></code></pre></div>
 </section><section id="ejemplo-limpieza" class="slide level2">
 <h2>ejemplo: limpieza</h2>
 <ul>
 <li>dropna(): elimina filas con valores nulos</li>
 <li>drop_duplicates(): elimina filas duplicadas</li>
 </ul>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" data-line-number="1">df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb61-2" data-line-number="2">df.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb61-1" title="1">df.dropna(inplace<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb61-2" title="2">df.drop_duplicates(inplace<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 </section><section id="ejemplo-inspección" class="slide level2">
 <h2>ejemplo: inspección</h2>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" data-line-number="1">df.describe()</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb62-1" title="1">df.describe()</a></code></pre></div>
 </section><section id="ejemplo-split" class="slide level2">
 <h2>ejemplo: split</h2>
 <p>se dividen los datos en grupos, donde cada grupo es el conjunto de películas estrenadas en un año determinado</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" data-line-number="1">df_by_year <span class="op">=</span> df.groupby(<span class="st">&#39;release year&#39;</span>)</a>
-<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="bu">type</span>(df_by_year)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb63-1" title="1">df_by_year <span class="op">=</span> df.groupby(<span class="st">&#39;release year&#39;</span>)</a>
+<a class="sourceLine" id="cb63-2" title="2"><span class="bu">type</span>(df_by_year)</a></code></pre></div>
 </section><section id="ejemplo-apply" class="slide level2">
 <h2>ejemplo: apply</h2>
 <p>aplicar <code>.describe()</code> a cada grupo</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" data-line-number="1">df_by_year.describe().head()</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb64-1" title="1">df_by_year.describe().head()</a></code></pre></div>
 </section><section id="ejemplo-combine" class="slide level2">
 <h2>ejemplo: combine</h2>
 <p>obtener la media o la mediana de la puntuación de usuario por año</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" data-line-number="1">df_med_by_year <span class="op">=</span> df_by_year.median()</a>
-<a class="sourceLine" id="cb65-2" data-line-number="2">df_med_by_year.head()</a>
-<a class="sourceLine" id="cb65-3" data-line-number="3">df_med_by_year[<span class="st">&#39;user rating score&#39;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb65-1" title="1">df_med_by_year <span class="op">=</span> df_by_year.median()</a>
+<a class="sourceLine" id="cb65-2" title="2">df_med_by_year.head()</a>
+<a class="sourceLine" id="cb65-3" title="3">df_med_by_year[<span class="st">&#39;user rating score&#39;</span>]</a></code></pre></div>
 </section><section id="ejercicio-agrupaciones" class="slide level2">
 <h2>ejercicio: agrupaciones</h2>
 <p>importar datos desde:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" title="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user&#39;</span></a></code></pre></div>
 <p>¡inspeccionar separadores!</p>
 </section><section id="ejercicio-agrupaciones-1" class="slide level2">
 <h2>ejercicio: agrupaciones</h2>
@@ -763,76 +763,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div>
 <p>son funciones definidas sin nombre</p>
 <p><code>lambda arguments: expression</code></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">def</span> square_root(x):</a>
-<a class="sourceLine" id="cb67-2" data-line-number="2">    <span class="cf">return</span> math.sqrt(x)</a>
-<a class="sourceLine" id="cb67-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb67-4" data-line-number="4">square_root <span class="op">=</span> <span class="kw">lambda</span> x: math.sqrt(x)</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" title="1"><span class="kw">def</span> square_root(x):</a>
+<a class="sourceLine" id="cb67-2" title="2">    <span class="cf">return</span> math.sqrt(x)</a>
+<a class="sourceLine" id="cb67-3" title="3"></a>
+<a class="sourceLine" id="cb67-4" title="4">square_root <span class="op">=</span> <span class="kw">lambda</span> x: math.sqrt(x)</a></code></pre></div>
 <p>se usan mucho para aplicar funciones a dataframes</p>
 </div>
 </section><section id="ejemplo-aplicar-operaciones-en-dataframes" class="slide level2">
 <h2>ejemplo: aplicar operaciones en dataframes</h2>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb68-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb68-4" data-line-number="4">data <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: [<span class="st">&#39;Pedro&#39;</span>, <span class="st">&#39;Paco&#39;</span>, <span class="st">&#39;Lorena&#39;</span>, <span class="st">&#39;Juan&#39;</span>, <span class="st">&#39;Patxi&#39;</span>], </a>
-<a class="sourceLine" id="cb68-5" data-line-number="5">        <span class="st">&#39;year&#39;</span>: [<span class="dv">2012</span>, <span class="dv">2012</span>, <span class="dv">2013</span>, <span class="dv">2014</span>, <span class="dv">2014</span>], </a>
-<a class="sourceLine" id="cb68-6" data-line-number="6">        <span class="st">&#39;reports&#39;</span>: [<span class="dv">4</span>, <span class="dv">24</span>, <span class="dv">31</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
-<a class="sourceLine" id="cb68-7" data-line-number="7">        <span class="st">&#39;coverage&#39;</span>: [<span class="dv">25</span>, <span class="dv">94</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">70</span>]}</a>
-<a class="sourceLine" id="cb68-8" data-line-number="8">df <span class="op">=</span> pd.DataFrame(data, index <span class="op">=</span> [<span class="st">&#39;Santander&#39;</span>, <span class="st">&#39;Torrelavega&#39;</span>, <span class="st">&#39;Laredo&#39;</span>, <span class="st">&#39;Camargo&#39;</span>, <span class="st">&#39;Astillero&#39;</span>])</a>
-<a class="sourceLine" id="cb68-9" data-line-number="9">df</a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb68-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb68-3" title="3"></a>
+<a class="sourceLine" id="cb68-4" title="4">data <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: [<span class="st">&#39;Pedro&#39;</span>, <span class="st">&#39;Paco&#39;</span>, <span class="st">&#39;Lorena&#39;</span>, <span class="st">&#39;Juan&#39;</span>, <span class="st">&#39;Patxi&#39;</span>], </a>
+<a class="sourceLine" id="cb68-5" title="5">        <span class="st">&#39;year&#39;</span>: [<span class="dv">2012</span>, <span class="dv">2012</span>, <span class="dv">2013</span>, <span class="dv">2014</span>, <span class="dv">2014</span>], </a>
+<a class="sourceLine" id="cb68-6" title="6">        <span class="st">&#39;reports&#39;</span>: [<span class="dv">4</span>, <span class="dv">24</span>, <span class="dv">31</span>, <span class="dv">2</span>, <span class="dv">3</span>],</a>
+<a class="sourceLine" id="cb68-7" title="7">        <span class="st">&#39;coverage&#39;</span>: [<span class="dv">25</span>, <span class="dv">94</span>, <span class="dv">57</span>, <span class="dv">62</span>, <span class="dv">70</span>]}</a>
+<a class="sourceLine" id="cb68-8" title="8">df <span class="op">=</span> pd.DataFrame(data, index <span class="op">=</span> [<span class="st">&#39;Santander&#39;</span>, <span class="st">&#39;Torrelavega&#39;</span>, <span class="st">&#39;Laredo&#39;</span>, <span class="st">&#39;Camargo&#39;</span>, <span class="st">&#39;Astillero&#39;</span>])</a>
+<a class="sourceLine" id="cb68-9" title="9">df</a></code></pre></div>
 <aside class="notes">
 <p>PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE</p>
 </aside>
 </section><section id="ejemplo-2" class="slide level2">
 <h2>ejemplo</h2>
 <p>crear función que pase a mayúsculas usando lambda</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" data-line-number="1">capitalizer <span class="op">=</span> <span class="kw">lambda</span> x: x.upper()</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" title="1">capitalizer <span class="op">=</span> <span class="kw">lambda</span> x: x.upper()</a></code></pre></div>
 <aside class="notes">
 <p>PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE</p>
 </aside>
 </section><section id="ejemplo-3" class="slide level2">
 <h2>ejemplo</h2>
 <p>aplicar la función a la columna <code>name</code></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" data-line-number="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">apply</span>(capitalizer)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" title="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">apply</span>(capitalizer)</a></code></pre></div>
 </section><section id="ejemplo-4" class="slide level2">
 <h2>ejemplo</h2>
 <p>equivalente al anterior</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" data-line-number="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.upper())</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" title="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.upper())</a></code></pre></div>
 </section><section id="ejemplo-5" class="slide level2">
 <h2>ejemplo</h2>
 <p>mapear la función sobre cada elemento de la series <code>name</code></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" data-line-number="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">map</span>(capitalizer)</a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" title="1">df[<span class="st">&#39;name&#39;</span>].<span class="bu">map</span>(capitalizer)</a></code></pre></div>
 </section><section id="ejemplo-6" class="slide level2">
 <h2>ejemplo</h2>
 <p>aplicar una raiz cuadrada a todas las celdas del dataframe</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb73-1" data-line-number="1">df <span class="op">=</span> df.drop(<span class="st">&#39;name&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># eliminar la columna de texto</span></a>
-<a class="sourceLine" id="cb73-2" data-line-number="2">df.applymap(np.sqrt)</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb73-1" title="1">df <span class="op">=</span> df.drop(<span class="st">&#39;name&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># eliminar la columna de texto</span></a>
+<a class="sourceLine" id="cb73-2" title="2">df.applymap(np.sqrt)</a></code></pre></div>
 </section><section id="ejemplo-7" class="slide level2">
 <h2>ejemplo</h2>
 <p>aplicar una función que multiplica por 100 los números</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">def</span> times100(x):</a>
-<a class="sourceLine" id="cb74-2" data-line-number="2">    <span class="cf">if</span> <span class="bu">type</span>(x) <span class="kw">is</span> <span class="bu">str</span>:</a>
-<a class="sourceLine" id="cb74-3" data-line-number="3">        <span class="cf">return</span> x</a>
-<a class="sourceLine" id="cb74-4" data-line-number="4">    <span class="cf">elif</span> x:</a>
-<a class="sourceLine" id="cb74-5" data-line-number="5">        <span class="cf">return</span> <span class="dv">100</span> <span class="op">*</span> x</a>
-<a class="sourceLine" id="cb74-6" data-line-number="6">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb74-7" data-line-number="7">        <span class="cf">return</span></a>
-<a class="sourceLine" id="cb74-8" data-line-number="8">df.applymap(times100)</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" title="1"><span class="kw">def</span> times100(x):</a>
+<a class="sourceLine" id="cb74-2" title="2">    <span class="cf">if</span> <span class="bu">type</span>(x) <span class="kw">is</span> <span class="bu">str</span>:</a>
+<a class="sourceLine" id="cb74-3" title="3">        <span class="cf">return</span> x</a>
+<a class="sourceLine" id="cb74-4" title="4">    <span class="cf">elif</span> x:</a>
+<a class="sourceLine" id="cb74-5" title="5">        <span class="cf">return</span> <span class="dv">100</span> <span class="op">*</span> x</a>
+<a class="sourceLine" id="cb74-6" title="6">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb74-7" title="7">        <span class="cf">return</span></a>
+<a class="sourceLine" id="cb74-8" title="8">df.applymap(times100)</a></code></pre></div>
 </section></section>
 <section><section id="pandas-desde-excel" class="title-slide slide level1"><h1>pandas desde excel</h1></section><h4 id="pandas-desde-excel-1">pandas desde excel</h4><section id="cargar-fichero-de-ejemplo" class="slide level2">
 <h2>cargar fichero de ejemplo</h2>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb75-3" data-line-number="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/24e8e4ee465956aa923bc0add5309118/raw/0f076cc91b06dd8190d10ede1810fc3c22029eda/gistfile1.txt&#39;</span></a>
-<a class="sourceLine" id="cb75-4" data-line-number="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
-<a class="sourceLine" id="cb75-5" data-line-number="5">df.head()</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb75-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb75-3" title="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/24e8e4ee465956aa923bc0add5309118/raw/0f076cc91b06dd8190d10ede1810fc3c22029eda/gistfile1.txt&#39;</span></a>
+<a class="sourceLine" id="cb75-4" title="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
+<a class="sourceLine" id="cb75-5" title="5">df.head()</a></code></pre></div>
 <aside class="notes">
 <p>PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE</p>
 </aside>
 </section><section id="añadir-columna-de-totales" class="slide level2">
 <h2>añadir columna de totales</h2>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1">df[<span class="st">&quot;total&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;Jan&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;Feb&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;Mar&quot;</span>]</a>
-<a class="sourceLine" id="cb76-2" data-line-number="2">df.head()</a></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" title="1">df[<span class="st">&quot;total&quot;</span>] <span class="op">=</span> df[<span class="st">&quot;Jan&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;Feb&quot;</span>] <span class="op">+</span> df[<span class="st">&quot;Mar&quot;</span>]</a>
+<a class="sourceLine" id="cb76-2" title="2">df.head()</a></code></pre></div>
 <aside class="notes">
 <p>PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE</p>
 </aside>
@@ -841,108 +841,108 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>¿total, media, mínimo, máximo del mes de enero?</li>
 </ul>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">sum</span>()</a>
-<a class="sourceLine" id="cb77-2" data-line-number="2">df[<span class="st">&quot;Jan&quot;</span>].mean()</a>
-<a class="sourceLine" id="cb77-3" data-line-number="3">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">min</span>()</a>
-<a class="sourceLine" id="cb77-4" data-line-number="4">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">max</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" title="1">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">sum</span>()</a>
+<a class="sourceLine" id="cb77-2" title="2">df[<span class="st">&quot;Jan&quot;</span>].mean()</a>
+<a class="sourceLine" id="cb77-3" title="3">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">min</span>()</a>
+<a class="sourceLine" id="cb77-4" title="4">df[<span class="st">&quot;Jan&quot;</span>].<span class="bu">max</span>()</a></code></pre></div>
 <aside class="notes">
 <p>PREGUNTAR CÓMO SE HARÍA LA SIGUIENTE</p>
 </aside>
 </section><section id="añadir-subtotales-por-mes-y-total-general" class="slide level2">
 <h2>añadir subtotales por mes y total general</h2>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb78-1" data-line-number="1">sum_row <span class="op">=</span> df[[<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].<span class="bu">sum</span>() <span class="co"># suma para cada columna</span></a>
-<a class="sourceLine" id="cb78-2" data-line-number="2">df_sum <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>sum_row).T <span class="co"># crear un nuevo dataframe transpuesto</span></a>
-<a class="sourceLine" id="cb78-3" data-line-number="3">df_sum</a>
-<a class="sourceLine" id="cb78-4" data-line-number="4">df_sum <span class="op">=</span> df_sum.reindex(columns<span class="op">=</span>df.columns) <span class="co"># añadir las columnas que faltan</span></a>
-<a class="sourceLine" id="cb78-5" data-line-number="5">df_sum</a>
-<a class="sourceLine" id="cb78-6" data-line-number="6">df_final <span class="op">=</span> df.append(df_sum, ignore_index<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb78-7" data-line-number="7">df_final.tail()</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb78-1" title="1">sum_row <span class="op">=</span> df[[<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].<span class="bu">sum</span>() <span class="co"># suma para cada columna</span></a>
+<a class="sourceLine" id="cb78-2" title="2">df_sum <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>sum_row).T <span class="co"># crear un nuevo dataframe transpuesto</span></a>
+<a class="sourceLine" id="cb78-3" title="3">df_sum</a>
+<a class="sourceLine" id="cb78-4" title="4">df_sum <span class="op">=</span> df_sum.reindex(columns<span class="op">=</span>df.columns) <span class="co"># añadir las columnas que faltan</span></a>
+<a class="sourceLine" id="cb78-5" title="5">df_sum</a>
+<a class="sourceLine" id="cb78-6" title="6">df_final <span class="op">=</span> df.append(df_sum, ignore_index<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb78-7" title="7">df_final.tail()</a></code></pre></div>
 </section><section id="añadir-subtotales-por-estado" class="slide level2">
 <h2>añadir subtotales por estado</h2>
-<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="im">from</span> money <span class="im">import</span> Money</a>
-<a class="sourceLine" id="cb79-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb79-3" data-line-number="3">df_sub <span class="op">=</span> df_final[[<span class="st">&quot;state&quot;</span>,<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].groupby(<span class="st">&#39;state&#39;</span>).<span class="bu">sum</span>()</a>
-<a class="sourceLine" id="cb79-4" data-line-number="4">formatted_df <span class="op">=</span> df_sub.applymap(<span class="kw">lambda</span> x: Money(x, currency<span class="op">=</span><span class="st">&#39;EUR&#39;</span>))</a>
-<a class="sourceLine" id="cb79-5" data-line-number="5">formatted_df</a>
-<a class="sourceLine" id="cb79-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb79-7" data-line-number="7">sum_row<span class="op">=</span>df_sub[[<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].<span class="bu">sum</span>() <span class="co"># calcular subtotales como en el caso anterior</span></a>
-<a class="sourceLine" id="cb79-8" data-line-number="8">sum_row</a>
-<a class="sourceLine" id="cb79-9" data-line-number="9">df_sub_sum<span class="op">=</span>pd.DataFrame(data<span class="op">=</span>sum_row).T</a>
-<a class="sourceLine" id="cb79-10" data-line-number="10"><span class="kw">def</span> money(x):</a>
-<a class="sourceLine" id="cb79-11" data-line-number="11">    <span class="cf">return</span> Money(x, currency<span class="op">=</span><span class="st">&#39;EUR&#39;</span>)</a>
-<a class="sourceLine" id="cb79-12" data-line-number="12">df_sub_sum <span class="op">=</span> df_sub_sum.applymap(money)</a>
-<a class="sourceLine" id="cb79-13" data-line-number="13">df_sub_sum</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" title="1"><span class="im">from</span> money <span class="im">import</span> Money</a>
+<a class="sourceLine" id="cb79-2" title="2"></a>
+<a class="sourceLine" id="cb79-3" title="3">df_sub <span class="op">=</span> df_final[[<span class="st">&quot;state&quot;</span>,<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].groupby(<span class="st">&#39;state&#39;</span>).<span class="bu">sum</span>()</a>
+<a class="sourceLine" id="cb79-4" title="4">formatted_df <span class="op">=</span> df_sub.applymap(<span class="kw">lambda</span> x: Money(x, currency<span class="op">=</span><span class="st">&#39;EUR&#39;</span>))</a>
+<a class="sourceLine" id="cb79-5" title="5">formatted_df</a>
+<a class="sourceLine" id="cb79-6" title="6"></a>
+<a class="sourceLine" id="cb79-7" title="7">sum_row<span class="op">=</span>df_sub[[<span class="st">&quot;Jan&quot;</span>,<span class="st">&quot;Feb&quot;</span>,<span class="st">&quot;Mar&quot;</span>,<span class="st">&quot;total&quot;</span>]].<span class="bu">sum</span>() <span class="co"># calcular subtotales como en el caso anterior</span></a>
+<a class="sourceLine" id="cb79-8" title="8">sum_row</a>
+<a class="sourceLine" id="cb79-9" title="9">df_sub_sum<span class="op">=</span>pd.DataFrame(data<span class="op">=</span>sum_row).T</a>
+<a class="sourceLine" id="cb79-10" title="10"><span class="kw">def</span> money(x):</a>
+<a class="sourceLine" id="cb79-11" title="11">    <span class="cf">return</span> Money(x, currency<span class="op">=</span><span class="st">&#39;EUR&#39;</span>)</a>
+<a class="sourceLine" id="cb79-12" title="12">df_sub_sum <span class="op">=</span> df_sub_sum.applymap(money)</a>
+<a class="sourceLine" id="cb79-13" title="13">df_sub_sum</a></code></pre></div>
 </section><section id="añadir-subtotales-por-estado-1" class="slide level2">
 <h2>añadir subtotales por estado</h2>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" data-line-number="1">final_table <span class="op">=</span> formatted_df.append(df_sub_sum)</a>
-<a class="sourceLine" id="cb80-2" data-line-number="2">final_table</a>
-<a class="sourceLine" id="cb80-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb80-4" data-line-number="4">final_table <span class="op">=</span> final_table.rename(index<span class="op">=</span>{<span class="dv">0</span>:<span class="st">&quot;Total&quot;</span>})</a>
-<a class="sourceLine" id="cb80-5" data-line-number="5">final_table</a></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" title="1">final_table <span class="op">=</span> formatted_df.append(df_sub_sum)</a>
+<a class="sourceLine" id="cb80-2" title="2">final_table</a>
+<a class="sourceLine" id="cb80-3" title="3"></a>
+<a class="sourceLine" id="cb80-4" title="4">final_table <span class="op">=</span> final_table.rename(index<span class="op">=</span>{<span class="dv">0</span>:<span class="st">&quot;Total&quot;</span>})</a>
+<a class="sourceLine" id="cb80-5" title="5">final_table</a></code></pre></div>
 </section><section id="otro-ejemplo" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>lectura del fichero</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb81-3" data-line-number="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/29a4c89cc652d3b201ec718377cbfd11/raw/d6a5adcc0534138fc8e2275cc7780b054136c3e3/excel-data-2.csv&#39;</span></a>
-<a class="sourceLine" id="cb81-4" data-line-number="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
-<a class="sourceLine" id="cb81-5" data-line-number="5">df.head()</a>
-<a class="sourceLine" id="cb81-6" data-line-number="6">df.dtypes</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb81-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb81-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb81-3" title="3">DATA_URL <span class="op">=</span> <span class="st">&#39;https://gist.githubusercontent.com/predicador37/29a4c89cc652d3b201ec718377cbfd11/raw/d6a5adcc0534138fc8e2275cc7780b054136c3e3/excel-data-2.csv&#39;</span></a>
+<a class="sourceLine" id="cb81-4" title="4">df <span class="op">=</span> pd.read_csv(DATA_URL)</a>
+<a class="sourceLine" id="cb81-5" title="5">df.head()</a>
+<a class="sourceLine" id="cb81-6" title="6">df.dtypes</a></code></pre></div>
 </section><section id="otro-ejemplo-1" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>conversión de objeto a fecha</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" data-line-number="1">df[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;date&#39;</span>])</a>
-<a class="sourceLine" id="cb82-2" data-line-number="2">df.head()</a>
-<a class="sourceLine" id="cb82-3" data-line-number="3">df.dtypes</a></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" title="1">df[<span class="st">&#39;date&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;date&#39;</span>])</a>
+<a class="sourceLine" id="cb82-2" title="2">df.head()</a>
+<a class="sourceLine" id="cb82-3" title="3">df.dtypes</a></code></pre></div>
 </section><section id="otro-ejemplo-2" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>filtrar por número de cuenta 307599</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb83-1" data-line-number="1">df[df[<span class="st">&#39;account number&#39;</span>] <span class="op">==</span> <span class="dv">307599</span>].head()</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb83-1" title="1">df[df[<span class="st">&#39;account number&#39;</span>] <span class="op">==</span> <span class="dv">307599</span>].head()</a></code></pre></div>
 </section><section id="otro-ejemplo-3" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>filtrar por cantidad mayor a 22</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" data-line-number="1">df[df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>].head()</a></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" title="1">df[df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>].head()</a></code></pre></div>
 </section><section id="otro-ejemplo-4" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>filtrar por referencia (sku) que empiece por B1</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>))].head()</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" title="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>))].head()</a></code></pre></div>
 </section><section id="otro-ejemplo-5" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>combinar los dos filtros anteriores</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1">df[(df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>)))].head()</a></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" title="1">df[(df[<span class="st">&#39;quantity&#39;</span>] <span class="op">&gt;</span> <span class="dv">22</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;sku&#39;</span>].<span class="bu">map</span>(<span class="kw">lambda</span> x: x.startswith(<span class="st">&#39;B1&#39;</span>)))].head()</a></code></pre></div>
 </section><section id="otro-ejemplo-6" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>encontrar todos los registros que incluyen dos números de cuenta específicos</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" data-line-number="1">df[df[<span class="st">&#39;account number&#39;</span>].isin([<span class="dv">714466</span>, <span class="dv">218895</span>])].head()</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" title="1">df[df[<span class="st">&#39;account number&#39;</span>].isin([<span class="dv">714466</span>, <span class="dv">218895</span>])].head()</a></code></pre></div>
 </section><section id="otro-ejemplo-7" class="slide level2">
 <h2>otro ejemplo</h2>
-<p>recuperar lista de clientes por nombre</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1">df.query(<span class="st">&#39;name == [&quot;Kulas Inc&quot;,&quot;Barton LLC&quot;]&#39;</span>).head()</a></code></pre></div>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.query.html">query</a>: requiere instalación previa de <code>numexpr</code> recuperar lista de clientes por nombre</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" title="1">df.query(<span class="st">&#39;name == [&quot;Kulas Inc&quot;,&quot;Barton LLC&quot;]&#39;</span>).head()</a></code></pre></div>
 </section><section id="otro-ejemplo-8" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>trabajar con fechas</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" data-line-number="1">df <span class="op">=</span> df.sort(<span class="st">&#39;date&#39;</span>)</a>
-<a class="sourceLine" id="cb89-2" data-line-number="2">df.head()</a>
-<a class="sourceLine" id="cb89-3" data-line-number="3">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;20140905&#39;</span>].head() <span class="co"># por fecha exacta</span></a>
-<a class="sourceLine" id="cb89-4" data-line-number="4">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;2014-03&#39;</span>].head() <span class="co"># por mes</span></a>
-<a class="sourceLine" id="cb89-5" data-line-number="5">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;Oct-2014&#39;</span>].head() <span class="co"># por mes en otro formato</span></a>
-<a class="sourceLine" id="cb89-6" data-line-number="6">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;10-10-2014&#39;</span>].head() <span class="co"># por fecha en otro formato</span></a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" title="1">df <span class="op">=</span> df.sort(<span class="st">&#39;date&#39;</span>)</a>
+<a class="sourceLine" id="cb89-2" title="2">df.head()</a>
+<a class="sourceLine" id="cb89-3" title="3">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;20140905&#39;</span>].head() <span class="co"># por fecha exacta</span></a>
+<a class="sourceLine" id="cb89-4" title="4">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span><span class="st">&#39;2014-03&#39;</span>].head() <span class="co"># por mes</span></a>
+<a class="sourceLine" id="cb89-5" title="5">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;Oct-2014&#39;</span>].head() <span class="co"># por mes en otro formato</span></a>
+<a class="sourceLine" id="cb89-6" title="6">df[df[<span class="st">&#39;date&#39;</span>] <span class="op">&gt;=</span> <span class="st">&#39;10-10-2014&#39;</span>].head() <span class="co"># por fecha en otro formato</span></a></code></pre></div>
 </section><section id="otro-ejemplo-9" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>series temporales: utilizar la fecha como índice con <code>set_index()</code></p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">df2 <span class="op">=</span> df.set_index([<span class="st">&#39;date&#39;</span>])</a>
-<a class="sourceLine" id="cb90-2" data-line-number="2">df2.head()</a>
-<a class="sourceLine" id="cb90-3" data-line-number="3">df2[<span class="st">&quot;20140101&quot;</span>:<span class="st">&quot;20140201&quot;</span>].head() <span class="co"># filtrado por rango de fechas</span></a>
-<a class="sourceLine" id="cb90-4" data-line-number="4">df2[<span class="st">&quot;2014&quot;</span>].head() <span class="co"># filtrado por año</span></a></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" title="1">df2 <span class="op">=</span> df.set_index([<span class="st">&#39;date&#39;</span>])</a>
+<a class="sourceLine" id="cb90-2" title="2">df2.head()</a>
+<a class="sourceLine" id="cb90-3" title="3">df2[<span class="st">&quot;20140101&quot;</span>:<span class="st">&quot;20140201&quot;</span>].head() <span class="co"># filtrado por rango de fechas</span></a>
+<a class="sourceLine" id="cb90-4" title="4">df2[<span class="st">&quot;2014&quot;</span>].head() <span class="co"># filtrado por año</span></a></code></pre></div>
 </section><section id="otro-ejemplo-10" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>identificar referencias que contienen un determinado valor</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" data-line-number="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1&#39;</span>)].head()</a>
-<a class="sourceLine" id="cb91-2" data-line-number="2">df[(df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1-531&#39;</span>)) <span class="op">&amp;</span> (df[<span class="st">&#39;quantity&#39;</span>]<span class="op">&gt;</span><span class="dv">40</span>)].sort_values(by<span class="op">=</span>[<span class="st">&#39;quantity&#39;</span>,<span class="st">&#39;name&#39;</span>],ascending<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" title="1">df[df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1&#39;</span>)].head()</a>
+<a class="sourceLine" id="cb91-2" title="2">df[(df[<span class="st">&#39;sku&#39;</span>].<span class="bu">str</span>.contains(<span class="st">&#39;B1-531&#39;</span>)) <span class="op">&amp;</span> (df[<span class="st">&#39;quantity&#39;</span>]<span class="op">&gt;</span><span class="dv">40</span>)].sort_values(by<span class="op">=</span>[<span class="st">&#39;quantity&#39;</span>,<span class="st">&#39;name&#39;</span>],ascending<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</a></code></pre></div>
 </section><section id="otro-ejemplo-11" class="slide level2">
 <h2>otro ejemplo</h2>
 <p>obtener una lista de valores únicos</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" data-line-number="1">df[<span class="st">&#39;name&#39;</span>].unique()</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" title="1">df[<span class="st">&#39;name&#39;</span>].unique()</a></code></pre></div>
 </section></section>
 <section><section id="pyjstat" class="title-slide slide level1"><h1>pyjstat</h1></section><h4 id="pyjstat-1">pyjstat</h4><section id="qué-es-1" class="slide level2">
 <h2>qué es</h2>
@@ -957,69 +957,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section id="ejemplo-lectura-de-archivo" class="slide level2">
 <h2>ejemplo: lectura de archivo</h2>
-<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="im">from</span> pyjstat <span class="im">import</span> pyjstat</a>
-<a class="sourceLine" id="cb93-2" data-line-number="2">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/active-population-aged-16-more-gender-age-group-activity-base-2011.json-stat&#39;</span></a>
-<a class="sourceLine" id="cb93-3" data-line-number="3">dataset <span class="op">=</span> pyjstat.Dataset.read(DATA_URL) <span class="co"># lee dataset de json-stat</span></a>
-<a class="sourceLine" id="cb93-4" data-line-number="4">df <span class="op">=</span> dataset.write(<span class="st">&#39;dataframe&#39;</span>) <span class="co"># genera un dataframe</span></a>
-<a class="sourceLine" id="cb93-5" data-line-number="5"><span class="bu">print</span>(df)</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" title="1"><span class="im">from</span> pyjstat <span class="im">import</span> pyjstat</a>
+<a class="sourceLine" id="cb93-2" title="2">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/active-population-aged-16-more-gender-age-group-activity-base-2011.json-stat&#39;</span></a>
+<a class="sourceLine" id="cb93-3" title="3">dataset <span class="op">=</span> pyjstat.Dataset.read(DATA_URL) <span class="co"># lee dataset de json-stat</span></a>
+<a class="sourceLine" id="cb93-4" title="4">df <span class="op">=</span> dataset.write(<span class="st">&#39;dataframe&#39;</span>) <span class="co"># genera un dataframe</span></a>
+<a class="sourceLine" id="cb93-5" title="5"><span class="bu">print</span>(df)</a></code></pre></div>
 </section><section id="ejemplo-consulta" class="slide level2">
 <h2>ejemplo: consulta</h2>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" data-line-number="1">query <span class="op">=</span> [{<span class="st">&#39;sexo&#39;</span>: <span class="st">&#39;hombres&#39;</span>}, {<span class="st">&#39;trimestre&#39;</span>: <span class="st">&#39;2016-1&#39;</span>}, {<span class="st">&#39;grupo-de-edad&#39;</span>: <span class="st">&#39;total&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;parados&#39;</span>}]</a>
-<a class="sourceLine" id="cb94-2" data-line-number="2">dataset.get_value(query)</a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" title="1">query <span class="op">=</span> [{<span class="st">&#39;sexo&#39;</span>: <span class="st">&#39;hombres&#39;</span>}, {<span class="st">&#39;trimestre&#39;</span>: <span class="st">&#39;2016-1&#39;</span>}, {<span class="st">&#39;grupo-de-edad&#39;</span>: <span class="st">&#39;total&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;parados&#39;</span>}]</a>
+<a class="sourceLine" id="cb94-2" title="2">dataset.get_value(query)</a></code></pre></div>
 <blockquote>
 <p>obtener el total de activos mujeres para todos los grupos de edad en el segundo trimestre de 2017</p>
 </blockquote>
 <aside class="notes">
-<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb95-1" data-line-number="1">query <span class="op">=</span> [{<span class="st">&#39;sexo&#39;</span>: <span class="st">&#39;mujeres&#39;</span>}, {<span class="st">&#39;trimestre&#39;</span>: <span class="st">&#39;2017-2&#39;</span>}, {<span class="st">&#39;grupo-de-edad&#39;</span>: <span class="st">&#39;total&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;activos&#39;</span>}]</a>
-<a class="sourceLine" id="cb95-2" data-line-number="2">dataset.get_value(query)</a>
-<a class="sourceLine" id="cb95-3" data-line-number="3"><span class="fl">128.8</span></a></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb95-1" title="1">query <span class="op">=</span> [{<span class="st">&#39;sexo&#39;</span>: <span class="st">&#39;mujeres&#39;</span>}, {<span class="st">&#39;trimestre&#39;</span>: <span class="st">&#39;2017-2&#39;</span>}, {<span class="st">&#39;grupo-de-edad&#39;</span>: <span class="st">&#39;total&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;activos&#39;</span>}]</a>
+<a class="sourceLine" id="cb95-2" title="2">dataset.get_value(query)</a>
+<a class="sourceLine" id="cb95-3" title="3"><span class="fl">128.8</span></a></code></pre></div>
 </aside>
 </section></section>
 <section><section id="ejercicios-1" class="title-slide slide level1"><h1>ejercicios</h1></section><h4 id="ejercicios-2">ejercicios</h4><section id="ejercicio-dataset-icane" class="slide level2">
 <h2>ejercicio: dataset ICANE</h2>
 <p>importar y explorar el archivo JSON-stat desde la siguiente URL:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" data-line-number="1">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" title="1">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat&#39;</span></a></code></pre></div>
 <ul>
 <li>crear un índice temporal</li>
 <li>filtrar los últimos 5 años de tu municipio de residencia en una variable <code>df_muni</code></li>
 <li>obtener una serie con la población para ese filtro</li>
 </ul>
 <aside class="notes">
-<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="im">from</span> pyjstat <span class="im">import</span> pyjstat</a>
-<a class="sourceLine" id="cb97-2" data-line-number="2"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb97-3" data-line-number="3"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb97-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb97-5" data-line-number="5">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat&#39;</span></a>
-<a class="sourceLine" id="cb97-6" data-line-number="6">dataset <span class="op">=</span> pyjstat.Dataset.read(DATA_URL)</a>
-<a class="sourceLine" id="cb97-7" data-line-number="7">df <span class="op">=</span> dataset.write(<span class="st">&#39;dataframe&#39;</span>)</a>
-<a class="sourceLine" id="cb97-8" data-line-number="8">df.describe()</a>
-<a class="sourceLine" id="cb97-9" data-line-number="9">df.dtypes</a>
-<a class="sourceLine" id="cb97-10" data-line-number="10">df.info()</a>
-<a class="sourceLine" id="cb97-11" data-line-number="11">df.head()</a>
-<a class="sourceLine" id="cb97-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb97-13" data-line-number="13">df[<span class="st">&#39;Año&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;Año&#39;</span>])</a>
-<a class="sourceLine" id="cb97-14" data-line-number="14">df.dtypes</a>
-<a class="sourceLine" id="cb97-15" data-line-number="15">df <span class="op">=</span> df.set_index([<span class="st">&#39;Año&#39;</span>])</a>
-<a class="sourceLine" id="cb97-16" data-line-number="16">df</a>
-<a class="sourceLine" id="cb97-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb97-18" data-line-number="18">df_muni <span class="op">=</span> df[(df[<span class="st">&#39;Municipios&#39;</span>] <span class="op">==</span> <span class="st">&#39;39075 - Santander&#39;</span>)]</a>
-<a class="sourceLine" id="cb97-19" data-line-number="19">df_muni <span class="op">=</span> df_muni.loc[df_muni.index <span class="op">&gt;</span> <span class="st">&#39;2012&#39;</span>]</a>
-<a class="sourceLine" id="cb97-20" data-line-number="20">series <span class="op">=</span> df_muni[df_muni[<span class="st">&#39;Variables&#39;</span>] <span class="op">==</span> <span class="st">&#39;Población&#39;][&#39;</span>value<span class="st">&#39;]</span></a>
-<a class="sourceLine" id="cb97-21" data-line-number="21"><span class="st">type(series)</span></a>
-<a class="sourceLine" id="cb97-22" data-line-number="22"><span class="st">series</span></a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb97-1" title="1"><span class="im">from</span> pyjstat <span class="im">import</span> pyjstat</a>
+<a class="sourceLine" id="cb97-2" title="2"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb97-3" title="3"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb97-4" title="4"></a>
+<a class="sourceLine" id="cb97-5" title="5">DATA_URL <span class="op">=</span> <span class="st">&#39;http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat&#39;</span></a>
+<a class="sourceLine" id="cb97-6" title="6">dataset <span class="op">=</span> pyjstat.Dataset.read(DATA_URL)</a>
+<a class="sourceLine" id="cb97-7" title="7">df <span class="op">=</span> dataset.write(<span class="st">&#39;dataframe&#39;</span>)</a>
+<a class="sourceLine" id="cb97-8" title="8">df.describe()</a>
+<a class="sourceLine" id="cb97-9" title="9">df.dtypes</a>
+<a class="sourceLine" id="cb97-10" title="10">df.info()</a>
+<a class="sourceLine" id="cb97-11" title="11">df.head()</a>
+<a class="sourceLine" id="cb97-12" title="12"></a>
+<a class="sourceLine" id="cb97-13" title="13">df[<span class="st">&#39;Año&#39;</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">&#39;Año&#39;</span>])</a>
+<a class="sourceLine" id="cb97-14" title="14">df.dtypes</a>
+<a class="sourceLine" id="cb97-15" title="15">df <span class="op">=</span> df.set_index([<span class="st">&#39;Año&#39;</span>])</a>
+<a class="sourceLine" id="cb97-16" title="16">df</a>
+<a class="sourceLine" id="cb97-17" title="17"></a>
+<a class="sourceLine" id="cb97-18" title="18">df_muni <span class="op">=</span> df[(df[<span class="st">&#39;Municipios&#39;</span>] <span class="op">==</span> <span class="st">&#39;39075 - Santander&#39;</span>)]</a>
+<a class="sourceLine" id="cb97-19" title="19">df_muni <span class="op">=</span> df_muni.loc[df_muni.index <span class="op">&gt;</span> <span class="st">&#39;2012&#39;</span>]</a>
+<a class="sourceLine" id="cb97-20" title="20">series <span class="op">=</span> df_muni[df_muni[<span class="st">&#39;Variables&#39;</span>] <span class="op">==</span> <span class="st">&#39;Población&#39;][&#39;</span>value<span class="st">&#39;]</span></a>
+<a class="sourceLine" id="cb97-21" title="21"><span class="st">type(series)</span></a>
+<a class="sourceLine" id="cb97-22" title="22"><span class="st">series</span></a></code></pre></div>
 </aside>
 </section><section id="ejercicio-dataset-icane-1" class="slide level2">
 <h2>ejercicio: dataset ICANE</h2>
 <p>consultar en el dataset original la variación interanual de la población total de Cantabria en 2017.</p>
 <p>¡ojo! inspeccionar dataset en <a href="http://jsonviewer.stack.hu/">http://jsonviewer.stack.hu/</a> para identificar nombres de dimensiones y variables</p>
 <aside class="notes">
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" data-line-number="1">query <span class="op">=</span> [{<span class="st">&#39;municipios&#39;</span>: <span class="st">&#39;total-cantabria&#39;</span>}, {<span class="st">&#39;ano&#39;</span>: <span class="st">&#39;2017&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;variacion-interanual&#39;</span>}]</a>
-<a class="sourceLine" id="cb98-2" data-line-number="2">dataset.get_value(query)</a></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" title="1">query <span class="op">=</span> [{<span class="st">&#39;municipios&#39;</span>: <span class="st">&#39;total-cantabria&#39;</span>}, {<span class="st">&#39;ano&#39;</span>: <span class="st">&#39;2017&#39;</span>}, {<span class="st">&#39;variables&#39;</span>: <span class="st">&#39;variacion-interanual&#39;</span>}]</a>
+<a class="sourceLine" id="cb98-2" title="2">dataset.get_value(query)</a></code></pre></div>
 </aside>
 </section><section id="ejercicio-nombres-de-niños-en-us" class="slide level2">
 <h2>ejercicio: nombres de niños en US</h2>
 <p>crear un dataframe desde la siguiente URL y asignárselo a la variable <code>baby_names</code></p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" data-line-number="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/guipsamora/pandas_exercises/master/06_Stats/US_Baby_Names/US_Baby_Names_right.csv&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" title="1">DATA_URL <span class="op">=</span> <span class="st">&#39;https://raw.githubusercontent.com/guipsamora/pandas_exercises/master/06_Stats/US_Baby_Names/US_Baby_Names_right.csv&#39;</span></a></code></pre></div>
 </section><section id="ejercicio-nombres-de-niños-en-us-1" class="slide level2 slide:" style="font-size: 30px;">
 <h2>ejercicio: nombres de niños en US</h2>
 <ul>
