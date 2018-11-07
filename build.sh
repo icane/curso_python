@@ -10,6 +10,8 @@ cat source/$1/*.md | \
 pandoc -t revealjs -f markdown -s - --css ../css/estilo.css  \
  -o slides/$1.html
 
+
+# req: texlive-{core,fontsextra,latexextra}
 echo "Generating pdf document for $1..."
 cat source/$1/*.md \
 | sed 's/incremental/.dummy/i;

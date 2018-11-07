@@ -146,7 +146,7 @@ df[df['account number'].isin([714466, 218895])].head()
 
 ## otro ejemplo
 
-[query]: requiere instalación previa de `numexpr`
+[query]\: requiere instalación previa de `numexpr`
 recuperar lista de clientes por nombre
 
 ~~~~python
