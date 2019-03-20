@@ -6,8 +6,9 @@
 Diferentes distribuciones para Windows:
 
 ::: incremental
-- [python]
-- [conda]
+- [python] (cpython)
+- **[conda]** (anaconda/miniconda)
+- [canopy]
 - [winpython]
    + enfocado a sitemas Windows
    + no necesita ser instalado
@@ -21,12 +22,13 @@ Diferentes distribuciones para Windows:
 - Para ejecutar código python necesitaremos un **intérprete** (`python.exe`).
 
 ::: incremental
-- Preinstalado en ciertos S.O. (p.e. Linux)
+- Preinstalado en ciertos S.O. (p.e. Linux, Mac OS X)
 - Diferentes tipos de intérprete (**`CPython`**, `PyPy`, `Jython`,
   `IronPython`...)
 - Podemos tener "`n`" intérpretes distintos instalados en el sistema, cada uno
   con diferentes librerías
-- `conda`: instala por defecto un entorno (intérprete) `base`
+- `conda`: instala por defecto un entorno (intérprete) `base` y un conjunto de
+  librerías
 :::
 
 :::
@@ -38,17 +40,18 @@ Diferentes distribuciones para Windows:
 
 
 ##
-> **Regla general**: evitar usar el intérprete global del sistema
-  y el entorno `base`
+Cada entorno tiene un único intérprete python + librerías
 
-::: incremental
-- Puede afectar a otros componentes
-- Dependencias entre distintos proyectos 
-- Puede no ser la misma versión que la requerida en un proyecto
-:::
+![entornos]\
 
 ##
-![entornos]\
+![entornos_brokendeps]\
+
+::: {.hiddenbullet}
+::: incremental
+- ... necesitamos un entorno independiente
+:::
+:::
 
 ##
 ![<https://xkcd.com/1987>][https://xkcd.com/1987]
@@ -61,13 +64,31 @@ Diferentes distribuciones para Windows:
 #### Entornos virtuales
 
 ##
-- Funcionan en un marco aislado y seguro
+- Funcionan como un marco aislado y seguro
 - Independientes entre sí
 - Permiten especificar versiones de Python (2.7.10, 3.6.6, 3.6.7, ...)
 - Facilmente reproducibles y exportables (**Portabilidad**)
+  + p.e. replicar un entorno preexistente
+- De _"usar y tirar"_
 
 ## 
-![entornos] \
+![entornos]\
+
+##
+> **Regla general**: evitar usar el intérprete global del sistema
+  y el entorno `base`
+
+::: incremental
+- Puede afectar a otros componentes
+- Dependencias entre distintos proyectos 
+- Puede no ser la misma versión que la requerida en un proyecto
+:::
+
+##
+![entornos_venv]\
+
+##
+![entornos_conda]\
 
 ::: notes
     > where python
@@ -147,8 +168,8 @@ anaconda: 18 min
 ##
 ### Entorno virtual con Navigator
 
-- Ejecutar Navigator y crear un nuevo entorno (distinto a `base`) con 
-  diferentes librerías instaladas, p.e.:
+- Ejecutar "Anaconda Navigator" y crear un nuevo entorno (distinto a `base`)
+  con diferentes librerías instaladas, p.e.:
 
  ----------------- ---------------
  `pandas`          `bs4`

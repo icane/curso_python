@@ -38,6 +38,11 @@ subtitle {
   font-size: 2em;
 }
 
+#title-slide .date {
+  font-size: larger;
+  font-weight: bold;
+}
+
 #title-slide h1 {
   font-size: 1.5em;
 }
@@ -52,4 +57,8 @@ subtitle {
 
 .text-muted {
     opacity: 0.5;
+}
+
+.hiddenbullet * {
+  list-style-type:  none;
 }

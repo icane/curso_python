@@ -2,6 +2,7 @@
 # Introducción a Python
 #### Introducción a Python
 
+
 ##
 ![Python_logo_1990s]\
 
@@ -15,17 +16,23 @@ _Benevolent Dictator for Life_ hasta el 28/Feb/2018
 :::
 
 ##
-- Énfasis en la productividad y legibilidad del código ([PEP20])
+Definición y **evolución** del lenguaje recogido en [PEPs]
+(**Python Enhancement Proposals**)
 
 ::: incremental
-- *Beautiful is better than ugly*
-- *Explicit is better than implicit*
-- *Simple is better than complex*
-- *Complex is better than complicated*
-- *Readability counts*
+- Énfasis en la productividad y legibilidad del código ([PEP20])
+  + *Beautiful is better than ugly*
+  + *Explicit is better than implicit*
+  + *Simple is better than complex*
+  + *Complex is better than complicated*
+  + *Readability counts*
+  + ...
+- +reusable, +fácil mantener
 :::
 
 ::: notes
+  >>> import this
+
 > There are two ways of constructing a software design: one way is to make it
   so simple that there are obviously no deficiencies; the other is to make it
   so complicated that there are no obvious deficiencies
@@ -34,25 +41,24 @@ _Benevolent Dictator for Life_ hasta el 28/Feb/2018
 
 ## Ejemplo:
 ~~~python
-from math import factorial
+import math
 
-try:
-    num = input("Introduce un número [0, 1, 2, ...]: ")
-    num = int(num)
-    assert num >= 0
-except ValueError:
-    print('Debes introducir un número')
-except AssertionError:
-    print('Error, el número no puede ser negativo')
-else:
-    print('El factorial de {} es {}'.format(num, factorial(num)))
+num = input("Introduce un número [0, 1, 2, ...]: ")
+num = int(num)  # convierte texto a número entero
+
+print('El factorial de', num, 'es', math.factorial(num))
+
+# de forma alternativa:
+
+# print('El factorial de %s es %s' % (num, math.factorial(num)))
+# print('El factorial de {} es {}'.format(num, math.factorial(num)))
+# print(f'El factorial de {num} es {math.factorial(num)}')
 ~~~
-
 
 ##
 - Actualmente dos versiones principales activas:
-   + Python2.7 (soporte hasta 1/1/2020)
-   + **Python3.x (3.6, 3.7)** &larr;
+   + Python 2.7 (soporte hasta 1/1/2020)
+   + **Python 3.x (3.6, 3.7)** &larr;
 
 ~~~
 python x.y.z
@@ -63,7 +69,7 @@ z: versión menor (errores y seguridad)
 
 ~~~bash
 $ python -V
-Python 3.7.0
+Python 3.7.3
 ~~~
 
 
@@ -82,13 +88,13 @@ P.e. Python3.4.9 y 3.5.6 están soportadas solamente en modo
 ##
 - Lenguaje de alto nivel, interpretado, orientado a objetos
 
-::: notes 
+::: notes
 ciclo escribir-test-corregir muy corto
 :::
 
 ::: incremental
 - Alta productividad, no compilado
-- Gran cantidad de librerías incorporadas (*batteries included*)
+- Gran cantidad de librerías incorporadas ([*batteries included*][batteries])
 - \+ librerías externas (>1M): Python Package Index ([PyPI])
 :::
 
@@ -100,6 +106,14 @@ ciclo escribir-test-corregir muy corto
 - Abstracción de datos
 - Menos líneas de código
 - Interfaces simples (*pythonic*)
+
+    ~~~python
+    >>> import requests
+    >>> r = requests.get('https://api.github.com/events')
+    >>> r.text
+    u'[{"repository":{"open_issues":0,"url":"https://github.com/...
+    ~~~~
+
 :::
 
 ## Código ejemplo en C++
@@ -114,28 +128,28 @@ ciclo escribir-test-corregir muy corto
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <err.h>
- 
+
 char response[] = "HTTP/1.1 200 OK\r\n"
 "Content-Type: text/html; charset=UTF-8\r\n\r\n"
 "Hello, world!\r\n";
- 
+
 int main()
 {
   int one = 1, client_fd;
   struct sockaddr_in svr_addr, cli_addr;
   socklen_t sin_len = sizeof(cli_addr);
- 
+
   int sock = socket(AF_INET, SOCK_STREAM, 0);
   if (sock < 0)
     err(1, "can't open socket");
- 
+
   setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(int));
- 
+
   int port = 8080;
   svr_addr.sin_family = AF_INET;
   svr_addr.sin_addr.s_addr = INADDR_ANY;
   svr_addr.sin_port = htons(port);
- 
+
   if (bind(sock, (struct sockaddr *) &svr_addr, sizeof(svr_addr)) == -1) {
     close(sock);
     err(1, "Can't bind");
@@ -144,12 +158,12 @@ int main()
   listen(sock, 5);
   while (1) {
     client_fd = accept(sock, (struct sockaddr *) &cli_addr, &sin_len);
- 
+
     if (client_fd == -1) {
       perror("Can't accept");
       continue;
     }
- 
+
     write(client_fd, response, sizeof(response) - 1); /*-1:'\0'*/
     close(client_fd);
   }
@@ -173,7 +187,7 @@ Flask.run(app, port=8080)
 ## Interpretado
 
 ::: incremental
-- No es necesario compilar
+- No es necesario compilar...
 
   :::::::::::::: {.columns}
   ::: {.column width="64%"}
@@ -184,28 +198,38 @@ Flask.run(app, port=8080)
   :::
   ::::::::::::::
 
-  Necesitamos tener instalado un intérprete `python`
+  ... pero necesitamos tener instalado un _intérprete_ `python.exe`
 :::
-
 
 ## Interpretado
 
 ::: incremental
-- Compatible (en general) en distintos sistemas operativos y arquitecturas  
+- Compatible (en general) entre distintos sistemas operativos y arquitecturas:
    + Linux
    + MacOS
    + Windows
    + otros (AIX, AS/400, z/OS, OpenVMS, ARM, ...)
+   + **Arduino/Raspberry PI (IoT)**
 - Depuración de errores desde intérprete
-- Gestión automática de memoria
+- [Gestión automática de memoria](#bonus-gil-y-gc)
 :::
 
 ::: notes
 GC, GIL (_Global Intepreter Lock_)
 
-reference counting: 
+reference counting:
 :::
 
+## Práctica
+### intérprete python
+
+::: {.hiddenbullet}
+::: incremental
+- Anaconda Prompt > `python` (> `ipython`)
+
+    ![interprete]\
+:::
+:::
 
 ## Diferentes paradigmas de programación
 
@@ -227,22 +251,21 @@ reference counting:
 ![logo_keras]\ ![logo_tensorflow]\ ![logo_pytorch]\
 
 ## Desarrollo Web
-(p.e. [pinterest], [instagram], ...)
+(p.e. [pinterest], [instagram], [linkedin], ...)
 
 ![logo_django]\ ![logo_flask]\ ![logo_pyramid]\
 
 ## Desarrollo software (scripts, prototipos, ...)
 como "pegamento" entre componentes escritos en otros lenguajes
 
-![logo_fabric]
-![logo_celery]
+![logo_fabric]\ ![logo_celery]\ ![logo_sqlalchemy]\
 
 ## Automatización de procesos software
-
-![logo_ansible]\ ![logo_jinja2]\ ![logo_requests]\
-
-##
 ![simpson]\
+
+## Automatización de procesos software
+![logo_ansible]\ ![logo_robot]\ ![logo_requests]\
+
 
 ::: notes
 Poner un ejemplo
@@ -255,11 +278,16 @@ Poner un ejemplo
 
 > ![ieee_graph]\
 
-gran soporte en [foros][stackoverflow], comunidades, conferencias, ...
+gran soporte en [foros][stackoverflow], [comunidades][pyslackers],
+[conferencias][pycon], ...
 
 ##
+[stackoverflow][stackoverflow_vs]
+
 ![stackoverflow_top]\
-fuente: [stackoverflow][stackoverflow_vs]
+
+_Worldwide, Python is the most popular language, Python grew the most in the
+last 5 years ([PYPL])_ 
 
 ##
 ![R vs Python] \
@@ -281,7 +309,7 @@ fuente: [stackoverflow][stackoverflow_trends]
 - [Python Data Science][kdnuggets0806]
 :::
 ::: {.column width="60%"}
-![poll_results]\
+![poll_re`lts]\
 :::
 ::::::::::::::
 

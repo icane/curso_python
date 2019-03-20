@@ -78,6 +78,7 @@ ficheros = [(f.name, f.stat().st_size)
 ~~~
 
 [cuaderno jupyter][binder03]
+
 [cuaderno jupyter (offline)][03ipynb]
 
 ##
@@ -264,9 +265,10 @@ proyecto/
 devuelve varios resultados, pero solamente estamos interesados en uno.
 ::::
 
-:::: {.footnote}
+<!-- :::: {.footnote}
 [consola online]
 ::::
+ -->
 
 ##
 - `[TAB]` autocompleta (p.e. `import st[TAB]`)
@@ -298,8 +300,9 @@ In[7]: dir(math)  # muestra todos los métodos
 
 
 ##
-- Convierte 67 grados a radianes
-- Calcula la raíz cúbica del resultado
+- Importa la librería `math`
+- Convierte 67 grados a radianes (`math.radians`)
+- Calcula la raíz cúbica del resultado (`math.pow`)
 - Verifica si el resultado es mayor que `14/13`
 
 ## Solución
@@ -318,7 +321,6 @@ False
 ::: incremental
 - Importa el módulo `numpy`
   + `import numpy as np`
-  + o bien (ipython): `%pylab` (no recomendado)
 - Crea un array `a` de 1000 puntos entre [0, 1]
   + Ejecuta el método `np.linspace`
 - Calcula el seno de $2\cdot\pi\cdot a$
@@ -326,6 +328,25 @@ False
 - Activa el modo gráfico integrado
   + `%matplotlib inline`
 - Crea el gráfico de `(a, seno(a))`
+:::
+
+::: notes
+ipython/jupyter: `%pylab` (no recomendado)
+Esto último quivalente a:
+
+~~~Python
+import numpy
+import matplotlib
+from matplotlib import pylab, mlab, pyplot
+np = numpy
+plt = pyplot
+
+from IPython.display import display
+from IPython.core.pylabtools import figsize, getfigs
+
+from pylab import *
+from numpy import *
+~~~
 :::
 
 ## Solución
@@ -395,6 +416,7 @@ Exportar entorno virtual
 - Guías de estilo:
   + [PEP8]
   + [Guía de estilo de Google]
+  + [Cuadernos Jupyter para Data Science]
 
 
 ## 
@@ -405,5 +427,5 @@ Otros recursos en línea
 - [Guía para principiantes][beginners]
 - [Stackoverflow][stackoverflow]
 - [Stackoverflow en español][stackoverflow-es]
-- [awesome][awesome]
+- [awesome python][awesome]
 

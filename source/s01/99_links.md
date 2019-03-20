@@ -5,8 +5,10 @@
 [awesome]: https://github.com/vinta/awesome-python#readme
 [batteries]: https://docs.python.org/3/library/index.html
 [beginners]: https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+[canopy]: https://store.enthought.com/downloads/
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
+[Cuadernos Jupyter para Data Science]: https://github.com/donnemartin/data-science-ipython-notebooks
 [distrib]: https://docs.python.org/3/distributing/index.html 
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
@@ -15,13 +17,18 @@
 [kdnuggets0708]: https://www.kdnuggets.com/2017/08/python-overtakes-r-leader-analytics-data-science.html
 [kdnuggets0805]: https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html
 [kdnuggets0806]: https://www.kdnuggets.com/2018/06/ecosystem-data-science-python-victory.html
+[linkedin]: https://www.linkedin.com/
 [pandas]: https://pandas.pydata.org/
 [PEP20]: https://www.python.org/dev/peps/pep-0020/
-[PEP8]: https://www.python.org/dev/peps/pep-0008/? 
+[PEP8]: https://www.python.org/dev/peps/pep-0008/
+[PEPs]: https://www.python.org/dev/peps/
 [pinterest]: https://www.pinterest.com
 [pip_userguide]: https://pip.pypa.io/en/stable/user_guide/
 [pipenv]: https://pipenv-es.readthedocs.io/es/latest/
+[pycon]: https://www.python.org/community/workshops/
 [PyPI]: https://pypi.org/
+[PYPL]: http://pypl.github.io/PYPL.html
+[pyslackers]: https://pyslackers.com/
 [python]: https://www.python.org/
 [reference]: https://docs.python.org/3.7/reference/index.html
 [scikit-learn]: http://scikit-learn.org/
@@ -36,28 +43,33 @@
 
 [conda_envs]: images/s01/envs_graph.jpg
 [conda_platform]: images/s01/conda_platform.jpeg
-[entornos]: images/s01/conda_envs.png
+[entornos]: images/s01/entornos.svg
+[entornos_brokendeps]: images/s01/entornos_brokendeps.svg
+[entornos_conda]: images/s01/conda_venvs.svg
+[entornos_venv]: images/s01/entornos_venv.svg
 [exec_compiler]: images/s01/exec_compiler.png
 [exec_interpreter]: images/s01/exec_interpreter.png
 [GIL]: images/s01/GIL.png { width=70% }
 [Guido van Rossum, 1995]: images/s01/guido.jpg  { width=40% }
 [Guido van Rossum, 1999]: images/s01/guido2.gif  { width=40% }
-[hierarchy]: images/s01/hierarchy.png
+[hierarchy]: images/s01/hierarchy.svg
 [https://xkcd.com/1987]: images/s01/xkcd1987.png
 [ieee_graph]: images/s01/ieee_graph.jpeg
+[interprete]: images/s01/interprete.png
 [logo_ansible]: images/s01/ansible_logo.png { .logo }
 [logo_celery]: images/s01/logo_celery.png { .logo }
 [logo_django]: images/s01/logo_django.png { .logo }
 [logo_fabric]: images/s01/logo_fabric.png { .logo }
 [logo_flask]: images/s01/flask_logo.png { .logo }
-[logo_jinja2]: images/s01/jinja_logo.png { .logo }
 [logo_keras]: images/s01/keras_logo.png { .logo }
 [logo_pandas]: images/s01/pandas_logo.png { .logo }
 [logo_pyramid]: images/s01/pyramid_logo.png { .logo }
 [logo_pytorch]: images/s01/pytorch_logo.png { .logo }
 [logo_requests]: images/s01/requests_logo.png {.logo}
+[logo_robot]: images/s01/robot.png { .logo }
 [logo_scikit]: images/s01/scikit_logo.png { .logo }
 [logo_scipy]: images/s01/scipy_logo.png { .logo }
+[logo_sqlalchemy]: images/s01/logo_sqlalchemy.png { width=40% }
 [logo_tensorflow]: images/s01/tensorflow_logo.png { .logo }
 [poll_results]: images/s01/poll_results.png
 [python_logo]: images/s01/python_logo.png

@@ -1,0 +1,56 @@
+@startuml
+set namespaceSeparator none
+package "Entorno base" #DDAAAA {
+    enum "Python 3.6" {
+        [librerías preinstaladas]
+    }  
+}
+
+package "entorno-01" #EEBBAA {
+    "Python 3.6.7"  -- "Proyecto 1"
+}
+
+package "entorno-02" #EEAABB {
+    "Python 3.6.8"  -- "Proyecto 2"
+}
+
+package "entorno-03" #DD66AA {
+    "Python 3.7.3"  -- "Proyecto 3"
+}
+
+
+enum "Python 3.6.7" {
+    [librerias preinstaladas]
+    django 1.8.19
+    wagtail 1.10.1
+}
+
+enum "Python 3.6.8" {
+    [librerías preinstaladas]
+    pandas 0.21.1
+    wagtail 1.10.1
+}
+
+enum "Python 3.7.3" {
+    [librerías preinstaladas]
+    pandas 0.23.4
+    django 2.1.7
+}
+
+
+class "Proyecto 1" {
+    wagtail 1.10.1
+    django 1.8.19
+}
+
+class "Proyecto 2" {
+    pandas 0.21.1
+    sqlalchemy 1.0.12
+}
+
+class "Proyecto 3" {
+    pandas 0.23.4
+    django 2.1.7
+}
+
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+set namespaceSeparator none
+package "Entorno base" #DDAAAA {
+  "Python 3.6" -- "Proyecto 1"
+  "Python 3.6" -- "Proyecto 2"
+}
+
+enum "Python 3.6" {
+    django 1.8.19
+    pandas 0.21.1
+    sqlalchemy 1.0.12   
+    wagtail 1.10.1
+}
+
+class "Proyecto 1" {
+    wagtail 1.10.1
+    django 1.8.19
+}
+
+class "Proyecto 2" {
+    pandas 0.21.1
+    sqlalchemy 1.0.12
+}
+
+
+@enduml
