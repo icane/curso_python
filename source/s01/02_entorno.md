@@ -17,6 +17,19 @@ Diferentes distribuciones para Windows:
 :::
 
 ##
+### Podemos ejecutar código **python**:
+
+::: incremental
+- Directamente (si el S.O. lo permite, `#!`)
+- Desde un intérprete interactivo `python` (p.e. `ipython`, `bpython`)
+- Desde un [cuaderno `jupyter`]
+:::
+
+::: notes
+cuaderno jupyter en html: https://bit.ly/2ygkNqU
+:::
+
+##
 ::::::::::::: {.columns}
 ::: {.column width="60%" .smaller}
 - Para ejecutar código python necesitaremos un **intérprete** (`python.exe`).
@@ -69,9 +82,10 @@ Cada entorno tiene un único intérprete python + librerías
 - Permiten especificar versiones de Python (2.7.10, 3.6.6, 3.6.7, ...)
 - Facilmente reproducibles y exportables (**Portabilidad**)
   + p.e. replicar un entorno preexistente
-- De _"usar y tirar"_
+- De _"usar y tirar"_ (p.e. probar nuevas versiones de código o librerías)
 
-## 
+##
+Por defecto partiremos de un entorno global/base 
 ![entornos]\
 
 ##
@@ -94,20 +108,6 @@ Cada entorno tiene un único intérprete python + librerías
     > where python
 :::
 
-##
-### Podemos ejecutar código **python**:
-
-::: incremental
-- Directamente (si el S.O. lo permite, `#!`)
-- Desde un intérprete `python` (p.e. `ipython`)
-- Desde un [cuaderno `jupyter`]
-:::
-
-
-::: notes
-cuaderno jupyter en html: https://bit.ly/2ygkNqU
-:::
-
 # Conda
 #### Python en Windows
 
@@ -116,10 +116,11 @@ cuaderno jupyter en html: https://bit.ly/2ygkNqU
 
 - Gestor de paquetes multi-lenguaje (python/R/...)
 - Transparente: no instala ficheros fuera de su directorio
-- Multipropósito, gestiona paquetes adicionales (p.e. `git`, librerías, ...)
+- Distribución multipropósito, gestiona paquetes adicionales (p.e. `git`,
+  librerías, ...)
 - Coexistencia de entornos con diferentes librerías y versiones de python
 
->- Por defecto nos encontraremos en el entorno `base`
+>- Por defecto nos encontraremos en un entorno llamado `base`
 
 ## 
 
@@ -134,10 +135,10 @@ Anaconda Navigator                      sin interfaz gráfico
                         
 
 ## 
-Alternativa: [python] + [pipenv]
+Alternativas (más bajo nivel):
 
-(más bajo nivel)
-
+- [python] + [pipenv]
+- [python] + [virtualenvwrapper (lazy)][virtualenvwrapper]
 
 # Instalación
 #### Instalación

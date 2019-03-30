@@ -425,6 +425,7 @@ Otros recursos en línea
 - [Librería standard de Python][batteries]
 - [Guía de referencia de Python][reference]
 - [Guía para principiantes][beginners]
+- **[The Hitchhiker’s Guide to Python!]**
 - [Stackoverflow][stackoverflow]
 - [Stackoverflow en español][stackoverflow-es]
 - [awesome python][awesome]

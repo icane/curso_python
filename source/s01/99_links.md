@@ -9,7 +9,8 @@
 [conda]: https://conda.io
 [conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
 [Cuadernos Jupyter para Data Science]: https://github.com/donnemartin/data-science-ipython-notebooks
-[distrib]: https://docs.python.org/3/distributing/index.html 
+[distrib]: https://docs.python.org/3/distributing/index.html
+[flake8]: http://flake8.pycqa.org/en/latest/
 [Guido van Rossum]: https://gvanrossum.github.io/
 [Guía de estilo de Google]: https://github.com/google/styleguide/blob/gh-pages/pyguide.md
 [ieee_rank]: https://spectrum.ieee.org/at-work/innovation/the-2018-top-programming-languages
@@ -37,6 +38,8 @@
 [stackoverflow]: https://stackoverflow.com/questions/tagged/python
 [stackoverflow_trends]: https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas
 [stackoverflow_vs]: https://insights.stackoverflow.com/trends?tags=python%2Cjava%2Cphp%2Cc%23
+[The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org/
+[virtualenvwrapper]: https://virtualenvwrapper.readthedocs.io/es/latest/
 [winpython]: https://winpython.github.io/
 
 <!-- imágenes -->
@@ -81,6 +84,7 @@
 [stackoverflow_top]: images/s01/SO_py_vs_other.svg
 [timeline]: images/s01/timeline.png
 [venv_navigator]: images/s01/venv_navigator.gif
+[vscode]: images/s01/vscode.png
 
 <!-- código -->
 

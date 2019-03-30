@@ -240,6 +240,10 @@ reference counting:
 - Funcional (<100%)
 :::
 
+::: notes
+https://blog.newrelic.com/engineering/python-programming-styles/
+:::
+
 # Python es usado en
 
 ## Data Science
@@ -309,7 +313,7 @@ fuente: [stackoverflow][stackoverflow_trends]
 - [Python Data Science][kdnuggets0806]
 :::
 ::: {.column width="60%"}
-![poll_re`lts]\
+![poll_results]\
 :::
 ::::::::::::::
 

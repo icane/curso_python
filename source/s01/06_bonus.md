@@ -1,6 +1,6 @@
 
-# _Bonus_: GIL y GC
-#### _Bonus_: GIL y GC
+# _Bonus (II)_: GIL y GC
+#### _Bonus (II)_: GIL y GC
 
 ##
 #### _Reference counting_
