@@ -15,9 +15,14 @@ keywords: [python, intro]
 
 #
 - [sesión 1 (1 Abril)](slides/s01.html)
-- [sesión 2 (2 Abril)](slides/s02.html)
+- sesión 2 (2 Abril)
+- sesión 3 (3 Abril)
+- sesión 4 (8 Abril)
+- sesión 5 (9 Abril)
+- sesión 6 (10 Abril)
+<!-- - [sesión 2 (2 Abril)](slides/s02.html)
 - [sesión 3 (3 Abril)](slides/s03.html)
 - [sesión 4 (8 Abril)](slides/s04.html)
 - [sesión 5 (9 Abril)](slides/s05.html)
 - [sesión 6 (10 Abril)](slides/s06.html)
-
+ -->

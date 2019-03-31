@@ -149,7 +149,7 @@ Tiempo de ejecución 1.32 segundos
 ##
 [cuaderno jupyter (offline)][05ipynb]
 
-[cuaderno jupyter][binder05]
+[cuaderno jupyter (binder)][binder05]
 
 
 

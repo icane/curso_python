@@ -31,6 +31,7 @@
 [PYPL]: http://pypl.github.io/PYPL.html
 [pyslackers]: https://pyslackers.com/
 [python]: https://www.python.org/
+[python tutorial]: https://docs.python.org/3/tutorial/index.html
 [reference]: https://docs.python.org/3.7/reference/index.html
 [scikit-learn]: http://scikit-learn.org/
 [scipy]: https://www.scipy.org/
@@ -75,6 +76,7 @@
 [logo_sqlalchemy]: images/s01/logo_sqlalchemy.png { width=40% }
 [logo_tensorflow]: images/s01/tensorflow_logo.png { .logo }
 [poll_results]: images/s01/poll_results.png
+[python_documentation]: images/s01/pydoc.png
 [python_logo]: images/s01/python_logo.png
 [Python_logo_1990s]: images/s01/Python_logo_1990s.svg
 [R vs Python]: images/s01/R_vs_Python.png
@@ -92,9 +94,7 @@
 [05ipynb]: code/s01/05_bonus.ipynb
 [binder03]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F03_estructura.ipynb
 [binder05]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F05_bonus.ipynb
-[bindersp]: https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2Fnb_sample.ipynb
 [circunferencia.py]: code/s01/circunferencia.py
 [consola online]: https://hub.mybinder.org/user/icane-curso_python-98y3wfn8/lab?
 [cuaderno `jupyter`]: https://raw.githubusercontent.com/thomas-haslwanter/statsintro_python/master/ipynb/6_distContinuous.ipynb
-[ipynb_offline]: code/s01/nb_sample.ipynb
-
+[sample_notebook]: https://nbviewer.jupyter.org/github/donnemartin/data-science-ipython-notebooks/blob/master/python-data/structs.ipynb

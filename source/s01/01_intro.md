@@ -43,16 +43,16 @@ Definición y **evolución** del lenguaje recogido en [PEPs]
 ~~~python
 import math
 
-num = input("Introduce un número [0, 1, 2, ...]: ")
-num = int(num)  # convierte texto a número entero
+número = input("Introduce un número [0, 1, 2, ...]: ")
+número = int(número)  # convierte texto a número entero
 
-print('El factorial de', num, 'es', math.factorial(num))
+print('El factorial de', número, 'es', math.factorial(número))
 
 # de forma alternativa:
 
-# print('El factorial de %s es %s' % (num, math.factorial(num)))
-# print('El factorial de {} es {}'.format(num, math.factorial(num)))
-# print(f'El factorial de {num} es {math.factorial(num)}')
+# print('El factorial de %s es %s' % (número, math.factorial(número)))
+# print('El factorial de {} es {}'.format(número, math.factorial(número)))
+# print(f'El factorial de {número} es {math.factorial(número)}')
 ~~~
 
 ##
@@ -103,7 +103,7 @@ ciclo escribir-test-corregir muy corto
 ::: incremental
 - Sencillo y comprensible
 - Fácil de aprender
-- Abstracción de datos
+- Abstracción de datos (no es necesario declarar variables)
 - Menos líneas de código
 - Interfaces simples (*pythonic*)
 
@@ -211,7 +211,7 @@ Flask.run(app, port=8080)
    + otros (AIX, AS/400, z/OS, OpenVMS, ARM, ...)
    + **Arduino/Raspberry PI (IoT)**
 - Depuración de errores desde intérprete
-- [Gestión automática de memoria](#bonus-gil-y-gc)
+- [Gestión automática de memoria](#bonus-ii-gil-y-gc)
 :::
 
 ::: notes

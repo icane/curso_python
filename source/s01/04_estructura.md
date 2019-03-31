@@ -302,8 +302,8 @@ In[7]: dir(math)  # muestra todos los métodos
 ##
 - Importa la librería `math`
 - Convierte 67 grados a radianes (`math.radians`)
-- Calcula la raíz cúbica del resultado (`math.pow`)
-- Verifica si el resultado es mayor que `14/13`
+- Calcula el cuadrado (n²) del resultado (operador `**` o `math.pow`)
+- Verifica si el resultado es mayor que `16/13`
 
 ## Solución
 ##
@@ -312,22 +312,29 @@ import math
 
 
 grados = math.radians(67)
-math.pow(grados, 1/3) > 14/13
+grados ** 2 > 16/13
+# math.pow(grados, 2) > 16/13
 
-False
+True
 ~~~
 
 ## Parte 2
+::: {.smaller}
 ::: incremental
-- Importa el módulo `numpy`
+- Importa la librería `numpy`
   + `import numpy as np`
+- Importa el módulo `pyplot` de la librería `matplotlib`
+  + `from matplotlib import pyplot as plt`
 - Crea un array `a` de 1000 puntos entre [0, 1]
-  + Ejecuta el método `np.linspace`
+  + Ejecuta el método `np.linspace()`
 - Calcula el seno de $2\cdot\pi\cdot a$
-  + Usa la constante `np.pi`
+  + usa el método `np.sin()`
+  + usa la constante `np.pi`
 - Activa el modo gráfico integrado
   + `%matplotlib inline`
-- Crea el gráfico de `(a, seno(a))`
+- Crea un gráfico con `a` en el eje _x_ y $2\cdot\pi\cdot a$ en el eje _y_
+  + emplea la función `plt.plot()`
+:::
 :::
 
 ::: notes
@@ -367,11 +374,10 @@ plt.plot(a, b)
 #### Práctica IV: Ejecutar un cuaderno `jupyter`
 
 ##
-<!-- Copiar el [cuaderno de ejemplo][ipynb_offline] en el directorio del prompt de -->
-<!-- Anaconda y ejecutar línea por línea. -->
-Abrir el [cuaderno de ejemplo][bindersp] y ejecutar línea por línea.
+Descargar el [cuaderno de ejemplo][sample_notebook] en el directorio `python` y
+ejecutar línea por línea.
 
-[cuaderno ejemplo offline][ipynb_offline]
+(o bien ejecutarlo en forma remota con Binder)
 
 # Práctica V
 #### Práctica V: Exportar e importar un entorno virtual
@@ -388,35 +394,51 @@ Exportar entorno virtual
 
 # entorno + dependencias
 (entorno-01) conda env export > entorno-01.yml
-~~~
-
-
-~~~zsh
-# Desde otro sistema, restaurar el entorno
-(base) conda env create -f entorno-01.yml
+# o bien desde base
+(base) conda env export --name entorno-01 > entorno-01.yml
 ~~~
 
 ~~~zsh
-# O bien el la misma máquina, con otro nombre:
-(entorno-01) conda list --export > requirements.txt
+# Restaurar el entorno con otro nombre (clonar)
 (entorno-01) deactivate
 (base) conda env create --name entorno-11 --file requirements.txt
 (base) activate entorno-11
 (entoro-11) conda list
 ~~~
 
-- Restaurar solo dependencias (`requirements.txt`): independiente de `conda`
-
+~~~zsh
+# Destruir el entorno y restaurarlo desde la copia
+(base) conda env remove --name entorno-01 -y
+(base) conda env create -f entorno-01.yml
+~~~
 :::
+
+##
+
+##### Exportar entorno virtual (II)
+
+- Copia y restauración de dependencias con `pip` (`requirements.txt`)
+  + independiente de `conda`
+
+~~~zsh
+(entorno-01) pip freeze > requirements.txt
+(entorno-01) conda activate entorno-03
+(entorno-03) pip install -r requirements.txt
+~~~
+
 
 # Recursos adicionales
 #### Recursos adicionales
 
 ##
+![python_documentation] [Documentación oficial](https://docs.python.org/3.7/)
+
+##
+- [Tutorial de python][python tutorial]
 - Guías de estilo:
   + [PEP8]
   + [Guía de estilo de Google]
-  + [Cuadernos Jupyter para Data Science]
+- [Cuadernos Jupyter para Data Science]
 
 
 ## 

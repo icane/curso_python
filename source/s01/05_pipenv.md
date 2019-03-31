@@ -1,9 +1,10 @@
 
-# _Bonus_: `[pipenv]`
-#### _Bonus_: `[pipenv]`
+# _Bonus_: [pipenv]
+#### _Bonus_: [pipenv]
 
 ##
 - Permite gestionar un entorno virtual y sus dependencias
+
 ::: incremental
 - Instalación desde `pip`
 - Cada carpeta de proyecto es considerada un entorno virtual
@@ -13,7 +14,7 @@
 - Ejecutar scripts con `pipenv run ...`
 :::
 
-## Instala `[pipenv]` y crea un entorno virtual nuevo
+## Instala [pipenv] y crea un entorno virtual nuevo
 
 ::: { .hiddenbullets }
 ::: incremental
@@ -50,7 +51,7 @@ $ cat Pipfile.lock
 ~~~
 
 ##
-Otras funcionalidades útiles con `pipenv`:
+Otras funcionalidades útiles con [pipenv]:
 
 ~~~bash
 # muestra dónde instala realmente el entorno
@@ -95,7 +96,6 @@ $ pipenv --rm
 
 ~~~
 
-##
 Restaura un entorno virtual desde los ficheros `Pipfile` y `Pipfile.lock`:
 
 ~~~bash
