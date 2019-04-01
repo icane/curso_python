@@ -2,7 +2,7 @@
 title: "Python para Análisis de datos: Introducción"
 subtitle: Sesión 5
 author: Miguel Expósito Martín (exposito_m@cantabria.es)
-date: 24 Octubre 2018
+date: 9 Abril 2019
 revealjs-url: ..
 theme: solarized
 transition: fade

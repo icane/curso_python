@@ -2,7 +2,7 @@
 title: "Python para Análisis de datos: Introducción"
 subtitle: Sesión 6
 author: Jesús Fernández (fernandez.cuesta@gmail.com)
-date: 25 Octubre 2018
+date: 10 Abril 2019
 revealjs-url: ..
 theme: solarized
 transition: fade

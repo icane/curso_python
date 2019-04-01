@@ -5,6 +5,7 @@
 [awesome]: https://github.com/vinta/awesome-python#readme
 [batteries]: https://docs.python.org/3/library/index.html
 [beginners]: https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+[choosalicense]: http://choosealicense.com/
 [canopy]: https://store.enthought.com/downloads/
 [conda]: https://conda.io
 [conda_cheatsheet]: https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html
@@ -39,6 +40,7 @@
 [stackoverflow]: https://stackoverflow.com/questions/tagged/python
 [stackoverflow_trends]: https://insights.stackoverflow.com/trends?tags=r%2Cpython%2Cpandas
 [stackoverflow_vs]: https://insights.stackoverflow.com/trends?tags=python%2Cjava%2Cphp%2Cc%23
+[stop writing classes]: https://www.youtube.com/watch?v=o9pEzgHorH0
 [The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org/
 [virtualenvwrapper]: https://virtualenvwrapper.readthedocs.io/es/latest/
 [vscode]: https://code.visualstudio.com/

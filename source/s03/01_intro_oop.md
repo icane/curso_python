@@ -2,7 +2,7 @@
 title: "Python para Análisis de datos: Introducción"
 subtitle: Sesión 3
 author: Alejandro Villar (avillar@ticnor.es)
-date: 22 Octubre 2018
+date: 3 Abril 2019
 revealjs-url: ..
 theme: solarized
 transition: fade

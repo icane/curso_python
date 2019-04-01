@@ -10,6 +10,7 @@ def area(radio):
 def longitud(radio):
     return 2 * math.pi * radio
 
+print('Hola mundo')
 
 # entra aquí cuando se ejecuta directamente
 if __name__ == "__main__":

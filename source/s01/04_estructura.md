@@ -4,82 +4,110 @@
 
 ##
 - No hay delimitadores de línea (tipo '`;`')
-- Comentar código con `#`
 - Jerarquía del código según nivel de indentación
 - Indentar código con espacios
+- Comentar código con « `#` »
 - Importar librerías al inicio
 - Código agrupado con líneas en blanco
 - **Recomendado**: Longitud de línea < 80 caracteres
 
+[cuaderno jupyter][binder03]
+
+[cuaderno jupyter (offline)][03ipynb]
+
 ##
+::: {.smaller}
 - No hay delimitadores de línea (tipo `;`)
-- Comentar código con `#`
-
-~~~python
-import os
-
-home = os.path.expanduser('~')  # comentario en línea
-directorio_entorno = os.path.join(home,
-                                  'Anaconda3',
-                                  'envs',
-                                  'entorno-03')
-ficheros = []
-
-# los comentarios comienzan con el caracter '#'
-for f in os.listdir(directorio_entorno):
-    if os.path.isfile(f):
-        tamaño = os.stat(os.join(directorio_entorno), f).st_size
-        ficheros.append((f, tamaño))
-~~~
-
-##
 - Jerarquía del código según nivel de sangría (*indent*)
 - Diferenciarlo con espacios &sup1;
 
 ~~~python
 import os
 
+
 home = os.path.expanduser('~')  # directorio del usuario
-directorio_entorno = os.path.join(
-    home, 'Anaconda3', 'envs', 'entorno-03'
+directorio = os.path.join(
+    home, 'Documentos', 'python'
 )
 ficheros = []
 
 # Busca ficheros y guarda (nombre, tamaño)
-for f in os.listdir(directorio_entorno):
-    if os.path.isfile(f):
-        tamaño = os.stat(os.join(directorio_entorno), f).st_size
+for f in os.listdir(directorio):
+    ruta = os.path.join(directorio, f)
+    if os.path.isfile(ruta):
+        tamaño = os.stat(ruta).st_size
         ficheros.append((f, tamaño))
-    print(f)
-print(tamaño)
+        print(f)
+        print(tamaño)
+print("Total", len(ficheros), "ficheros")
 ~~~
+
 :::: {.footnote}
-&sup1; Generalmente con 4 espacios, no mezclar con `TAB`
+&sup1; Generalmente con 4 espacios, no mezclar con tabuladores!!!
 ::::
+:::
 
 ::: notes
 Copiar y pegar el texto en st3 para visualizar los caracteres vacíos
 :::
 
 ##
-- Importar librerías al inicio
-- Código agrupado con líneas en blanco
+:::{.smaller}
+- Comentar código con « `#` »
 
 ~~~python
-import pathlib
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Descripción breve del programa.
+Varias líneas delimitadas por 3 caracteres "
+"""
+import os
+
+
+home = os.path.expanduser('~')  # comentario en línea
+directorio = os.path.join(
+    home, 'Documentos', 'python'
+)
+
+# Comentario
+ficheros = [f for f in os.listdir(directorio) 
+            if os.path.isfile(os.path.join(directorio, f))]
+for f in ficheros:
+    print(f)
+    print(os.stat(os.join(directorio), f).st_size)
+
+~~~
+:::
+
+##
+::: {.smaller}
+- Importar librerías al inicio
+- Código agrupado con líneas en blanco
+  + 2 líneas después de los `import`
+  + funciones y clases: 2 líneas antes/después
+  + métodos dentro de clases: 1 línea
+  + líneas adicionales para agrupar funciones relacionadas
+
+~~~python
 from pathlib import Path
 
 
 home = Path.home()  # pathlib.Path.home()
-directorio_entorno = home / 'Anaconda3' / 'envs' / 'entorno-03'
-ficheros = [(f.name, f.stat().st_size)
-            for f in directorio_entorno.iterdir()
-            if f.is_file()]
+directorio = home / 'Documentos' / 'python'
+
+
+def busca_ficheros(directorio):
+    return (
+      (f.name, f.stat().st_size) for f in directorio.iterdir() if f.is_file()
+    )
+
+
+for (nombre, tamaño) in busca_ficheros(directorio):
+    print(f'Encontrado fichero {nombre} de {tamaño} Bytes')
+
 ~~~
-
-[cuaderno jupyter][binder03]
-
-[cuaderno jupyter (offline)][03ipynb]
+:::
 
 ##
 Palabras reservadas
@@ -137,13 +165,12 @@ print(dir(builtins))
 Se llama a `__main__()` cuando se ejecuta [directamente][circunferencia.py]:
 
 ~~~zsh
-(base) python circunferencia.py
+(base) python circunferencia.py 35
 ~~~
 
 ~~~python
 import sys
 import math
-
 
 def area(radio):
     return math.pi * (radio ** 2)
@@ -151,7 +178,9 @@ def area(radio):
 def longitud(radio):
     return 2 * math.pi * radio
 
-# entra aquí cuando se ejecuta directamente
+print('Hola mundo')
+
+# entra aquí cuando se ejecuta desde un intérprete
 if __name__ == "__main__":
     radio = float(sys.argv[1])  # sys.argv[] son los argumentos de entrada
     print(
@@ -164,8 +193,9 @@ if __name__ == "__main__":
 :::
 
 ::: notes
-En el ejemplo anterior no son necesarios los paréntesis, ya que el operador
+- En el ejemplo anterior no son necesarios los paréntesis, ya que el operador
 `**` tiene prioridad sobre `*`. Lo verán en la sesión#2.
+- Probar a hacer un `import circunferencia`, aparecerá 'Hola mundo'
 ::::
 
 ##
@@ -177,9 +207,9 @@ En el ejemplo anterior no son necesarios los paréntesis, ya que el operador
 
 ~~~
     principal/
-        __init__.py
+        __init__.py         import principal
         practica.py
-        recolector/
+        recolector/         from principal import recolector
             __init__.py
             collector.py
             database.py
@@ -226,8 +256,8 @@ proyecto/
 ::: {.column width="60%"}
     nombre del paquete
     descripción del proyecto
-    licencia
-    distribución/empaquetado [2]
+    licencia [2]
+    distribución/empaquetado [3]
     descripción de las dependencias
     descripción del entorno
     el código en sí
@@ -240,10 +270,88 @@ proyecto/
 :::
 ::::::::::::::
 
+:::: {.footnote}
+&sup2; [choosalicense]
+::::
 
 :::: {.footnote}
-&sup2; p.e. [setuptools][distrib]
+&sup3; p.e. [setuptools][distrib]
 ::::
+
+##
+Cómo importar módulos
+
+:::{.smaller}
+Mal:
+
+~~~python
+from pandas import *
+from numpy import *
+
+f = array([1, 2, 3, 4])  # ndarray es de pandas o numpy?
+~~~
+
+Algo mejor:
+
+~~~python
+from numpy import array
+from pandas import *
+
+f = array([1, 2, 3, 4])  # seguro que ndarray es de numpy?
+~~~
+
+Bien:
+
+~~~python
+import pandas as pd  # renombrar para abreviar o por convención
+import numpy
+
+f = numpy.array([1, 2, 3, 4])
+~~~
+:::
+
+##
+Código estructurado por módulos/submódulos
+
+~~~
+    principal/
+        __init__.py  <-------- entrada al módulo principal
+        recolector/       <-----.
+            __init__.py         |
+            collector.py --.    |
+            database.py    |    |
+        conversor/   <-----'    |
+            __init__.py         |
+            limpia.py ----------'
+            procesa.py
+        graficos/
+            __init__.py
+            graficos.py
+            exportar.py
+~~~
+::: {.smaller}
+- Dependencias cíclicas: método de `collector.py` necesita importar `conversor`, mientras que `limpia.py` importa `recolector`.
+- Acoplamiento: cambios en `conversor` afectan a `gráficos`
+- Uso excesivo de variables globales
+- Anidamiento excesivo (búcles `for`, `if`)
+- Defecto/exceso de clases (_[stop writing classes]_)
+:::
+
+::: notes
+
+~~~python
+class Greeting(object):
+    def __init__(self, greeting='hello'):
+        self.greeting = greeting
+
+    def greet(self, name):
+        return '%s! %s' % (self.greeting, name)
+
+greeting = Greeting('hola')
+print(greeting.greet('bob'))
+~~~
+
+:::
 
 # Práctica III
 #### Práctica III: Consola `ipython`
@@ -255,13 +363,13 @@ proyecto/
 - `In[n]` identifica las entradas de comandos
 - comandos _mágicos_ (solamente para `ipython`)
   + comienzan por el caracter '`%`'
-  + ejemplo: `%edit`, `%pylab`
+  + ejemplo: `%run`, `%matplotlib`, `%load`, `%who`
 - `Ctrl+R` activa la búsqueda en el historial
   + `%hist`, `%history` para visualizarlo
-- `_` guarda la salida del último comando &sup3;
+- `_` guarda la salida del último comando &sup4;
 
 :::: {.footnote}
-&sup3; `_` se usa también como variable de usar/tirar, p.e. cuando una función
+&sup4; `_` se usa también como variable de usar/tirar, p.e. cuando una función
 devuelve varios resultados, pero solamente estamos interesados en uno.
 ::::
 
@@ -319,7 +427,6 @@ True
 ~~~
 
 ## Parte 2
-::: {.smaller}
 ::: incremental
 - Importa la librería `numpy`
   + `import numpy as np`
@@ -397,6 +504,7 @@ Exportar entorno virtual
 # o bien desde base
 (base) conda env export --name entorno-01 > entorno-01.yml
 ~~~
+
 
 ~~~zsh
 # Restaurar el entorno con otro nombre (clonar)

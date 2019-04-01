@@ -766,77 +766,104 @@ con <code>chocolatey</code>:</p>
 <h2></h2>
 <ul>
 <li>No hay delimitadores de línea (tipo ‘<code>;</code>’)</li>
-<li>Comentar código con <code>#</code></li>
 <li>Jerarquía del código según nivel de indentación</li>
 <li>Indentar código con espacios</li>
+<li>Comentar código con « <code>#</code> »</li>
 <li>Importar librerías al inicio</li>
 <li>Código agrupado con líneas en blanco</li>
 <li><strong>Recomendado</strong>: Longitud de línea &lt; 80 caracteres</li>
 </ul>
+<p><a href="https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F03_estructura.ipynb">cuaderno jupyter</a></p>
+<p><a href="code/s01/03_estructura.ipynb">cuaderno jupyter (offline)</a></p>
 </section><section id="section-39" class="slide level2">
 <h2></h2>
+<div class="smaller">
 <ul>
 <li>No hay delimitadores de línea (tipo <code>;</code>)</li>
-<li>Comentar código con <code>#</code></li>
-</ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="im">import</span> os</a>
-<a class="sourceLine" id="cb17-2" title="2"></a>
-<a class="sourceLine" id="cb17-3" title="3">home <span class="op">=</span> os.path.expanduser(<span class="st">&#39;~&#39;</span>)  <span class="co"># comentario en línea</span></a>
-<a class="sourceLine" id="cb17-4" title="4">directorio_entorno <span class="op">=</span> os.path.join(home,</a>
-<a class="sourceLine" id="cb17-5" title="5">                                  <span class="st">&#39;Anaconda3&#39;</span>,</a>
-<a class="sourceLine" id="cb17-6" title="6">                                  <span class="st">&#39;envs&#39;</span>,</a>
-<a class="sourceLine" id="cb17-7" title="7">                                  <span class="st">&#39;entorno-03&#39;</span>)</a>
-<a class="sourceLine" id="cb17-8" title="8">ficheros <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb17-9" title="9"></a>
-<a class="sourceLine" id="cb17-10" title="10"><span class="co"># los comentarios comienzan con el caracter &#39;#&#39;</span></a>
-<a class="sourceLine" id="cb17-11" title="11"><span class="cf">for</span> f <span class="kw">in</span> os.listdir(directorio_entorno):</a>
-<a class="sourceLine" id="cb17-12" title="12">    <span class="cf">if</span> os.path.isfile(f):</a>
-<a class="sourceLine" id="cb17-13" title="13">        tamaño <span class="op">=</span> os.stat(os.join(directorio_entorno), f).st_size</a>
-<a class="sourceLine" id="cb17-14" title="14">        ficheros.append((f, tamaño))</a></code></pre></div>
-</section><section id="section-40" class="slide level2">
-<h2></h2>
-<ul>
 <li>Jerarquía del código según nivel de sangría (<em>indent</em>)</li>
 <li>Diferenciarlo con espacios ¹</li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="im">import</span> os</a>
-<a class="sourceLine" id="cb18-2" title="2"></a>
-<a class="sourceLine" id="cb18-3" title="3">home <span class="op">=</span> os.path.expanduser(<span class="st">&#39;~&#39;</span>)  <span class="co"># directorio del usuario</span></a>
-<a class="sourceLine" id="cb18-4" title="4">directorio_entorno <span class="op">=</span> os.path.join(</a>
-<a class="sourceLine" id="cb18-5" title="5">    home, <span class="st">&#39;Anaconda3&#39;</span>, <span class="st">&#39;envs&#39;</span>, <span class="st">&#39;entorno-03&#39;</span></a>
-<a class="sourceLine" id="cb18-6" title="6">)</a>
-<a class="sourceLine" id="cb18-7" title="7">ficheros <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb18-8" title="8"></a>
-<a class="sourceLine" id="cb18-9" title="9"><span class="co"># Busca ficheros y guarda (nombre, tamaño)</span></a>
-<a class="sourceLine" id="cb18-10" title="10"><span class="cf">for</span> f <span class="kw">in</span> os.listdir(directorio_entorno):</a>
-<a class="sourceLine" id="cb18-11" title="11">    <span class="cf">if</span> os.path.isfile(f):</a>
-<a class="sourceLine" id="cb18-12" title="12">        tamaño <span class="op">=</span> os.stat(os.join(directorio_entorno), f).st_size</a>
-<a class="sourceLine" id="cb18-13" title="13">        ficheros.append((f, tamaño))</a>
-<a class="sourceLine" id="cb18-14" title="14">    <span class="bu">print</span>(f)</a>
-<a class="sourceLine" id="cb18-15" title="15"><span class="bu">print</span>(tamaño)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb17-2" title="2"></a>
+<a class="sourceLine" id="cb17-3" title="3"></a>
+<a class="sourceLine" id="cb17-4" title="4">home <span class="op">=</span> os.path.expanduser(<span class="st">&#39;~&#39;</span>)  <span class="co"># directorio del usuario</span></a>
+<a class="sourceLine" id="cb17-5" title="5">directorio <span class="op">=</span> os.path.join(</a>
+<a class="sourceLine" id="cb17-6" title="6">    home, <span class="st">&#39;Documentos&#39;</span>, <span class="st">&#39;python&#39;</span></a>
+<a class="sourceLine" id="cb17-7" title="7">)</a>
+<a class="sourceLine" id="cb17-8" title="8">ficheros <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb17-9" title="9"></a>
+<a class="sourceLine" id="cb17-10" title="10"><span class="co"># Busca ficheros y guarda (nombre, tamaño)</span></a>
+<a class="sourceLine" id="cb17-11" title="11"><span class="cf">for</span> f <span class="kw">in</span> os.listdir(directorio):</a>
+<a class="sourceLine" id="cb17-12" title="12">    ruta <span class="op">=</span> os.path.join(directorio, f)</a>
+<a class="sourceLine" id="cb17-13" title="13">    <span class="cf">if</span> os.path.isfile(ruta):</a>
+<a class="sourceLine" id="cb17-14" title="14">        tamaño <span class="op">=</span> os.stat(ruta).st_size</a>
+<a class="sourceLine" id="cb17-15" title="15">        ficheros.append((f, tamaño))</a>
+<a class="sourceLine" id="cb17-16" title="16">        <span class="bu">print</span>(f)</a>
+<a class="sourceLine" id="cb17-17" title="17">        <span class="bu">print</span>(tamaño)</a>
+<a class="sourceLine" id="cb17-18" title="18"><span class="bu">print</span>(<span class="st">&quot;Total&quot;</span>, <span class="bu">len</span>(ficheros), <span class="st">&quot;ficheros&quot;</span>)</a></code></pre></div>
 <div class="footnote">
-<p>¹ Generalmente con 4 espacios, no mezclar con <code>TAB</code></p>
+<p>¹ Generalmente con 4 espacios, no mezclar con tabuladores!!!</p>
+</div>
 </div>
 <aside class="notes">
 <p>Copiar y pegar el texto en st3 para visualizar los caracteres vacíos</p>
 </aside>
+</section><section id="section-40" class="slide level2">
+<h2></h2>
+<div class="smaller">
+<ul>
+<li>Comentar código con « <code>#</code> »</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="co">#!/usr/bin/env python</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="co"># -*- coding: utf-8 -*-</span></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="co">Descripción breve del programa.</span></a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="co">Varias líneas delimitadas por 3 caracteres &quot;</span></a>
+<a class="sourceLine" id="cb18-6" title="6"><span class="co">&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb18-7" title="7"><span class="im">import</span> os</a>
+<a class="sourceLine" id="cb18-8" title="8"></a>
+<a class="sourceLine" id="cb18-9" title="9"></a>
+<a class="sourceLine" id="cb18-10" title="10">home <span class="op">=</span> os.path.expanduser(<span class="st">&#39;~&#39;</span>)  <span class="co"># comentario en línea</span></a>
+<a class="sourceLine" id="cb18-11" title="11">directorio <span class="op">=</span> os.path.join(</a>
+<a class="sourceLine" id="cb18-12" title="12">    home, <span class="st">&#39;Documentos&#39;</span>, <span class="st">&#39;python&#39;</span></a>
+<a class="sourceLine" id="cb18-13" title="13">)</a>
+<a class="sourceLine" id="cb18-14" title="14"></a>
+<a class="sourceLine" id="cb18-15" title="15"><span class="co"># Comentario</span></a>
+<a class="sourceLine" id="cb18-16" title="16">ficheros <span class="op">=</span> [f <span class="cf">for</span> f <span class="kw">in</span> os.listdir(directorio) </a>
+<a class="sourceLine" id="cb18-17" title="17">            <span class="cf">if</span> os.path.isfile(os.path.join(directorio, f))]</a>
+<a class="sourceLine" id="cb18-18" title="18"><span class="cf">for</span> f <span class="kw">in</span> ficheros:</a>
+<a class="sourceLine" id="cb18-19" title="19">    <span class="bu">print</span>(f)</a>
+<a class="sourceLine" id="cb18-20" title="20">    <span class="bu">print</span>(os.stat(os.join(directorio), f).st_size)</a></code></pre></div>
+</div>
 </section><section id="section-41" class="slide level2">
 <h2></h2>
+<div class="smaller">
 <ul>
 <li>Importar librerías al inicio</li>
-<li>Código agrupado con líneas en blanco</li>
+<li>Código agrupado con líneas en blanco
+<ul>
+<li>2 líneas después de los <code>import</code></li>
+<li>funciones y clases: 2 líneas antes/después</li>
+<li>métodos dentro de clases: 1 línea</li>
+<li>líneas adicionales para agrupar funciones relacionadas</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="im">import</span> pathlib</a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="im">from</span> pathlib <span class="im">import</span> Path</a>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="im">from</span> pathlib <span class="im">import</span> Path</a>
+<a class="sourceLine" id="cb19-2" title="2"></a>
 <a class="sourceLine" id="cb19-3" title="3"></a>
-<a class="sourceLine" id="cb19-4" title="4"></a>
-<a class="sourceLine" id="cb19-5" title="5">home <span class="op">=</span> Path.home()  <span class="co"># pathlib.Path.home()</span></a>
-<a class="sourceLine" id="cb19-6" title="6">directorio_entorno <span class="op">=</span> home <span class="op">/</span> <span class="st">&#39;Anaconda3&#39;</span> <span class="op">/</span> <span class="st">&#39;envs&#39;</span> <span class="op">/</span> <span class="st">&#39;entorno-03&#39;</span></a>
-<a class="sourceLine" id="cb19-7" title="7">ficheros <span class="op">=</span> [(f.name, f.stat().st_size)</a>
-<a class="sourceLine" id="cb19-8" title="8">            <span class="cf">for</span> f <span class="kw">in</span> directorio_entorno.iterdir()</a>
-<a class="sourceLine" id="cb19-9" title="9">            <span class="cf">if</span> f.is_file()]</a></code></pre></div>
-<p><a href="https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F03_estructura.ipynb">cuaderno jupyter</a></p>
-<p><a href="code/s01/03_estructura.ipynb">cuaderno jupyter (offline)</a></p>
+<a class="sourceLine" id="cb19-4" title="4">home <span class="op">=</span> Path.home()  <span class="co"># pathlib.Path.home()</span></a>
+<a class="sourceLine" id="cb19-5" title="5">directorio <span class="op">=</span> home <span class="op">/</span> <span class="st">&#39;Documentos&#39;</span> <span class="op">/</span> <span class="st">&#39;python&#39;</span></a>
+<a class="sourceLine" id="cb19-6" title="6"></a>
+<a class="sourceLine" id="cb19-7" title="7"></a>
+<a class="sourceLine" id="cb19-8" title="8"><span class="kw">def</span> busca_ficheros(directorio):</a>
+<a class="sourceLine" id="cb19-9" title="9">    <span class="cf">return</span> (</a>
+<a class="sourceLine" id="cb19-10" title="10">      (f.name, f.stat().st_size) <span class="cf">for</span> f <span class="kw">in</span> directorio.iterdir() <span class="cf">if</span> f.is_file()</a>
+<a class="sourceLine" id="cb19-11" title="11">    )</a>
+<a class="sourceLine" id="cb19-12" title="12"></a>
+<a class="sourceLine" id="cb19-13" title="13"></a>
+<a class="sourceLine" id="cb19-14" title="14"><span class="cf">for</span> (nombre, tamaño) <span class="kw">in</span> busca_ficheros(directorio):</a>
+<a class="sourceLine" id="cb19-15" title="15">    <span class="bu">print</span>(<span class="ss">f&#39;Encontrado fichero </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss"> de </span><span class="sc">{</span>tama<span class="sc">ño}</span><span class="ss"> Bytes&#39;</span>)</a></code></pre></div>
+</div>
 </section><section id="section-42" class="slide level2">
 <h2></h2>
 <p>Palabras reservadas</p>
@@ -887,29 +914,33 @@ con <code>chocolatey</code>:</p>
 <h4 id="if-__name__-__main__"><code>if __name__ == "__main__":</code></h4>
 <div class="smaller">
 <p>Se llama a <code>__main__()</code> cuando se ejecuta <a href="code/s01/circunferencia.py">directamente</a>:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">(</span>base<span class="kw">)</span> python circunferencia.py</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">(</span>base<span class="kw">)</span> python circunferencia.py 35</a></code></pre></div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1"><span class="im">import</span> sys</a>
 <a class="sourceLine" id="cb22-2" title="2"><span class="im">import</span> math</a>
 <a class="sourceLine" id="cb22-3" title="3"></a>
-<a class="sourceLine" id="cb22-4" title="4"></a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="kw">def</span> area(radio):</a>
-<a class="sourceLine" id="cb22-6" title="6">    <span class="cf">return</span> math.pi <span class="op">*</span> (radio <span class="op">**</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb22-7" title="7"></a>
-<a class="sourceLine" id="cb22-8" title="8"><span class="kw">def</span> longitud(radio):</a>
-<a class="sourceLine" id="cb22-9" title="9">    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> radio</a>
-<a class="sourceLine" id="cb22-10" title="10"></a>
-<a class="sourceLine" id="cb22-11" title="11"><span class="co"># entra aquí cuando se ejecuta directamente</span></a>
-<a class="sourceLine" id="cb22-12" title="12"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
-<a class="sourceLine" id="cb22-13" title="13">    radio <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">1</span>])  <span class="co"># sys.argv[] son los argumentos de entrada</span></a>
-<a class="sourceLine" id="cb22-14" title="14">    <span class="bu">print</span>(</a>
-<a class="sourceLine" id="cb22-15" title="15">        <span class="st">&quot;La longitud de una circunferencia de radio </span><span class="sc">{}</span><span class="st">cm es </span><span class="sc">{:.2f}</span><span class="st">cm^2.&quot;</span></a>
-<a class="sourceLine" id="cb22-16" title="16">        .<span class="bu">format</span>(radio, longitud(radio))</a>
-<a class="sourceLine" id="cb22-17" title="17">    )</a>
-<a class="sourceLine" id="cb22-18" title="18">    <span class="bu">print</span>(<span class="st">&quot;El area de una circunferencia de radio </span><span class="sc">{1}</span><span class="st">cm es </span><span class="sc">{0:.2f}</span><span class="st">cm^2.&quot;</span></a>
-<a class="sourceLine" id="cb22-19" title="19">          .<span class="bu">format</span>(area(radio), radio))</a></code></pre></div>
+<a class="sourceLine" id="cb22-4" title="4"><span class="kw">def</span> area(radio):</a>
+<a class="sourceLine" id="cb22-5" title="5">    <span class="cf">return</span> math.pi <span class="op">*</span> (radio <span class="op">**</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb22-6" title="6"></a>
+<a class="sourceLine" id="cb22-7" title="7"><span class="kw">def</span> longitud(radio):</a>
+<a class="sourceLine" id="cb22-8" title="8">    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> radio</a>
+<a class="sourceLine" id="cb22-9" title="9"></a>
+<a class="sourceLine" id="cb22-10" title="10"><span class="bu">print</span>(<span class="st">&#39;Hola mundo&#39;</span>)</a>
+<a class="sourceLine" id="cb22-11" title="11"></a>
+<a class="sourceLine" id="cb22-12" title="12"><span class="co"># entra aquí cuando se ejecuta desde un intérprete</span></a>
+<a class="sourceLine" id="cb22-13" title="13"><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</a>
+<a class="sourceLine" id="cb22-14" title="14">    radio <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">1</span>])  <span class="co"># sys.argv[] son los argumentos de entrada</span></a>
+<a class="sourceLine" id="cb22-15" title="15">    <span class="bu">print</span>(</a>
+<a class="sourceLine" id="cb22-16" title="16">        <span class="st">&quot;La longitud de una circunferencia de radio </span><span class="sc">{}</span><span class="st">cm es </span><span class="sc">{:.2f}</span><span class="st">cm^2.&quot;</span></a>
+<a class="sourceLine" id="cb22-17" title="17">        .<span class="bu">format</span>(radio, longitud(radio))</a>
+<a class="sourceLine" id="cb22-18" title="18">    )</a>
+<a class="sourceLine" id="cb22-19" title="19">    <span class="bu">print</span>(<span class="st">&quot;El area de una circunferencia de radio </span><span class="sc">{1}</span><span class="st">cm es </span><span class="sc">{0:.2f}</span><span class="st">cm^2.&quot;</span></a>
+<a class="sourceLine" id="cb22-20" title="20">          .<span class="bu">format</span>(area(radio), radio))</a></code></pre></div>
 </div>
 <aside class="notes">
-<p>En el ejemplo anterior no son necesarios los paréntesis, ya que el operador <code>**</code> tiene prioridad sobre <code>*</code>. Lo verán en la sesión#2.</p>
+<ul>
+<li>En el ejemplo anterior no son necesarios los paréntesis, ya que el operador <code>**</code> tiene prioridad sobre <code>*</code>. Lo verán en la sesión#2.</li>
+<li>Probar a hacer un <code>import circunferencia</code>, aparecerá ‘Hola mundo’</li>
+</ul>
 </aside>
 </section><section id="section-44" class="slide level2">
 <h2></h2>
@@ -919,9 +950,9 @@ con <code>chocolatey</code>:</p>
 <li>Para organizar el código guardaremos los ficheros <code>.py</code> en un árbol de directorios:</li>
 </ul>
 <pre><code>    principal/
-        __init__.py
+        __init__.py         import principal
         practica.py
-        recolector/
+        recolector/         from principal import recolector
             __init__.py
             collector.py
             database.py
@@ -960,8 +991,8 @@ con <code>chocolatey</code>:</p>
 </div><div class="column" style="width:60%;">
 <pre><code>nombre del paquete
 descripción del proyecto
-licencia
-distribución/empaquetado [2]
+licencia [2]
+distribución/empaquetado [3]
 descripción de las dependencias
 descripción del entorno
 el código en sí
@@ -974,10 +1005,70 @@ funciones de test del proyecto
 </div>
 </div>
 <div class="footnote">
-<p>² p.e. <a href="https://docs.python.org/3/distributing/index.html">setuptools</a></p>
+<p>² <a href="http://choosealicense.com/">choosalicense</a></p>
 </div>
+<div class="footnote">
+<p>³ p.e. <a href="https://docs.python.org/3/distributing/index.html">setuptools</a></p>
+</div>
+</section><section id="section-45" class="slide level2">
+<h2></h2>
+<p>Cómo importar módulos</p>
+<div class="smaller">
+<p>Mal:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1"><span class="im">from</span> pandas <span class="im">import</span> <span class="op">*</span></a>
+<a class="sourceLine" id="cb26-2" title="2"><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span></a>
+<a class="sourceLine" id="cb26-3" title="3"></a>
+<a class="sourceLine" id="cb26-4" title="4">f <span class="op">=</span> array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])  <span class="co"># ndarray es de pandas o numpy?</span></a></code></pre></div>
+<p>Algo mejor:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" title="1"><span class="im">from</span> numpy <span class="im">import</span> array</a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="im">from</span> pandas <span class="im">import</span> <span class="op">*</span></a>
+<a class="sourceLine" id="cb27-3" title="3"></a>
+<a class="sourceLine" id="cb27-4" title="4">f <span class="op">=</span> array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])  <span class="co"># seguro que ndarray es de numpy?</span></a></code></pre></div>
+<p>Bien:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1"><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># renombrar para abreviar o por convención</span></a>
+<a class="sourceLine" id="cb28-2" title="2"><span class="im">import</span> numpy</a>
+<a class="sourceLine" id="cb28-3" title="3"></a>
+<a class="sourceLine" id="cb28-4" title="4">f <span class="op">=</span> numpy.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</a></code></pre></div>
+</div>
+</section><section id="section-46" class="slide level2">
+<h2></h2>
+<p>Código estructurado por módulos/submódulos</p>
+<pre><code>    principal/
+        __init__.py  &lt;-------- entrada al módulo principal
+        recolector/       &lt;-----.
+            __init__.py         |
+            collector.py --.    |
+            database.py    |    |
+        conversor/   &lt;-----&#39;    |
+            __init__.py         |
+            limpia.py ----------&#39;
+            procesa.py
+        graficos/
+            __init__.py
+            graficos.py
+            exportar.py</code></pre>
+<div class="smaller">
+<ul>
+<li>Dependencias cíclicas: método de <code>collector.py</code> necesita importar <code>conversor</code>, mientras que <code>limpia.py</code> importa <code>recolector</code>.</li>
+<li>Acoplamiento: cambios en <code>conversor</code> afectan a <code>gráficos</code></li>
+<li>Uso excesivo de variables globales</li>
+<li>Anidamiento excesivo (búcles <code>for</code>, <code>if</code>)</li>
+<li>Defecto/exceso de clases (<em><a href="https://www.youtube.com/watch?v=o9pEzgHorH0">stop writing classes</a></em>)</li>
+</ul>
+</div>
+<aside class="notes">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">class</span> Greeting(<span class="bu">object</span>):</a>
+<a class="sourceLine" id="cb30-2" title="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, greeting<span class="op">=</span><span class="st">&#39;hello&#39;</span>):</a>
+<a class="sourceLine" id="cb30-3" title="3">        <span class="va">self</span>.greeting <span class="op">=</span> greeting</a>
+<a class="sourceLine" id="cb30-4" title="4"></a>
+<a class="sourceLine" id="cb30-5" title="5">    <span class="kw">def</span> greet(<span class="va">self</span>, name):</a>
+<a class="sourceLine" id="cb30-6" title="6">        <span class="cf">return</span> <span class="st">&#39;</span><span class="sc">%s</span><span class="st">! </span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (<span class="va">self</span>.greeting, name)</a>
+<a class="sourceLine" id="cb30-7" title="7"></a>
+<a class="sourceLine" id="cb30-8" title="8">greeting <span class="op">=</span> Greeting(<span class="st">&#39;hola&#39;</span>)</a>
+<a class="sourceLine" id="cb30-9" title="9"><span class="bu">print</span>(greeting.greet(<span class="st">&#39;bob&#39;</span>))</a></code></pre></div>
+</aside>
 </section></section>
-<section><section id="práctica-iii" class="title-slide slide level1"><h1>Práctica III</h1></section><h4 id="práctica-iii-consola-ipython">Práctica III: Consola <code>ipython</code></h4><section id="section-45" class="slide level2">
+<section><section id="práctica-iii" class="title-slide slide level1"><h1>Práctica III</h1></section><h4 id="práctica-iii-consola-ipython">Práctica III: Consola <code>ipython</code></h4><section id="section-47" class="slide level2">
 <h2></h2>
 <h3 id="parte-1">Parte 1</h3>
 <ul>
@@ -992,16 +1083,16 @@ funciones de test del proyecto
 <ul>
 <li><code>%hist</code>, <code>%history</code> para visualizarlo</li>
 </ul></li>
-<li><code>_</code> guarda la salida del último comando ³</li>
+<li><code>_</code> guarda la salida del último comando &amp;sup4;</li>
 </ul>
 <div class="footnote">
-<p>³ <code>_</code> se usa también como variable de usar/tirar, p.e. cuando una función devuelve varios resultados, pero solamente estamos interesados en uno.</p>
+<p>&amp;sup4; <code>_</code> se usa también como variable de usar/tirar, p.e. cuando una función devuelve varios resultados, pero solamente estamos interesados en uno.</p>
 </div>
 <!-- :::: {.footnote}
 [consola online]
 ::::
  -->
-</section><section id="section-46" class="slide level2">
+</section><section id="section-48" class="slide level2">
 <h2></h2>
 <ul>
 <li><code>[TAB]</code> autocompleta (p.e. <code>import st[TAB]</code>)
@@ -1009,26 +1100,26 @@ funciones de test del proyecto
 <li>muy util para ver los métodos/atributos de un módulo/clase</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" title="1">In[]: <span class="im">import</span> st[TAB]</a>
-<a class="sourceLine" id="cb26-2" title="2">In[]: <span class="im">import</span> string</a>
-<a class="sourceLine" id="cb26-3" title="3"></a>
-<a class="sourceLine" id="cb26-4" title="4"></a>
-<a class="sourceLine" id="cb26-5" title="5">In[]: string.[TAB]</a>
-<a class="sourceLine" id="cb26-6" title="6">   string.Formatter       string.ascii_uppercase string.octdigits</a>
-<a class="sourceLine" id="cb26-7" title="7">   string.Template        string.capwords        string.printable</a>
-<a class="sourceLine" id="cb26-8" title="8">   string.ascii_letters   string.digits          string.punctuation</a>
-<a class="sourceLine" id="cb26-9" title="9">   string.ascii_lowercase string.hexdigits       string.whitespace</a></code></pre></div>
-</section><section id="section-47" class="slide level2">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" title="1">In[]: <span class="im">import</span> st[TAB]</a>
+<a class="sourceLine" id="cb31-2" title="2">In[]: <span class="im">import</span> string</a>
+<a class="sourceLine" id="cb31-3" title="3"></a>
+<a class="sourceLine" id="cb31-4" title="4"></a>
+<a class="sourceLine" id="cb31-5" title="5">In[]: string.[TAB]</a>
+<a class="sourceLine" id="cb31-6" title="6">   string.Formatter       string.ascii_uppercase string.octdigits</a>
+<a class="sourceLine" id="cb31-7" title="7">   string.Template        string.capwords        string.printable</a>
+<a class="sourceLine" id="cb31-8" title="8">   string.ascii_letters   string.digits          string.punctuation</a>
+<a class="sourceLine" id="cb31-9" title="9">   string.ascii_lowercase string.hexdigits       string.whitespace</a></code></pre></div>
+</section><section id="section-49" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" title="1">In[<span class="dv">1</span>]: ?  <span class="co"># muestra ayuda del intérprete ipython</span></a>
-<a class="sourceLine" id="cb27-2" title="2">In[<span class="dv">2</span>]: ? <span class="bu">dict</span>  <span class="co"># muestra ayuda breve de un método/clase/...</span></a>
-<a class="sourceLine" id="cb27-3" title="3">In[<span class="dv">3</span>]: <span class="bu">help</span>(<span class="bu">dict</span>)  <span class="co"># muestra ayuda completa</span></a>
-<a class="sourceLine" id="cb27-4" title="4">In[<span class="dv">4</span>]: <span class="im">import</span> math</a>
-<a class="sourceLine" id="cb27-5" title="5">In[<span class="dv">5</span>]: math.sq[TAB]</a>
-<a class="sourceLine" id="cb27-6" title="6">In[<span class="dv">5</span>]: math.sqrt(<span class="dv">94</span>)</a>
-<a class="sourceLine" id="cb27-7" title="7">In[<span class="dv">6</span>]: a <span class="op">=</span> _  <span class="co"># recupera última salida</span></a>
-<a class="sourceLine" id="cb27-8" title="8">In[<span class="dv">7</span>]: <span class="bu">dir</span>(math)  <span class="co"># muestra todos los métodos</span></a></code></pre></div>
-</section><section id="section-48" class="slide level2">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1">In[<span class="dv">1</span>]: ?  <span class="co"># muestra ayuda del intérprete ipython</span></a>
+<a class="sourceLine" id="cb32-2" title="2">In[<span class="dv">2</span>]: ? <span class="bu">dict</span>  <span class="co"># muestra ayuda breve de un método/clase/...</span></a>
+<a class="sourceLine" id="cb32-3" title="3">In[<span class="dv">3</span>]: <span class="bu">help</span>(<span class="bu">dict</span>)  <span class="co"># muestra ayuda completa</span></a>
+<a class="sourceLine" id="cb32-4" title="4">In[<span class="dv">4</span>]: <span class="im">import</span> math</a>
+<a class="sourceLine" id="cb32-5" title="5">In[<span class="dv">5</span>]: math.sq[TAB]</a>
+<a class="sourceLine" id="cb32-6" title="6">In[<span class="dv">5</span>]: math.sqrt(<span class="dv">94</span>)</a>
+<a class="sourceLine" id="cb32-7" title="7">In[<span class="dv">6</span>]: a <span class="op">=</span> _  <span class="co"># recupera última salida</span></a>
+<a class="sourceLine" id="cb32-8" title="8">In[<span class="dv">7</span>]: <span class="bu">dir</span>(math)  <span class="co"># muestra todos los métodos</span></a></code></pre></div>
+</section><section id="section-50" class="slide level2">
 <h2></h2>
 <ul>
 <li>Importa la librería <code>math</code></li>
@@ -1038,19 +1129,18 @@ funciones de test del proyecto
 </ul>
 </section><section id="solución-1" class="slide level2">
 <h2>Solución</h2>
-</section><section id="section-49" class="slide level2">
+</section><section id="section-51" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" title="1"><span class="im">import</span> math</a>
-<a class="sourceLine" id="cb28-2" title="2"></a>
-<a class="sourceLine" id="cb28-3" title="3"></a>
-<a class="sourceLine" id="cb28-4" title="4">grados <span class="op">=</span> math.radians(<span class="dv">67</span>)</a>
-<a class="sourceLine" id="cb28-5" title="5">grados <span class="op">**</span> <span class="dv">2</span> <span class="op">&gt;</span> <span class="dv">16</span><span class="op">/</span><span class="dv">13</span></a>
-<a class="sourceLine" id="cb28-6" title="6"><span class="co"># math.pow(grados, 2) &gt; 16/13</span></a>
-<a class="sourceLine" id="cb28-7" title="7"></a>
-<a class="sourceLine" id="cb28-8" title="8"><span class="va">True</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" title="1"><span class="im">import</span> math</a>
+<a class="sourceLine" id="cb33-2" title="2"></a>
+<a class="sourceLine" id="cb33-3" title="3"></a>
+<a class="sourceLine" id="cb33-4" title="4">grados <span class="op">=</span> math.radians(<span class="dv">67</span>)</a>
+<a class="sourceLine" id="cb33-5" title="5">grados <span class="op">**</span> <span class="dv">2</span> <span class="op">&gt;</span> <span class="dv">16</span><span class="op">/</span><span class="dv">13</span></a>
+<a class="sourceLine" id="cb33-6" title="6"><span class="co"># math.pow(grados, 2) &gt; 16/13</span></a>
+<a class="sourceLine" id="cb33-7" title="7"></a>
+<a class="sourceLine" id="cb33-8" title="8"><span class="va">True</span></a></code></pre></div>
 </section><section id="parte-2" class="slide level2">
 <h2>Parte 2</h2>
-<div class="smaller">
 <div>
 <ul>
 <li class="fragment">Importa la librería <code>numpy</code>
@@ -1080,63 +1170,63 @@ funciones de test del proyecto
 </ul></li>
 </ul>
 </div>
-</div>
+<p>:::</p>
 <aside class="notes">
 <p>ipython/jupyter: <code>%pylab</code> (no recomendado) Esto último quivalente a:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb29-1" title="1"><span class="im">import</span> numpy</a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="im">import</span> matplotlib</a>
-<a class="sourceLine" id="cb29-3" title="3"><span class="im">from</span> matplotlib <span class="im">import</span> pylab, mlab, pyplot</a>
-<a class="sourceLine" id="cb29-4" title="4">np <span class="op">=</span> numpy</a>
-<a class="sourceLine" id="cb29-5" title="5">plt <span class="op">=</span> pyplot</a>
-<a class="sourceLine" id="cb29-6" title="6"></a>
-<a class="sourceLine" id="cb29-7" title="7"><span class="im">from</span> IPython.display <span class="im">import</span> display</a>
-<a class="sourceLine" id="cb29-8" title="8"><span class="im">from</span> IPython.core.pylabtools <span class="im">import</span> figsize, getfigs</a>
-<a class="sourceLine" id="cb29-9" title="9"></a>
-<a class="sourceLine" id="cb29-10" title="10"><span class="im">from</span> pylab <span class="im">import</span> <span class="op">*</span></a>
-<a class="sourceLine" id="cb29-11" title="11"><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" title="1"><span class="im">import</span> numpy</a>
+<a class="sourceLine" id="cb34-2" title="2"><span class="im">import</span> matplotlib</a>
+<a class="sourceLine" id="cb34-3" title="3"><span class="im">from</span> matplotlib <span class="im">import</span> pylab, mlab, pyplot</a>
+<a class="sourceLine" id="cb34-4" title="4">np <span class="op">=</span> numpy</a>
+<a class="sourceLine" id="cb34-5" title="5">plt <span class="op">=</span> pyplot</a>
+<a class="sourceLine" id="cb34-6" title="6"></a>
+<a class="sourceLine" id="cb34-7" title="7"><span class="im">from</span> IPython.display <span class="im">import</span> display</a>
+<a class="sourceLine" id="cb34-8" title="8"><span class="im">from</span> IPython.core.pylabtools <span class="im">import</span> figsize, getfigs</a>
+<a class="sourceLine" id="cb34-9" title="9"></a>
+<a class="sourceLine" id="cb34-10" title="10"><span class="im">from</span> pylab <span class="im">import</span> <span class="op">*</span></a>
+<a class="sourceLine" id="cb34-11" title="11"><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span></a></code></pre></div>
 </aside>
 </section><section id="solución-2" class="slide level2">
 <h2>Solución</h2>
-</section><section id="section-50" class="slide level2">
+</section><section id="section-52" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" title="1"><span class="op">%</span>matplotlib inline</a>
-<a class="sourceLine" id="cb30-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
-<a class="sourceLine" id="cb30-3" title="3"><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb30-4" title="4"></a>
-<a class="sourceLine" id="cb30-5" title="5"></a>
-<a class="sourceLine" id="cb30-6" title="6">a <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb30-7" title="7">b <span class="op">=</span> sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>a)</a>
-<a class="sourceLine" id="cb30-8" title="8"></a>
-<a class="sourceLine" id="cb30-9" title="9">plt.plot(a, b)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" title="1"><span class="op">%</span>matplotlib inline</a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="im">import</span> numpy <span class="im">as</span> np</a>
+<a class="sourceLine" id="cb35-3" title="3"><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb35-4" title="4"></a>
+<a class="sourceLine" id="cb35-5" title="5"></a>
+<a class="sourceLine" id="cb35-6" title="6">a <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb35-7" title="7">b <span class="op">=</span> sin(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>a)</a>
+<a class="sourceLine" id="cb35-8" title="8"></a>
+<a class="sourceLine" id="cb35-9" title="9">plt.plot(a, b)</a></code></pre></div>
 </section></section>
-<section><section id="práctica-iv" class="title-slide slide level1"><h1>Práctica IV</h1></section><h4 id="práctica-iv-ejecutar-un-cuaderno-jupyter">Práctica IV: Ejecutar un cuaderno <code>jupyter</code></h4><section id="section-51" class="slide level2">
+<section><section id="práctica-iv" class="title-slide slide level1"><h1>Práctica IV</h1></section><h4 id="práctica-iv-ejecutar-un-cuaderno-jupyter">Práctica IV: Ejecutar un cuaderno <code>jupyter</code></h4><section id="section-53" class="slide level2">
 <h2></h2>
 <p>Descargar el <a href="https://nbviewer.jupyter.org/github/donnemartin/data-science-ipython-notebooks/blob/master/python-data/structs.ipynb">cuaderno de ejemplo</a> en el directorio <code>python</code> y ejecutar línea por línea.</p>
 <p>(o bien ejecutarlo en forma remota con Binder)</p>
 </section></section>
-<section><section id="práctica-v" class="title-slide slide level1"><h1>Práctica V</h1></section><h4 id="práctica-v-exportar-e-importar-un-entorno-virtual">Práctica V: Exportar e importar un entorno virtual</h4><section id="section-52" class="slide level2">
+<section><section id="práctica-v" class="title-slide slide level1"><h1>Práctica V</h1></section><h4 id="práctica-v-exportar-e-importar-un-entorno-virtual">Práctica V: Exportar e importar un entorno virtual</h4><section id="section-54" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Exportar entorno virtual</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb31-1" title="1"><span class="co"># exportar definición del entorno</span></a>
-<a class="sourceLine" id="cb31-2" title="2">  </a>
-<a class="sourceLine" id="cb31-3" title="3"><span class="co"># solo dependencias</span></a>
-<a class="sourceLine" id="cb31-4" title="4"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda list --export <span class="kw">&gt;</span> requirements.txt</a>
-<a class="sourceLine" id="cb31-5" title="5"></a>
-<a class="sourceLine" id="cb31-6" title="6"><span class="co"># entorno + dependencias</span></a>
-<a class="sourceLine" id="cb31-7" title="7"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda <span class="kw">env</span> <span class="kw">export</span> <span class="kw">&gt;</span> entorno-01.yml</a>
-<a class="sourceLine" id="cb31-8" title="8"><span class="co"># o bien desde base</span></a>
-<a class="sourceLine" id="cb31-9" title="9"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> <span class="kw">export</span> --name <span class="ot">entorno</span>-01 <span class="kw">&gt;</span> entorno-01.yml</a></code></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb32-1" title="1"><span class="co"># Restaurar el entorno con otro nombre (clonar)</span></a>
-<a class="sourceLine" id="cb32-2" title="2"><span class="kw">(</span>entorno-01<span class="kw">)</span> deactivate</a>
-<a class="sourceLine" id="cb32-3" title="3"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> create --name entorno-11 --file requirements.txt</a>
-<a class="sourceLine" id="cb32-4" title="4"><span class="kw">(</span>base<span class="kw">)</span> activate entorno-11</a>
-<a class="sourceLine" id="cb32-5" title="5"><span class="kw">(</span>entoro-11<span class="kw">)</span> conda list</a></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb33-1" title="1"><span class="co"># Destruir el entorno y restaurarlo desde la copia</span></a>
-<a class="sourceLine" id="cb33-2" title="2"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> remove --name entorno-01 -y</a>
-<a class="sourceLine" id="cb33-3" title="3"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> create -f entorno-01.yml</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb36-1" title="1"><span class="co"># exportar definición del entorno</span></a>
+<a class="sourceLine" id="cb36-2" title="2">  </a>
+<a class="sourceLine" id="cb36-3" title="3"><span class="co"># solo dependencias</span></a>
+<a class="sourceLine" id="cb36-4" title="4"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda list --export <span class="kw">&gt;</span> requirements.txt</a>
+<a class="sourceLine" id="cb36-5" title="5"></a>
+<a class="sourceLine" id="cb36-6" title="6"><span class="co"># entorno + dependencias</span></a>
+<a class="sourceLine" id="cb36-7" title="7"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda <span class="kw">env</span> <span class="kw">export</span> <span class="kw">&gt;</span> entorno-01.yml</a>
+<a class="sourceLine" id="cb36-8" title="8"><span class="co"># o bien desde base</span></a>
+<a class="sourceLine" id="cb36-9" title="9"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> <span class="kw">export</span> --name <span class="ot">entorno</span>-01 <span class="kw">&gt;</span> entorno-01.yml</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb37-1" title="1"><span class="co"># Restaurar el entorno con otro nombre (clonar)</span></a>
+<a class="sourceLine" id="cb37-2" title="2"><span class="kw">(</span>entorno-01<span class="kw">)</span> deactivate</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> create --name entorno-11 --file requirements.txt</a>
+<a class="sourceLine" id="cb37-4" title="4"><span class="kw">(</span>base<span class="kw">)</span> activate entorno-11</a>
+<a class="sourceLine" id="cb37-5" title="5"><span class="kw">(</span>entoro-11<span class="kw">)</span> conda list</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb38-1" title="1"><span class="co"># Destruir el entorno y restaurarlo desde la copia</span></a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> remove --name entorno-01 -y</a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="kw">(</span>base<span class="kw">)</span> conda <span class="kw">env</span> create -f entorno-01.yml</a></code></pre></div>
 </div>
-</section><section id="section-53" class="slide level2">
+</section><section id="section-55" class="slide level2">
 <h2></h2>
 <h5 id="exportar-entorno-virtual-ii">Exportar entorno virtual (II)</h5>
 <ul>
@@ -1145,14 +1235,14 @@ funciones de test del proyecto
 <li>independiente de <code>conda</code></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb34-1" title="1"><span class="kw">(</span>entorno-01<span class="kw">)</span> pip freeze <span class="kw">&gt;</span> requirements.txt</a>
-<a class="sourceLine" id="cb34-2" title="2"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda activate entorno-03</a>
-<a class="sourceLine" id="cb34-3" title="3"><span class="kw">(</span>entorno-03<span class="kw">)</span> pip <span class="kw">install</span> -r requirements.txt</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">(</span>entorno-01<span class="kw">)</span> pip freeze <span class="kw">&gt;</span> requirements.txt</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">(</span>entorno-01<span class="kw">)</span> conda activate entorno-03</a>
+<a class="sourceLine" id="cb39-3" title="3"><span class="kw">(</span>entorno-03<span class="kw">)</span> pip <span class="kw">install</span> -r requirements.txt</a></code></pre></div>
 </section></section>
-<section><section id="recursos-adicionales" class="title-slide slide level1"><h1>Recursos adicionales</h1></section><h4 id="recursos-adicionales-1">Recursos adicionales</h4><section id="section-54" class="slide level2">
+<section><section id="recursos-adicionales" class="title-slide slide level1"><h1>Recursos adicionales</h1></section><h4 id="recursos-adicionales-1">Recursos adicionales</h4><section id="section-56" class="slide level2">
 <h2></h2>
 <p><img data-src="images/s01/pydoc.png" alt="python_documentation" /> <a href="https://docs.python.org/3.7/">Documentación oficial</a></p>
-</section><section id="section-55" class="slide level2">
+</section><section id="section-57" class="slide level2">
 <h2></h2>
 <ul>
 <li><a href="https://docs.python.org/3/tutorial/index.html">Tutorial de python</a></li>
@@ -1163,7 +1253,7 @@ funciones de test del proyecto
 </ul></li>
 <li><a href="https://github.com/donnemartin/data-science-ipython-notebooks">Cuadernos Jupyter para Data Science</a></li>
 </ul>
-</section><section id="section-56" class="slide level2">
+</section><section id="section-58" class="slide level2">
 <h2></h2>
 <p>Otros recursos en línea</p>
 <ul>
@@ -1176,7 +1266,7 @@ funciones de test del proyecto
 <li><a href="https://github.com/vinta/awesome-python#readme">awesome python</a></li>
 </ul>
 </section></section>
-<section><section id="bonus-pipenv" class="title-slide slide level1"><h1><em>Bonus</em>: <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></h1></section><h4 id="bonus-pipenv-1"><em>Bonus</em>: <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></h4><section id="section-57" class="slide level2">
+<section><section id="bonus-pipenv" class="title-slide slide level1"><h1><em>Bonus</em>: <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></h1></section><h4 id="bonus-pipenv-1"><em>Bonus</em>: <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a></h4><section id="section-59" class="slide level2">
 <h2></h2>
 <ul>
 <li>Permite gestionar un entorno virtual y sus dependencias</li>
@@ -1197,66 +1287,66 @@ funciones de test del proyecto
 <h2>Instala <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a> y crea un entorno virtual nuevo</h2>
 <div class="hiddenbullets">
 <div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" title="1">$ <span class="fu">mkdir</span> proyecto</a>
-<a class="sourceLine" id="cb35-2" title="2">$ <span class="bu">cd</span> proyecto</a>
-<a class="sourceLine" id="cb35-3" title="3">$ <span class="ex">pipenv</span> --python=3.7 [--three]</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" title="1">$ <span class="fu">mkdir</span> proyecto</a>
+<a class="sourceLine" id="cb40-2" title="2">$ <span class="bu">cd</span> proyecto</a>
+<a class="sourceLine" id="cb40-3" title="3">$ <span class="ex">pipenv</span> --python=3.7 [--three]</a></code></pre></div>
 </div>
 </div>
 </section><section id="instala-distintos-paquetes-dentro-del-entorno-virtual" class="slide level2">
 <h2>Instala distintos paquetes dentro del entorno virtual</h2>
 <div class="hiddenbullets">
 <div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" title="1">$ <span class="ex">pipenv</span> install bpython</a>
-<a class="sourceLine" id="cb36-2" title="2">$ <span class="ex">pip</span> install <span class="st">&#39;pandas==&#39;</span>  <span class="co"># muestra versiones disponibles [OJO! pip]</span></a>
-<a class="sourceLine" id="cb36-3" title="3">$ <span class="ex">pipenv</span> install <span class="st">&#39;pandas==0.23.1&#39;</span> <span class="st">&#39;requests==2.2.1&#39;</span></a>
-<a class="sourceLine" id="cb36-4" title="4">$ <span class="ex">pipenv</span> install <span class="st">&#39;lxml==3.*&#39;</span>  <span class="co"># bloquea solamente la rama 3.x</span></a>
-<a class="sourceLine" id="cb36-5" title="5">$ <span class="ex">pipenv</span> install <span class="st">&#39;untangle==1.1.*&#39;</span>  <span class="co"># bloquea versiones [major, minor]</span></a>
-<a class="sourceLine" id="cb36-6" title="6">$ <span class="ex">pipenv</span> install -r requirements.txt  <span class="co"># instala desde un fichero requirements</span></a>
-<a class="sourceLine" id="cb36-7" title="7">$ <span class="ex">pipenv</span> lock -r <span class="op">&gt;</span> requirements.txt  <span class="co"># exporta a fichero requirements</span></a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" title="1">$ <span class="ex">pipenv</span> install bpython</a>
+<a class="sourceLine" id="cb41-2" title="2">$ <span class="ex">pip</span> install <span class="st">&#39;pandas==&#39;</span>  <span class="co"># muestra versiones disponibles [OJO! pip]</span></a>
+<a class="sourceLine" id="cb41-3" title="3">$ <span class="ex">pipenv</span> install <span class="st">&#39;pandas==0.23.1&#39;</span> <span class="st">&#39;requests==2.2.1&#39;</span></a>
+<a class="sourceLine" id="cb41-4" title="4">$ <span class="ex">pipenv</span> install <span class="st">&#39;lxml==3.*&#39;</span>  <span class="co"># bloquea solamente la rama 3.x</span></a>
+<a class="sourceLine" id="cb41-5" title="5">$ <span class="ex">pipenv</span> install <span class="st">&#39;untangle==1.1.*&#39;</span>  <span class="co"># bloquea versiones [major, minor]</span></a>
+<a class="sourceLine" id="cb41-6" title="6">$ <span class="ex">pipenv</span> install -r requirements.txt  <span class="co"># instala desde un fichero requirements</span></a>
+<a class="sourceLine" id="cb41-7" title="7">$ <span class="ex">pipenv</span> lock -r <span class="op">&gt;</span> requirements.txt  <span class="co"># exporta a fichero requirements</span></a></code></pre></div>
 </div>
 </div>
-</section><section id="section-58" class="slide level2">
-<h2></h2>
-<p>Para comprobar los paquetes instalados, mostrar el contenido de <code>Pipfile</code></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" title="1">$ <span class="fu">cat</span> Pipfile</a>
-<a class="sourceLine" id="cb37-2" title="2">$ <span class="fu">cat</span> Pipfile.lock</a></code></pre></div>
-</section><section id="section-59" class="slide level2">
-<h2></h2>
-<p>Otras funcionalidades útiles con <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a>:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" title="1"><span class="co"># muestra dónde instala realmente el entorno</span></a>
-<a class="sourceLine" id="cb38-2" title="2">$ <span class="ex">pipenv</span> --venv</a>
-<a class="sourceLine" id="cb38-3" title="3"></a>
-<a class="sourceLine" id="cb38-4" title="4"><span class="co"># muestra gráfico de dependencias</span></a>
-<a class="sourceLine" id="cb38-5" title="5">$ <span class="ex">pipenv</span> graph</a>
-<a class="sourceLine" id="cb38-6" title="6"></a>
-<a class="sourceLine" id="cb38-7" title="7"><span class="co"># muestra vulnerabilidades con los paquetes instalados</span></a>
-<a class="sourceLine" id="cb38-8" title="8">$ <span class="ex">pipenv</span> check</a></code></pre></div>
 </section><section id="section-60" class="slide level2">
 <h2></h2>
-<p>Acceder al intérprete propio del entorno:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" title="1">$ <span class="ex">pipenv</span> shell</a>
-<a class="sourceLine" id="cb39-2" title="2">$ <span class="ex">python</span>  <span class="co"># o bpython/ipython si está instalado</span></a>
-<a class="sourceLine" id="cb39-3" title="3"></a>
-<a class="sourceLine" id="cb39-4" title="4"><span class="co"># o bien: pipenv run python</span></a></code></pre></div>
+<p>Para comprobar los paquetes instalados, mostrar el contenido de <code>Pipfile</code></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" title="1">$ <span class="fu">cat</span> Pipfile</a>
+<a class="sourceLine" id="cb42-2" title="2">$ <span class="fu">cat</span> Pipfile.lock</a></code></pre></div>
 </section><section id="section-61" class="slide level2">
 <h2></h2>
-<p>Ejecutar código cargando librerías propias del entorno:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb40-2" title="2"><span class="op">&gt;&gt;&gt;</span> URL_crypto <span class="op">=</span> <span class="st">&#39;https://api.coinmarketcap.com/v1/ticker/&#39;</span></a>
-<a class="sourceLine" id="cb40-3" title="3"><span class="op">&gt;&gt;&gt;</span> cc <span class="op">=</span> pd.read_json(URL) </a>
-<a class="sourceLine" id="cb40-4" title="4"><span class="op">&gt;&gt;&gt;</span> cc.set_index(<span class="st">&#39;id&#39;</span>, inplace<span class="op">=</span><span class="va">True</span>)</a>
-<a class="sourceLine" id="cb40-5" title="5"><span class="op">&gt;&gt;&gt;</span> cc[cc[<span class="st">&#39;price_usd&#39;</span>] <span class="op">&lt;</span> <span class="fl">300.0</span>]</a></code></pre></div>
+<p>Otras funcionalidades útiles con <a href="https://pipenv-es.readthedocs.io/es/latest/">pipenv</a>:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" title="1"><span class="co"># muestra dónde instala realmente el entorno</span></a>
+<a class="sourceLine" id="cb43-2" title="2">$ <span class="ex">pipenv</span> --venv</a>
+<a class="sourceLine" id="cb43-3" title="3"></a>
+<a class="sourceLine" id="cb43-4" title="4"><span class="co"># muestra gráfico de dependencias</span></a>
+<a class="sourceLine" id="cb43-5" title="5">$ <span class="ex">pipenv</span> graph</a>
+<a class="sourceLine" id="cb43-6" title="6"></a>
+<a class="sourceLine" id="cb43-7" title="7"><span class="co"># muestra vulnerabilidades con los paquetes instalados</span></a>
+<a class="sourceLine" id="cb43-8" title="8">$ <span class="ex">pipenv</span> check</a></code></pre></div>
 </section><section id="section-62" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" title="1"><span class="co"># desinstala todos los paquetes no especificados en `Pipfile.lock`</span></a>
-<a class="sourceLine" id="cb41-2" title="2">$ <span class="ex">pipenv</span> clean</a>
-<a class="sourceLine" id="cb41-3" title="3"></a>
-<a class="sourceLine" id="cb41-4" title="4"><span class="co"># destruye el entorno virtual</span></a>
-<a class="sourceLine" id="cb41-5" title="5">$ <span class="ex">pipenv</span> --rm</a></code></pre></div>
+<p>Acceder al intérprete propio del entorno:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" title="1">$ <span class="ex">pipenv</span> shell</a>
+<a class="sourceLine" id="cb44-2" title="2">$ <span class="ex">python</span>  <span class="co"># o bpython/ipython si está instalado</span></a>
+<a class="sourceLine" id="cb44-3" title="3"></a>
+<a class="sourceLine" id="cb44-4" title="4"><span class="co"># o bien: pipenv run python</span></a></code></pre></div>
+</section><section id="section-63" class="slide level2">
+<h2></h2>
+<p>Ejecutar código cargando librerías propias del entorno:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb45-2" title="2"><span class="op">&gt;&gt;&gt;</span> URL_crypto <span class="op">=</span> <span class="st">&#39;https://api.coinmarketcap.com/v1/ticker/&#39;</span></a>
+<a class="sourceLine" id="cb45-3" title="3"><span class="op">&gt;&gt;&gt;</span> cc <span class="op">=</span> pd.read_json(URL) </a>
+<a class="sourceLine" id="cb45-4" title="4"><span class="op">&gt;&gt;&gt;</span> cc.set_index(<span class="st">&#39;id&#39;</span>, inplace<span class="op">=</span><span class="va">True</span>)</a>
+<a class="sourceLine" id="cb45-5" title="5"><span class="op">&gt;&gt;&gt;</span> cc[cc[<span class="st">&#39;price_usd&#39;</span>] <span class="op">&lt;</span> <span class="fl">300.0</span>]</a></code></pre></div>
+</section><section id="section-64" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb46-1" title="1"><span class="co"># desinstala todos los paquetes no especificados en `Pipfile.lock`</span></a>
+<a class="sourceLine" id="cb46-2" title="2">$ <span class="ex">pipenv</span> clean</a>
+<a class="sourceLine" id="cb46-3" title="3"></a>
+<a class="sourceLine" id="cb46-4" title="4"><span class="co"># destruye el entorno virtual</span></a>
+<a class="sourceLine" id="cb46-5" title="5">$ <span class="ex">pipenv</span> --rm</a></code></pre></div>
 <p>Restaura un entorno virtual desde los ficheros <code>Pipfile</code> y <code>Pipfile.lock</code>:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" title="1">$ <span class="ex">pipenv</span> install</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb47-1" title="1">$ <span class="ex">pipenv</span> install</a></code></pre></div>
 </section></section>
-<section><section id="bonus-ii-gil-y-gc" class="title-slide slide level1"><h1><em>Bonus (II)</em>: GIL y GC</h1></section><h4 id="bonus-ii-gil-y-gc-1"><em>Bonus (II)</em>: GIL y GC</h4><section id="section-63" class="slide level2">
+<section><section id="bonus-ii-gil-y-gc" class="title-slide slide level1"><h1><em>Bonus (II)</em>: GIL y GC</h1></section><h4 id="bonus-ii-gil-y-gc-1"><em>Bonus (II)</em>: GIL y GC</h4><section id="section-65" class="slide level2">
 <h2></h2>
 <h4 id="reference-counting"><em>Reference counting</em></h4>
 <ul>
@@ -1264,13 +1354,13 @@ funciones de test del proyecto
 <li>Cuenta las referencias a cada objeto creado</li>
 <li>Cuando la cuenta es 0, la memoria reservada se libera</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" title="1"><span class="im">import</span> sys</a>
-<a class="sourceLine" id="cb43-2" title="2"></a>
-<a class="sourceLine" id="cb43-3" title="3">a <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb43-4" title="4">b <span class="op">=</span> a</a>
-<a class="sourceLine" id="cb43-5" title="5">sys.getrefcount(a)</a>
-<a class="sourceLine" id="cb43-6" title="6"><span class="dv">3</span></a></code></pre></div>
-</section><section id="section-64" class="slide level2">
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" title="1"><span class="im">import</span> sys</a>
+<a class="sourceLine" id="cb48-2" title="2"></a>
+<a class="sourceLine" id="cb48-3" title="3">a <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb48-4" title="4">b <span class="op">=</span> a</a>
+<a class="sourceLine" id="cb48-5" title="5">sys.getrefcount(a)</a>
+<a class="sourceLine" id="cb48-6" title="6"><span class="dv">3</span></a></code></pre></div>
+</section><section id="section-66" class="slide level2">
 <h2></h2>
 <p>GC: <em>Garbage Collector</em></p>
 <p>Utiliza 2 algoritmos para la gestión de memoria:</p>
@@ -1283,20 +1373,20 @@ funciones de test del proyecto
 </ul>
 </section><section id="ejemplo-1" class="slide level2">
 <h2>Ejemplo</h2>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" title="1">foo <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb44-2" title="2"></a>
-<a class="sourceLine" id="cb44-3" title="3"><span class="co"># 2 referencias, 1 de la variable foo y una de la llamada a getrefcount</span></a>
-<a class="sourceLine" id="cb44-4" title="4"><span class="bu">print</span>(sys.getrefcount(foo))</a>
-<a class="sourceLine" id="cb44-5" title="5"></a>
-<a class="sourceLine" id="cb44-6" title="6"><span class="kw">def</span> bar(a):</a>
-<a class="sourceLine" id="cb44-7" title="7">    <span class="co"># 4 referencias</span></a>
-<a class="sourceLine" id="cb44-8" title="8">    <span class="co"># variable foo, argumento a función, getrefcount + pila interna de python</span></a>
-<a class="sourceLine" id="cb44-9" title="9">    <span class="bu">print</span>(sys.getrefcount(a))</a>
-<a class="sourceLine" id="cb44-10" title="10"></a>
-<a class="sourceLine" id="cb44-11" title="11">bar(foo)</a>
-<a class="sourceLine" id="cb44-12" title="12"><span class="co"># 2 referencias, se limpiaron las propias de la función</span></a>
-<a class="sourceLine" id="cb44-13" title="13"><span class="bu">print</span>(sys.getrefcount(foo))</a></code></pre></div>
-</section><section id="section-65" class="slide level2">
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" title="1">foo <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb49-2" title="2"></a>
+<a class="sourceLine" id="cb49-3" title="3"><span class="co"># 2 referencias, 1 de la variable foo y una de la llamada a getrefcount</span></a>
+<a class="sourceLine" id="cb49-4" title="4"><span class="bu">print</span>(sys.getrefcount(foo))</a>
+<a class="sourceLine" id="cb49-5" title="5"></a>
+<a class="sourceLine" id="cb49-6" title="6"><span class="kw">def</span> bar(a):</a>
+<a class="sourceLine" id="cb49-7" title="7">    <span class="co"># 4 referencias</span></a>
+<a class="sourceLine" id="cb49-8" title="8">    <span class="co"># variable foo, argumento a función, getrefcount + pila interna de python</span></a>
+<a class="sourceLine" id="cb49-9" title="9">    <span class="bu">print</span>(sys.getrefcount(a))</a>
+<a class="sourceLine" id="cb49-10" title="10"></a>
+<a class="sourceLine" id="cb49-11" title="11">bar(foo)</a>
+<a class="sourceLine" id="cb49-12" title="12"><span class="co"># 2 referencias, se limpiaron las propias de la función</span></a>
+<a class="sourceLine" id="cb49-13" title="13"><span class="bu">print</span>(sys.getrefcount(foo))</a></code></pre></div>
+</section><section id="section-67" class="slide level2">
 <h2></h2>
 <h4 id="gil-global-interpreter-lock">GIL: Global Interpreter Lock</h4>
 <div class="smaller">
@@ -1313,78 +1403,78 @@ funciones de test del proyecto
 </div>
 <p><img data-src="images/s01/GIL.png" alt="GIL" data-max-width="70%" /><br />
 </p>
-</section><section id="section-66" class="slide level2">
+</section><section id="section-68" class="slide level2">
 <h2></h2>
 <h4 id="ejemplo-práctico-programa-limitado-por-cpu-ejecución-secuencial">Ejemplo práctico: programa limitado por CPU, ejecución secuencial</h4>
 <div class="smaller">
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" title="1"><span class="co"># single_threaded.py</span></a>
-<a class="sourceLine" id="cb45-2" title="2"><span class="im">import</span> time</a>
-<a class="sourceLine" id="cb45-3" title="3"></a>
-<a class="sourceLine" id="cb45-4" title="4">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
-<a class="sourceLine" id="cb45-5" title="5"></a>
-<a class="sourceLine" id="cb45-6" title="6"><span class="kw">def</span> countdown(n):</a>
-<a class="sourceLine" id="cb45-7" title="7">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb45-8" title="8">        n <span class="op">-=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb45-9" title="9"></a>
-<a class="sourceLine" id="cb45-10" title="10">start <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb45-11" title="11">countdown(COUNT)</a>
-<a class="sourceLine" id="cb45-12" title="12">end <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb45-13" title="13"></a>
-<a class="sourceLine" id="cb45-14" title="14"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb46-1" title="1">$ python single_threaded.py</a>
-<a class="sourceLine" id="cb46-2" title="2">Tiempo de ejecución 2.30 segundos</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" title="1"><span class="co"># single_threaded.py</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb50-3" title="3"></a>
+<a class="sourceLine" id="cb50-4" title="4">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
+<a class="sourceLine" id="cb50-5" title="5"></a>
+<a class="sourceLine" id="cb50-6" title="6"><span class="kw">def</span> countdown(n):</a>
+<a class="sourceLine" id="cb50-7" title="7">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb50-8" title="8">        n <span class="op">-=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb50-9" title="9"></a>
+<a class="sourceLine" id="cb50-10" title="10">start <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb50-11" title="11">countdown(COUNT)</a>
+<a class="sourceLine" id="cb50-12" title="12">end <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb50-13" title="13"></a>
+<a class="sourceLine" id="cb50-14" title="14"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb51-1" title="1">$ python single_threaded.py</a>
+<a class="sourceLine" id="cb51-2" title="2">Tiempo de ejecución 2.30 segundos</a></code></pre></div>
 </div>
-</section><section id="section-67" class="slide level2">
+</section><section id="section-69" class="slide level2">
 <h2></h2>
 <h4 id="programa-limitado-por-cpu-ejecución-concurrente-multithread">Programa limitado por CPU, ejecución concurrente (<code>multithread</code>)</h4>
 <div class="smaller">
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" title="1"><span class="co"># multi_threaded.py</span></a>
-<a class="sourceLine" id="cb47-2" title="2"><span class="im">import</span> time</a>
-<a class="sourceLine" id="cb47-3" title="3"><span class="im">from</span> threading <span class="im">import</span> Thread</a>
-<a class="sourceLine" id="cb47-4" title="4"></a>
-<a class="sourceLine" id="cb47-5" title="5">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
-<a class="sourceLine" id="cb47-6" title="6"></a>
-<a class="sourceLine" id="cb47-7" title="7"><span class="kw">def</span> countdown(n):</a>
-<a class="sourceLine" id="cb47-8" title="8">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb47-9" title="9">        n <span class="op">-=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb47-10" title="10"></a>
-<a class="sourceLine" id="cb47-11" title="11">thread_1 <span class="op">=</span> Thread(target<span class="op">=</span>countdown, args<span class="op">=</span>(COUNT<span class="op">//</span><span class="dv">2</span>,))</a>
-<a class="sourceLine" id="cb47-12" title="12">thread_2 <span class="op">=</span> Thread(target<span class="op">=</span>countdown, args<span class="op">=</span>(COUNT<span class="op">//</span><span class="dv">2</span>,))</a>
-<a class="sourceLine" id="cb47-13" title="13">start <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb47-14" title="14">thread_1.start()</a>
-<a class="sourceLine" id="cb47-15" title="15">thread_2.start()</a>
-<a class="sourceLine" id="cb47-16" title="16">thread_1.join()</a>
-<a class="sourceLine" id="cb47-17" title="17">thread_2.join()</a>
-<a class="sourceLine" id="cb47-18" title="18">end <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb47-19" title="19"></a>
-<a class="sourceLine" id="cb47-20" title="20"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb48-1" title="1">$ python multi_threaded.py</a>
-<a class="sourceLine" id="cb48-2" title="2">Tiempo de ejecución 2.85 segundos</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" title="1"><span class="co"># multi_threaded.py</span></a>
+<a class="sourceLine" id="cb52-2" title="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb52-3" title="3"><span class="im">from</span> threading <span class="im">import</span> Thread</a>
+<a class="sourceLine" id="cb52-4" title="4"></a>
+<a class="sourceLine" id="cb52-5" title="5">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
+<a class="sourceLine" id="cb52-6" title="6"></a>
+<a class="sourceLine" id="cb52-7" title="7"><span class="kw">def</span> countdown(n):</a>
+<a class="sourceLine" id="cb52-8" title="8">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb52-9" title="9">        n <span class="op">-=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb52-10" title="10"></a>
+<a class="sourceLine" id="cb52-11" title="11">thread_1 <span class="op">=</span> Thread(target<span class="op">=</span>countdown, args<span class="op">=</span>(COUNT<span class="op">//</span><span class="dv">2</span>,))</a>
+<a class="sourceLine" id="cb52-12" title="12">thread_2 <span class="op">=</span> Thread(target<span class="op">=</span>countdown, args<span class="op">=</span>(COUNT<span class="op">//</span><span class="dv">2</span>,))</a>
+<a class="sourceLine" id="cb52-13" title="13">start <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb52-14" title="14">thread_1.start()</a>
+<a class="sourceLine" id="cb52-15" title="15">thread_2.start()</a>
+<a class="sourceLine" id="cb52-16" title="16">thread_1.join()</a>
+<a class="sourceLine" id="cb52-17" title="17">thread_2.join()</a>
+<a class="sourceLine" id="cb52-18" title="18">end <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb52-19" title="19"></a>
+<a class="sourceLine" id="cb52-20" title="20"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb53-1" title="1">$ python multi_threaded.py</a>
+<a class="sourceLine" id="cb53-2" title="2">Tiempo de ejecución 2.85 segundos</a></code></pre></div>
 </div>
-</section><section id="section-68" class="slide level2">
+</section><section id="section-70" class="slide level2">
 <h2></h2>
 <h4 id="programa-limitado-por-cpu-ejecución-concurrente-multiprocess">Programa limitado por CPU, ejecución concurrente (<code>multiprocess</code>)</h4>
 <div class="smaller">
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" title="1"><span class="co"># multi_process.py</span></a>
-<a class="sourceLine" id="cb49-2" title="2"><span class="im">import</span> time</a>
-<a class="sourceLine" id="cb49-3" title="3"><span class="im">from</span> multiprocessing <span class="im">import</span> Pool</a>
-<a class="sourceLine" id="cb49-4" title="4"></a>
-<a class="sourceLine" id="cb49-5" title="5">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
-<a class="sourceLine" id="cb49-6" title="6"></a>
-<a class="sourceLine" id="cb49-7" title="7"><span class="kw">def</span> countdown(n):</a>
-<a class="sourceLine" id="cb49-8" title="8">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb49-9" title="9">        n <span class="op">-=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb49-10" title="10"></a>
-<a class="sourceLine" id="cb49-11" title="11">start <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb49-12" title="12"><span class="cf">with</span> Pool(<span class="dv">2</span>) <span class="im">as</span> p:  <span class="co"># bypass del GIL</span></a>
-<a class="sourceLine" id="cb49-13" title="13">    p.<span class="bu">map</span>(countdown, <span class="dv">2</span><span class="op">*</span> [COUNT<span class="op">//</span><span class="dv">2</span>])</a>
-<a class="sourceLine" id="cb49-14" title="14">end <span class="op">=</span> time.time()</a>
-<a class="sourceLine" id="cb49-15" title="15"></a>
-<a class="sourceLine" id="cb49-16" title="16"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
-<div class="sourceCode" id="cb50"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb50-1" title="1">$ python multi_threaded.py</a>
-<a class="sourceLine" id="cb50-2" title="2">Tiempo de ejecución 1.32 segundos</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb54-1" title="1"><span class="co"># multi_process.py</span></a>
+<a class="sourceLine" id="cb54-2" title="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb54-3" title="3"><span class="im">from</span> multiprocessing <span class="im">import</span> Pool</a>
+<a class="sourceLine" id="cb54-4" title="4"></a>
+<a class="sourceLine" id="cb54-5" title="5">COUNT <span class="op">=</span> <span class="dv">50000000</span></a>
+<a class="sourceLine" id="cb54-6" title="6"></a>
+<a class="sourceLine" id="cb54-7" title="7"><span class="kw">def</span> countdown(n):</a>
+<a class="sourceLine" id="cb54-8" title="8">    <span class="cf">while</span> n<span class="op">&gt;</span><span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb54-9" title="9">        n <span class="op">-=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb54-10" title="10"></a>
+<a class="sourceLine" id="cb54-11" title="11">start <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb54-12" title="12"><span class="cf">with</span> Pool(<span class="dv">2</span>) <span class="im">as</span> p:  <span class="co"># bypass del GIL</span></a>
+<a class="sourceLine" id="cb54-13" title="13">    p.<span class="bu">map</span>(countdown, <span class="dv">2</span><span class="op">*</span> [COUNT<span class="op">//</span><span class="dv">2</span>])</a>
+<a class="sourceLine" id="cb54-14" title="14">end <span class="op">=</span> time.time()</a>
+<a class="sourceLine" id="cb54-15" title="15"></a>
+<a class="sourceLine" id="cb54-16" title="16"><span class="bu">print</span>(<span class="st">&#39;Tiempo de ejecución </span><span class="sc">{:.2f}</span><span class="st"> segundos&#39;</span>.<span class="bu">format</span>(end <span class="op">-</span> start))</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb55-1" title="1">$ python multi_threaded.py</a>
+<a class="sourceLine" id="cb55-2" title="2">Tiempo de ejecución 1.32 segundos</a></code></pre></div>
 </div>
-</section><section id="section-69" class="slide level2">
+</section><section id="section-71" class="slide level2">
 <h2></h2>
 <p><a href="code/s01/05_bonus.ipynb">cuaderno jupyter (offline)</a></p>
 <p><a href="https://mybinder.org/v2/gh/icane/curso_python/master?filepath=%2Fslides%2Fcode%2Fs01%2F05_bonus.ipynb">cuaderno jupyter (binder)</a></p>
