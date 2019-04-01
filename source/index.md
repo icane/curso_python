@@ -5,7 +5,7 @@ author:
  - Miguel Expósito Martín (exposito_m@cantabria.es)
  - Alejandro Villar (avillar@ticnor.es)
  - Jesús Fernández (fernandez.cuesta@gmail.com)
-date: Abril 2019
+date: 1-10 Abril 2019
 revealjs-url: .
 theme: solarized
 transition: fade
