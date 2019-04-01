@@ -1032,6 +1032,7 @@ funciones de test del proyecto
 </div>
 </section><section id="section-46" class="slide level2">
 <h2></h2>
+<div class="smaller">
 <p>Código estructurado por módulos/submódulos</p>
 <pre><code>    principal/
         __init__.py  &lt;-------- entrada al módulo principal
@@ -1042,15 +1043,10 @@ funciones de test del proyecto
         conversor/   &lt;-----&#39;    |
             __init__.py         |
             limpia.py ----------&#39;
-            procesa.py
-        graficos/
-            __init__.py
-            graficos.py
-            exportar.py</code></pre>
-<div class="smaller">
+            procesa.py</code></pre>
 <ul>
-<li>Dependencias cíclicas: método de <code>collector.py</code> necesita importar <code>conversor</code>, mientras que <code>limpia.py</code> importa <code>recolector</code>.</li>
-<li>Acoplamiento: cambios en <code>conversor</code> afectan a <code>gráficos</code></li>
+<li>Dependencias cíclicas: método de <code>collector.py</code> necesita importar <code>conversor</code>, mientras que <code>limpia.py</code> importa <code>recolector</code></li>
+<li>Acoplamiento: cambios en <code>conversor</code> afectan a <code>recolector</code></li>
 <li>Uso excesivo de variables globales</li>
 <li>Anidamiento excesivo (búcles <code>for</code>, <code>if</code>)</li>
 <li>Defecto/exceso de clases (<em><a href="https://www.youtube.com/watch?v=o9pEzgHorH0">stop writing classes</a></em>)</li>
@@ -1077,7 +1073,7 @@ funciones de test del proyecto
 <li>comandos <em>mágicos</em> (solamente para <code>ipython</code>)
 <ul>
 <li>comienzan por el caracter ‘<code>%</code>’</li>
-<li>ejemplo: <code>%edit</code>, <code>%pylab</code></li>
+<li>ejemplo: <code>%run</code>, <code>%matplotlib</code>, <code>%load</code>, <code>%who</code></li>
 </ul></li>
 <li><code>Ctrl+R</code> activa la búsqueda en el historial
 <ul>
@@ -1097,7 +1093,7 @@ funciones de test del proyecto
 <ul>
 <li><code>[TAB]</code> autocompleta (p.e. <code>import st[TAB]</code>)
 <ul>
-<li>muy util para ver los métodos/atributos de un módulo/clase</li>
+<li>muy útil para ver los métodos/atributos de un módulo/clase</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" title="1">In[]: <span class="im">import</span> st[TAB]</a>
@@ -1111,6 +1107,7 @@ funciones de test del proyecto
 <a class="sourceLine" id="cb31-9" title="9">   string.ascii_lowercase string.hexdigits       string.whitespace</a></code></pre></div>
 </section><section id="section-49" class="slide level2">
 <h2></h2>
+<h3 id="ejemplos">Ejemplos</h3>
 <div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" title="1">In[<span class="dv">1</span>]: ?  <span class="co"># muestra ayuda del intérprete ipython</span></a>
 <a class="sourceLine" id="cb32-2" title="2">In[<span class="dv">2</span>]: ? <span class="bu">dict</span>  <span class="co"># muestra ayuda breve de un método/clase/...</span></a>
 <a class="sourceLine" id="cb32-3" title="3">In[<span class="dv">3</span>]: <span class="bu">help</span>(<span class="bu">dict</span>)  <span class="co"># muestra ayuda completa</span></a>

@@ -311,6 +311,7 @@ f = numpy.array([1, 2, 3, 4])
 :::
 
 ##
+::: {.smaller}
 Código estructurado por módulos/submódulos
 
 ~~~
@@ -324,14 +325,10 @@ Código estructurado por módulos/submódulos
             __init__.py         |
             limpia.py ----------'
             procesa.py
-        graficos/
-            __init__.py
-            graficos.py
-            exportar.py
 ~~~
-::: {.smaller}
-- Dependencias cíclicas: método de `collector.py` necesita importar `conversor`, mientras que `limpia.py` importa `recolector`.
-- Acoplamiento: cambios en `conversor` afectan a `gráficos`
+- Dependencias cíclicas: método de `collector.py` necesita importar
+  `conversor`, mientras que `limpia.py` importa `recolector`
+- Acoplamiento: cambios en `conversor` afectan a `recolector`
 - Uso excesivo de variables globales
 - Anidamiento excesivo (búcles `for`, `if`)
 - Defecto/exceso de clases (_[stop writing classes]_)
@@ -380,7 +377,7 @@ devuelve varios resultados, pero solamente estamos interesados en uno.
 
 ##
 - `[TAB]` autocompleta (p.e. `import st[TAB]`)
-  + muy util para ver los métodos/atributos de un módulo/clase
+  + muy útil para ver los métodos/atributos de un módulo/clase
 
 ~~~python
 In[]: import st[TAB]
@@ -395,6 +392,8 @@ In[]: string.[TAB]
 ~~~
 
 ##
+### Ejemplos
+
 ~~~python
 In[1]: ?  # muestra ayuda del intérprete ipython
 In[2]: ? dict  # muestra ayuda breve de un método/clase/...
