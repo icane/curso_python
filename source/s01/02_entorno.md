@@ -179,7 +179,7 @@ anaconda: 18 min
   con diferentes librerías instaladas, p.e.:
 
  ----------------- ---------------
- `pandas`          `bs4`
+ `pandas`          `beautifulsoup4`
  `requests`        `jupyter`
  `scrapy`          `matplotlib`
  `sqlalchemy`      `numpy`
