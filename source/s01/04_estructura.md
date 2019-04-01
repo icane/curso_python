@@ -11,6 +11,9 @@
 - Código agrupado con líneas en blanco
 - **Recomendado**: Longitud de línea < 80 caracteres
 
+##
+Descargar o ejecutar en línea el cuaderno jupyter
+
 [cuaderno jupyter][binder03]
 
 [cuaderno jupyter (offline)][03ipynb]
@@ -27,7 +30,7 @@ import os
 
 home = os.path.expanduser('~')  # directorio del usuario
 directorio = os.path.join(
-    home, 'Documentos', 'python'
+    home, 'Documents', 'python'
 )
 ficheros = []
 
@@ -67,7 +70,7 @@ import os
 
 home = os.path.expanduser('~')  # comentario en línea
 directorio = os.path.join(
-    home, 'Documentos', 'python'
+    home, 'Documents', 'python'
 )
 
 # Comentario
@@ -94,7 +97,7 @@ from pathlib import Path
 
 
 home = Path.home()  # pathlib.Path.home()
-directorio = home / 'Documentos' / 'python'
+directorio = home / 'Documents' / 'python'
 
 
 def busca_ficheros(directorio):
@@ -363,10 +366,10 @@ print(greeting.greet('bob'))
   + ejemplo: `%run`, `%matplotlib`, `%load`, `%who`
 - `Ctrl+R` activa la búsqueda en el historial
   + `%hist`, `%history` para visualizarlo
-- `_` guarda la salida del último comando &sup4;
+- `_` guarda la salida del último comando *;
 
 :::: {.footnote}
-&sup4; `_` se usa también como variable de usar/tirar, p.e. cuando una función
+* `_` se usa también como variable de usar/tirar, p.e. cuando una función
 devuelve varios resultados, pero solamente estamos interesados en uno.
 ::::
 
@@ -393,6 +396,8 @@ In[]: string.[TAB]
 
 ##
 ### Ejemplos
+
+
 
 ~~~python
 In[1]: ?  # muestra ayuda del intérprete ipython
@@ -471,7 +476,7 @@ from matplotlib import pyplot as plt
 
 
 a = np.linspace(0, 1, 1000)
-b = sin(2*np.pi*a)
+b = np.sin(2*np.pi*a)
 
 plt.plot(a, b)
 ~~~

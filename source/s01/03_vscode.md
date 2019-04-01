@@ -29,12 +29,13 @@
 ## Depuración de errores
 - Errores de sintaxis
 - Avisos del _linter_
+
 ~~~python
 #!/bin/env python3
 import requests
 
 URL='https://elpais.com'
-r = requests.get(url)  # crear un breakpoint aquí
+r = requests.get(URL)  # crear un breakpoint aquí
 
 print(f'Código de respuesta: {r.status_code}')
 print(f'Recibidos {len(r.text)} Bytes de contenido')

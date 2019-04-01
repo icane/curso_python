@@ -139,8 +139,8 @@ Alternativas (más bajo nivel):
 
 - [python] + [pipenv]
 - [python] + [virtualenvwrapper (lazy)][virtualenvwrapper]
-#
- Instalación
+
+# Instalación
 #### Instalación
 
 ##
@@ -227,8 +227,6 @@ Crear un entorno virtual con `pandas`, `scrapy`, `jupyter`, `bs4` y `pyjstat`.
 ##
 Crear un entorno virtual con `pandas`, `scrapy`, `jupyter`, `bs4` y `pyjstat`.
 
-::: {.smaller}
-
 - Instalar librerías adicionales dentro del entorno
 
 ~~~zsh
@@ -236,18 +234,20 @@ Crear un entorno virtual con `pandas`, `scrapy`, `jupyter`, `bs4` y `pyjstat`.
 (entorno 03) > conda install pandas scrapy jupyter bs4 --yes
 ~~~
 
+##
+
 - `pyjstat` no está dentro de los repositorios de conda
   + instalaremos desde [PyPI] o desde el repositorio `git`
+  + ejecutar solamente uno de los siguientes comandos
 
 ~~~zsh
 # instala paquetes no gestionados por conda desde PyPI (Python Package Index)
-(entorno-03) > pip install -y pyjstat 
+(entorno-03) > pip install pyjstat
 # o bien desde el repositorio git
 (entorno-03) > pip install -e ^
 "git+https://github.com/predicador37/pyjstat.git#egg=pyjstat-git"
 
 ~~~
-:::
 
 ##
 - Exportar entorno virtual (distribuible y replicable)
