@@ -82,3 +82,21 @@ print(x)
 - divide y vencerás
 - hacer bibliotecas con lo que más se usa
 
+## ejercicio
+
+Escribir una función que, dadas las coordenadas de un punto en un plano (x,y), imprima su cuadrante.
+
+:::: notes
+~~~~python
+def coord(x,y):
+    if x > 0 and y > 0:
+        print("Quadrant I")
+    elif x > 0 and y < 0:
+        print("Quadrant IV")
+    elif y > 0:
+        print("Quadrant II")
+    else:
+        print("Quadrant III")
+~~~~
+::::
+

@@ -123,6 +123,8 @@ greeting.startswith('Que')
 
 ## ejercicio
 
+Extraer el nombre del servidor de la siguiente cabecera de correo electrónico:
+
 `From miguel.exposito@apps.cantabria.es Sat Jan  5 09:14:16 2008`
 
 ::: notes

@@ -52,7 +52,7 @@ print(my_dict)
 shopping_list = {'patatas': 3, 'york': 100, 'yogur': 6}
 ~~~~
 
-se puede crear un my_dict vacío así: 
+se puede crear un diccionario vacío así: 
 
 ~~~~python
 empty_dict = {}
@@ -111,16 +111,21 @@ print(counts.items())
 
 - hacer split del texto en palabras
 - iterar a lo largo de las palabras
-- usar un my_dict para contar cada palabra de forma independiente
+- usar un diccionario para contar cada palabra de forma independiente
 
 ## ejercicio
->En un lugar de La Mancha, de cuyo nombre no quiero acordarme...
+Contar el número de ocurrencias de cada palabra en la siguiente frase:
 
+>Tanto monta, monta tanto, Isabel como Fernando.
+
+OJO! Comas y mayúsculas...
 
 ::: notes
 ~~~~python
 counts = dict()
-text = 'En un lugar de La Mancha, de cuyo nombre no quiero acordarme...'
+text = 'Tanto monta, monta tanto, Isabel como Fernando.'
+text = text.replace(',', '')
+text = text.lower()
 words = text.split()
 for word in words:
     counts[word] = counts.get(word, 0) + 1
@@ -128,7 +133,11 @@ print('Cuenta:', counts )
 ~~~~
 :::
 
-## ejercicio
+## ejercicio avanzado
+
+Obtener una lista con los nombres de proveedor ordenados por prioridad.
+
+**Sugerencia**: usar funciones anónimas ([lambda](https://www.w3schools.com/python/python_lambda.asp))
 
 ~~~~python
 providers = {

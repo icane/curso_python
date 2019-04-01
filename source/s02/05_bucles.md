@@ -100,7 +100,7 @@ print('Hecho!')
 ::: notes
 ~~~~python
 numbers = [9, 41, 12, 3, 74, 15]
-max = -1
+max = 0
 for number in numbers:
     if number > max:
         max = number

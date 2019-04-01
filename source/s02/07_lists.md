@@ -7,7 +7,7 @@
 
 - colecciones de elementos
 - un elemento puede ser cualquier tipo de objeto
-- una my_list puede estar vacía
+- una lista puede estar vacía
 - son mutables: se puede cambiar un elemento usando el operador índice
 - son **ordenadas**
 
@@ -72,10 +72,10 @@ también se puede especificar qué elemento (índice)
 
 `len, max, min, sum`
 
-split rompe un string en una my_list de strings
+split rompe un string en una lista de strings
 
 ~~~~python
-my_list = 'my_list de cuatro palabras'
+my_list = 'lista de cuatro palabras'
 palabras = my_list.split()
 print(palabras)
 ~~~~
