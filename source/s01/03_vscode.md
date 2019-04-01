@@ -1,5 +1,5 @@
-# vscode
-#### Visual Studio Code
+# [vscode]
+#### [Visual Studio Code][vscode]
 
 ##
 ::: {.smaller}
@@ -7,7 +7,7 @@
   + _"Instalar extensiones"_
   + _"Python: ..."_
 :::
-![vscode]\
+![vscode_screenshot]\
 
 ##
 ### Integración con el entorno virtual de cada proyecto

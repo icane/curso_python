@@ -7,7 +7,7 @@
 [beginners]: https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
 [canopy]: https://store.enthought.com/downloads/
 [conda]: https://conda.io
-[conda_cheatsheet]: https://conda.io/docs/_downloads/conda-cheatsheet.pdf
+[conda_cheatsheet]: https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html
 [Cuadernos Jupyter para Data Science]: https://github.com/donnemartin/data-science-ipython-notebooks
 [distrib]: https://docs.python.org/3/distributing/index.html
 [flake8]: http://flake8.pycqa.org/en/latest/
@@ -41,6 +41,7 @@
 [stackoverflow_vs]: https://insights.stackoverflow.com/trends?tags=python%2Cjava%2Cphp%2Cc%23
 [The Hitchhiker’s Guide to Python!]: https://docs.python-guide.org/
 [virtualenvwrapper]: https://virtualenvwrapper.readthedocs.io/es/latest/
+[vscode]: https://code.visualstudio.com/
 [winpython]: https://winpython.github.io/
 
 <!-- imágenes -->
@@ -53,9 +54,9 @@
 [entornos_venv]: images/s01/entornos_venv.svg
 [exec_compiler]: images/s01/exec_compiler.png
 [exec_interpreter]: images/s01/exec_interpreter.png
-[GIL]: images/s01/GIL.png { width=70% }
-[Guido van Rossum, 1995]: images/s01/guido.jpg  { width=40% }
-[Guido van Rossum, 1999]: images/s01/guido2.gif  { width=40% }
+[GIL]: images/s01/GIL.png { max-width=70% }
+[Guido van Rossum, 1995]: images/s01/guido.jpg  { max-width=40% }
+[Guido van Rossum, 1999]: images/s01/guido2.gif  { max-width=40% }
 [hierarchy]: images/s01/hierarchy.svg
 [https://xkcd.com/1987]: images/s01/xkcd1987.png
 [ieee_graph]: images/s01/ieee_graph.jpeg
@@ -73,7 +74,7 @@
 [logo_robot]: images/s01/robot.png { .logo }
 [logo_scikit]: images/s01/scikit_logo.png { .logo }
 [logo_scipy]: images/s01/scipy_logo.png { .logo }
-[logo_sqlalchemy]: images/s01/logo_sqlalchemy.png { width=40% }
+[logo_sqlalchemy]: images/s01/logo_sqlalchemy.png { max-width=40% }
 [logo_tensorflow]: images/s01/tensorflow_logo.png { .logo }
 [poll_results]: images/s01/poll_results.png
 [python_documentation]: images/s01/pydoc.png
@@ -86,7 +87,7 @@
 [stackoverflow_top]: images/s01/SO_py_vs_other.svg
 [timeline]: images/s01/timeline.png
 [venv_navigator]: images/s01/venv_navigator.gif
-[vscode]: images/s01/vscode.png
+[vscode_screenshot]: images/s01/vscode.png
 
 <!-- código -->
 

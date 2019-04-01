@@ -139,8 +139,8 @@ Alternativas (más bajo nivel):
 
 - [python] + [pipenv]
 - [python] + [virtualenvwrapper (lazy)][virtualenvwrapper]
-
-# Instalación
+#
+ Instalación
 #### Instalación
 
 ##
@@ -155,7 +155,13 @@ instalar con chocolatey?
 ##
 <https://www.anaconda.com/download/>
 ![setup] \
-La instalación puede tardar unos 5-10 minutos
+con `chocolatey`:
+
+~~~zsh
+> choco install anaconda3 vscode -y
+~~~
+
+🕐 7-15 minutos
 
 ::: notes
 tiempos en VM windows 7-32bit 2GB RAM
@@ -174,10 +180,10 @@ anaconda: 18 min
 
  ----------------- ---------------
  `pandas`          `bs4`
- `matplotlib`      `jupyter`
- `scrapy`          `scipy`
- `sqlalchemy`      `flask`
- `jsonschema`      `bokeh`
+ `requests`        `jupyter`
+ `scrapy`          `matplotlib`
+ `sqlalchemy`      `numpy`
+ `jsonschema`      `seaborn`
  ----------------- ---------------
 
 ## {data-background-image="images/s01/venv_navigator.gif" data-background-size=80%}
@@ -192,72 +198,80 @@ anaconda: 18 min
 Se puede sugerir que cierto grupo instale diferentes versiones
 :::
 
-- Ejecutar `Anaconda prompt`
+- Ejecutar `Anaconda prompt` o acceder a la terminal desde [vscode]
 - Verificar que conda está instalado:
 ~~~zsh
-(base) conda info
-(base) conda --help
+(base) > conda info
+(base) > conda --help
 ~~~
 
 ##
-Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
+Crear un entorno virtual con `pandas`, `scrapy`, `jupyter`, `bs4` y `pyjstat`.
 
-- Inicializar el entorno virtual:
+- Inicializar el entorno virtual. Ejemplos:
 
 ~~~zsh
-(base) conda create --name entorno-01
-(base) conda create --name entorno-02 python=2.7 --yes
+(base) > conda create --name entorno-01
+(base) > conda create --name entorno-02 python=2.7 --yes
 # crea entorno con paquetes preinstalados
-(base) conda create -n entorno-03 python=3.7 pandas scipy -y
+(base) > conda create -n entorno-03 python=3.7 pandas scipy -y
 ~~~
 
 - Acceder (activar) el entorno virtual:
 
-~~~python
-(base) conda activate entorno-03
-(entorno-03) conda list  # muestra paquetes instalados
+~~~zsh
+(base) > conda activate entorno-03
+(entorno-03) > conda list  # muestra paquetes instalados
 ~~~
 
 ##
-Crear un entorno virtual con `pandas`, `matplotlib`, `jupyter` y `pyjstat`.
+Crear un entorno virtual con `pandas`, `scrapy`, `jupyter`, `bs4` y `pyjstat`.
 
 ::: {.smaller}
+
 - Instalar librerías adicionales dentro del entorno
-~~~python
-# instala librerías gestionadas por conda
-(entorno 03) conda install matplotlib jupyter --yes
-# instala paquetes no gestionados por conda desde PyPI (Python Package Index)
-(entorno-03) pip install -y pyjstat 
-~~~
 
-- Exportar entorno virtual
-
-~~~python
-# exportar definición del entorno
-(entorno-03) conda list --export > requirements.txt  # solo dependencias
-(entorno-03) conda env export > entorno-03.yml  # entorno + dependencias
-~~~
-:::
- **Distribuible y replicable**
-
-##
-- Acceder al entorno virtual y mostrar librerías instaladas
 ~~~zsh
-(base) conda activate entorno-03
-(entorno-03) conda list  # muestra paquetes instalados
+# instala librerías gestionadas por conda
+(entorno 03) > conda install pandas scrapy jupyter bs4 --yes
+~~~
 
-# instala paquetes adicionales
-(entorno-03) conda install jupyter -y
+- `pyjstat` no está dentro de los repositorios de conda
+  + instalaremos desde [PyPI] o desde el repositorio `git`
 
-# instala paquetes desde PyPI, no gestionados por conda
-(entorno-03) pip install pyjstat 
-(entorno-03) conda list
-
-# instala paquetes desde github usando pip
-(entorno-03) pip install -e ^
+~~~zsh
+# instala paquetes no gestionados por conda desde PyPI (Python Package Index)
+(entorno-03) > pip install -y pyjstat 
+# o bien desde el repositorio git
+(entorno-03) > pip install -e ^
 "git+https://github.com/predicador37/pyjstat.git#egg=pyjstat-git"
 
 ~~~
+:::
+
+##
+- Exportar entorno virtual (distribuible y replicable)
+
+~~~zsh
+# exportar definición del entorno
+(entorno-03) > conda list --export > requirements.txt  # solo dependencias
+(entorno-03) > conda env export > entorno-03.yml  # entorno + dependencias
+# salir del entorno (vuelve al entorno base)
+(entorno-03) > conda deactivate
+(base) >
+~~~
+
+- Acceder al entorno virtual y mostrar librerías instaladas
+~~~zsh
+(base) > conda activate entorno-03
+(entorno-03) > conda list  # muestra paquetes instalados
+
+# instala paquetes adicionales
+(entorno-03) > conda install seaborn -y
+
+~~~
+
+##
 
 - [Resumen comandos `conda`][conda_cheatsheet]
 - [Guía de usuario `pip`][pip_userguide]
