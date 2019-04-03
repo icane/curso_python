@@ -101,22 +101,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <h1 class="title">Python para Análisis de datos: Introducción</h1>
   <p class="subtitle">Sesión 6</p>
   <p class="author">Jesús Fernández (fernandez.cuesta@gmail.com)</p>
-  <p class="date">25 Octubre 2018</p>
+  <p class="date">10 Abril 2019</p>
 </section>
 
 <section><section id="visualización-de-datos" class="title-slide slide level1"><h1>Visualización de datos</h1></section><h4 id="visualización-de-datos-1">Visualización de datos</h4><section id="section" class="slide level2">
 <h2></h2>
-<p>Diferentes librerías para visualización de datos</p>
+<p>Librerías más usadas:</p>
 <div>
 <div class="smaller">
 <ul>
 <li class="fragment"><a href="https://matplotlib.org/">Matplotlib</a>
 <ul>
-<li class="fragment">standard de-facto</li>
+<li class="fragment">standard de-facto, basado en <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></li>
 <li class="fragment">hacer fácil tareas sencillas y posible tareas complejas</li>
 <li class="fragment">versátil, madura y extensa</li>
-<li class="fragment">integrado con pandas (&lt;100% )</li>
-<li class="fragment">acepta paquetes de terceros como <strong>extensiones</strong></li>
+<li class="fragment">integrado con pandas (&lt;100%)</li>
+<li class="fragment">acepta paquetes de terceros como <strong>extensiones</strong> (plugins)</li>
 </ul></li>
 <li class="fragment">Algunas extensiones de Matplotlib:
 <ul>
@@ -137,22 +137,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-</section><section id="matplotlib" class="slide level2">
-<h2>Matplotlib</h2>
-<h4 id="pyplot-módulo-con-interfaz-parecida-a-matlab"><code>pyplot</code>: módulo con interfaz parecida a <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="co"># from matplotlib import pyplot as plt</span></a></code></pre></div>
-<p>Importar las librerías necesarias</p>
 </section><section id="section-1" class="slide level2">
 <h2></h2>
-<p>Partes de una figura</p>
-<p><img data-src="images/s06/anatomy_simple.png" alt="simple_anatomy" /><br />
-</p>
+<ul>
+<li>Descargar cuaderno jupyter: <a href="code/s06/visualizacion_con_matplotlib.ipynb">matplotlib/pyplot</a></li>
+<li>Iniciar jupyter (2 opciones):
+<ul>
+<li>Desde Anaconda Navigator (jupyter notebook &gt; <em>Launch</em>)</li>
+<li><p>Desde un terminal (<code>Anaconda Prompt</code> o terminal de VSCODE):</p>
+<code>&gt; jupyter notebook</code></li>
+</ul></li>
+<li>Abrir cuaderno descargado en jupyter</li>
+<li>Ejecutar paso a paso de la siguiente sección</li>
+</ul>
+</section><section id="matplotlib" class="slide level2">
+<h2><a href="https://matplotlib.org/">Matplotlib</a></h2>
+<h4 id="pyplot-módulo-con-interfaz-parecida-a-matlab"><code>pyplot</code>: módulo con interfaz parecida a <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></h4>
+<p>Para importar pyplot:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co"># o bien: from matplotlib import pyplot as plt</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co"># sólo en jupyter: %matplotlib inline</span></a></code></pre></div>
 </section><section id="section-2" class="slide level2">
 <h2></h2>
-<p>Partes de una figura (II)</p>
-<p><img data-src="images/s06/anatomy.png" alt="fig_anatomy" style="width:50.0%" /><br />
-</p>
+<p>Partes de una figura</p>
+<p><img data-src="images/s06/anatomy_simple.png" alt="simple_anatomy" />  <img data-src="images/s06/anatomy.png" alt="fig_anatomy" style="width:50.0%" /></p>
 </section><section id="section-3" class="slide level2">
 <h2></h2>
 <p>Los componentes más importantes son:</p>
@@ -184,23 +192,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><strong>Nota</strong>: 1 y 2 se pueden combinar en un mismo comando</p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">N <span class="op">=</span> <span class="dv">1000</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" title="1">N <span class="op">=</span> <span class="dv">365</span></a>
 <a class="sourceLine" id="cb2-2" title="2">np.random.seed(<span class="dv">2983</span>)  <span class="co"># reproducibilidad</span></a>
-<a class="sourceLine" id="cb2-3" title="3"></a>
-<a class="sourceLine" id="cb2-4" title="4">fig <span class="op">=</span> plt.figure()  <span class="co"># crea figura</span></a>
-<a class="sourceLine" id="cb2-5" title="5">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># crea ejes</span></a>
-<a class="sourceLine" id="cb2-6" title="6">t <span class="op">=</span> pd.date_range(<span class="st">&#39;1/1/2018&#39;</span>, periods<span class="op">=</span><span class="dv">365</span>)</a>
-<a class="sourceLine" id="cb2-7" title="7">y <span class="op">=</span> np.random.randn(N).cumsum()</a>
-<a class="sourceLine" id="cb2-8" title="8">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-3" title="3">t <span class="op">=</span> pd.date_range(<span class="st">&#39;1/1/2018&#39;</span>, periods<span class="op">=</span>N)</a>
+<a class="sourceLine" id="cb2-4" title="4">y <span class="op">=</span> <span class="dv">200</span> <span class="op">*</span> (np.random.randn(N).cumsum() <span class="op">+</span> <span class="dv">40</span>)</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">#####</span></a>
+<a class="sourceLine" id="cb2-7" title="7">fig <span class="op">=</span> plt.figure()  <span class="co"># crea figura</span></a>
+<a class="sourceLine" id="cb2-8" title="8">ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># crea ejes</span></a>
+<a class="sourceLine" id="cb2-9" title="9"></a>
+<a class="sourceLine" id="cb2-10" title="10">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#####</span></a></code></pre></div>
 </section><section id="section-5" class="slide level2">
 <h2></h2>
 <p>De forma simplificada, los ejes y la figura se crean simultáneamente:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># fig = plt.figure()  # crea figura</span></a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co"># ax = plt.subplot(1, 1, 1)  # crea ejes</span></a>
-<a class="sourceLine" id="cb3-3" title="3">(fix, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_rows, n_cols)</span></a>
-<a class="sourceLine" id="cb3-4" title="4">t <span class="op">=</span> pd.date_range(<span class="st">&#39;1/1/2018&#39;</span>, periods<span class="op">=</span><span class="dv">365</span>)</a>
-<a class="sourceLine" id="cb3-5" title="5">y <span class="op">=</span> np.random.randn(N).cumsum()</a>
-<a class="sourceLine" id="cb3-6" title="6">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">(fix, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_filas, n_columnas)</span></a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a></code></pre></div>
 </section><section id="importante" class="slide level2">
 <h2>Importante</h2>
 <p>En un cuaderno los gráficos aparecerán automáticamente si la primera línea es:</p>
@@ -212,7 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>… para mostrar cada gráfico</p>
 </section><section id="section-6" class="slide level2">
 <h2></h2>
-<h3 id="matplotlib-acepta-los-siguientes-tipos-de-datos">matplotlib acepta los siguientes tipos de datos:</h3>
+<h3 id="matplotlib-puede-dibujar-datos-organizados-en"><a href="https://matplotlib.org/">Matplotlib</a> puede dibujar datos organizados en:</h3>
 <ul>
 <li>Listas</li>
 <li>Diccionarios</li>
@@ -223,7 +231,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>El resto puede -o no- funcionar.</p>
 </section><section id="section-7" class="slide level2">
 <h2></h2>
-<h4 id="plt.subplots"><code>plt.subplots()</code></h4>
 <div class="smaller">
 <p>Para crear una tupla (figura, ejes) usaremos:</p>
 </div>
@@ -233,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>plt.subplots()</code>
 <ul>
 <li>sin argumentos: crea una figura con 1 area de dibujo</li>
-<li>(<code>nrows</code>, <code>ncols</code>): crea una figura con <code>nrows*ncols</code> areas</li>
+<li>plt.subplots(<code>n</code>, <code>m</code>): crea una figura con varias zonas de dibujo distribuidas en <code>n</code> filas y <code>m</code> columnas</li>
 <li>devuelve la figura y todos los ejes</li>
 </ul></li>
 </ul>
@@ -241,14 +248,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">fig, (eje1, eje2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>)</a>
 <a class="sourceLine" id="cb6-2" title="2"></a>
 <a class="sourceLine" id="cb6-3" title="3">eje1.plot(t, y, <span class="st">&#39;g&#39;</span>)</a>
-<a class="sourceLine" id="cb6-4" title="4">eje2.plot(t, <span class="op">-</span>y[::<span class="op">-</span><span class="dv">1</span>])</a></code></pre></div>
+<a class="sourceLine" id="cb6-4" title="4">eje2.plot(t, z)</a></code></pre></div>
 <p><img data-src="images/s06/subplots12.png" alt="subplots12" /><br />
 </p>
 </div>
 </div>
 </section><section id="section-8" class="slide level2">
 <h2></h2>
-<h4 id="plt.subplots-1"><code>plt.subplots()</code></h4>
+<h4 id="plt.subplots"><code>plt.subplots()</code></h4>
 <div class="smaller">
 <p>Para crear una tupla (figura, ejes) usaremos:</p>
 </div>

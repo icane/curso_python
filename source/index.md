@@ -18,14 +18,14 @@ keywords: [python, intro]
 **Programa del curso**
 
 ::: {.smaller}
-- [Sesión 1 (1 Abril)](slides/s01.html)
+- [Sesión 1 (1 Abril)](slides/s01.html) [[pdf](slides/s01.pdf)]
   + Introducción a Python
   + Instalación y entorno de programación
   + Organización y estructuración del código
-- [Sesión 2 (2 Abril)](slides/s02.html)
+- [Sesión 2 (2 Abril)](slides/s02.html) [[pdf](slides/s02.pdf)]
   + Variables, estructuras de datos, expresiones, sentencias
   + Estructuras de control y funciones
-- [Sesión 3 (3 Abril)](#) <!-- slides/s03.html -->
+- [Sesión 3 (3 Abril)](slides/s03.html) [[pdf](slides/s03.pdf)]
   + Orientación a objetos y expresiones regulares
 - [Sesión 4 (8 Abril)](#) <!-- slides/s04.html -->
   + Web scraping

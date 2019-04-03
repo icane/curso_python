@@ -4,16 +4,16 @@
 
 ##
 
-Diferentes librerías para visualización de datos
+Librerías más usadas:
 
 ::: incremental
 ::: {.smaller}
 - [Matplotlib]
-  + standard de-facto
+  + standard de-facto, basado en [MATLAB]
   + hacer fácil tareas sencillas y posible tareas complejas
   + versátil, madura y extensa
-  + integrado con pandas (<100% )
-  + acepta paquetes de terceros como **extensiones**
+  + integrado con pandas (<100%)
+  + acepta paquetes de terceros como **extensiones** (plugins)
 - Algunas extensiones de Matplotlib:
   + [Seaborn]
     * funciona sobre `matplotlib`
@@ -25,25 +25,32 @@ Diferentes librerías para visualización de datos
 :::
 :::
 
-## Matplotlib
+##
+- Descargar cuaderno jupyter: [matplotlib/pyplot][nb_mpl]
+- Iniciar jupyter (2 opciones):
+   + Desde Anaconda Navigator (jupyter notebook > _Launch_)
+   + Desde un terminal (`Anaconda Prompt` o terminal de VSCODE):
+
+        `> jupyter notebook`
+- Abrir cuaderno descargado en jupyter
+- Ejecutar paso a paso de la siguiente sección
+
+## [Matplotlib]
 #### `pyplot`: módulo con interfaz parecida a [MATLAB]
+
+Para importar pyplot:
 
 ~~~python
 import matplotlib.pyplot as plt
-# from matplotlib import pyplot as plt
+# o bien: from matplotlib import pyplot as plt
+# sólo en jupyter: %matplotlib inline
 ~~~
 
-Importar las librerías necesarias
 
 ##
 Partes de una figura
 
-![simple_anatomy] \
-
-##
-Partes de una figura (II)
-
-![fig_anatomy] \
+![simple_anatomy] \ ![fig_anatomy]
 
 
 ##
@@ -71,25 +78,25 @@ Como regla general seguiremos los siguientes pasos:
 :::
 
 ~~~python
-N = 1000
+N = 365
 np.random.seed(2983)  # reproducibilidad
+t = pd.date_range('1/1/2018', periods=N)
+y = 200 * (np.random.randn(N).cumsum() + 40)
 
+#####
 fig = plt.figure()  # crea figura
 ax = plt.subplot(1, 1, 1)  # crea ejes
-t = pd.date_range('1/1/2018', periods=365)
-y = np.random.randn(N).cumsum()
+
 ax.plot(t, y)  # dibuja sobre los ejes
+#####
 ~~~
 
 ##
 De forma simplificada, los ejes y la figura se crean simultáneamente:
 
 ~~~python
-# fig = plt.figure()  # crea figura
-# ax = plt.subplot(1, 1, 1)  # crea ejes
-(fix, ax) = plt.subplots(1, 1)  # (n_rows, n_cols)
-t = pd.date_range('1/1/2018', periods=365)
-y = np.random.randn(N).cumsum()
+(fix, ax) = plt.subplots(1, 1)  # (n_filas, n_columnas)
+
 ax.plot(t, y)  # dibuja sobre los ejes
 ~~~
 
@@ -110,7 +117,7 @@ plt.show()  # muestra el gráfico
 ... para mostrar cada gráfico
 
 ##
-### matplotlib acepta los siguientes tipos de datos:
+### [Matplotlib] puede dibujar datos organizados en:
 
 - Listas
 - Diccionarios
@@ -122,7 +129,6 @@ El tipo de datos nativo es `np.array`.
 El resto puede -o no- funcionar.
 
 ##
-#### `plt.subplots()`
 ::: { .smaller }
 Para crear una tupla (figura, ejes) usaremos:
 
@@ -132,7 +138,8 @@ Para crear una tupla (figura, ejes) usaremos:
 ::: {.column width="50%" .smaller}
 - `plt.subplots()`
   + sin argumentos: crea una figura con 1 area de dibujo
-  + (`nrows`, `ncols`): crea una figura con `nrows*ncols` areas
+  + plt.subplots(`n`, `m`): crea una figura con varias zonas de dibujo
+    distribuidas en `n` filas y `m` columnas
   + devuelve la figura y todos los ejes
 :::
 ::: {.column width="50%"}
@@ -140,7 +147,7 @@ Para crear una tupla (figura, ejes) usaremos:
 fig, (eje1, eje2) = plt.subplots(1, 2)
 
 eje1.plot(t, y, 'g')
-eje2.plot(t, -y[::-1])
+eje2.plot(t, z)
 ~~~
 ![subplots12] \
 :::
