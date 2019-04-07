@@ -140,7 +140,7 @@ matrix
 **importante**: `astype` para convertir tipos
 
 ~~~python
-arr1 = np.array([1, 2, 3], dtype=np.float64)
+arr1 = np.array([1.5, 2.2, 3.7], dtype=np.float64)
 arr2 = np.array([1, 2, 3], dtype=np.int32)
 
 arr1.dtype
@@ -188,9 +188,23 @@ arr * arr
 A = np.array( [[1,1], [0,1]] )
 B = np.array( [[2,0], [3,4]] )
 
-A @ B 
+A @ B
+A.matmul(B)
 A.dot(B)
 ~~~
+
+## operaciones matriciales
+
+matmul differs from dot in two important ways:
+
+- Multiplication by scalars is not allowed.
+- Stacks of matrices are broadcast together as if the matrices were elements.
+
+## operaciones matriciales
+
+- **matmul:** If either argument is N-D, N > 2, it is treated as a stack of matrices residing in the last two indexes and broadcast accordingly.
+
+- **np.dot:** For 2-D arrays it is equivalent to matrix multiplication, and for 1-D arrays to inner product of vectors (without complex conjugation). For N dimensions it is a sum product over the last axis of a and the second-to-last of b.
 
 ## más álgebra lineal
 
@@ -199,10 +213,10 @@ from numpy.linalg import inv, qr
 
 X = np.random.randn(5, 5)
 mat = X.T.dot(X)
-inv(mat)
-mat.dot(inv(mat))
+mat_inv = np.linalg.inv(mat)
+mat.dot(mat_inv)
 
-q, r = qr(mat)
+q, r = np.linalg.qr(mat)
 ~~~
 
 [linear algebra] \
@@ -212,7 +226,7 @@ q, r = qr(mat)
 ~~~python
 arr = np.arange(10)
 arr[5]
-arr[5:8]
+arr[5:8] # 5 incluido, 8 excluido
 arr[5:8] = 12
 1 / arr
 ~~~
@@ -230,8 +244,8 @@ arr2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 arr2d[2]
 arr2d[0][2]
 
-arr2d[:2]
-arr2d[:2, 1:]
+arr2d[:2]  # hasta N - 1
+arr2d[:2, 1:] # desde col. 1 incluida
 ~~~
 
 ## funciones universales
@@ -255,8 +269,8 @@ np.maximum(x, y) # máximo elemento a elemento
 ~~~~python
 arr = np.random.randn(5, 4)
 
-arr.mean()
-arr.mean(axis=1)
+arr.mean() # un escalar, la media de la matriz
+arr.mean(axis=1) # 0 columnas, 1 filas
 arr.sum()
 ~~~~
 
@@ -304,8 +318,8 @@ np.where(arr > 0, 2, -2)
 
 ~~~~python
 bools = np.array([False, False, True, False])
-bools.any()
-bools.all()
+bools.any() # hay alguno True?
+bools.all() # son todos True?
 ~~~~
 
 ¿cómo contar True en un array booleano?

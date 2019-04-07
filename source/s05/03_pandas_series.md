@@ -44,6 +44,10 @@ la relación valor-índice se preserva
 obj2[obj2 > 0]
 ~~~~
 
+a veces interesa resetar un índice... usar el método `reset_index()`
+
+
+
 ## desde diccionario
 
 la relación diccionario - series es directa
@@ -74,6 +78,8 @@ myarr = np.arange(26)
 mydict = dict(zip(mylist, myarr))
 ~~~~
 
+usar el método `.head()` para explorar el contenido de la serie
+
 ::: notes
 ~~~~python
 ser1 = pd.Series(mylist)
@@ -101,7 +107,9 @@ obj3 + obj4
 
 obtener los elementos de A que no están en B
 
-usar `~` , `isin`
+- filtrar ser1, y dentro del filtro:
+- usar `isin`: A.isin(B)
+- usar el operador negación: `~`
 
 ~~~~python
 ser1 = pd.Series([1, 2, 3, 4, 5])

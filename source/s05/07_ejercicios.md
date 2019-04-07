@@ -6,7 +6,7 @@
 importar y explorar el archivo JSON-stat desde la siguiente URL:
 
 ~~~~python
-DATA_URL = 'http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat'
+DATA_URL = 'https://gist.githubusercontent.com/predicador37/cfb854dbbb36d3f0c1ac2d13f837ce67/raw/08354aefe84b4cf875d9b968bf4be2c376ccc249/rev_padron_icane.json'
 ~~~~
 
 - crear un índice temporal
@@ -19,7 +19,7 @@ from pyjstat import pyjstat
 import pandas as pd
 import numpy as np
 
-DATA_URL = 'http://www.icane.es/data/api/municipal-register-annual-review-municipality.json-stat'
+DATA_URL = 'https://gist.githubusercontent.com/predicador37/cfb854dbbb36d3f0c1ac2d13f837ce67/raw/08354aefe84b4cf875d9b968bf4be2c376ccc249/rev_padron_icane.json'
 dataset = pyjstat.Dataset.read(DATA_URL)
 df = dataset.write('dataframe')
 df.describe()

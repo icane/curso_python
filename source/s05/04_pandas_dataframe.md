@@ -56,7 +56,7 @@ acepta:
 
 - URLs
 - `sep`: separador (,)
-- `delimiter`: delimitador (`None`)
+- `delimiter`: delimitador (`None`, se suelen usar comillas dobles)
 - `header`: cabecera (se infiere)
 
 ## escritura desde archivo
@@ -138,7 +138,8 @@ pd.isnull(array)
 ~~~~python
 frame2.describe() # información estadística
 frame2.info() # información sobre la estructura de datos
-frame2.tail()
+fraem2.head(5) # visualizar las 5 primeras filas
+frame2.tail(5) # visualizar las 5 últimas filas
 ~~~~
 
 ## selección de columnas
@@ -193,7 +194,7 @@ DATA_URL = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.use
 usuarios = pd.read_csv(DATA_URL, sep='|')
 ~~~~
 
-asignar a una variable llamada `users` y utilizar `user_id` como índice
+asignar a una variable llamada `users` y utilizar `user_id` como índice (usar el parámetro index_col, que acepta como valor un nombre de columna)
 
 ## ejercicio inspección
 
@@ -204,14 +205,38 @@ asignar a una variable llamada `users` y utilizar `user_id` como índice
 - mostrar los nombres de las columnas
 - mostrar el índice del dataset
 
+::: notes
+~~~~python
+import pandas as pd
+users = pd.read_table('https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.user', sep='|', index_col='user_id')
+users.head(25)
+users.tail(10)
+users.shape[0]
+users.shape[1]
+users.columns
+users.index
+~~~~
+:::
+
 ## ejercicio inspección
 
 - mostrar los tipos de datos de cada columna
 - mostrar sólo la columna de ocupación
 - mostrar cuántas ocupaciones diferentes hay en el dataset
 - mostrar la ocupación más frecuente
-- resumir el dataframe
-- calcular la edad media de los usuarios
+- mostrar información de resumen del dataframe
+- calcular la edad media de los usuarios (redondear con la función `round`)
+
+::: notes
+~~~~python
+users.dtypes
+users.occupation or users['occupation']
+users.occupation.nunique()
+users.occupation.value_counts().head()
+users.describe()
+round(users.age.mean())
+~~~~
+:::
 
 ## joins: merge
 
@@ -304,6 +329,8 @@ df.drop_duplicates(inplace=True)
 df.describe()
 ~~~~
 
+## ejemplo: split - apply - combine
+
 ## ejemplo: split
 
 se dividen los datos en grupos, donde cada grupo es el conjunto de películas estrenadas en un año determinado
@@ -312,6 +339,10 @@ se dividen los datos en grupos, donde cada grupo es el conjunto de películas es
 df_by_year = df.groupby('release year')
 type(df_by_year)
 ~~~~
+
+::: notes
+https://www.datacamp.com/community/tutorials/pandas-split-apply-combine-groupby
+:::
 
 ## ejemplo: apply
 
@@ -348,6 +379,14 @@ DATA_URL = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/u.use
 - para cada ocupación, calcular las edades mímina y máxima
 - para cada combinación de ocupación y sexo, calcular la edad media
 
+:::notes
+users_by_occ = usuarios.groupby('occupation')
+users_by_occ.mean().age
+users_by_occ.min().age
+users_by_occ.max().age
+users_by_occ_and_sex = usuarios.groupby(['occupation', 'gender'])
+users_by_occ_and_sex.mean().age
+:::
 
 ## aplicar funciones a filas, columnas y elementos
 
