@@ -2,12 +2,20 @@
 #### Caso práctico
 
 ##
-Abrir [cuaderno jupyter][nb_pract]
+- Descargar [cuaderno jupyter][nb_practice]
+- Abrirlo con `jupyter notebook`
+- Utiliza las celdas vacías para las respuestas, pruebas, etc.
 
 ##
 1. `ax`: ejes sobre los que dibujar
 
 ![practica_01]\
+
+##
+
+1.2. Barras apiladas (`stacked`)
+
+![practica_01b]\
 
 ##
 ::: { .smaller }
@@ -16,6 +24,11 @@ Abrir [cuaderno jupyter][nb_pract]
 
 ![practica_02]\
 :::
+
+##
+2.2. `layout` como parámetro de `plt.subplots()`
+
+![practica_02b]\
 
 ##
 3. `sharex/sharey`: compartir ejes (subplots)
@@ -69,10 +82,10 @@ Abrir [cuaderno jupyter][nb_pract]
 
 ![practica_12]\
 
-##
+<!-- ##
 **BONUS**
 Generar un gráfico circular con estilo `xkcd`
 
 ![practica_99]\
 
-
+ -->

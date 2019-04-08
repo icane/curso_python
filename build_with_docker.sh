@@ -24,11 +24,13 @@ fi
 # req: texlive-{core,fontsextra,latexextra}
 if [[ $2 = pdf ]]; then
   echo "Generating pdf document for $1..."
+  CHARS=$(python -c 'print("\u261D\u26A0")')
   cat source/$1/*.md \
   | sed 's/incremental/.dummy/i;
-s/theme: solarized/fontsize: 8pt/i;
-s/\.svg/\.png/i;
-s/\(.*\)\(code\/.*\)/\1https:\/\/icane.github.io\/curso_python\/slides\/\2/' \
+  s/theme: solarized/fontsize: 8pt/i;
+  s/\.svg/\.png/i;
+  s/\(.*\)\(code\/.*\)/\1https:\/\/icane.github.io\/curso_python\/slides\/\2/;
+  s/['"$CHARS"']//g' \
   > source/temp.md
   docker run --rm -i -v `pwd`:/source pandoc -t beamer -f markdown \
     -s source/temp.md -o slides/$1.pdf && \

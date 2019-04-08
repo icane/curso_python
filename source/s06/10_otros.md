@@ -1,9 +1,15 @@
 
-# Alternativas: `seaborn`
+# [Seaborn]
 #### seaborn
 
 ##
-Simplifica (aún más) ciertas tareas de visualización
+- Descargar [cuaderno jupyter][nb_snsbokeh]
+- Abrirlo con `jupyter notebook`
+- Ejecutar paso a paso de la siguiente sección
+
+##
+Capa de abstracción que simplifica ciertas tareas enfocadas a análisis
+estadístico
 
 ::::::::::::: {.columns}
 ::: {.column width="50%" .smaller}
@@ -24,7 +30,6 @@ with sns.color_palette("husl", 8):
 ![seaborn_scatter]\
 :::
 ::::::::::::::
-
 
 ##
 
@@ -57,8 +62,37 @@ crashes.plot.hist(y='alcohol', ax=ax3, sharey=ax1, normed=True, legend=None,
 :::
 
 ##
+Multitud de gráficas pre-establecidas
 
-- Hexbin
+::::::::::::: {.columns}
+::: {.column width="50%"}
+![seaborn_kde1]\
+:::
+::: {.column width="50%"}
+![seaborn_kde2]\
+:::
+::::::::::::::
+
+##
+::: {.smaller}
+Permite [cambiar temporalmente la estética](sns_context) mediante
+`context managers`:
+
+~~~python
+with sns.axes_style("ticks") and sns.color_palette("muted"):  # estilo temporal
+    sns.pairplot(data=tips,
+                 hue='smoker',
+                 kind='reg')
+~~~
+
+![seaborn_pairplot]\
+:::
+
+##
+
+[+ ejemplos][seaborn_ex]
+
+[tutorial seaborn][sns_tutorial]
 
 ~~~python
 x, y = np.random.multivariate_normal(mean, cov, 1000).T
@@ -66,5 +100,10 @@ with sns.axes_style("white"):
     sns.jointplot(x=x, y=y, kind="hex", color="k");
 ~~~
 
-[+ ejemplos][seaborn_ex]
+# Bokeh
+#### bokeh
+
+##
+- Permite generar gráficos "interactivos"
+- Salida a HTML o integrado en cuaderno `jupyter`
 

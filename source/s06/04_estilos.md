@@ -1,13 +1,18 @@
 
-# Elementos y parámetros
-#### Elementos de visualización
+# Parámetros de visualización con `pyplot`
+#### Parámetros de visualización con `pyplot`
+
+##
+- Descargar [cuaderno jupyter][nb_pyplot]
+- Abrirlo con `jupyter notebook`
+- Ejecutar paso a paso de la siguiente sección
 
 ## Color/estilo de línea
-
-El color de línea para un gráfico individual se puede controlar mediante una
-cadena de texto (p.e. `'r--'`):
-
 ::: {.smaller}
+El color de línea para un gráfico individual se puede controlar mediante una
+cadena de texto que defina color+estilo+marcador (p.e. `'r--'`), en cualquier
+orden, todos opcionales:
+
 ~~~python
 colors = {'b': 'blue', 'g': 'green', 'r': 'red', 'c': 'cyan', 'm': 'magenta',
           'y': 'yellow', 'k': 'black', 'w': 'white'}
@@ -33,6 +38,7 @@ markers = {
 :::
 
 ##
+Color/estilo de línea
 
 ::::::::::::: {.columns}
 ::: {.column width="60%" .smaller}
@@ -45,9 +51,12 @@ k = 0.8
 y = k + np.sin(x) * np.random.randn(N)
 
 (fig, ax) = plt.subplots(1)
+
+#####
 ax.errorbar(x, y, yerr=k, fmt='.r');
 ax.plot(x, 1 + np.cos(np.pi*x), '--g')
 ax.plot(x, x/5, 'b')
+#####
 ~~~
 :::
 ::: {.column width="40%"}
@@ -56,7 +65,8 @@ ax.plot(x, x/5, 'b')
 ::::::::::::::
 
 
-## xticks/yticks
+##
+xticks/yticks
 
 ~~~python
 plt.yticks(rotation='vertical')
@@ -67,17 +77,24 @@ plt.xticks(rotation=20)  # 20 grados en sentido antihorario
 
 
 ##
-#### Títulos, etiquetas y anotaciones
+::: {.smaller}
+Títulos, etiquetas y anotaciones
 
 ![titulos]\
 
-::: {.smaller}
 ::::::::::::: {.columns}
-::: {.column width="40%" .smaller}
-- Título de la figura
-- Título de cada `subplot` (`Axes`)
-- Título de cada eje (`Axis`)
-- Anotaciones
+::: {.column width="40%"}
+~~~
+Título de la figura --------->
+ 
+Título del subplot (Axes) --->
+Título de cada eje (Axis) --->
+
+Anotaciones ----------------->
+
+
+
+~~~
 :::
 ::: {.column width="60%"}
 ~~~python
@@ -87,8 +104,7 @@ ax.set_title('Vinos de 3 clases')
 ax.set_xlabel('Alcohol (°)')
 ax.set_ylabel('Flavonoides (ppm)')
 ax.annotate(
-    'Viña Arcada', xy=(11.8, 1),
-     xytext=(11, .5),
+    'Viña Arcada', xy=(11.8, 1), xytext=(11, .5),
     arrowprops=dict(facecolor='black', shrink=0.05)
 )
 ~~~
@@ -97,7 +113,8 @@ ax.annotate(
 :::
 
 ##
-### Leyenda
+Leyenda
+
 ::: { .smaller }
 
 - Se genera automáticamente según datos inferidos de las etiquetas
@@ -142,7 +159,7 @@ ax.legend(loc='upper left')
     plt.style.use('ggplot')
 ~~~
 
-- y/o modificar parámetros individualmente
+- y/o modificar parámetros (`plt.rcParams`) individualmente
 
     ~~~python
     plt.rcParams["figure.figsize"] = (20.0, 15.0)

@@ -15,4 +15,5 @@ js/reveal.min.js
 **/.ipynb_checkpoints/
 **/__pycache__/
 .venv
+.vscode
 

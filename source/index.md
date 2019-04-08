@@ -27,10 +27,11 @@ keywords: [python, intro]
   + Estructuras de control y funciones
 - [Sesión 3 (3 Abril)](slides/s03.html) [[pdf](slides/s03.pdf)]
   + Orientación a objetos y expresiones regulares
-- [Sesión 4 (8 Abril)](#) <!-- slides/s04.html -->
-  + Web scraping
-- [Sesión 5 (9 Abril)](#) <!-- slides/s05.html -->
-  + Pandas (Python Data Analysis)
+<!-- Cambiado orden de sesiones (4, 5) -->
+- [Sesión 4 (8 Abril)](slides/s05.html) [[pdf](slides/s05.pdf)]
+  + Pandas (Python Data Analysis) ⚠
+- [Sesión 5 (9 Abril)](slides/s04.html) [[pdf](slides/s04.pdf)]
+  + Web scraping ⚠
 - [Sesión 6 (10 Abril)](#) <!-- slides/s06.html -->
   + Visualización de datos
 :::

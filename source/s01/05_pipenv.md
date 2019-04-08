@@ -80,7 +80,7 @@ Ejecutar código cargando librerías propias del entorno:
 ~~~python
 >>> import pandas as pd
 >>> URL_crypto = 'https://api.coinmarketcap.com/v1/ticker/'
->>> cc = pd.read_json(URL) 
+>>> cc = pd.read_json(URL_crypto) 
 >>> cc.set_index('id', inplace=True)
 >>> cc[cc['price_usd'] < 300.0]
 ~~~

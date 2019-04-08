@@ -4,18 +4,16 @@
 
 ##
 ::: {.smaller}
-pyplot está (parcialmente) integrado en pandas
-
-::: incremental
-- Podemos dibujar directamente desde un dataframe de pandas
+- **Descargar y abrir [cuaderno jupyter][nb_pd]**
+- `pyplot` está (parcialmente) integrado en [pandas]
+- Podemos dibujar directamente desde un dataframe de [pandas]
 - se devuelve un objeto "_`Axes`_" sobre el que poder trabajar
   + no es necesario crear con antelación la figura y los ejes
   + ... aunque suele ser lo recomendable
-:::
 
-:::
-::::::::::::: {.columns}
-::: {.column width="60%" .smaller}
+
+:::::::::::::::: {.columns}
+::: {.column width="60%"}
 ~~~python
 # Crea la figura y los ejes
 fig, ax = plt.subplots()
@@ -42,17 +40,15 @@ True
 ![pd_scatter]\
 :::
 ::::::::::::::
-
+:::
 
 ##
 Sintaxis
 
 ![pandas_plot]\
 
-
 ##
-Visualizar datos usando la interfaz de `pandas` es conveniente y mucho más
-sencillo:
+Usar [pandas] es conveniente y mucho más sencillo:
 
 ::: { .smaller }
 ~~~python
@@ -76,7 +72,7 @@ plt.legend(marriages.Total.columns)
 plt.title('Total Matrimonios en 2017')
 ~~~
 
-Equivale a:
+con `pandas`, lo equivalente sería:
 
 ~~~python
 provincias = ['Cantabria', 'Madrid', 'Murcia', 'León', 'Albacete']
@@ -103,19 +99,23 @@ ax = df.plot.bar(
 
 
 ##
-Generalmente las opciones más usadas en cada tipo de gráfico (título, ejes y
-posición, color, tamaño de línea, ...) son directamente accesibles desde
-`pandas.DataFrame.plot()`.
-
-Para el resto, usar `matplotlib` refiriéndonos al objeto a modificar:
+- Generalmente las opciones más usadas en cada tipo de gráfico (título, ejes y
+  posición, color, tamaño de línea, ...) son directamente accesibles desde
+  `pandas.DataFrame.plot()`.
+- Para el resto, usar `matplotlib` sobre el objecto "Axes":
 
 ~~~python
 ax = df.plot(kind='scatter', ...)  # df.plot.scatter(...)
 ax.set_yticks(rotation='vertical')
 ~~~
 
-# Tipos de gráficos disponibles
-#### Tipos de gráficos con `pandas`
+::: notes
+_Hacer fácil las tareas sencillas y posibles/viables las complicadas__
+:::
+
+
+# Otros tipos de gráficos disponibles
+#### Otros tipos de gráficos con `pandas`
 
 ##
 ::: { .smaller }
@@ -147,7 +147,7 @@ df.hist(sharey=True, log=True)
 
 ##
 - **Series temporales**: aquellos donde el índice del `DataFrame` tiene
-propiedades de "índice temporal"
+propiedades de "índice temporal" (`DateTimeIndex`)
 
 ![ts]\
 
@@ -208,7 +208,7 @@ data.plot.area(
 :::
 
 ##
-- Circular
+- Circular (`pie chart`)
 
 ::: { .smaller }
 :::
@@ -232,14 +232,16 @@ ax = df1.plot.pie(cmap=cmap,
 ##
 ### `pd.DataFrame.plot()`
 
-::: { .smaller }
 Es posible pasar argumentos para realizar personalizaciones rápidas.
 
 - Existen opciones específicas para cada tipo de visualización
 - También hay opciones **comunes** a todos ellos
+
+##
 - Además, podremos usar las primitivas de `matplotlib`, bien como
   argumentos adicionales o sobre los ejes
-:::
+
+![pandas_plot]\
 
 ## NaN
 
