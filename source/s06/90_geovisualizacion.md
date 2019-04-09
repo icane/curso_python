@@ -9,16 +9,17 @@
 
 ![geo_1]\
 
-##
+## [Cartopy]
+[Cuaderno `jupyter`](nb_cartopy)
 
 ![geo_2]\
 
+## [Folium]
+[Cuaderno `jupyter`](nb_folium)
 
-##
+![folium_map]\
 
-Folium
-
-[ejemplos online][folium_nb]
+[ejemplos online][folium_ex]
 
 ::: notes
 Geopandas???

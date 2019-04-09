@@ -32,6 +32,6 @@ keywords: [python, intro]
   + Pandas (Python Data Analysis) ⚠
 - [Sesión 5 (9 Abril)](slides/s04.html) [[pdf](slides/s04.pdf)]
   + Web scraping ⚠
-- [Sesión 6 (10 Abril)](#) <!-- slides/s06.html -->
+- [Sesión 6 (10 Abril)](slides/s06.html) [[pdf](slides/s06.pdf)]
   + Visualización de datos
 :::

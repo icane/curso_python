@@ -100,10 +100,11 @@ with sns.axes_style("white"):
     sns.jointplot(x=x, y=y, kind="hex", color="k");
 ~~~
 
-# Bokeh
-#### bokeh
+# [Bokeh]
+#### [bokeh]
 
 ##
 - Permite generar gráficos "interactivos"
 - Salida a HTML o integrado en cuaderno `jupyter`
 
+<video data-autoplay src="images/s06/bokeh.webm"></video>

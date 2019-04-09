@@ -5,7 +5,7 @@
 [bokeh]: https://bokeh.pydata.org/
 [cartopy]: https://github.com/SciTools/cartopy
 [folium]: http://python-visualization.github.io/folium/
-[folium_nb]: https://nbviewer.jupyter.org/github/python-visualization/folium/tree/master/examples/
+[folium_ex]: https://nbviewer.jupyter.org/github/python-visualization/folium/tree/master/examples/
 [MATLAB]: https://www.mathworks.com/products/matlab.html
 [Matplotlib]: https://matplotlib.org/
 [pandas]: https://pandas.pydata.org/
@@ -17,8 +17,10 @@
 <!-- images -->
 [barplot]: images/s06/barplot.png
 [barplot_stacked]: images/s06/barplot_stacked.png { width=70% }
+[bokeh_video]: images/s06/bokeh.webm
 [color_linea]: images/s06/color_linea.png
 [fig_anatomy]: images/s06/anatomy.png { width=50% }
+[folium_map]: images/s06/folium.png
 [geo_1]: images/s06/geo_1.png
 [geo_2]: images/s06/geo_2.png
 [hist]: images/s06/hist.png
@@ -48,6 +50,8 @@
 [xkcd]: images/s06/xkcd.png
 
 <!-- notebooks -->
+[nb_cartopy]: code/s06/geovisualizacion.ipynb
+[nb_folium]: code/s06/folium.ipynb
 [nb_mpl]: code/s06/visualizacion_con_matplotlib.ipynb
 [nb_pd]: code/s06/visualizacion_con_pandas.ipynb
 [nb_practice]: code/s06/practica.ipynb
