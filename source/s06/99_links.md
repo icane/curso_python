@@ -9,6 +9,7 @@
 [MATLAB]: https://www.mathworks.com/products/matlab.html
 [Matplotlib]: https://matplotlib.org/
 [pandas]: https://pandas.pydata.org/
+[pyplot]: https://matplotlib.org/api/pyplot_api.html
 [Seaborn]: https://seaborn.pydata.org/
 [seaborn_ex]: https://seaborn.pydata.org/examples/index.html
 [sns_context]: https://seaborn.pydata.org/tutorial/aesthetics.html#temporarily-setting-figure-style
@@ -30,6 +31,7 @@
 [pd_area]: images/s06/pd_area.png
 [pd_boxplot]: images/s06/pd_boxplot.png
 [pd_hist]: images/s06/pd_hist.png { width=50% }
+[pd_interp]: images/s06/pd_interp.png { width=40% }
 [pd_pie]: images/s06/pd_pie.png
 [pd_scatter]: images/s06/pd_scatter.png
 [piechart]: images/s06/piechart.png

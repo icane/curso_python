@@ -104,13 +104,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">10 Abril 2019</p>
 </section>
 
-<section><section id="visualización-de-datos" class="title-slide slide level1"><h1>Visualización de datos</h1></section><h4 id="visualización-de-datos-1">Visualización de datos</h4><section id="section" class="slide level2">
+<section><section id="visualización-de-datos" class="title-slide slide level1"><h1>Visualización de datos</h1></section><h4 id="visualización-de-datos---introducción">Visualización de datos - Introducción</h4><section id="section" class="slide level2">
+<h2></h2>
+<p>Representamos datos de forma gráfica porque:</p>
+<ul>
+<li>Más fácil y rápido de interpretar</li>
+<li>Cada dominio representa los datos de una manera</li>
+<li>Alto volumen de datos: mejor visualmente</li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<p>Realizar gráficas desde un lenguaje de programación:</p>
+<ul>
+<li>Gráficas <del>estáticas</del> dinámicas</li>
+<li>Automatizar proceso complejo
+<ul>
+<li>Combinar procesamiento de datos con su representación</li>
+</ul></li>
+<li>Personalizable
+<ul>
+<li>Diferentes soportes (web, publicaciones, presentaciones)</li>
+</ul></li>
+</ul>
+</section><section id="section-2" class="slide level2">
+<h2></h2>
+<p>En general, seguiremos un procedimiento:</p>
+<ul>
+<li>Obtención de datos (BB.DD., web, logs, …)</li>
+<li>Sanear y procesar los datos</li>
+<li>Selección de parámetros</li>
+<li>Visualización</li>
+<li>Personalización (estilos)</li>
+</ul>
+</section><section id="section-3" class="slide level2">
 <h2></h2>
 <p><a href="http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/10_plotting_libraries.html">Librerías más usadas</a>:</p>
 <div>
 <div class="smaller">
 <ul>
-<li class="fragment"><a href="https://matplotlib.org/">Matplotlib</a>
+<li class="fragment"><a href="https://matplotlib.org/">Matplotlib</a> para gráficos estáticos
 <ul>
 <li class="fragment">standard de-facto, basado en <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></li>
 <li class="fragment">hacer fácil tareas sencillas y posible tareas complejas</li>
@@ -118,26 +150,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="fragment">integrado con pandas (&lt;100%)</li>
 <li class="fragment">acepta paquetes de terceros como <strong>extensiones</strong> (plugins)</li>
 </ul></li>
-<li class="fragment">Algunas extensiones de Matplotlib:
+<li class="fragment"><a href="https://seaborn.pydata.org/">Seaborn</a> para estadística
 <ul>
-<li class="fragment"><a href="https://seaborn.pydata.org/">Seaborn</a>
-<ul>
-<li class="fragment">enfocado a análisis estadístico</li>
-<li class="fragment">mejora el diseño de <code>matplotlib</code></li>
+<li class="fragment">enfocado a análisis de datos</li>
+<li class="fragment">mejora el diseño de <code>matplotlib</code> (plugin)</li>
 </ul></li>
-<li class="fragment"><a href="https://github.com/SciTools/cartopy">Cartopy</a>, <a href="http://python-visualization.github.io/folium/">folium</a>
-<ul>
-<li class="fragment">visualización de datos en mapas</li>
-</ul></li>
-</ul></li>
-<li class="fragment"><a href="https://bokeh.pydata.org/">Bokeh</a>
-<ul>
-<li class="fragment">enfocado a gráficos interactivos</li>
-</ul></li>
+<li class="fragment"><a href="https://bokeh.pydata.org/">Bokeh</a> para gráficas <strong>dinámicas</strong></li>
+<li class="fragment"><a href="https://github.com/SciTools/cartopy">Cartopy</a>, <a href="http://python-visualization.github.io/folium/">folium</a> para mapas</li>
 </ul>
 </div>
 </div>
-</section><section id="section-1" class="slide level2">
+</section><section id="section-4" class="slide level2">
 <h2></h2>
 <ul>
 <li>Descargar cuaderno jupyter: <a href="code/s06/visualizacion_con_matplotlib.ipynb">matplotlib/pyplot</a></li>
@@ -153,18 +176,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>☝ <strong>Fragmentos de código encerrados entre ‘<code>#####</code>’</strong></p>
 </blockquote>
-</section><section id="matplotlib" class="slide level2">
-<h2><a href="https://matplotlib.org/">Matplotlib</a></h2>
-<h4 id="pyplot-módulo-con-interfaz-parecida-a-matlab"><code>pyplot</code>: módulo con interfaz parecida a <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></h4>
-<p>Para importar pyplot:</p>
+</section></section>
+<section><section id="matplotlibpyplot" class="title-slide slide level1"><h1><a href="https://matplotlib.org/">Matplotlib</a>/<a href="https://matplotlib.org/api/pyplot_api.html">pyplot</a></h1></section><h4 id="pyplot-módulo-con-interfaz-parecida-a-matlab"><code>pyplot</code>: módulo con interfaz parecida a <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a></h4><section id="section-5" class="slide level2">
+<h2></h2>
+<p>Para importar <a href="https://matplotlib.org/api/pyplot_api.html">pyplot</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co"># o bien: from matplotlib import pyplot as plt</span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co"># Además, sólo en jupyter: %matplotlib inline</span></a></code></pre></div>
-</section><section id="section-2" class="slide level2">
+</section><section id="section-6" class="slide level2">
 <h2></h2>
 <p>Partes de una figura</p>
 <p><img data-src="images/s06/anatomy_simple.png" alt="simple_anatomy" />  <img data-src="images/s06/anatomy.png" alt="fig_anatomy" style="width:50.0%" /></p>
-</section><section id="section-3" class="slide level2">
+</section><section id="section-7" class="slide level2">
 <h2></h2>
 <p>Los componentes más importantes son:</p>
 <div>
@@ -184,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-</section><section id="section-4" class="slide level2">
+</section><section id="section-8" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Como regla general seguiremos los siguientes pasos:</p>
@@ -192,6 +215,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Crear figura</li>
 <li>Obtener ejes</li>
 <li>Dibujar sobre los ejes</li>
+<li>Añadir elementos extra (anotaciones, título)</li>
+<li>Renderizar gráfica</li>
 </ol>
 <p><strong>Nota</strong>: 1 y 2 se pueden combinar en un mismo comando</p>
 </div>
@@ -206,7 +231,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb2-9" title="9"></a>
 <a class="sourceLine" id="cb2-10" title="10">ax.plot(t, y)  <span class="co"># dibuja sobre los ejes</span></a>
 <a class="sourceLine" id="cb2-11" title="11"><span class="co">#####</span></a></code></pre></div>
-</section><section id="section-5" class="slide level2">
+</section><section id="section-9" class="slide level2">
 <h2></h2>
 <p>De forma simplificada, los ejes y la figura se crean simultáneamente:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1">(fix, ax) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)  <span class="co"># (n_filas, n_columnas)</span></a>
@@ -221,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-2" title="2">ax.plot(t, y, <span class="st">&#39;g.-&#39;</span>)</a>
 <a class="sourceLine" id="cb5-3" title="3">plt.show()  <span class="co"># muestra el gráfico</span></a></code></pre></div>
 <p>… para mostrar cada gráfico</p>
-</section><section id="section-6" class="slide level2">
+</section><section id="section-10" class="slide level2">
 <h2></h2>
 <h4 id="matplotlib-puede-dibujar-datos-organizados-en"><a href="https://matplotlib.org/">Matplotlib</a> puede dibujar datos organizados en:</h4>
 <ul>
@@ -232,9 +257,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="smaller">
 <p>El tipo de datos nativo es <code>np.array</code>.</p>
-<p>⚠ El resto puede requerir limpiar/homogeneizar los datos ⚠</p>
+<p>⚠ El resto puede requerir sanear/homogeneizar los datos ⚠</p>
 </div>
-</section><section id="section-7" class="slide level2">
+</section><section id="section-11" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Para crear una tupla (figura, ejes) usaremos:</p>
@@ -258,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-</section><section id="section-8" class="slide level2">
+</section><section id="section-12" class="slide level2">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -282,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 </div>
-</section><section id="section-9" class="slide level2">
+</section><section id="section-13" class="slide level2">
 <h2></h2>
 <h4 id="plt.subplot"><code>plt.subplot()</code></h4>
 <div class="smaller">
@@ -318,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 id="saltar">SALTAR</h1>
 </aside>
 </section></section>
-<section><section id="integración-con-pandas" class="title-slide slide level1"><h1>Integración con pandas</h1></section><h4 id="visualización-de-datos-con-pandas">Visualización de datos con pandas</h4><section id="section-10" class="slide level2">
+<section><section id="integración-con-pandas" class="title-slide slide level1"><h1>Integración con pandas</h1></section><h4 id="visualización-de-datos-con-pandas">Visualización de datos con pandas</h4><section id="section-14" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <ul>
@@ -358,12 +383,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-</section><section id="section-11" class="slide level2">
+</section><section id="section-15" class="slide level2">
 <h2></h2>
 <p>Sintaxis</p>
 <p><img data-src="images/s06/pandas_plot.png" alt="pandas_plot" /><br />
 </p>
-</section><section id="section-12" class="slide level2">
+</section><section id="section-16" class="slide level2">
 <h2></h2>
 <p>Usar <a href="https://pandas.pydata.org/">pandas</a> es conveniente y mucho más sencillo:</p>
 <div class="smaller">
@@ -391,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb12-3" title="3"><span class="st">ax = df.plot.bar(stacked=True,</span></a>
 <a class="sourceLine" id="cb12-4" title="4"><span class="st">    table=True, title=&#39;</span>Total Matrimonios en <span class="dv">2017</span><span class="st">&#39;)</span></a></code></pre></div>
 </div>
-</section><section id="section-13" class="slide level2">
+</section><section id="section-17" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1">provincias <span class="op">=</span> [<span class="st">&#39;Cantabria&#39;</span>, <span class="st">&#39;Madrid&#39;</span>, <span class="st">&#39;Murcia&#39;</span>, <span class="st">&#39;León&#39;, &#39;</span>Albacete<span class="st">&#39;]</span></a>
@@ -404,7 +429,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><img data-src="images/s06/barplot_stacked.png" alt="barplot_stacked" style="width:70.0%" /><br />
 </p>
-</section><section id="section-14" class="slide level2">
+</section><section id="section-18" class="slide level2">
 <h2></h2>
 <ul>
 <li>Generalmente las opciones más usadas en cada tipo de gráfico (título, ejes y posición, color, tamaño de línea, …) son directamente accesibles desde <code>pandas.DataFrame.plot()</code>.</li>
@@ -416,7 +441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>_Hacer fácil las tareas sencillas y posibles/viables las complicadas__</p>
 </aside>
 </section></section>
-<section><section id="otros-tipos-de-gráficos-disponibles" class="title-slide slide level1"><h1>Otros tipos de gráficos disponibles</h1></section><h4 id="otros-tipos-de-gráficos-con-pandas">Otros tipos de gráficos con <code>pandas</code></h4><section id="section-15" class="slide level2">
+<section><section id="otros-tipos-de-gráficos-disponibles" class="title-slide slide level1"><h1>Otros tipos de gráficos disponibles</h1></section><h4 id="otros-tipos-de-gráficos-con-pandas">Otros tipos de gráficos con <code>pandas</code></h4><section id="section-19" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <ul>
@@ -434,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img data-src="images/s06/pd_scatter.png" alt="pd_scatter" /><br />
 </p>
 </div>
-</section><section id="section-16" class="slide level2">
+</section><section id="section-20" class="slide level2">
 <h2></h2>
 <ul>
 <li>Histograma</li>
@@ -442,14 +467,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1">df.hist(sharey<span class="op">=</span><span class="va">True</span>, log<span class="op">=</span><span class="va">True</span>)</a></code></pre></div>
 <p><img data-src="images/s06/pd_hist.png" alt="pd_hist" style="width:50.0%" /><br />
 </p>
-</section><section id="section-17" class="slide level2">
+</section><section id="section-21" class="slide level2">
 <h2></h2>
 <ul>
 <li><strong>Series temporales</strong>: aquellos donde el índice del <code>DataFrame</code> tiene propiedades de “índice temporal” (<code>DateTimeIndex</code>)</li>
 </ul>
 <p><img data-src="images/s06/ts.png" alt="ts" /><br />
 </p>
-</section><section id="section-18" class="slide level2">
+</section><section id="section-22" class="slide level2">
 <h2></h2>
 <ul>
 <li>Boxplots</li>
@@ -466,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>:::</p>
-</section><section id="section-19" class="slide level2">
+</section><section id="section-23" class="slide level2">
 <h2></h2>
 <ul>
 <li>Área</li>
@@ -500,7 +525,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-</section><section id="section-20" class="slide level2">
+</section><section id="section-24" class="slide level2">
 <h2></h2>
 <ul>
 <li>Circular (<code>pie chart</code>)</li>
@@ -519,7 +544,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section></section>
-<section><section id="parámetros-opcionales" class="title-slide slide level1"><h1>Parámetros opcionales</h1></section><h4 id="parámetros-opcionales-en-pandas">Parámetros opcionales en <code>pandas</code></h4><section id="section-21" class="slide level2">
+<section><section id="parámetros-opcionales" class="title-slide slide level1"><h1>Parámetros opcionales</h1></section><h4 id="parámetros-opcionales-en-pandas">Parámetros opcionales en <code>pandas</code></h4><section id="section-25" class="slide level2">
 <h2></h2>
 <h3 id="pd.dataframe.plot"><code>pd.DataFrame.plot()</code></h3>
 <p>Es posible pasar argumentos para realizar personalizaciones rápidas.</p>
@@ -527,7 +552,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Existen opciones específicas para cada tipo de visualización</li>
 <li>También hay opciones <strong>comunes</strong> a todos ellos</li>
 </ul>
-</section><section id="section-22" class="slide level2">
+</section><section id="section-26" class="slide level2">
 <h2></h2>
 <ul>
 <li>Además, podremos usar las primitivas de <code>matplotlib</code>, bien como argumentos adicionales o sobre los ejes</li>
@@ -536,6 +561,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </section><section id="nan" class="slide level2">
 <h2>NaN</h2>
+<div class="smaller">
 <ul>
 <li>Por defecto ignora los datos ausentes (<code>NaN</code>)</li>
 <li>Podemos “rellenar los huecos”: <code>df.fillna()</code>
@@ -545,27 +571,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>O interpolar <code>df.interpolate()</code></li>
 </ul>
+<p><img data-src="images/s06/pd_interp.png" alt="pd_interp" style="width:40.0%" /><br />
+</p>
+</div>
 </section></section>
-<section><section id="interactivopráctico" class="title-slide slide level1"><h1>Interactivo/Práctico</h1></section><h4 id="caso-práctico">Caso práctico</h4><section id="section-23" class="slide level2">
+<section><section id="interactivopráctico" class="title-slide slide level1"><h1>Interactivo/Práctico</h1></section><h4 id="caso-práctico">Caso práctico</h4><section id="section-27" class="slide level2">
 <h2></h2>
 <ul>
 <li>Descargar <a href="code/s06/practica.ipynb">cuaderno jupyter</a></li>
 <li>Abrirlo con <code>jupyter notebook</code></li>
 <li>Utiliza las celdas vacías para las respuestas, pruebas, etc.</li>
 </ul>
-</section><section id="section-24" class="slide level2">
+</section><section id="section-28" class="slide level2">
 <h2></h2>
 <ol type="1">
 <li><code>ax</code>: ejes sobre los que dibujar</li>
 </ol>
 <p><img data-src="images/s06/practica_01.png" alt="practica_01" /><br />
 </p>
-</section><section id="section-25" class="slide level2">
+</section><section id="section-29" class="slide level2">
 <h2></h2>
 <p>1.2. Barras apiladas (<code>stacked</code>)</p>
 <p><img data-src="images/s06/practica_01b.png" alt="practica_01b" /><br />
 </p>
-</section><section id="section-26" class="slide level2">
+</section><section id="section-30" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <ol start="2" type="1">
@@ -577,19 +606,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img data-src="images/s06/practica_02.png" alt="practica_02" /><br />
 </p>
 </div>
-</section><section id="section-27" class="slide level2">
+</section><section id="section-31" class="slide level2">
 <h2></h2>
 <p>2.2. <code>layout</code> como parámetro de <code>plt.subplots()</code></p>
 <p><img data-src="images/s06/practica_02b.png" alt="practica_02b" /><br />
 </p>
-</section><section id="section-28" class="slide level2">
+</section><section id="section-32" class="slide level2">
 <h2></h2>
 <ol start="3" type="1">
 <li><code>sharex/sharey</code>: compartir ejes (subplots)</li>
 </ol>
 <p><img data-src="images/s06/practica_03.png" alt="practica_03" /><br />
 </p>
-</section><section id="section-29" class="slide level2">
+</section><section id="section-33" class="slide level2">
 <h2></h2>
 <ol start="4" type="1">
 <li><code>title</code>:
@@ -600,56 +629,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><img data-src="images/s06/practica_04.png" alt="practica_04" /><br />
 </p>
-</section><section id="section-30" class="slide level2">
+</section><section id="section-34" class="slide level2">
 <h2></h2>
 <ol start="5" type="1">
 <li><code>figsize</code>: tamaño de la figura</li>
 </ol>
 <p><img data-src="images/s06/practica_05.png" alt="practica_05" /><br />
 </p>
-</section><section id="section-31" class="slide level2">
+</section><section id="section-35" class="slide level2">
 <h2></h2>
 <ol start="6" type="1">
 <li><code>stacked [True|False]</code>: apilar datos</li>
 </ol>
 <p><img data-src="images/s06/practica_06.png" alt="practica_06" /><br />
 </p>
-</section><section id="section-32" class="slide level2">
+</section><section id="section-36" class="slide level2">
 <h2></h2>
 <ol start="7" type="1">
 <li><code>grid [True|False]</code>: dibujar cuadrícula</li>
 </ol>
 <p><img data-src="images/s06/practica_07.png" alt="practica_07" /><br />
 </p>
-</section><section id="section-33" class="slide level2">
+</section><section id="section-37" class="slide level2">
 <h2></h2>
 <ol start="8" type="1">
 <li><code>rot</code>: <code>'horizontal'</code>, <code>'vertical'</code>, o número (en grados)</li>
 </ol>
 <p><img data-src="images/s06/practica_08.png" alt="practica_08" /><br />
 </p>
-</section><section id="section-34" class="slide level2">
+</section><section id="section-38" class="slide level2">
 <h2></h2>
 <ol start="9" type="1">
 <li><code>xlim, ylim</code>: tuplas <code>(lo, hi)</code> para delimitar visualización</li>
 </ol>
 <p><img data-src="images/s06/practica_09.png" alt="practica_09" /><br />
 </p>
-</section><section id="section-35" class="slide level2">
+</section><section id="section-39" class="slide level2">
 <h2></h2>
 <ol start="10" type="1">
-<li><code>colormap</code>: mapa de colores (<code>matplotlib.cm.</code>)</li>
+<li><code>colormap</code>: mapa de colores (<code>plt.colormaps()</code>)</li>
 </ol>
 <p><img data-src="images/s06/practica_10.png" alt="practica_10" /><br />
 </p>
-</section><section id="section-36" class="slide level2">
+</section><section id="section-40" class="slide level2">
 <h2></h2>
 <ol start="11" type="1">
 <li><code>secondary_y</code>: segundo eje de ordenadas</li>
 </ol>
 <p><img data-src="images/s06/practica_11.png" alt="practica_11" /><br />
 </p>
-</section><section id="section-37" class="slide level2">
+</section><section id="section-41" class="slide level2">
 <h2></h2>
 <ol start="12" type="1">
 <li><code>table [True|False]</code>: mostrar tabla bajo el gráfico</li>
@@ -664,7 +693,7 @@ Generar un gráfico circular con estilo `xkcd`
 
  -->
 </section></section>
-<section><section id="parámetros-de-visualización-con-pyplot" class="title-slide slide level1"><h1>Parámetros de visualización con <code>pyplot</code></h1></section><h4 id="parámetros-de-visualización-con-pyplot-1">Parámetros de visualización con <code>pyplot</code></h4><section id="section-38" class="slide level2">
+<section><section id="parámetros-de-visualización-con-pyplot" class="title-slide slide level1"><h1>Parámetros de visualización con <code>pyplot</code></h1></section><h4 id="parámetros-de-visualización-con-pyplot-1">Parámetros de visualización con <code>pyplot</code></h4><section id="section-42" class="slide level2">
 <h2></h2>
 <ul>
 <li>Descargar <a href="code/s06/pyplot_ii.ipynb">cuaderno jupyter</a></li>
@@ -696,7 +725,7 @@ Generar un gráfico circular con estilo `xkcd`
 <a class="sourceLine" id="cb20-19" title="19">    <span class="st">&#39;&#39;</span>: <span class="st">&#39;nothing&#39;</span></a>
 <a class="sourceLine" id="cb20-20" title="20">}</a></code></pre></div>
 </div>
-</section><section id="section-39" class="slide level2">
+</section><section id="section-43" class="slide level2">
 <h2></h2>
 <p>Color/estilo de línea</p>
 <div class="columns">
@@ -720,14 +749,14 @@ Generar un gráfico circular con estilo `xkcd`
 </p>
 </div>
 </div>
-</section><section id="section-40" class="slide level2">
+</section><section id="section-44" class="slide level2">
 <h2></h2>
 <p>xticks/yticks</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1">plt.yticks(rotation<span class="op">=</span><span class="st">&#39;vertical&#39;</span>)</a>
 <a class="sourceLine" id="cb22-2" title="2">plt.xticks(rotation<span class="op">=</span><span class="dv">20</span>)  <span class="co"># 20 grados en sentido antihorario</span></a></code></pre></div>
 <p><img data-src="images/s06/tick_rotation.png" alt="tick_rotation" style="width:50.0%" /><br />
 </p>
-</section><section id="section-41" class="slide level2">
+</section><section id="section-45" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Títulos, etiquetas y anotaciones</p>
@@ -757,7 +786,7 @@ Anotaciones -----------------&gt;
 </div>
 </div>
 </div>
-</section><section id="section-42" class="slide level2">
+</section><section id="section-46" class="slide level2">
 <h2></h2>
 <p>Leyenda</p>
 <div class="smaller">
@@ -783,7 +812,7 @@ Anotaciones -----------------&gt;
 </div>
 <p>:::</p>
 </section></section>
-<section><section id="estilos" class="title-slide slide level1"><h1>Estilos</h1></section><h4 id="estilos-1">Estilos</h4><section id="section-43" class="slide level2">
+<section><section id="estilos" class="title-slide slide level1"><h1>Estilos</h1></section><h4 id="estilos-1">Estilos</h4><section id="section-47" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <div>
@@ -830,7 +859,7 @@ Anotaciones -----------------&gt;
 </div>
 <p>:::</p>
 </section></section>
-<section><section id="tipos-de-gráficos-más-importantes-en-pyplot" class="title-slide slide level1"><h1>Tipos de gráficos más importantes en <code>pyplot</code></h1></section><h4 id="tipos-de-gráficos-en-matplotlibpyplot">Tipos de gráficos en <code>matplotlib</code>/<code>pyplot</code></h4><section id="section-44" class="slide level2">
+<section><section id="tipos-de-gráficos-más-importantes-en-pyplot" class="title-slide slide level1"><h1>Tipos de gráficos más importantes en <code>pyplot</code></h1></section><h4 id="tipos-de-gráficos-en-matplotlibpyplot">Tipos de gráficos en <code>matplotlib</code>/<code>pyplot</code></h4><section id="section-48" class="slide level2">
 <h2></h2>
 <h3 id="lineplot-.plot">Lineplot (<code>.plot()</code>)</h3>
 <div class="smaller">
@@ -846,7 +875,7 @@ Anotaciones -----------------&gt;
 <p><img data-src="images/s06/plot.png" alt="plot" style="width:60.0%" /><br />
 </p>
 </div>
-</section><section id="section-45" class="slide level2">
+</section><section id="section-49" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Dos gráficos al mismo tiempo:</p>
@@ -863,7 +892,7 @@ Anotaciones -----------------&gt;
 <p><img data-src="images/s06/plot2.png" alt="plot2" style="width:60.0%" /><br />
 </p>
 </div>
-</section><section id="section-46" class="slide level2">
+</section><section id="section-50" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Dos gráficos al mismo tiempo:</p>
@@ -880,7 +909,7 @@ Anotaciones -----------------&gt;
 <p><img data-src="images/s06/plot2.png" alt="plot2" style="width:60.0%" /><br />
 </p>
 </div>
-</section><section id="section-47" class="slide level2">
+</section><section id="section-51" class="slide level2">
 <h2></h2>
 <h4 id="gráfico-de-dispersión-scatterplot">Gráfico de dispersión (Scatterplot)</h4>
 <div class="columns">
@@ -917,7 +946,7 @@ Anotaciones -----------------&gt;
 </p>
 </div>
 </div>
-</section><section id="section-48" class="slide level2">
+</section><section id="section-52" class="slide level2">
 <h2></h2>
 <p>Gráfico de barras (barplot)</p>
 <div class="columns">
@@ -955,7 +984,7 @@ Anotaciones -----------------&gt;
 </p>
 </div>
 </div>
-</section><section id="section-49" class="slide level2">
+</section><section id="section-53" class="slide level2">
 <h2></h2>
 <p>Histograma</p>
 <div class="smaller">
@@ -973,7 +1002,7 @@ Anotaciones -----------------&gt;
 </div>
 <p><img data-src="images/s06/hist.png" alt="hist" /><br />
 </p>
-</section><section id="section-50" class="slide level2">
+</section><section id="section-54" class="slide level2">
 <h2></h2>
 <p>Diagrama circular (pie)</p>
 <div class="smaller">
@@ -987,7 +1016,7 @@ Anotaciones -----------------&gt;
 </div>
 <p><img data-src="images/s06/piechart.png" alt="piechart" /><br />
 </p>
-</section><section id="section-51" class="slide level2">
+</section><section id="section-55" class="slide level2">
 <h2></h2>
 <p>Guardar figura a fichero (de forma programática)</p>
 <div class="smaller">
@@ -1008,14 +1037,14 @@ Anotaciones -----------------&gt;
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" title="1"><span class="bu">print</span>(fig.canvas.get_supported_filetypes())</a></code></pre></div>
 </div>
 </section></section>
-<section><section id="seaborn" class="title-slide slide level1"><h1><a href="https://seaborn.pydata.org/">Seaborn</a></h1></section><h4 id="seaborn-1">seaborn</h4><section id="section-52" class="slide level2">
+<section><section id="seaborn" class="title-slide slide level1"><h1><a href="https://seaborn.pydata.org/">Seaborn</a></h1></section><h4 id="seaborn-1">seaborn</h4><section id="section-56" class="slide level2">
 <h2></h2>
 <ul>
 <li>Descargar <a href="code/s06/seaborn_bokeh.ipynb">cuaderno jupyter</a></li>
 <li>Abrirlo con <code>jupyter notebook</code></li>
 <li>Ejecutar paso a paso de la siguiente sección</li>
 </ul>
-</section><section id="section-53" class="slide level2">
+</section><section id="section-57" class="slide level2">
 <h2></h2>
 <p>Capa de abstracción que simplifica ciertas tareas enfocadas a análisis estadístico</p>
 <div class="columns">
@@ -1035,7 +1064,7 @@ Anotaciones -----------------&gt;
 </p>
 </div>
 </div>
-</section><section id="section-54" class="slide level2">
+</section><section id="section-58" class="slide level2">
 <h2></h2>
 <p>Con <code>matplotlib</code>: …</p>
 <div class="smaller">
@@ -1061,7 +1090,7 @@ Anotaciones -----------------&gt;
 <a class="sourceLine" id="cb41-20" title="20">crashes.plot.hist(y<span class="op">=</span><span class="st">&#39;alcohol&#39;</span>, ax<span class="op">=</span>ax3, sharey<span class="op">=</span>ax1, normed<span class="op">=</span><span class="va">True</span>, legend<span class="op">=</span><span class="va">None</span>,</a>
 <a class="sourceLine" id="cb41-21" title="21">    orientation<span class="op">=</span><span class="st">&#39;horizontal&#39;</span>, alpha<span class="op">=</span>.<span class="dv">5</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>)</a></code></pre></div>
 </div>
-</section><section id="section-55" class="slide level2">
+</section><section id="section-59" class="slide level2">
 <h2></h2>
 <p>Multitud de gráficas pre-establecidas</p>
 <div class="columns">
@@ -1073,7 +1102,7 @@ Anotaciones -----------------&gt;
 </p>
 </div>
 </div>
-</section><section id="section-56" class="slide level2">
+</section><section id="section-60" class="slide level2">
 <h2></h2>
 <div class="smaller">
 <p>Permite <a href="sns_context">cambiar temporalmente la estética</a> mediante <code>context managers</code>:</p>
@@ -1084,7 +1113,7 @@ Anotaciones -----------------&gt;
 <p><img data-src="images/s06/sns_pairplot.png" alt="seaborn_pairplot" style="width:40.0%" /><br />
 </p>
 </div>
-</section><section id="section-57" class="slide level2">
+</section><section id="section-61" class="slide level2">
 <h2></h2>
 <p><a href="https://seaborn.pydata.org/examples/index.html">+ ejemplos</a></p>
 <p><a href="http://seaborn.pydata.org/tutorial.html">tutorial seaborn</a></p>
@@ -1092,16 +1121,17 @@ Anotaciones -----------------&gt;
 <a class="sourceLine" id="cb43-2" title="2"><span class="cf">with</span> sns.axes_style(<span class="st">&quot;white&quot;</span>):</a>
 <a class="sourceLine" id="cb43-3" title="3">    sns.jointplot(x<span class="op">=</span>x, y<span class="op">=</span>y, kind<span class="op">=</span><span class="st">&quot;hex&quot;</span>, color<span class="op">=</span><span class="st">&quot;k&quot;</span>)<span class="op">;</span></a></code></pre></div>
 </section></section>
-<section><section id="bokeh" class="title-slide slide level1"><h1><a href="https://bokeh.pydata.org/">Bokeh</a></h1></section><h4 id="bokeh-1"><a href="https://bokeh.pydata.org/">bokeh</a></h4><section id="section-58" class="slide level2">
+<section><section id="bokeh" class="title-slide slide level1"><h1><a href="https://bokeh.pydata.org/">Bokeh</a></h1></section><h4 id="bokeh-1"><a href="https://bokeh.pydata.org/">bokeh</a></h4><section id="section-62" class="slide level2">
 <h2></h2>
 <ul>
 <li>Permite generar gráficos “interactivos”</li>
 <li>Salida a HTML o integrado en cuaderno <code>jupyter</code></li>
 </ul>
-<video data-autoplay src="images/s06/bokeh.webm">
-</video>
+<!-- <video data-autoplay src="images/s06/bokeh.webm"></video> -->
+<iframe src="code/s06/bokeh.html" width="50%" height="600">
+</iframe>
 </section></section>
-<section><section id="geovisualización" class="title-slide slide level1"><h1>Geovisualización</h1></section><section id="section-59" class="slide level2">
+<section><section id="geovisualización" class="title-slide slide level1"><h1>Geovisualización</h1></section><section id="section-63" class="slide level2">
 <h2></h2>
 <ul>
 <li>Librería standard <em>de facto</em>: matplotlib-toolkit (<strong>obsoleta</strong>)</li>
@@ -1118,29 +1148,25 @@ Anotaciones -----------------&gt;
 </section><section id="folium" class="slide level2">
 <h2><a href="http://python-visualization.github.io/folium/">Folium</a></h2>
 <p><a href="nb_folium">Cuaderno <code>jupyter</code></a></p>
-<p><img data-src="images/s06/folium.png" alt="folium_map" /><br />
-</p>
+<!-- ![folium_map]\ -->
+<iframe src="code/s06/santander.html" width="100%" height="300">
+</iframe>
 <p><a href="https://nbviewer.jupyter.org/github/python-visualization/folium/tree/master/examples/">ejemplos online</a></p>
 <aside class="notes">
 <p>Geopandas???</p>
 </aside>
 </section></section>
-<section><section id="cuadernos-jupyter" class="title-slide slide level1"><h1>Cuadernos <code>jupyter</code></h1></section><h4 id="cuadernos-jupyter-1">Cuadernos <code>jupyter</code></h4><section id="section-60" class="slide level2">
+<section><section id="cuadernos-jupyter" class="title-slide slide level1"><h1>Cuadernos <code>jupyter</code></h1></section><h4 id="cuadernos-jupyter-1">Cuadernos <code>jupyter</code></h4><section id="section-64" class="slide level2">
 <h2></h2>
-<ul>
+<ol type="1">
 <li><a href="code/s06/visualizacion_con_matplotlib.ipynb">matplotlib/pyplot</a></li>
 <li><a href="code/s06/visualizacion_con_pandas.ipynb">pandas</a></li>
-<li><a href="code/s06/practica.ipynb">caso práctico</a></li>
-<li><a href="code/s06/pyplot_ii.ipynb">pyplot</a></li>
-<li><a href="code/s06/seaborn_bokeh.ipynb">seaborn</a></li>
+<li><a href="code/s06/practica.ipynb">caso práctico</a> (<a href="code/s06/soluciones.ipynb"><strong>soluciones</strong></a>)</li>
+<li><a href="code/s06/pyplot_ii.ipynb">pyplot II</a></li>
+<li><a href="code/s06/seaborn_bokeh.ipynb">seaborn + bokeh</a></li>
 <li><a href="code/s06/geovisualizacion.ipynb">cartopy</a></li>
 <li><a href="code/s06/folium.ipynb">folium</a></li>
-<li><a href="code/s06/soluciones.ipynb"><strong>Soluciones</strong> caso práctico</a></li>
-</ul>
-<p>Información adicional:</p>
-<ul>
-<li><a href="http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/10_plotting_libraries.html">10 plotting libraries</a></li>
-</ul>
+</ol>
 <!-- enlaces -->
 <!-- images -->
 <!-- notebooks -->

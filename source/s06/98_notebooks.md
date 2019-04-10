@@ -3,15 +3,10 @@
 
 ##
 
-- [matplotlib/pyplot][nb_mpl]
-- [pandas][nb_pd]
-- [caso práctico][nb_practice]
-- [pyplot][nb_pyplot]
-- [seaborn][nb_snsbokeh]
-- [cartopy][nb_cartopy]
-- [folium][nb_folium]
-- [**Soluciones** caso práctico][nb_solution]
-
-Información adicional:
-
-- [10 plotting libraries][10libraries]
+1. [matplotlib/pyplot][nb_mpl]
+2. [pandas][nb_pd]
+3. [caso práctico][nb_practice] ([**soluciones**][nb_solution])
+4. [pyplot II][nb_pyplot]
+5. [seaborn + bokeh][nb_snsbokeh]
+6. [cartopy][nb_cartopy]
+7. [folium][nb_folium]
